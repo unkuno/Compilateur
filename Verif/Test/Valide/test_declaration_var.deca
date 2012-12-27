@@ -1,0 +1,67 @@
+// Description:
+//    Programme testant la declaration des variables
+//    et la compabilité entre float et int
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+class A { 
+}
+
+class B extends A {
+}
+
+class C extends B {
+}
+
+class D extends C {
+
+   void test()   
+   int i = 1;
+   float j = 5.0;
+   float k = 5;
+   boolean b = true;
+
+   A a0 = null;
+   A a1 = new A();
+   A a2 = new B();
+   A a3 = new C();
+   A a4;
+   B b0 = null;
+   B b1 = new B();
+   B b2 = new C();
+   B b3;
+   C c0 = null;
+   C c1 = new C();
+   C c2;
+   {
+   }
+}
+
+
+
+int i = 1;
+float j = 5.0;
+float k = 5;
+boolean b = true;
+
+A a0 = null;
+A a1 = new A();
+A a2 = new B();
+A a3 = new C();
+A a4;
+B b0 = null;
+B b1 = new B();
+B b2 = new C();
+B b3;
+C c0 = null;
+C c1 = new C();
+C c2;
+{
+}

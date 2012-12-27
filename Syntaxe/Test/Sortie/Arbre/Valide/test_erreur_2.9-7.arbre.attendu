@@ -1,0 +1,21 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT i                          -- Ligne 13
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 13
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT i                          -- Ligne 14
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 14
+. NOEUD_VIDE

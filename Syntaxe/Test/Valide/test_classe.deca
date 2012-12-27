@@ -1,0 +1,38 @@
+// Description:
+//    test sur les classes et de tout ses noeuds possibles
+//
+// Resultats: Creation de la classe A et B
+//
+//
+// Historique:
+//    crée le 09/01/2012
+
+
+class A {
+   int x;
+   
+   int getX() {
+      return x;
+   }
+
+   void AffectX( int x0, int y0) 
+      int x1,y1 ;
+   {   
+      x1 = x0;
+      x = x1;
+   }   
+}
+
+class B extends A {
+   int y,z;
+}   
+
+
+A a = new A();
+B b = new B();
+{
+
+   a = null;
+
+}
+

@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.45)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Expression booléenne attendue (règle 3.45)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+{
+   if(1) {
+   }
+}

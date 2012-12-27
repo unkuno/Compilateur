@@ -1,0 +1,175 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT Eval                                   -- Ligne 10
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 13
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 13
+. . . . . . . NOEUD_IDENT evalGauche                       -- Ligne 13
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT boolean                    -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT bo                         -- Ligne 13
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 14
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "evaluation gauche"   -- Ligne 14
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT bo                         -- Ligne 15
+. . . . . # NOEUD_METHODE                                  -- Ligne 18
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 18
+. . . . . . . NOEUD_IDENT evalDroit                        -- Ligne 18
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT boolean                    -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT bo                         -- Ligne 18
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 19
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "evaluation droite"   -- Ligne 19
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 20
+. . . . . . . . . . NOEUD_IDENT bo                         -- Ligne 20
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 27
+. . . . . NOEUD_IDENT Eval                                 -- Ligne 27
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 27
+. . . . . . . . NOEUD_IDENT v                              -- Ligne 27
+. . . . . . . . NOEUD_CREATION                             -- Ligne 27
+. . . . . . . . . NOEUD_IDENT Eval                         -- Ligne 27
+. . <Liste (longueur 10) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 29
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "Evaluation AND : "             -- Ligne 29
+. . . # NOEUD_SI                                           -- Ligne 30
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 30
+. . . . . . . . NOEUD_ET                                   -- Ligne 30
+. . . . . . . . . NOEUD_APPEL                              -- Ligne 30
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 30
+. . . . . . . . . . . NOEUD_IDENT v                        -- Ligne 30
+. . . . . . . . . . . NOEUD_IDENT evalGauche               -- Ligne 30
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_FAUX                         -- Ligne 30
+. . . . . . . . . NOEUD_APPEL                              -- Ligne 30
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 30
+. . . . . . . . . . . NOEUD_IDENT v                        -- Ligne 30
+. . . . . . . . . . . NOEUD_IDENT evalDroit                -- Ligne 30
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_VRAI                         -- Ligne 30
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 31
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO"                -- Ligne 31
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 34
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "OK"                      -- Ligne 34
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 35
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "Evaluation OR : "        -- Ligne 35
+. . . . . . # NOEUD_SI                                     -- Ligne 36
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_COND                             -- Ligne 36
+. . . . . . . . . . . NOEUD_OU                             -- Ligne 36
+. . . . . . . . . . . . NOEUD_APPEL                        -- Ligne 36
+. . . . . . . . . . . . . NOEUD_SELECTION                  -- Ligne 36
+. . . . . . . . . . . . . . NOEUD_IDENT v                  -- Ligne 36
+. . . . . . . . . . . . . . NOEUD_IDENT evalGauche         -- Ligne 36
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_VRAI                   -- Ligne 36
+. . . . . . . . . . . . NOEUD_APPEL                        -- Ligne 36
+. . . . . . . . . . . . . NOEUD_SELECTION                  -- Ligne 36
+. . . . . . . . . . . . . . NOEUD_IDENT v                  -- Ligne 36
+. . . . . . . . . . . . . . NOEUD_IDENT evalDroit          -- Ligne 36
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_FAUX                   -- Ligne 36
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_ECRITURE_LIGNE             -- Ligne 37
+. . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . # NOEUD_CHAINE "OK"          -- Ligne 37
+. . . . . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 41
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "Evaluation AND et OR : "       -- Ligne 41
+. . . # NOEUD_SI                                           -- Ligne 42
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 42
+. . . . . . . . NOEUD_OU                                   -- Ligne 42
+. . . . . . . . . NOEUD_ET                                 -- Ligne 42
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 42
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 42
+. . . . . . . . . . . . NOEUD_IDENT v                      -- Ligne 42
+. . . . . . . . . . . . NOEUD_IDENT evalGauche             -- Ligne 42
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_VRAI                       -- Ligne 42
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 42
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 42
+. . . . . . . . . . . . NOEUD_IDENT v                      -- Ligne 42
+. . . . . . . . . . . . NOEUD_IDENT evalGauche             -- Ligne 42
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_VRAI                       -- Ligne 42
+. . . . . . . . . NOEUD_APPEL                              -- Ligne 42
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 42
+. . . . . . . . . . . NOEUD_IDENT v                        -- Ligne 42
+. . . . . . . . . . . NOEUD_IDENT evalGauche               -- Ligne 42
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_FAUX                         -- Ligne 42
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 43
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "OK"                -- Ligne 43
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 46
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "Evaluation AND dans WHILE : "  -- Ligne 46
+. . . # NOEUD_TANTQUE                                      -- Ligne 47
+. . . . . NOEUD_ET                                         -- Ligne 47
+. . . . . . NOEUD_APPEL                                    -- Ligne 47
+. . . . . . . NOEUD_SELECTION                              -- Ligne 47
+. . . . . . . . NOEUD_IDENT v                              -- Ligne 47
+. . . . . . . . NOEUD_IDENT evalGauche                     -- Ligne 47
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_FAUX                               -- Ligne 47
+. . . . . . NOEUD_APPEL                                    -- Ligne 47
+. . . . . . . NOEUD_SELECTION                              -- Ligne 47
+. . . . . . . . NOEUD_IDENT v                              -- Ligne 47
+. . . . . . . . NOEUD_IDENT evalDroit                      -- Ligne 47
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_VRAI                               -- Ligne 47
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 48
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "KO"                      -- Ligne 48
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 50
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "OK"                            -- Ligne 50
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 51
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "Evaluation OR dans WHILE : "   -- Ligne 51
+. . . # NOEUD_TANTQUE                                      -- Ligne 52
+. . . . . NOEUD_NON                                        -- Ligne 52
+. . . . . . NOEUD_OU                                       -- Ligne 52
+. . . . . . . NOEUD_APPEL                                  -- Ligne 52
+. . . . . . . . NOEUD_SELECTION                            -- Ligne 52
+. . . . . . . . . NOEUD_IDENT v                            -- Ligne 52
+. . . . . . . . . NOEUD_IDENT evalGauche                   -- Ligne 52
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_VRAI                             -- Ligne 52
+. . . . . . . NOEUD_APPEL                                  -- Ligne 52
+. . . . . . . . NOEUD_SELECTION                            -- Ligne 52
+. . . . . . . . . NOEUD_IDENT v                            -- Ligne 52
+. . . . . . . . . NOEUD_IDENT evalDroit                    -- Ligne 52
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_FAUX                             -- Ligne 52
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 53
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "KO"                      -- Ligne 53
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 55
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "OK"                            -- Ligne 55

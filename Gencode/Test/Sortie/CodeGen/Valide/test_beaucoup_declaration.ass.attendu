@@ -1,0 +1,2063 @@
+; Initialisation du programme
+     TSTO #1002
+     BOV pile_pleine
+     ADDSP #1002
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 12.
+
+; Declarations ligne n° 13.
+
+; Declarations ligne n° 14.
+
+; Declarations ligne n° 15.
+
+; Declarations ligne n° 16.
+
+; Declarations ligne n° 17.
+
+; Declarations ligne n° 18.
+
+; Declarations ligne n° 19.
+
+; Declarations ligne n° 20.
+
+; Declarations ligne n° 21.
+
+; Declarations ligne n° 22.
+
+; Declarations ligne n° 23.
+
+; Declarations ligne n° 24.
+
+; Declarations ligne n° 25.
+
+; Declarations ligne n° 26.
+
+; Declarations ligne n° 27.
+
+; Declarations ligne n° 28.
+
+; Declarations ligne n° 29.
+
+; Declarations ligne n° 30.
+
+; Declarations ligne n° 31.
+
+; Declarations ligne n° 32.
+
+; Declarations ligne n° 33.
+
+; Declarations ligne n° 34.
+
+; Declarations ligne n° 35.
+
+; Declarations ligne n° 36.
+
+; Declarations ligne n° 37.
+
+; Declarations ligne n° 38.
+
+; Declarations ligne n° 39.
+
+; Declarations ligne n° 40.
+
+; Declarations ligne n° 41.
+
+; Declarations ligne n° 42.
+
+; Declarations ligne n° 43.
+
+; Declarations ligne n° 44.
+
+; Declarations ligne n° 45.
+
+; Declarations ligne n° 46.
+
+; Declarations ligne n° 47.
+
+; Declarations ligne n° 48.
+
+; Declarations ligne n° 49.
+
+; Declarations ligne n° 50.
+
+; Declarations ligne n° 51.
+
+; Declarations ligne n° 52.
+
+; Declarations ligne n° 53.
+
+; Declarations ligne n° 54.
+
+; Declarations ligne n° 55.
+
+; Declarations ligne n° 56.
+
+; Declarations ligne n° 57.
+
+; Declarations ligne n° 58.
+
+; Declarations ligne n° 59.
+
+; Declarations ligne n° 60.
+
+; Declarations ligne n° 61.
+
+; Declarations ligne n° 62.
+
+; Declarations ligne n° 63.
+
+; Declarations ligne n° 64.
+
+; Declarations ligne n° 65.
+
+; Declarations ligne n° 66.
+
+; Declarations ligne n° 67.
+
+; Declarations ligne n° 68.
+
+; Declarations ligne n° 69.
+
+; Declarations ligne n° 70.
+
+; Declarations ligne n° 71.
+
+; Declarations ligne n° 72.
+
+; Declarations ligne n° 73.
+
+; Declarations ligne n° 74.
+
+; Declarations ligne n° 75.
+
+; Declarations ligne n° 76.
+
+; Declarations ligne n° 77.
+
+; Declarations ligne n° 78.
+
+; Declarations ligne n° 79.
+
+; Declarations ligne n° 80.
+
+; Declarations ligne n° 81.
+
+; Declarations ligne n° 82.
+
+; Declarations ligne n° 83.
+
+; Declarations ligne n° 84.
+
+; Declarations ligne n° 85.
+
+; Declarations ligne n° 86.
+
+; Declarations ligne n° 87.
+
+; Declarations ligne n° 88.
+
+; Declarations ligne n° 89.
+
+; Declarations ligne n° 90.
+
+; Declarations ligne n° 91.
+
+; Declarations ligne n° 92.
+
+; Declarations ligne n° 93.
+
+; Declarations ligne n° 94.
+
+; Declarations ligne n° 95.
+
+; Declarations ligne n° 96.
+
+; Declarations ligne n° 97.
+
+; Declarations ligne n° 98.
+
+; Declarations ligne n° 99.
+
+; Declarations ligne n° 100.
+
+; Declarations ligne n° 101.
+
+; Declarations ligne n° 102.
+
+; Declarations ligne n° 103.
+
+; Declarations ligne n° 104.
+
+; Declarations ligne n° 105.
+
+; Declarations ligne n° 106.
+
+; Declarations ligne n° 107.
+
+; Declarations ligne n° 108.
+
+; Declarations ligne n° 109.
+
+; Declarations ligne n° 110.
+
+; Declarations ligne n° 111.
+
+; Declarations ligne n° 112.
+
+; Declarations ligne n° 113.
+
+; Declarations ligne n° 114.
+
+; Declarations ligne n° 115.
+
+; Declarations ligne n° 116.
+
+; Declarations ligne n° 117.
+
+; Declarations ligne n° 118.
+
+; Declarations ligne n° 119.
+
+; Declarations ligne n° 120.
+
+; Declarations ligne n° 121.
+
+; Declarations ligne n° 122.
+
+; Declarations ligne n° 123.
+
+; Declarations ligne n° 124.
+
+; Declarations ligne n° 125.
+
+; Declarations ligne n° 126.
+
+; Declarations ligne n° 127.
+
+; Declarations ligne n° 128.
+
+; Declarations ligne n° 129.
+
+; Declarations ligne n° 130.
+
+; Declarations ligne n° 131.
+
+; Declarations ligne n° 132.
+
+; Declarations ligne n° 133.
+
+; Declarations ligne n° 134.
+
+; Declarations ligne n° 135.
+
+; Declarations ligne n° 136.
+
+; Declarations ligne n° 137.
+
+; Declarations ligne n° 138.
+
+; Declarations ligne n° 139.
+
+; Declarations ligne n° 140.
+
+; Declarations ligne n° 141.
+
+; Declarations ligne n° 142.
+
+; Declarations ligne n° 143.
+
+; Declarations ligne n° 144.
+
+; Declarations ligne n° 145.
+
+; Declarations ligne n° 146.
+
+; Declarations ligne n° 147.
+
+; Declarations ligne n° 148.
+
+; Declarations ligne n° 149.
+
+; Declarations ligne n° 150.
+
+; Declarations ligne n° 151.
+
+; Declarations ligne n° 152.
+
+; Declarations ligne n° 153.
+
+; Declarations ligne n° 154.
+
+; Declarations ligne n° 155.
+
+; Declarations ligne n° 156.
+
+; Declarations ligne n° 157.
+
+; Declarations ligne n° 158.
+
+; Declarations ligne n° 159.
+
+; Declarations ligne n° 160.
+
+; Declarations ligne n° 161.
+
+; Declarations ligne n° 162.
+
+; Declarations ligne n° 163.
+
+; Declarations ligne n° 164.
+
+; Declarations ligne n° 165.
+
+; Declarations ligne n° 166.
+
+; Declarations ligne n° 167.
+
+; Declarations ligne n° 168.
+
+; Declarations ligne n° 169.
+
+; Declarations ligne n° 170.
+
+; Declarations ligne n° 171.
+
+; Declarations ligne n° 172.
+
+; Declarations ligne n° 173.
+
+; Declarations ligne n° 174.
+
+; Declarations ligne n° 175.
+
+; Declarations ligne n° 176.
+
+; Declarations ligne n° 177.
+
+; Declarations ligne n° 178.
+
+; Declarations ligne n° 179.
+
+; Declarations ligne n° 180.
+
+; Declarations ligne n° 181.
+
+; Declarations ligne n° 182.
+
+; Declarations ligne n° 183.
+
+; Declarations ligne n° 184.
+
+; Declarations ligne n° 185.
+
+; Declarations ligne n° 186.
+
+; Declarations ligne n° 187.
+
+; Declarations ligne n° 188.
+
+; Declarations ligne n° 189.
+
+; Declarations ligne n° 190.
+
+; Declarations ligne n° 191.
+
+; Declarations ligne n° 192.
+
+; Declarations ligne n° 193.
+
+; Declarations ligne n° 194.
+
+; Declarations ligne n° 195.
+
+; Declarations ligne n° 196.
+
+; Declarations ligne n° 197.
+
+; Declarations ligne n° 198.
+
+; Declarations ligne n° 199.
+
+; Declarations ligne n° 200.
+
+; Declarations ligne n° 201.
+
+; Declarations ligne n° 202.
+
+; Declarations ligne n° 203.
+
+; Declarations ligne n° 204.
+
+; Declarations ligne n° 205.
+
+; Declarations ligne n° 206.
+
+; Declarations ligne n° 207.
+
+; Declarations ligne n° 208.
+
+; Declarations ligne n° 209.
+
+; Declarations ligne n° 210.
+
+; Declarations ligne n° 211.
+
+; Declarations ligne n° 212.
+
+; Declarations ligne n° 213.
+
+; Declarations ligne n° 214.
+
+; Declarations ligne n° 215.
+
+; Declarations ligne n° 216.
+
+; Declarations ligne n° 217.
+
+; Declarations ligne n° 218.
+
+; Declarations ligne n° 219.
+
+; Declarations ligne n° 220.
+
+; Declarations ligne n° 221.
+
+; Declarations ligne n° 222.
+
+; Declarations ligne n° 223.
+
+; Declarations ligne n° 224.
+
+; Declarations ligne n° 225.
+
+; Declarations ligne n° 226.
+
+; Declarations ligne n° 227.
+
+; Declarations ligne n° 228.
+
+; Declarations ligne n° 229.
+
+; Declarations ligne n° 230.
+
+; Declarations ligne n° 231.
+
+; Declarations ligne n° 232.
+
+; Declarations ligne n° 233.
+
+; Declarations ligne n° 234.
+
+; Declarations ligne n° 235.
+
+; Declarations ligne n° 236.
+
+; Declarations ligne n° 237.
+
+; Declarations ligne n° 238.
+
+; Declarations ligne n° 239.
+
+; Declarations ligne n° 240.
+
+; Declarations ligne n° 241.
+
+; Declarations ligne n° 242.
+
+; Declarations ligne n° 243.
+
+; Declarations ligne n° 244.
+
+; Declarations ligne n° 245.
+
+; Declarations ligne n° 246.
+
+; Declarations ligne n° 247.
+
+; Declarations ligne n° 248.
+
+; Declarations ligne n° 249.
+
+; Declarations ligne n° 250.
+
+; Declarations ligne n° 251.
+
+; Declarations ligne n° 252.
+
+; Declarations ligne n° 253.
+
+; Declarations ligne n° 254.
+
+; Declarations ligne n° 255.
+
+; Declarations ligne n° 256.
+
+; Declarations ligne n° 257.
+
+; Declarations ligne n° 258.
+
+; Declarations ligne n° 259.
+
+; Declarations ligne n° 260.
+
+; Declarations ligne n° 261.
+
+; Declarations ligne n° 262.
+
+; Declarations ligne n° 263.
+
+; Declarations ligne n° 264.
+
+; Declarations ligne n° 265.
+
+; Declarations ligne n° 266.
+
+; Declarations ligne n° 267.
+
+; Declarations ligne n° 268.
+
+; Declarations ligne n° 269.
+
+; Declarations ligne n° 270.
+
+; Declarations ligne n° 271.
+
+; Declarations ligne n° 272.
+
+; Declarations ligne n° 273.
+
+; Declarations ligne n° 274.
+
+; Declarations ligne n° 275.
+
+; Declarations ligne n° 276.
+
+; Declarations ligne n° 277.
+
+; Declarations ligne n° 278.
+
+; Declarations ligne n° 279.
+
+; Declarations ligne n° 280.
+
+; Declarations ligne n° 281.
+
+; Declarations ligne n° 282.
+
+; Declarations ligne n° 283.
+
+; Declarations ligne n° 284.
+
+; Declarations ligne n° 285.
+
+; Declarations ligne n° 286.
+
+; Declarations ligne n° 287.
+
+; Declarations ligne n° 288.
+
+; Declarations ligne n° 289.
+
+; Declarations ligne n° 290.
+
+; Declarations ligne n° 291.
+
+; Declarations ligne n° 292.
+
+; Declarations ligne n° 293.
+
+; Declarations ligne n° 294.
+
+; Declarations ligne n° 295.
+
+; Declarations ligne n° 296.
+
+; Declarations ligne n° 297.
+
+; Declarations ligne n° 298.
+
+; Declarations ligne n° 299.
+
+; Declarations ligne n° 300.
+
+; Declarations ligne n° 301.
+
+; Declarations ligne n° 302.
+
+; Declarations ligne n° 303.
+
+; Declarations ligne n° 304.
+
+; Declarations ligne n° 305.
+
+; Declarations ligne n° 306.
+
+; Declarations ligne n° 307.
+
+; Declarations ligne n° 308.
+
+; Declarations ligne n° 309.
+
+; Declarations ligne n° 310.
+
+; Declarations ligne n° 311.
+
+; Declarations ligne n° 312.
+
+; Declarations ligne n° 313.
+
+; Declarations ligne n° 314.
+
+; Declarations ligne n° 315.
+
+; Declarations ligne n° 316.
+
+; Declarations ligne n° 317.
+
+; Declarations ligne n° 318.
+
+; Declarations ligne n° 319.
+
+; Declarations ligne n° 320.
+
+; Declarations ligne n° 321.
+
+; Declarations ligne n° 322.
+
+; Declarations ligne n° 323.
+
+; Declarations ligne n° 324.
+
+; Declarations ligne n° 325.
+
+; Declarations ligne n° 326.
+
+; Declarations ligne n° 327.
+
+; Declarations ligne n° 328.
+
+; Declarations ligne n° 329.
+
+; Declarations ligne n° 330.
+
+; Declarations ligne n° 331.
+
+; Declarations ligne n° 332.
+
+; Declarations ligne n° 333.
+
+; Declarations ligne n° 334.
+
+; Declarations ligne n° 335.
+
+; Declarations ligne n° 336.
+
+; Declarations ligne n° 337.
+
+; Declarations ligne n° 338.
+
+; Declarations ligne n° 339.
+
+; Declarations ligne n° 340.
+
+; Declarations ligne n° 341.
+
+; Declarations ligne n° 342.
+
+; Declarations ligne n° 343.
+
+; Declarations ligne n° 344.
+
+; Declarations ligne n° 345.
+
+; Declarations ligne n° 346.
+
+; Declarations ligne n° 347.
+
+; Declarations ligne n° 348.
+
+; Declarations ligne n° 349.
+
+; Declarations ligne n° 350.
+
+; Declarations ligne n° 351.
+
+; Declarations ligne n° 352.
+
+; Declarations ligne n° 353.
+
+; Declarations ligne n° 354.
+
+; Declarations ligne n° 355.
+
+; Declarations ligne n° 356.
+
+; Declarations ligne n° 357.
+
+; Declarations ligne n° 358.
+
+; Declarations ligne n° 359.
+
+; Declarations ligne n° 360.
+
+; Declarations ligne n° 361.
+
+; Declarations ligne n° 362.
+
+; Declarations ligne n° 363.
+
+; Declarations ligne n° 364.
+
+; Declarations ligne n° 365.
+
+; Declarations ligne n° 366.
+
+; Declarations ligne n° 367.
+
+; Declarations ligne n° 368.
+
+; Declarations ligne n° 369.
+
+; Declarations ligne n° 370.
+
+; Declarations ligne n° 371.
+
+; Declarations ligne n° 372.
+
+; Declarations ligne n° 373.
+
+; Declarations ligne n° 374.
+
+; Declarations ligne n° 375.
+
+; Declarations ligne n° 376.
+
+; Declarations ligne n° 377.
+
+; Declarations ligne n° 378.
+
+; Declarations ligne n° 379.
+
+; Declarations ligne n° 380.
+
+; Declarations ligne n° 381.
+
+; Declarations ligne n° 382.
+
+; Declarations ligne n° 383.
+
+; Declarations ligne n° 384.
+
+; Declarations ligne n° 385.
+
+; Declarations ligne n° 386.
+
+; Declarations ligne n° 387.
+
+; Declarations ligne n° 388.
+
+; Declarations ligne n° 389.
+
+; Declarations ligne n° 390.
+
+; Declarations ligne n° 391.
+
+; Declarations ligne n° 392.
+
+; Declarations ligne n° 393.
+
+; Declarations ligne n° 394.
+
+; Declarations ligne n° 395.
+
+; Declarations ligne n° 396.
+
+; Declarations ligne n° 397.
+
+; Declarations ligne n° 398.
+
+; Declarations ligne n° 399.
+
+; Declarations ligne n° 400.
+
+; Declarations ligne n° 401.
+
+; Declarations ligne n° 402.
+
+; Declarations ligne n° 403.
+
+; Declarations ligne n° 404.
+
+; Declarations ligne n° 405.
+
+; Declarations ligne n° 406.
+
+; Declarations ligne n° 407.
+
+; Declarations ligne n° 408.
+
+; Declarations ligne n° 409.
+
+; Declarations ligne n° 410.
+
+; Declarations ligne n° 411.
+
+; Declarations ligne n° 412.
+
+; Declarations ligne n° 413.
+
+; Declarations ligne n° 414.
+
+; Declarations ligne n° 415.
+
+; Declarations ligne n° 416.
+
+; Declarations ligne n° 417.
+
+; Declarations ligne n° 418.
+
+; Declarations ligne n° 419.
+
+; Declarations ligne n° 420.
+
+; Declarations ligne n° 421.
+
+; Declarations ligne n° 422.
+
+; Declarations ligne n° 423.
+
+; Declarations ligne n° 424.
+
+; Declarations ligne n° 425.
+
+; Declarations ligne n° 426.
+
+; Declarations ligne n° 427.
+
+; Declarations ligne n° 428.
+
+; Declarations ligne n° 429.
+
+; Declarations ligne n° 430.
+
+; Declarations ligne n° 431.
+
+; Declarations ligne n° 432.
+
+; Declarations ligne n° 433.
+
+; Declarations ligne n° 434.
+
+; Declarations ligne n° 435.
+
+; Declarations ligne n° 436.
+
+; Declarations ligne n° 437.
+
+; Declarations ligne n° 438.
+
+; Declarations ligne n° 439.
+
+; Declarations ligne n° 440.
+
+; Declarations ligne n° 441.
+
+; Declarations ligne n° 442.
+
+; Declarations ligne n° 443.
+
+; Declarations ligne n° 444.
+
+; Declarations ligne n° 445.
+
+; Declarations ligne n° 446.
+
+; Declarations ligne n° 447.
+
+; Declarations ligne n° 448.
+
+; Declarations ligne n° 449.
+
+; Declarations ligne n° 450.
+
+; Declarations ligne n° 451.
+
+; Declarations ligne n° 452.
+
+; Declarations ligne n° 453.
+
+; Declarations ligne n° 454.
+
+; Declarations ligne n° 455.
+
+; Declarations ligne n° 456.
+
+; Declarations ligne n° 457.
+
+; Declarations ligne n° 458.
+
+; Declarations ligne n° 459.
+
+; Declarations ligne n° 460.
+
+; Declarations ligne n° 461.
+
+; Declarations ligne n° 462.
+
+; Declarations ligne n° 463.
+
+; Declarations ligne n° 464.
+
+; Declarations ligne n° 465.
+
+; Declarations ligne n° 466.
+
+; Declarations ligne n° 467.
+
+; Declarations ligne n° 468.
+
+; Declarations ligne n° 469.
+
+; Declarations ligne n° 470.
+
+; Declarations ligne n° 471.
+
+; Declarations ligne n° 472.
+
+; Declarations ligne n° 473.
+
+; Declarations ligne n° 474.
+
+; Declarations ligne n° 475.
+
+; Declarations ligne n° 476.
+
+; Declarations ligne n° 477.
+
+; Declarations ligne n° 478.
+
+; Declarations ligne n° 479.
+
+; Declarations ligne n° 480.
+
+; Declarations ligne n° 481.
+
+; Declarations ligne n° 482.
+
+; Declarations ligne n° 483.
+
+; Declarations ligne n° 484.
+
+; Declarations ligne n° 485.
+
+; Declarations ligne n° 486.
+
+; Declarations ligne n° 487.
+
+; Declarations ligne n° 488.
+
+; Declarations ligne n° 489.
+
+; Declarations ligne n° 490.
+
+; Declarations ligne n° 491.
+
+; Declarations ligne n° 492.
+
+; Declarations ligne n° 493.
+
+; Declarations ligne n° 494.
+
+; Declarations ligne n° 495.
+
+; Declarations ligne n° 496.
+
+; Declarations ligne n° 497.
+
+; Declarations ligne n° 498.
+
+; Declarations ligne n° 499.
+
+; Declarations ligne n° 500.
+
+; Declarations ligne n° 501.
+
+; Declarations ligne n° 502.
+
+; Declarations ligne n° 503.
+
+; Declarations ligne n° 504.
+
+; Declarations ligne n° 505.
+
+; Declarations ligne n° 506.
+
+; Declarations ligne n° 507.
+
+; Declarations ligne n° 508.
+
+; Declarations ligne n° 509.
+
+; Declarations ligne n° 510.
+
+; Declarations ligne n° 511.
+
+; Declarations ligne n° 512.
+
+; Declarations ligne n° 513.
+
+; Declarations ligne n° 514.
+
+; Declarations ligne n° 515.
+
+; Declarations ligne n° 516.
+
+; Declarations ligne n° 517.
+
+; Declarations ligne n° 518.
+
+; Declarations ligne n° 519.
+
+; Declarations ligne n° 520.
+
+; Declarations ligne n° 521.
+
+; Declarations ligne n° 522.
+
+; Declarations ligne n° 523.
+
+; Declarations ligne n° 524.
+
+; Declarations ligne n° 525.
+
+; Declarations ligne n° 526.
+
+; Declarations ligne n° 527.
+
+; Declarations ligne n° 528.
+
+; Declarations ligne n° 529.
+
+; Declarations ligne n° 530.
+
+; Declarations ligne n° 531.
+
+; Declarations ligne n° 532.
+
+; Declarations ligne n° 533.
+
+; Declarations ligne n° 534.
+
+; Declarations ligne n° 535.
+
+; Declarations ligne n° 536.
+
+; Declarations ligne n° 537.
+
+; Declarations ligne n° 538.
+
+; Declarations ligne n° 539.
+
+; Declarations ligne n° 540.
+
+; Declarations ligne n° 541.
+
+; Declarations ligne n° 542.
+
+; Declarations ligne n° 543.
+
+; Declarations ligne n° 544.
+
+; Declarations ligne n° 545.
+
+; Declarations ligne n° 546.
+
+; Declarations ligne n° 547.
+
+; Declarations ligne n° 548.
+
+; Declarations ligne n° 549.
+
+; Declarations ligne n° 550.
+
+; Declarations ligne n° 551.
+
+; Declarations ligne n° 552.
+
+; Declarations ligne n° 553.
+
+; Declarations ligne n° 554.
+
+; Declarations ligne n° 555.
+
+; Declarations ligne n° 556.
+
+; Declarations ligne n° 557.
+
+; Declarations ligne n° 558.
+
+; Declarations ligne n° 559.
+
+; Declarations ligne n° 560.
+
+; Declarations ligne n° 561.
+
+; Declarations ligne n° 562.
+
+; Declarations ligne n° 563.
+
+; Declarations ligne n° 564.
+
+; Declarations ligne n° 565.
+
+; Declarations ligne n° 566.
+
+; Declarations ligne n° 567.
+
+; Declarations ligne n° 568.
+
+; Declarations ligne n° 569.
+
+; Declarations ligne n° 570.
+
+; Declarations ligne n° 571.
+
+; Declarations ligne n° 572.
+
+; Declarations ligne n° 573.
+
+; Declarations ligne n° 574.
+
+; Declarations ligne n° 575.
+
+; Declarations ligne n° 576.
+
+; Declarations ligne n° 577.
+
+; Declarations ligne n° 578.
+
+; Declarations ligne n° 579.
+
+; Declarations ligne n° 580.
+
+; Declarations ligne n° 581.
+
+; Declarations ligne n° 582.
+
+; Declarations ligne n° 583.
+
+; Declarations ligne n° 584.
+
+; Declarations ligne n° 585.
+
+; Declarations ligne n° 586.
+
+; Declarations ligne n° 587.
+
+; Declarations ligne n° 588.
+
+; Declarations ligne n° 589.
+
+; Declarations ligne n° 590.
+
+; Declarations ligne n° 591.
+
+; Declarations ligne n° 592.
+
+; Declarations ligne n° 593.
+
+; Declarations ligne n° 594.
+
+; Declarations ligne n° 595.
+
+; Declarations ligne n° 596.
+
+; Declarations ligne n° 597.
+
+; Declarations ligne n° 598.
+
+; Declarations ligne n° 599.
+
+; Declarations ligne n° 600.
+
+; Declarations ligne n° 601.
+
+; Declarations ligne n° 602.
+
+; Declarations ligne n° 603.
+
+; Declarations ligne n° 604.
+
+; Declarations ligne n° 605.
+
+; Declarations ligne n° 606.
+
+; Declarations ligne n° 607.
+
+; Declarations ligne n° 608.
+
+; Declarations ligne n° 609.
+
+; Declarations ligne n° 610.
+
+; Declarations ligne n° 611.
+
+; Declarations ligne n° 612.
+
+; Declarations ligne n° 613.
+
+; Declarations ligne n° 614.
+
+; Declarations ligne n° 615.
+
+; Declarations ligne n° 616.
+
+; Declarations ligne n° 617.
+
+; Declarations ligne n° 618.
+
+; Declarations ligne n° 619.
+
+; Declarations ligne n° 620.
+
+; Declarations ligne n° 621.
+
+; Declarations ligne n° 622.
+
+; Declarations ligne n° 623.
+
+; Declarations ligne n° 624.
+
+; Declarations ligne n° 625.
+
+; Declarations ligne n° 626.
+
+; Declarations ligne n° 627.
+
+; Declarations ligne n° 628.
+
+; Declarations ligne n° 629.
+
+; Declarations ligne n° 630.
+
+; Declarations ligne n° 631.
+
+; Declarations ligne n° 632.
+
+; Declarations ligne n° 633.
+
+; Declarations ligne n° 634.
+
+; Declarations ligne n° 635.
+
+; Declarations ligne n° 636.
+
+; Declarations ligne n° 637.
+
+; Declarations ligne n° 638.
+
+; Declarations ligne n° 639.
+
+; Declarations ligne n° 640.
+
+; Declarations ligne n° 641.
+
+; Declarations ligne n° 642.
+
+; Declarations ligne n° 643.
+
+; Declarations ligne n° 644.
+
+; Declarations ligne n° 645.
+
+; Declarations ligne n° 646.
+
+; Declarations ligne n° 647.
+
+; Declarations ligne n° 648.
+
+; Declarations ligne n° 649.
+
+; Declarations ligne n° 650.
+
+; Declarations ligne n° 651.
+
+; Declarations ligne n° 652.
+
+; Declarations ligne n° 653.
+
+; Declarations ligne n° 654.
+
+; Declarations ligne n° 655.
+
+; Declarations ligne n° 656.
+
+; Declarations ligne n° 657.
+
+; Declarations ligne n° 658.
+
+; Declarations ligne n° 659.
+
+; Declarations ligne n° 660.
+
+; Declarations ligne n° 661.
+
+; Declarations ligne n° 662.
+
+; Declarations ligne n° 663.
+
+; Declarations ligne n° 664.
+
+; Declarations ligne n° 665.
+
+; Declarations ligne n° 666.
+
+; Declarations ligne n° 667.
+
+; Declarations ligne n° 668.
+
+; Declarations ligne n° 669.
+
+; Declarations ligne n° 670.
+
+; Declarations ligne n° 671.
+
+; Declarations ligne n° 672.
+
+; Declarations ligne n° 673.
+
+; Declarations ligne n° 674.
+
+; Declarations ligne n° 675.
+
+; Declarations ligne n° 676.
+
+; Declarations ligne n° 677.
+
+; Declarations ligne n° 678.
+
+; Declarations ligne n° 679.
+
+; Declarations ligne n° 680.
+
+; Declarations ligne n° 681.
+
+; Declarations ligne n° 682.
+
+; Declarations ligne n° 683.
+
+; Declarations ligne n° 684.
+
+; Declarations ligne n° 685.
+
+; Declarations ligne n° 686.
+
+; Declarations ligne n° 687.
+
+; Declarations ligne n° 688.
+
+; Declarations ligne n° 689.
+
+; Declarations ligne n° 690.
+
+; Declarations ligne n° 691.
+
+; Declarations ligne n° 692.
+
+; Declarations ligne n° 693.
+
+; Declarations ligne n° 694.
+
+; Declarations ligne n° 695.
+
+; Declarations ligne n° 696.
+
+; Declarations ligne n° 697.
+
+; Declarations ligne n° 698.
+
+; Declarations ligne n° 699.
+
+; Declarations ligne n° 700.
+
+; Declarations ligne n° 701.
+
+; Declarations ligne n° 702.
+
+; Declarations ligne n° 703.
+
+; Declarations ligne n° 704.
+
+; Declarations ligne n° 705.
+
+; Declarations ligne n° 706.
+
+; Declarations ligne n° 707.
+
+; Declarations ligne n° 708.
+
+; Declarations ligne n° 709.
+
+; Declarations ligne n° 710.
+
+; Declarations ligne n° 711.
+
+; Declarations ligne n° 712.
+
+; Declarations ligne n° 713.
+
+; Declarations ligne n° 714.
+
+; Declarations ligne n° 715.
+
+; Declarations ligne n° 716.
+
+; Declarations ligne n° 717.
+
+; Declarations ligne n° 718.
+
+; Declarations ligne n° 719.
+
+; Declarations ligne n° 720.
+
+; Declarations ligne n° 721.
+
+; Declarations ligne n° 722.
+
+; Declarations ligne n° 723.
+
+; Declarations ligne n° 724.
+
+; Declarations ligne n° 725.
+
+; Declarations ligne n° 726.
+
+; Declarations ligne n° 727.
+
+; Declarations ligne n° 728.
+
+; Declarations ligne n° 729.
+
+; Declarations ligne n° 730.
+
+; Declarations ligne n° 731.
+
+; Declarations ligne n° 732.
+
+; Declarations ligne n° 733.
+
+; Declarations ligne n° 734.
+
+; Declarations ligne n° 735.
+
+; Declarations ligne n° 736.
+
+; Declarations ligne n° 737.
+
+; Declarations ligne n° 738.
+
+; Declarations ligne n° 739.
+
+; Declarations ligne n° 740.
+
+; Declarations ligne n° 741.
+
+; Declarations ligne n° 742.
+
+; Declarations ligne n° 743.
+
+; Declarations ligne n° 744.
+
+; Declarations ligne n° 745.
+
+; Declarations ligne n° 746.
+
+; Declarations ligne n° 747.
+
+; Declarations ligne n° 748.
+
+; Declarations ligne n° 749.
+
+; Declarations ligne n° 750.
+
+; Declarations ligne n° 751.
+
+; Declarations ligne n° 752.
+
+; Declarations ligne n° 753.
+
+; Declarations ligne n° 754.
+
+; Declarations ligne n° 755.
+
+; Declarations ligne n° 756.
+
+; Declarations ligne n° 757.
+
+; Declarations ligne n° 758.
+
+; Declarations ligne n° 759.
+
+; Declarations ligne n° 760.
+
+; Declarations ligne n° 761.
+
+; Declarations ligne n° 762.
+
+; Declarations ligne n° 763.
+
+; Declarations ligne n° 764.
+
+; Declarations ligne n° 765.
+
+; Declarations ligne n° 766.
+
+; Declarations ligne n° 767.
+
+; Declarations ligne n° 768.
+
+; Declarations ligne n° 769.
+
+; Declarations ligne n° 770.
+
+; Declarations ligne n° 771.
+
+; Declarations ligne n° 772.
+
+; Declarations ligne n° 773.
+
+; Declarations ligne n° 774.
+
+; Declarations ligne n° 775.
+
+; Declarations ligne n° 776.
+
+; Declarations ligne n° 777.
+
+; Declarations ligne n° 778.
+
+; Declarations ligne n° 779.
+
+; Declarations ligne n° 780.
+
+; Declarations ligne n° 781.
+
+; Declarations ligne n° 782.
+
+; Declarations ligne n° 783.
+
+; Declarations ligne n° 784.
+
+; Declarations ligne n° 785.
+
+; Declarations ligne n° 786.
+
+; Declarations ligne n° 787.
+
+; Declarations ligne n° 788.
+
+; Declarations ligne n° 789.
+
+; Declarations ligne n° 790.
+
+; Declarations ligne n° 791.
+
+; Declarations ligne n° 792.
+
+; Declarations ligne n° 793.
+
+; Declarations ligne n° 794.
+
+; Declarations ligne n° 795.
+
+; Declarations ligne n° 796.
+
+; Declarations ligne n° 797.
+
+; Declarations ligne n° 798.
+
+; Declarations ligne n° 799.
+
+; Declarations ligne n° 800.
+
+; Declarations ligne n° 801.
+
+; Declarations ligne n° 802.
+
+; Declarations ligne n° 803.
+
+; Declarations ligne n° 804.
+
+; Declarations ligne n° 805.
+
+; Declarations ligne n° 806.
+
+; Declarations ligne n° 807.
+
+; Declarations ligne n° 808.
+
+; Declarations ligne n° 809.
+
+; Declarations ligne n° 810.
+
+; Declarations ligne n° 811.
+
+; Declarations ligne n° 812.
+
+; Declarations ligne n° 813.
+
+; Declarations ligne n° 814.
+
+; Declarations ligne n° 815.
+
+; Declarations ligne n° 816.
+
+; Declarations ligne n° 817.
+
+; Declarations ligne n° 818.
+
+; Declarations ligne n° 819.
+
+; Declarations ligne n° 820.
+
+; Declarations ligne n° 821.
+
+; Declarations ligne n° 822.
+
+; Declarations ligne n° 823.
+
+; Declarations ligne n° 824.
+
+; Declarations ligne n° 825.
+
+; Declarations ligne n° 826.
+
+; Declarations ligne n° 827.
+
+; Declarations ligne n° 828.
+
+; Declarations ligne n° 829.
+
+; Declarations ligne n° 830.
+
+; Declarations ligne n° 831.
+
+; Declarations ligne n° 832.
+
+; Declarations ligne n° 833.
+
+; Declarations ligne n° 834.
+
+; Declarations ligne n° 835.
+
+; Declarations ligne n° 836.
+
+; Declarations ligne n° 837.
+
+; Declarations ligne n° 838.
+
+; Declarations ligne n° 839.
+
+; Declarations ligne n° 840.
+
+; Declarations ligne n° 841.
+
+; Declarations ligne n° 842.
+
+; Declarations ligne n° 843.
+
+; Declarations ligne n° 844.
+
+; Declarations ligne n° 845.
+
+; Declarations ligne n° 846.
+
+; Declarations ligne n° 847.
+
+; Declarations ligne n° 848.
+
+; Declarations ligne n° 849.
+
+; Declarations ligne n° 850.
+
+; Declarations ligne n° 851.
+
+; Declarations ligne n° 852.
+
+; Declarations ligne n° 853.
+
+; Declarations ligne n° 854.
+
+; Declarations ligne n° 855.
+
+; Declarations ligne n° 856.
+
+; Declarations ligne n° 857.
+
+; Declarations ligne n° 858.
+
+; Declarations ligne n° 859.
+
+; Declarations ligne n° 860.
+
+; Declarations ligne n° 861.
+
+; Declarations ligne n° 862.
+
+; Declarations ligne n° 863.
+
+; Declarations ligne n° 864.
+
+; Declarations ligne n° 865.
+
+; Declarations ligne n° 866.
+
+; Declarations ligne n° 867.
+
+; Declarations ligne n° 868.
+
+; Declarations ligne n° 869.
+
+; Declarations ligne n° 870.
+
+; Declarations ligne n° 871.
+
+; Declarations ligne n° 872.
+
+; Declarations ligne n° 873.
+
+; Declarations ligne n° 874.
+
+; Declarations ligne n° 875.
+
+; Declarations ligne n° 876.
+
+; Declarations ligne n° 877.
+
+; Declarations ligne n° 878.
+
+; Declarations ligne n° 879.
+
+; Declarations ligne n° 880.
+
+; Declarations ligne n° 881.
+
+; Declarations ligne n° 882.
+
+; Declarations ligne n° 883.
+
+; Declarations ligne n° 884.
+
+; Declarations ligne n° 885.
+
+; Declarations ligne n° 886.
+
+; Declarations ligne n° 887.
+
+; Declarations ligne n° 888.
+
+; Declarations ligne n° 889.
+
+; Declarations ligne n° 890.
+
+; Declarations ligne n° 891.
+
+; Declarations ligne n° 892.
+
+; Declarations ligne n° 893.
+
+; Declarations ligne n° 894.
+
+; Declarations ligne n° 895.
+
+; Declarations ligne n° 896.
+
+; Declarations ligne n° 897.
+
+; Declarations ligne n° 898.
+
+; Declarations ligne n° 899.
+
+; Declarations ligne n° 900.
+
+; Declarations ligne n° 901.
+
+; Declarations ligne n° 902.
+
+; Declarations ligne n° 903.
+
+; Declarations ligne n° 904.
+
+; Declarations ligne n° 905.
+
+; Declarations ligne n° 906.
+
+; Declarations ligne n° 907.
+
+; Declarations ligne n° 908.
+
+; Declarations ligne n° 909.
+
+; Declarations ligne n° 910.
+
+; Declarations ligne n° 911.
+
+; Declarations ligne n° 912.
+
+; Declarations ligne n° 913.
+
+; Declarations ligne n° 914.
+
+; Declarations ligne n° 915.
+
+; Declarations ligne n° 916.
+
+; Declarations ligne n° 917.
+
+; Declarations ligne n° 918.
+
+; Declarations ligne n° 919.
+
+; Declarations ligne n° 920.
+
+; Declarations ligne n° 921.
+
+; Declarations ligne n° 922.
+
+; Declarations ligne n° 923.
+
+; Declarations ligne n° 924.
+
+; Declarations ligne n° 925.
+
+; Declarations ligne n° 926.
+
+; Declarations ligne n° 927.
+
+; Declarations ligne n° 928.
+
+; Declarations ligne n° 929.
+
+; Declarations ligne n° 930.
+
+; Declarations ligne n° 931.
+
+; Declarations ligne n° 932.
+
+; Declarations ligne n° 933.
+
+; Declarations ligne n° 934.
+
+; Declarations ligne n° 935.
+
+; Declarations ligne n° 936.
+
+; Declarations ligne n° 937.
+
+; Declarations ligne n° 938.
+
+; Declarations ligne n° 939.
+
+; Declarations ligne n° 940.
+
+; Declarations ligne n° 941.
+
+; Declarations ligne n° 942.
+
+; Declarations ligne n° 943.
+
+; Declarations ligne n° 944.
+
+; Declarations ligne n° 945.
+
+; Declarations ligne n° 946.
+
+; Declarations ligne n° 947.
+
+; Declarations ligne n° 948.
+
+; Declarations ligne n° 949.
+
+; Declarations ligne n° 950.
+
+; Declarations ligne n° 951.
+
+; Declarations ligne n° 952.
+
+; Declarations ligne n° 953.
+
+; Declarations ligne n° 954.
+
+; Declarations ligne n° 955.
+
+; Declarations ligne n° 956.
+
+; Declarations ligne n° 957.
+
+; Declarations ligne n° 958.
+
+; Declarations ligne n° 959.
+
+; Declarations ligne n° 960.
+
+; Declarations ligne n° 961.
+
+; Declarations ligne n° 962.
+
+; Declarations ligne n° 963.
+
+; Declarations ligne n° 964.
+
+; Declarations ligne n° 965.
+
+; Declarations ligne n° 966.
+
+; Declarations ligne n° 967.
+
+; Declarations ligne n° 968.
+
+; Declarations ligne n° 969.
+
+; Declarations ligne n° 970.
+
+; Declarations ligne n° 971.
+
+; Declarations ligne n° 972.
+
+; Declarations ligne n° 973.
+
+; Declarations ligne n° 974.
+
+; Declarations ligne n° 975.
+
+; Declarations ligne n° 976.
+
+; Declarations ligne n° 977.
+
+; Declarations ligne n° 978.
+
+; Declarations ligne n° 979.
+
+; Declarations ligne n° 980.
+
+; Declarations ligne n° 981.
+
+; Declarations ligne n° 982.
+
+; Declarations ligne n° 983.
+
+; Declarations ligne n° 984.
+
+; Declarations ligne n° 985.
+
+; Declarations ligne n° 986.
+
+; Declarations ligne n° 987.
+
+; Declarations ligne n° 988.
+
+; Declarations ligne n° 989.
+
+; Declarations ligne n° 990.
+
+; Declarations ligne n° 991.
+
+; Declarations ligne n° 992.
+
+; Declarations ligne n° 993.
+
+; Declarations ligne n° 994.
+
+; Declarations ligne n° 995.
+
+; Declarations ligne n° 996.
+
+; Declarations ligne n° 997.
+
+; Declarations ligne n° 998.
+
+; Declarations ligne n° 999.
+
+; Declarations ligne n° 1000.
+
+; Declarations ligne n° 1001.
+
+; Declarations ligne n° 1002.
+
+; Declarations ligne n° 1003.
+
+; Declarations ligne n° 1004.
+
+; Declarations ligne n° 1005.
+
+; Declarations ligne n° 1006.
+
+; Declarations ligne n° 1007.
+
+; Declarations ligne n° 1008.
+
+; Declarations ligne n° 1009.
+
+; Declarations ligne n° 1010.
+
+; Declarations ligne n° 1011.
+
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

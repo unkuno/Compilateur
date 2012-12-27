@@ -1,0 +1,130 @@
+// Description:
+//    tests calculette interactive
+//
+// Resultats:
+//   la calculette produit les bons résultats
+// 
+// Attributs: exec correct manuel
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+
+int choix = 0;
+int entier1, entier2;
+float float1, float2;
+{
+
+   while (choix != 5) {
+      println("Bienvenue dans la calculator !");
+      println("***** MENU PRINCIPAL *****");
+      println("1 - Addition");  
+      println("2 - Multiplication");  
+      println("3 - Division");  
+      println("4 - Modulo");  
+      println("5 - Quitter");
+      print("Choix : ");choix = readInt();  
+
+         if (choix == 1) {
+            choix = 0;
+            while (choix != 3) {
+               println("***** ADDITION *****");
+               println("1 - Entier");  
+               println("2 - Flottant");             
+               println("3 - Retour au menu");  
+               print("Choix : ");choix = readInt();  
+               if (choix == 1) {
+                  println("***** ADDITION ENTIERE*****");
+                  print("Entier 1 : ");
+                  entier1 = readInt();
+                  println("");
+                  print("Entier 2 : ");                  
+                  entier2 = readInt();
+                  println("Résultats : ", entier1 + entier2);
+               }
+               elsif (choix == 2) {
+                  println("***** ADDITION FLOTTANTE*****");
+                  print("Flottant 1 : ");
+                  float1 = readFloat();
+                  println("");
+                  print("Flottant 2 : ");                  
+                  float2 = readFloat();
+                  println("Résultats : ", float1 + float2);
+               }
+            }         
+         }
+         elsif (choix == 2) {
+            choix = 0;
+            while (choix != 3) {
+               println("***** MULTIPLICATION *****");
+               println("1 - Entier");  
+               println("2 - Flottant");             
+               println("3 - Retour au menu");  
+               print("Choix : ");choix = readInt();  
+               if (choix == 1) {
+                  println("***** MULTIPLICATION ENTIERE*****");
+                  print("Entier 1 : ");
+                  entier1 = readInt();
+                  println("");
+                  print("Entier 2 : ");                  
+                  entier2 = readInt();
+                  println("Résultats : ", entier1 * entier2);
+               }
+               elsif (choix == 2) {
+                  println("***** MULTIPLICATION FLOTTANTE*****");
+                  print("Flottant 1 : ");
+                  float1 = readFloat();
+                  println("");
+                  print("Flottant 2 : ");                  
+                  float2 = readFloat();
+                  println("Résultats : ", float1 * float2);
+               }
+            }         
+         }
+         elsif (choix == 3) {
+            choix = 0;
+            while (choix != 3) {
+               println("***** DIVISION *****");
+               println("1 - Entier");  
+               println("2 - Flottant");             
+               println("3 - Retour au menu");  
+               print("Choix : ");choix = readInt();  
+               if (choix == 1) {
+                  println("***** DIVISION ENTIERE*****");
+                  print("Entier 1 : ");
+                  entier1 = readInt();
+                  println("");
+                  print("Entier 2 : ");                  
+                  entier2 = readInt();
+                  println("Résultats : ", entier1 / entier2);
+               }
+               elsif (choix == 2) {
+                  println("***** DIVISION FLOTTANTE*****");
+                  print("Flottant 1 : ");
+                  float1 = readFloat();
+                  println("");
+                  print("Flottant 2 : ");                  
+                  float2 = readFloat();
+                  println("Résultats : ", float1 / float2);
+               }
+            }         
+         }
+         elsif (choix == 4) {
+            choix = 0;
+            println("***** MODULO ENTIERE*****");
+            print("Entier 1 : ");
+            entier1 = readInt();
+            println("");
+            print("Entier 2 : ");                  
+            entier2 = readInt();
+            println("Résultats : ", entier1 % entier2);
+   
+         }
+         else {
+            println("Bye bye !");
+         }
+         
+   }
+
+}

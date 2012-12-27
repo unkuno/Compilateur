@@ -1,0 +1,20 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT add                                    -- Ligne 14
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 16
+. . . . . . . NOEUD_IDENT int                              -- Ligne 16
+. . . . . . . NOEUD_IDENT add                              -- Ligne 16
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 16
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 16
+. . . . . . . . . . NOEUD_IDENT i                          -- Ligne 16
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 17
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 17
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 17
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 17
+. NOEUD_VIDE

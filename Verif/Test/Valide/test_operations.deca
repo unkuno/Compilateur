@@ -1,0 +1,632 @@
+// Description:
+//    Tests sur les operations
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+
+class T {
+   
+   int Entier(){
+      return 1;
+   }
+   
+   float Flottant(){
+      return 1.0;
+   }
+   
+   boolean Vrai(){
+      return true;
+   }
+   boolean Faux(){
+      return false;
+   }
+   
+   void Rien(){
+   }
+}
+
+class T2 extends T { 
+   
+   int Entier(){
+      return 2;
+   }
+   
+   float Flottant(){
+      return 2.0;
+   }
+   
+   boolean Vrai(){
+      return true;
+   }
+   boolean Faux(){
+      return false;
+   }
+   
+   void Rien(){
+   }
+   
+   T Objet()
+      T x = null;	 
+   {
+      return x;
+   }  
+}
+
+
+int i;
+float f1,f2;
+boolean b1;
+boolean b2;
+T t1;
+T2 t2;
+{
+
+   //Test affectation//   
+   
+   i = t1.Entier();
+   i = 1;
+   f1 = t1.Flottant();
+   f1 = 3.0;
+   f2 = t1.Entier();
+   f2 = 4;
+   b1 = t1.Vrai();
+   b1 = true;
+   b2 = t1.Faux();
+   b2 = false;   
+   t1 = null; 
+   t1 = new T2();
+   t1 = t2.Objet();
+   t1 = new T();   
+   t2= new T2();
+   
+   //Test Diff//   
+   b1 = 1 != 2;
+   b1 = 1 != t2.Entier();
+   b1 = 1 != 2.0;
+   b1 = 1 != t2.Flottant();
+   b1 = 1 != 1;
+   b1 = 1 != t1.Entier();
+   b1 = 1 != 1.0;
+   b1 = 1 != t1.Flottant();
+   
+   b1 = 1.0 != 2;
+   b1 = 1.0 != t2.Entier();
+   b1 = 1.0 != 2.0;
+   b1 = 1.0 != t2.Flottant();
+   b1 = 1.0 != 1;
+   b1 = 1.0 != t1.Entier();
+   b1 = 1.0 != 1.0;
+   b1 = 1.0 != t1.Flottant();
+   
+   b1 = true != false;
+   b1 = true != t1.Faux();
+   b1 = false != true;
+   b1 = false != t1.Vrai();
+   b1 = true != true;
+   b1 = true != t1.Vrai();
+   b1 = false != false;
+   b1 = false != t1.Faux();
+
+   b1 = t1.Vrai() != false;
+   b1 = t1.Vrai() != t1.Faux();
+   b1 = t1.Faux() != true;
+   b1 = t1.Faux() != t1.Vrai();
+   b1 = t1.Vrai() != true;
+   b1 = t1.Vrai() != t1.Vrai();
+   b1 = t1.Faux() != false;
+   b1 = t1.Faux() != t1.Faux();
+
+   
+   b1 = t2.Entier() != 1; 
+   b1 = t2.Flottant() != 1;
+   b1 = t1.Entier() != 1;
+   b1 = t1.Flottant() != 1;
+   b1 = t2.Entier() != 1.0;   
+   b1 = t2.Flottant() !=1.0;
+   b1 = t1.Entier() != 1.0;
+   b1 = t1.Flottant() !=1.0;   
+   
+   b1 = t1.Entier() != 2;
+   b1 = t1.Entier() != t2.Entier();
+   b1 = t1.Entier() != 2.0;
+   b1 = t1.Entier() != t2.Flottant();
+   b1 = t1.Entier() != 1;
+   b1 = t1.Entier() != t1.Entier();
+   b1 = t1.Entier() != 1.0;
+   b1 = t1.Entier() != t1.Flottant();
+   
+   b1 = t1.Flottant() != 2;
+   b1 = t1.Flottant() != t2.Entier();
+   b1 = t1.Flottant() != 2.0;
+   b1 = t1.Flottant() != t2.Flottant();
+   b1 = t1.Flottant() != 1;
+   b1 = t1.Flottant() != t1.Entier();
+   b1 = t1.Flottant() != 1.0;
+   b1 = t1.Flottant() != t1.Flottant();
+   
+   
+   
+   b1 = t1 != t2;
+   b1 = t1 != t1;
+   b1 = t1 != null;
+   b1 = t1 != t2.Objet();   
+   
+   b1 = null != null;
+   
+   //Test Egal_Egal//     
+   
+   b1 = 1 == 2;
+   b1 = 1 == t2.Entier();
+   b1 = 1 == 2.0;
+   b1 = 1 == t2.Flottant();
+   b1 = 1 == 1;
+   b1 = 1 == t1.Entier();
+   b1 = 1 == 1.0;
+   b1 = 1 == t1.Flottant();
+   
+   b1 = 1.0 == 2;
+   b1 = 1.0 == t2.Entier();
+   b1 = 1.0 == 2.0;
+   b1 = 1.0 == t2.Flottant();
+   b1 = 1.0 == 1;
+   b1 = 1.0 == t1.Entier();
+   b1 = 1.0 == 1.0;
+   b1 = 1.0 == t1.Flottant();
+   
+   b1 = true == false;
+   b1 = true == t1.Faux();
+   b1 = false == true;
+   b1 = false == t1.Vrai();
+   b1 = true == true;
+   b1 = true == t1.Vrai();
+   b1 = false == false;
+   b1 = false == t1.Faux();
+
+   b1 = t1.Vrai() == false;
+   b1 = t1.Vrai() == t1.Faux();
+   b1 = t1.Faux() == true;
+   b1 = t1.Faux() == t1.Vrai();
+   b1 = t1.Vrai() == true;
+   b1 = t1.Vrai() == t1.Vrai();
+   b1 = t1.Faux() == false;
+   b1 = t1.Faux() == t1.Faux();
+
+   b1 = t2.Entier() == 1; 
+   b1 = t2.Flottant() == 1;
+   b1 = t1.Entier() == 1;
+   b1 = t1.Flottant() == 1;
+   b1 = t2.Entier() == 1.0;   
+   b1 = t2.Flottant() ==1.0;
+   b1 = t1.Entier() == 1.0;
+   b1 = t1.Flottant() ==1.0;   
+     
+   b1 = t1.Entier() == 2;
+   b1 = t1.Entier() == t2.Entier();
+   b1 = t1.Entier() == 2.0;
+   b1 = t1.Entier() == t2.Flottant();
+   b1 = t1.Entier() == 1;
+   b1 = t1.Entier() == t1.Entier();
+   b1 = t1.Entier() == 1.0;
+   b1 = t1.Entier() == t1.Flottant();
+   
+   b1 = t1.Flottant() == 2;
+   b1 = t1.Flottant() == t2.Entier();
+   b1 = t1.Flottant() == 2.0;
+   b1 = t1.Flottant() == t2.Flottant();
+   b1 = t1.Flottant() == 1;
+   b1 = t1.Flottant() == t1.Entier();
+   b1 = t1.Flottant() == 1.0;
+   b1 = t1.Flottant() == t1.Flottant();
+   
+   b1 = t1 == t2;
+   b1 = t1 == t1;
+   b1 = t1 == null;
+   b1 = t1 == t2.Objet();   
+   
+   b1 = null == null;
+   
+   //Test Et//      
+   
+   b1 = true && false;
+   b1 = true && t1.Faux();
+   b1 = false && true;
+   b1 = false && t1.Vrai();
+   b1 = true && true;
+   b1 = true && t1.Vrai();
+   b1 = false && false;
+   b1 = false && t1.Faux();
+
+   b1 = t1.Vrai() && false;
+   b1 = t1.Vrai() && t1.Faux();
+   b1 = t1.Faux() && true;
+   b1 = t1.Faux() && t1.Vrai();
+   b1 = t1.Vrai() && true;
+   b1 = t1.Vrai() && t1.Vrai();
+   b1 = t1.Faux() && false;
+   b1 = t1.Faux() && t1.Faux();
+   
+   
+   //Test Ou//   
+
+   b1 = true || false;
+   b1 = true || t1.Faux();
+   b1 = false || true;
+   b1 = false || t1.Vrai();
+   b1 = true || true;
+   b1 = true || t1.Vrai();
+   b1 = false || false;
+   b1 = false || t1.Faux();
+
+   b1 = t1.Vrai() || false;
+   b1 = t1.Vrai() || t1.Faux();
+   b1 = t1.Faux() || true;
+   b1 = t1.Faux() || t1.Vrai();
+   b1 = t1.Vrai() || true;
+   b1 = t1.Vrai() || t1.Vrai();
+   b1 = t1.Faux() || false;
+   b1 = t1.Faux() || t1.Faux();
+   
+   
+   //Test inf //
+   b1 = 1 < 2;
+   b1 = 1 < t2.Entier();
+   b1 = 1 < 2.0;
+   b1 = 1 < t2.Flottant();
+   b1 = 2 < 1;
+   b1 = t2.Entier() < 1;
+   b1 = 2.0 < 1;
+   b1 = t2.Flottant() < 1;
+   
+   b1 = 1.0 < 2;
+   b1 = 1.0 < t2.Entier();
+   b1 = 1.0 < 2.0;
+   b1 = 1.0 < t2.Flottant();
+   b1 = 2 < 1.0;
+   b1 = t2.Entier() < 1.0;
+   b1 = 2.0 < 1.0;
+   b1 = t2.Flottant()< 1.0;
+   
+   
+   b1 = 1 < 1;
+   b1 = 1 < t1.Entier();
+   b1 = 1 < 1.0;
+   b1 = 1 < t1.Flottant();
+   
+   
+   b1 = 1.0 < 1;
+   b1 = 1.0 < t1.Entier();
+   b1 = 1.0 < 1.0;
+   b1 = 1.0 < t1.Flottant();
+   
+   b1 = t1.Entier() < 2;
+   b1 = t1.Entier() < t2.Entier();
+   b1 = t1.Entier() < 2.0;
+   b1 = t1.Entier() < t2.Flottant();;
+   b1 = t2.Entier() < 1;
+   b1 = t2.Flottant() < 1;
+   
+   b1 = t1.Flottant() < 2;
+   b1 = t1.Flottant() < t2.Entier();
+   b1 = t1.Flottant() < 2.0;
+   b1 = t1.Flottant() < t2.Flottant();
+   b1 = t2.Entier() < 1.0;
+   b1 = t2.Flottant()< 1.0;
+   
+   
+   b1 = t1.Entier() < 1;
+   b1 = t1.Entier() < t1.Entier();
+   b1 = t1.Entier() < 1.0;
+   b1 = t1.Entier() < t1.Flottant();
+   
+   
+   b1 = t1.Flottant() < 1;
+   b1 = t1.Flottant() < t1.Entier();
+   b1 = t1.Flottant() < 1.0;
+   b1 = t1.Flottant() < t1.Flottant();
+
+   
+   
+   //Test inf egal //
+   
+   b1 = 1 <= 2;
+   b1 = 1 <= t2.Entier();
+   b1 = 1 <= 2.0;
+   b1 = 1 <= t2.Flottant();
+   b1 = 2 <= 1;
+   b1 = t2.Entier() <= 1;
+   b1 = 2.0 <= 1;
+   b1 = t2.Flottant() <= 1;
+   
+   b1 = 1.0 <= 2;
+   b1 = 1.0 <= t2.Entier();
+   b1 = 1.0 <= 2.0;
+   b1 = 1.0 <= t2.Flottant();
+   b1 = 2 <= 1.0;
+   b1 = t2.Entier() <= 1.0;
+   b1 = 2.0 <= 1.0;
+   b1 = t2.Flottant() <= 1.0;
+   
+   
+   b1 = 1 <= 1;
+   b1 = 1 <= t1.Entier();
+   b1 = 1 <= 1.0;
+   b1 = 1 <= t1.Flottant();
+   
+   
+   b1 = 1.0 <= 1;
+   b1 = 1.0 <= t1.Entier();
+   b1 = 1.0 <= 1.0;
+   b1 = 1.0 <= t1.Flottant();
+     
+   
+   b1 = t1.Entier() <= 2;
+   b1 = t1.Entier() <= t2.Entier();
+   b1 = t1.Entier() <= 2.0;
+   b1 = t1.Entier() <= t2.Flottant();;
+   b1 = t2.Entier() <= 1;
+   b1 = t2.Flottant() <= 1;
+   
+   b1 = t1.Flottant() <= 2;
+   b1 = t1.Flottant() <= t2.Entier();
+   b1 = t1.Flottant() <= 2.0;
+   b1 = t1.Flottant() <= t2.Flottant();
+   b1 = t2.Entier() <= 1.0;
+   b1 = t2.Flottant()<= 1.0;
+   
+   
+   b1 = t1.Entier() <= 1;
+   b1 = t1.Entier() <= t1.Entier();
+   b1 = t1.Entier() <= 1.0;
+   b1 = t1.Entier() <= t1.Flottant();
+   
+   
+   b1 = t1.Flottant() <= 1;
+   b1 = t1.Flottant() <= t1.Entier();
+   b1 = t1.Flottant() <= 1.0;
+   b1 = t1.Flottant() <= t1.Flottant(); 
+   
+   //Test sup //
+   
+   b1 = 1 > 2;
+   b1 = 1 > t2.Entier();
+   b1 = 1 > 2.0;
+   b1 = 1 > t2.Flottant();
+   b1 = 2 > 1;
+   b1 = t2.Entier() > 1;
+   b1 = 2.0 > 1;
+   b1 = t2.Flottant() > 1;
+   
+   b1 = 1.0 > 2;
+   b1 = 1.0 > t2.Entier();
+   b1 = 1.0 > 2.0;
+   b1 = 1.0 > t2.Flottant();
+   b1 = 2 > 1.0;
+   b1 = t2.Entier() > 1.0;
+   b1 = 2.0 > 1.0;
+   b1 = t2.Flottant() > 1.0;
+   
+   
+   b1 = 1 > 1;
+   b1 = 1 > t1.Entier();
+   b1 = 1 > 1.0;
+   b1 = 1 > t1.Flottant();
+   
+   
+   b1 = 1.0 > 1;
+   b1 = 1.0 > t1.Entier();
+   b1 = 1.0 > 1.0;
+   b1 = 1.0 > t1.Flottant();
+     
+   
+   b1 = t1.Entier() > 2;
+   b1 = t1.Entier() > t2.Entier();
+   b1 = t1.Entier() > 2.0;
+   b1 = t1.Entier() > t2.Flottant();;
+   b1 = t2.Entier() > 1;
+   b1 = t2.Flottant() > 1;
+   
+   b1 = t1.Flottant() > 2;
+   b1 = t1.Flottant() > t2.Entier();
+   b1 = t1.Flottant() > 2.0;
+   b1 = t1.Flottant() > t2.Flottant();
+   b1 = t2.Entier() > 1.0;
+   b1 = t2.Flottant() > 1.0;
+   
+   
+   b1 = t1.Entier() > 1;
+   b1 = t1.Entier() > t1.Entier();
+   b1 = t1.Entier() > 1.0;
+   b1 = t1.Entier() > t1.Flottant();
+   
+   
+   b1 = t1.Flottant() > 1;
+   b1 = t1.Flottant() > t1.Entier();
+   b1 = t1.Flottant() > 1.0;
+   b1 = t1.Flottant() > t1.Flottant(); 
+   
+   
+   //Test sup egal//
+   
+   b1 = 1 >= 2;
+   b1 = 1 >= t2.Entier();
+   b1 = 1 >= 2.0;
+   b1 = 1 >= t2.Flottant();
+   b1 = 2 >= 1;
+   b1 = t2.Entier() >= 1;
+   b1 = 2.0 >= 1;
+   b1 = t2.Flottant() >= 1;
+   
+   b1 = 1.0 >= 2;
+   b1 = 1.0 >= t2.Entier();
+   b1 = 1.0 >= 2.0;
+   b1 = 1.0 >= t2.Flottant();
+   b1 = 2 >= 1.0;
+   b1 = t2.Entier() >= 1.0;
+   b1 = 2.0 >= 1.0;
+   b1 = t2.Flottant() >= 1.0;
+   
+   
+   b1 = 1 >= 1;
+   b1 = 1 >= t1.Entier();
+   b1 = 1 >= 1.0;
+   b1 = 1 >= t1.Flottant();
+   
+   
+   b1 = 1.0 >= 1;
+   b1 = 1.0 >= t1.Entier();
+   b1 = 1.0 >= 1.0;
+   b1 = 1.0 >= t1.Flottant();
+     
+   
+   b1 = t1.Entier() >= 2;
+   b1 = t1.Entier() >= t2.Entier();
+   b1 = t1.Entier() >= 2.0;
+   b1 = t1.Entier() >= t2.Flottant();;
+   b1 = t2.Entier() >= 1;
+   b1 = t2.Flottant() >= 1;
+   
+   b1 = t1.Flottant() >= 2;
+   b1 = t1.Flottant() >= t2.Entier();
+   b1 = t1.Flottant() >= 2.0;
+   b1 = t1.Flottant() >= t2.Flottant();
+   b1 = t2.Entier() >= 1.0;
+   b1 = t2.Flottant() >= 1.0;
+   
+   
+   b1 = t1.Entier() >= 1;
+   b1 = t1.Entier() >= t1.Entier();
+   b1 = t1.Entier() >= 1.0;
+   b1 = t1.Entier() >= t1.Flottant();
+   
+   
+   b1 = t1.Flottant() >= 1;
+   b1 = t1.Flottant() >= t1.Entier();
+   b1 = t1.Flottant() >= 1.0;
+   b1 = t1.Flottant() >= t1.Flottant(); ; 
+   
+   //Test Moins//
+   
+   i = 1 - 2;
+   i = 1 - t2.Entier();
+   f1 = 1 - 2.0;
+   f1 = 1 - t2.Flottant();
+   
+   f1 = 2.0 - 1;
+   f1 = 2.0 - t1.Entier();
+   f1 = 1.0 - 2.0;
+   f1 = 1.0 - t2.Flottant();
+  
+   i = t1.Entier() - 2;
+   i = t1.Entier() - t2.Entier();
+   f1 = t1.Entier() - 2.0;
+   f1 = t1.Entier() - t2.Flottant();
+   
+   f1 = t2.Flottant() - 1;
+   f1 = t2.Flottant() - t1.Entier();
+   f1 = t1.Flottant() - 2.0;
+   f1 = t1.Flottant() - t2.Flottant();
+   
+   
+   //Test Plus//
+
+   i = 1 + 2;
+   i = 1 + t2.Entier();
+   f1 = 1 + 2.0;
+   f1 = 1 + t2.Flottant();
+   
+   f1 = 2.0 + 1;
+   f1 = 2.0 + t1.Entier();
+   f1 = 1.0 + 2.0;
+   f1 = 1.0 + t2.Flottant();
+  
+   i = t1.Entier() + 2;
+   i = t1.Entier() + t2.Entier();
+   f1 = t1.Entier() + 2.0;
+   f1 = t1.Entier() + t2.Flottant();
+   
+   f1 = t2.Flottant() + 1;
+   f1 = t2.Flottant() + t1.Entier();
+   f1 = t1.Flottant() + 2.0;
+   f1 = t1.Flottant() + t2.Flottant();
+   
+   //Test Div//   
+   
+   i = 1 / 2;
+   i = 1 / t2.Entier();
+   f1 = 1 / 2.0;
+   f1 = 1 / t2.Flottant();
+   
+   f1 = 2.0 / 1;
+   f1 = 2.0 / t1.Entier();
+   f1 = 1.0 / 2.0;
+   f1 = 1.0 / t2.Flottant();
+  
+   i = t1.Entier() / 2;
+   i = t1.Entier() / t2.Entier();
+   f1 = t1.Entier() / 2.0;
+   f1 = t1.Entier() / t2.Flottant();
+   
+   f1 = t2.Flottant() / 1;
+   f1 = t2.Flottant() / t1.Entier();
+   f1 = t1.Flottant() / 2.0;
+   f1 = t1.Flottant() / t2.Flottant();
+   
+   //Test Mult//
+   
+   i = 1 * 2;
+   i = 1 * t2.Entier();
+   f1 = 1 * 2.0;
+   f1 = 1 * t2.Flottant();
+   
+   f1 = 2.0 * 1;
+   f1 = 2.0 * t1.Entier();
+   f1 = 1.0 * 2.0;
+   f1 = 1.0 * t2.Flottant();
+  
+   i = t1.Entier() * 2;
+   i = t1.Entier() * t2.Entier();
+   f1 = t1.Entier() * 2.0;
+   f1 = t1.Entier() * t2.Flottant();
+   
+   f1 = t2.Flottant() * 1;
+   f1 = t2.Flottant() * t1.Entier();
+   f1 = t1.Flottant() * 2.0;
+   f1 = t1.Flottant() * t2.Flottant(); 
+   
+   //Test Not//
+   
+   b1 = !true;
+   b1 = !t1.Vrai();
+   b1 = !false;
+   b1 = !t1.Faux();
+   
+   //Test Moins Unaire//
+   i = -5;
+   i = -t1.Entier();
+   f1 = -5.0; 
+   f1 = -t1.Flottant();
+   
+   //Test ident//
+   
+   i = i;
+   f1 = f2;
+   f1 = i;
+   b1 = b2;
+   
+   //Test Lectures//  
+   i = readInt();
+   f1 = readFloat();
+   
+   //Test reste//
+   f1 = 5%2;
+   f1 =t1.Entier()%2;
+   f1 =5%t1.Entier();  
+   f1 =t1.Entier()%t2.Entier();
+}

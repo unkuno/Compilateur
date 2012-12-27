@@ -1,0 +1,352 @@
+; Initialisation du programme
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 13.
+     WSTR "40 + 2 = "
+     LOAD #40, R2
+     ADD #2, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 14.
+     WSTR "50 - 8 = "
+     LOAD #50, R2
+     SUB #8, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 15.
+     WSTR "-42 = "
+     OPP #42, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 16.
+     WSTR "6 * 6 = "
+     LOAD #6, R2
+     MUL #6, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 17.
+     WSTR "6 % 5 = "
+     LOAD #6, R2
+     REM #5, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 18.
+     WSTR "9 / 3 = "
+     LOAD #9, R2
+     QUO #3, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 19.
+     WSTR "9+9+9+9+9+9+9 = "
+     LOAD #9, R2
+     ADD #9, R2
+     ADD #9, R2
+     ADD #9, R2
+     ADD #9, R2
+     ADD #9, R2
+     ADD #9, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 20.
+     WSTR "5*2*5*2 = "
+     LOAD #5, R2
+     MUL #2, R2
+     MUL #5, R2
+     MUL #2, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 21.
+     WSTR "-1-1-1-1-1 = "
+     OPP #1, R2
+     SUB #1, R2
+     SUB #1, R2
+     SUB #1, R2
+     SUB #1, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 22.
+     WSTR "40/2/2/2 = "
+     LOAD #40, R2
+     QUO #2, R2
+     BOV debordement
+     QUO #2, R2
+     BOV debordement
+     QUO #2, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 23.
+     WSTR "10%6%5%3 = "
+     LOAD #10, R2
+     REM #6, R2
+     BOV debordement
+     REM #5, R2
+     BOV debordement
+     REM #3, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 24.
+     WSTR "(3+3+3)*(3+3+3) / 2 = "
+     LOAD #3, R2
+     ADD #3, R2
+     ADD #3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     QUO #2, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 25.
+     WSTR "(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3) / 2 = "
+     LOAD #3, R2
+     ADD #3, R2
+     ADD #3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     LOAD #3, R3
+     ADD #3, R3
+     ADD #3, R3
+     MUL R3, R2
+     QUO #2, R2
+     BOV debordement
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 26.
+     WSTR "(1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)))))))))) = "
+     LOAD #1, R2
+     ADD #1, R2
+     LOAD #1, R3
+     ADD #1, R3
+     LOAD #1, R4
+     ADD #1, R4
+     LOAD #1, R5
+     ADD #1, R5
+     LOAD #1, R6
+     ADD #1, R6
+     LOAD #1, R7
+     ADD #1, R7
+     LOAD #1, R8
+     ADD #1, R8
+     LOAD #1, R9
+     ADD #1, R9
+     LOAD #1, R10
+     ADD #1, R10
+     LOAD #1, R11
+     ADD #1, R11
+     MUL R11, R10
+     MUL R10, R9
+     MUL R9, R8
+     MUL R8, R7
+     MUL R7, R6
+     MUL R6, R5
+     MUL R5, R4
+     MUL R4, R3
+     MUL R3, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Instruction ligne n° 27.
+     WSTR "3.0+0.2 = "
+     LOAD #3.00000E+00, R2
+     ADD #2.00000E-01, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Instruction ligne n° 28.
+     WSTR "2.0-0.2 = "
+     LOAD #2.00000E+00, R2
+     SUB #2.00000E-01, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Instruction ligne n° 29.
+     WSTR "2.0 * 0.5 = "
+     LOAD #2.00000E+00, R2
+     MUL #5.00000E-01, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Instruction ligne n° 30.
+     WSTR "3.0 / 1.5 = "
+     LOAD #3.00000E+00, R2
+     DIV #1.50000E+00, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Instruction ligne n° 31.
+     WSTR "(1.5+1.3)*((1.3+1.5)*((1.5+1.3)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)))))))))) = "
+     LOAD #1.50000E+00, R2
+     ADD #1.30000E+00, R2
+     BOV debordement
+     LOAD #1.30000E+00, R3
+     ADD #1.50000E+00, R3
+     BOV debordement
+     LOAD #1.50000E+00, R4
+     ADD #1.30000E+00, R4
+     BOV debordement
+     LOAD #1.30000E+00, R5
+     ADD #1.50000E+00, R5
+     BOV debordement
+     LOAD #1.30000E+00, R6
+     ADD #1.50000E+00, R6
+     BOV debordement
+     LOAD #1.30000E+00, R7
+     ADD #1.50000E+00, R7
+     BOV debordement
+     LOAD #1.30000E+00, R8
+     ADD #1.50000E+00, R8
+     BOV debordement
+     LOAD #1.30000E+00, R9
+     ADD #1.50000E+00, R9
+     BOV debordement
+     LOAD #1.30000E+00, R10
+     ADD #1.50000E+00, R10
+     BOV debordement
+     LOAD #1.30000E+00, R11
+     ADD #1.50000E+00, R11
+     BOV debordement
+     MUL R11, R10
+     BOV debordement
+     MUL R10, R9
+     BOV debordement
+     MUL R9, R8
+     BOV debordement
+     MUL R8, R7
+     BOV debordement
+     MUL R7, R6
+     BOV debordement
+     MUL R6, R5
+     BOV debordement
+     MUL R5, R4
+     BOV debordement
+     MUL R4, R3
+     BOV debordement
+     MUL R3, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Instruction ligne n° 32.
+     WSTR " (1+3.5) = "
+     FLOAT #1, R2
+     ADD #3.50000E+00, R2
+     BOV debordement
+     LOAD R2, R1
+     WFLOAT
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

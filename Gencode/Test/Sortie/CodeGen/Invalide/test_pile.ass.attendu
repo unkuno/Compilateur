@@ -1,0 +1,116 @@
+; Initialisation du programme
+     TSTO #9
+     BOV pile_pleine
+     ADDSP #6
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Test
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Test.recursif, R0
+     STORE R0, 5 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 17.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Test
+     POP R2
+     STORE R2, 6 (LB)
+
+
+; Instruction ligne n° 19.
+     ADDSP #1
+     LOAD 6 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Test #
+; ##########################
+
+; Méthode Test.recursif
+code.Test.recursif :
+     TSTO #3
+     BOV pile_pleine
+
+; Instruction ligne n° 13.
+     ADDSP #1
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+fin.Test.recursif :
+     RTS
+
+; Initialisation des champs de la classe Test
+init.Test :
+     RTS

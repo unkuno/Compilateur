@@ -1,0 +1,6 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_NOP                                          -- Ligne 15

@@ -1,0 +1,30 @@
+// Description:
+//    Test les entrées manuelles d'entiers et de flottants dans des expression
+//
+// Resultats:
+//    Effectue bien les entrées une à une et comprend correctement les entrées.
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+{
+	println("Affichage entier :");
+	println(readInt());
+	println("Addition entière :");
+	println(readInt()+readInt());
+	println("Soustraction entière :");
+	println(readInt()-readInt());
+
+println();
+println("---------------------");
+println();
+
+	println("Affichage flottant :");
+	println(readFloat());
+	println("Addition flottante :");
+	println(readFloat()+readFloat());
+	println("Soustraction flottante :");
+	println(readFloat()-readFloat());
+}

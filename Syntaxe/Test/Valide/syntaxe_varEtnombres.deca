@@ -1,0 +1,16 @@
+// Description:
+//    tests des entiers.
+//
+// Resultats:
+//  Creation de deux variables et addition
+//
+// Historique:
+//    crée le 08/01/2012
+
+
+   int i = 1;
+   int j = 5; 
+{   
+   i = i + 4;
+   i = i + j;
+}

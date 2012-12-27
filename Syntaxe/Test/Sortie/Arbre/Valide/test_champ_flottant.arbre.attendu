@@ -1,0 +1,57 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT Point2D                                -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 13
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 14
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 14
+. . . . . . . . . . NOEUD_VIDE
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT y                          -- Ligne 14
+. . . . . . . . . . NOEUD_VIDE
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Point3D                                -- Ligne 17
+. . . . NOEUD_IDENT Point2D                                -- Ligne 17
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 18
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 18
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 18
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 19
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 19
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 19
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 19
+. . . . . . . . . . NOEUD_VIDE
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 22
+. . . . . NOEUD_IDENT Point2D                              -- Ligne 22
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 22
+. . . . . . . . NOEUD_IDENT p2                             -- Ligne 22
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 23
+. . . . . NOEUD_IDENT Point3D                              -- Ligne 23
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 23
+. . . . . . . . NOEUD_IDENT p3                             -- Ligne 23
+. . . . . . . . NOEUD_CREATION                             -- Ligne 23
+. . . . . . . . . NOEUD_IDENT Point3D                      -- Ligne 23
+. . <Liste vide>

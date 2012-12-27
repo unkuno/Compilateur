@@ -1,0 +1,14 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT boolean                              -- Ligne 12
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 12
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 12
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE                                     -- Ligne 14
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT b                                -- Ligne 14

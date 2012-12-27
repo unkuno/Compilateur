@@ -1,0 +1,40 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT A                                      -- Ligne 13
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 14
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . NOEUD_IDENT x                                -- Ligne 14
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 19
+. . . . NOEUD_IDENT B                                      -- Ligne 19
+. . . . NOEUD_IDENT A                                      -- Ligne 19
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 20
+. . . . . . . NOEUD_IDENT int                              -- Ligne 20
+. . . . . . . NOEUD_IDENT y                                -- Ligne 20
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 21
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 21
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 21
+. . . . . . . . . . . . . NOEUD_IDENT a                    -- Ligne 21
+. . . . . . . . . . . . . NOEUD_VIDE
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 22
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 22
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 22
+. . . . . . . . . . . . . NOEUD_IDENT z                    -- Ligne 22
+. . . . . . . . . . . . . NOEUD_VIDE
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 24
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 24
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 24
+. . . . . . . . . . . NOEUD_IDENT a                        -- Ligne 24
+. . . . . . . . . . . NOEUD_IDENT x                        -- Ligne 24
+. NOEUD_VIDE

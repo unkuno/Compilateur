@@ -1,0 +1,16 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 16
+. . . . . NOEUD_IDENT int                                  -- Ligne 16
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 16
+. . . . . . . . NOEUD_IDENT y                              -- Ligne 16
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 1) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 19
+. . . . . NOEUD_IDENT y                                    -- Ligne 19
+. . . . . NOEUD_SELECTION                                  -- Ligne 19
+. . . . . . NOEUD_CHAINE "a"                               -- Ligne 19
+. . . . . . NOEUD_IDENT x                                  -- Ligne 19

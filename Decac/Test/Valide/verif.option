@@ -1,0 +1,12 @@
+// Description:
+//    Test la vérification option -v
+//
+// Resultats:
+//   Arrête decac après l’étape de vérifications lexical et syntaxique
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-v ./echecs.deca

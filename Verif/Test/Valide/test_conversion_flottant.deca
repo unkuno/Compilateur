@@ -1,0 +1,71 @@
+// Description:
+//    Programme testant la conversion flottant
+//
+// Resultats:
+//    Creation des conversions flottant
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+class A {
+  float a1 = 1;
+  protected float a2 = 2;
+  
+  float get1() {
+      return 1;
+  }
+  
+  int get2() {
+      return 1;
+  }
+  void set(float x) {;     
+      this.a1 = x ;
+      this.a2 = x ;
+  }
+  
+  void test()
+  float t;
+  {
+      t = 1;
+  }    
+}
+
+
+
+
+A a = new A();
+
+int i = 1;
+float f = 5.0;
+float res;
+boolean b = true;
+{
+   res = f + i;
+   res = i + f;
+   res = f - i;
+   res = i - f;
+   res = f * i;
+   res = i * f;
+   res = f / i;
+   res = i / f;
+   
+   b = f != i;
+   b = i != f;
+   b = f == i;
+   b = i == f;
+   b = f < i;
+   b = i < f;
+   b = f <= i;
+   b = i <= f;
+   b = f > i;
+   b = i > f;
+   b = f >= i;
+   b = i >= f;
+
+   res = a.get2();
+   a.set(1);  
+
+}   

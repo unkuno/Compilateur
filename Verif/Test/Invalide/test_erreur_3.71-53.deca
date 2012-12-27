@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.71)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'boolean' et 'String' sont incompatibles avec l'opérateur binaire '-' (règle 3.71)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+boolean i;
+{
+   i = true - "a";
+}

@@ -1,0 +1,818 @@
+// Description:
+//    Générateur de grilles de Sudoku
+//
+// Resultats:
+//    doit fonctionner normalement
+//
+// Historique:
+//    cree le 25/01/2012
+
+
+////////////////////////////////////////////////////////////////////////////////
+// GENERATEUR PSEUDO-ALEATOIRE //
+/////////////////////////////////
+
+// Classe implémentant un générateur de nombres pseudo-aléatoires.
+class Random {
+	// Valeur courante du générateur
+	protected int val;
+
+	// Initialise le générateur
+	Random init(int seed) {
+		val = seed;
+		return this;
+	}
+
+	// Retourne le bit de poid faible
+	boolean lsb (int a) {
+		if (a >= 0) {
+			return a % 2 == 1;
+		} else {
+			return a % 2 == -1;
+		}
+	}
+
+	// Retourne a >> n
+	int shift (int a, int n) {
+		if (a < 0) {
+			return -1-(shift(-1-a,n));
+		}
+		while (n > 0) {
+			a = a / 2;
+			n = n - 1;
+		}
+		return a;
+	}
+
+	// Si mask == 2^n, alors retourne a >> n
+	// Sinon, indéfini
+	int shiftMask (int a, int mask) {
+		if (a >= 0) {
+			return a / mask;
+		} else {
+			return -1 - ((-1 - a) / mask);
+		}
+	}
+
+	// Retourne a & b
+	int and (int a, int b)
+		int i = 0, mask = 1, res = 0;
+	{
+		while (i < 32) {
+			if (lsb(shiftMask(a, mask)) &&
+			    lsb(shiftMask(b, mask))) {
+				res = res + mask;
+			}
+			mask = mask * 2;
+			i = i + 1;
+		}
+		return res;
+	}
+	
+	// Xor booléen
+	boolean xorBool (boolean a, boolean b) {
+		return (a && ! b) || (b && ! a);
+	}
+
+	// Retourne a ^ b
+	int xor (int a, int b)
+		int i = 0, mask = 1, res = 0;
+	{
+		while (i < 32) {
+			if (xorBool (lsb(shiftMask(a, mask)),
+				     lsb(shiftMask(b, mask)))) {
+				res = res + mask;
+			}
+			mask = mask * 2;
+			i = i + 1;
+		}
+		return res;
+	}
+	
+	// Retourne le prochain entier aléatoire
+	int next() {
+		val = xor(val / 2, and(-and(val, 1),-805306367));
+		return val;
+	}
+
+	// Retourne le prochain entier positif aléatoire
+	int nextPositif() {
+		next();
+		if (val >= 0) {return val;}
+		else {return -val;}
+	}
+
+	// Retourne le prochain entier aléatoire compris entre "a" et "b"
+	int nextBorne(int a, int b) {
+		if (a > b) {
+			println("Erreur : bornes incohérentes (",
+				a, ">", b, ")");
+			0/0;
+		}
+		return a + (nextPositif() % (b - a + 1));
+	}
+
+	// Retourne le prochain chiffre aléatoire (entre 1 et 9)
+	int nextChiffre() {
+		return nextBorne(1, 9);
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// ARBRES //
+////////////
+
+// Classe représentant un noeud d'arbre
+class Noeud {
+	Object val; // Valeur du noeud
+	Noeud fg;   // Fils gauche
+	Noeud fd;   // Fils droit
+}
+
+// Classe implémentant un arbre binaire complet.
+// Le nombre de noeud de l'arbre est fixé lors de l'initialisation.
+// Les valeurs contenues dans celui-ci sont repérées par des index, avec
+// 0 <= index <= taille - 1. Par conséquent, cette classe peut être vue comme
+// un tableau.
+class Arbre {
+	// Racine de l'arbre
+	protected Noeud racine;
+
+	// Taille de l'arbre
+	protected int taille;
+
+	// Alloue un sous-arbre contenant "taille" noeuds
+	Noeud allouer (int taille)
+		Noeud res = new Noeud();
+        {
+		if (taille > 1) {
+			res.fg = allouer (taille - taille / 2);
+			res.fd = allouer (taille / 2);
+		}
+		return res;
+	}
+
+	// Initialise cet arbre
+	Arbre init (int taille) {
+		this.taille = taille;
+		racine = allouer (taille);
+		return this;
+	}
+
+	// Retourne la taille de cet arbre
+	int getTaille () {
+		return taille;
+	}
+
+	// Retourne le noeud "index" du sous-arbre "racine".
+	Noeud chercher (Noeud racine, int index) {
+		if (index == 0 && racine.fg == null) {
+			return racine;
+		} elsif (index % 2 == 0) {
+			return chercher (racine.fg, index / 2);
+		} else {
+			return chercher (racine.fd, index / 2);
+		}
+	}
+
+	// Retourne la valeur associée à l'index "index"
+	Object get (int index) {
+		if (index < 0 || index >= taille) {return null;}
+		return chercher(racine, index).val;
+	}
+
+	// Modifie la valeur associée à l'index "index"
+	boolean set (int index, Object val) {
+		if (index < 0 || index >= taille) {return false;}
+		chercher(racine, index).val = val;
+		return true;
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// LISTES //
+////////////
+
+// Classe représentant une cellule de liste
+class Cellule {
+	Object val;
+	Cellule suiv;
+	Cellule prec;
+
+	void setSuiv (Cellule suiv) {
+		suiv.prec = this;
+		this.suiv = suiv;
+	}
+}
+
+
+// Classe implémentant une liste doublement chaînée.
+class Liste {
+	protected Cellule senti = new Cellule();
+	protected int taille = 0;
+
+	Liste init() {
+		senti.setSuiv (senti);
+		return this;
+	}
+
+	int getTaille () {
+		return taille;
+	}
+	
+	void insererTete (Object val)
+		Cellule tmp = new Cellule();
+	{
+		tmp.val = val;
+		tmp.setSuiv (senti.suiv);
+		senti.setSuiv (tmp);
+		taille = taille + 1;
+	}
+
+	void insererQueue (Object val)
+		Cellule tmp = new Cellule();
+	{
+		tmp.val = val;
+		senti.prec.setSuiv (tmp);
+		tmp.setSuiv (senti);
+		taille = taille + 1;
+	}
+
+	Cellule chercher (int index)
+		Cellule cour = senti;
+	{
+		if (index < 0) {return null;}
+		while (index >= 0) {
+			cour = cour.suiv;
+			if (cour == senti) {return null;}
+			index = index - 1;
+		}
+		return cour;
+	}
+
+	Object get (int index)
+		Cellule tmp = chercher(index);
+	{
+		if (tmp == null) {return null;}
+		return tmp.val;
+	}
+
+	Object getRandom (Random r) {
+		return get(r.nextBorne(0, taille - 1));
+	}
+	
+	boolean set (int index, Object val)
+		Cellule tmp = chercher(index);
+	{
+		if (tmp == null) {return false;}
+		tmp.val = val;
+		return true;
+	}
+
+	Object remove (int index)
+		Cellule tmp = chercher(index);
+	{
+		if (tmp == null) {return null;}
+		tmp.prec.setSuiv(tmp.suiv);
+		taille = taille - 1;
+		return tmp.val;
+	}
+
+	Object removeRandom(Random r) {
+		return remove(r.nextBorne(0, taille - 1));
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// SUDOKU //
+////////////
+
+// Classe représentant une case, possédant 9 possibilités.
+// Une case contient par défaut toutes les 9 possibilités (1, 2, ..., 9),
+// qui peuvent être supprimées. Lorsqu'il ne reste qu'une seule possibilité, la
+// case est dite "définie". Lorsqu'il ne reste plus aucune possibilité, la case
+// est dite "morte".
+// Un case définie est caractérisée par un chiffre, représentant la seule
+// possibilité qu'elle contient.
+class Case {
+	protected Arbre options = new Arbre().init(9);
+	protected Grille grille;
+	protected int lig, col, blc;
+	protected Object vrai, faux;
+
+	void reset()
+		int index = 0;
+	{
+		while (index < 9) {
+			options.set(index, vrai);
+			index = index + 1;
+		}
+	}
+
+	Case init(Grille grille, int lig, int col, int blc,
+		  Object vrai, Object faux) {
+		this.grille = grille;
+		this.lig = lig;
+		this.col = col;
+		this.blc = blc;
+		this.vrai = vrai;
+		this.faux = faux;
+		reset();
+		return this;
+	}
+
+	Grille getGrille() {
+		return grille;
+	}
+
+	int getLig() {
+		return lig;
+	}
+
+	int getCol() {
+		return col;
+	}
+	
+	int getBlc() {
+		return blc;
+	}
+		
+	boolean isPossible(int i) {
+		return options.get(i - 1) == vrai;
+	}
+
+	int getChiffre()
+		int num = 1, res = 0;
+	{
+		while (num <= 9) {
+			if (isPossible(num)) {
+				if (res != 0) {return 0;}
+				else {res = num;}
+			}
+			num = num + 1;
+		}
+		return res;
+	}
+
+	void setChiffre(int chiffre)
+		int i = 1;
+	{
+		while (i <= 9) {
+			if (i == chiffre) {options.set(i - 1, vrai);}
+			else {options.set(i - 1, faux);}
+			i = i + 1;
+		}
+	}
+
+	boolean isDef() {
+		return getChiffre() != 0;
+	}
+
+	boolean isMorte()
+		int i = 1;
+	{
+		while (i <= 9) {
+			if (isPossible(i)) {return false;}
+			i = i + 1;
+		}
+		return true;
+	}
+
+	boolean supprimer(int chiffre) {
+		if (isDef()) {return options.get(chiffre - 1) == vrai;}
+		options.set(chiffre - 1, faux);
+		if (isDef()) {return propager(getChiffre());}
+		return false;
+	}
+
+	boolean appliquer(int chiffre) {
+		setChiffre(chiffre);
+		return propager(chiffre);
+	}
+
+	boolean propager(int chiffre)
+		int num;
+		Arbre a;
+		Case c;
+	{
+		// Propagation dans la ligne
+		a = grille.getLigne(lig);
+		num = 1;
+		while (num <= 9) {
+			c = cast<Case>(a.get(num - 1));
+			if (c.col != col && c.supprimer(chiffre)) {
+				return true;
+			}
+			num = num + 1;
+		}
+
+		// Propagation dans la colonne
+		a = grille.getColonne(col);
+		num = 1;
+		while (num <= 9) {
+			c = cast<Case>(a.get(num - 1));
+			if (c.lig != lig && c.supprimer(chiffre)) {
+				return true;
+			}
+			num = num + 1;
+		}
+		
+		// Propagation dans le bloc
+		a = grille.getBloc(blc);
+		num = 1;
+		while (num <= 9) {
+			c = cast<Case>(a.get(num - 1));
+			if (c.lig != lig && c.col != col 
+			    && c.supprimer(chiffre)) {
+				return true;
+			}
+			num = num + 1;
+		}
+		
+		return false;
+	}
+
+	void copier(Case copie)
+		int i = 0;
+	{
+		while (i < 9) {
+			options.set(i, copie.options.get(i));
+			i = i + 1;
+		}
+	}
+}
+
+
+class IterateurAlea {
+	protected Random r;
+	protected Liste elems;
+	
+	IterateurAlea init (Random r, Arbre lignes)
+		int i = 0, j;
+		Arbre ligne;
+		Liste elem;
+	{
+		this.r = r;
+		elems = new Liste().init();
+		
+		while (i < 9) {
+			ligne = cast<Arbre>(lignes.get(i));
+			elem = new Liste().init();
+			elems.insererQueue(elem);
+
+			j = 0;
+			while (j < 9) {
+				elem.insererQueue(ligne.get(j));
+				j = j + 1;
+			}
+
+			i = i + 1;
+		}
+
+		return this;
+	}
+
+	boolean hasNext() {
+		return elems.getTaille() > 0;
+	}
+
+	Case next()
+		int index = r.nextBorne(0, elems.getTaille() - 1);
+		Liste elem = cast<Liste>(elems.get(index));
+		Case res;
+	{
+		res = cast<Case>(elem.removeRandom(r));
+		if (elem.getTaille() == 0) {
+			elems.remove(index);
+		}
+		return res;
+	}
+}
+
+// Tableau de booléens, à 2 dimensions
+class TabBooleens {
+	protected Arbre lignes;
+	protected Object vrai, faux;
+
+	TabBooleens init(int nbLig, int nbCol, boolean defaut,
+			 Object vrai, Object faux)
+		int i = 0, j;
+		Arbre ligne;
+	{
+		this.vrai = vrai;
+		this.faux = faux;
+
+		lignes = new Arbre().init(nbLig);
+
+		while (i < nbLig) {
+			ligne = new Arbre().init(nbCol);
+			lignes.set(i, ligne);
+				   
+			j = 0;
+			while (j < nbCol) {
+				if (defaut) {ligne.set(j, vrai);}
+				else {ligne.set(j, faux);}
+
+				j = j + 1;
+			}
+
+			i = i + 1;
+		}
+					
+		return this;
+	}
+
+	void set(int lig, int col, boolean val) {
+		if (val) {cast<Arbre>(lignes.get(lig - 1)).set(col - 1, vrai);}
+		else {cast<Arbre>(lignes.get(lig - 1)).set(col - 1, faux);}
+	}
+
+	boolean get(int lig, int col) {
+		return cast<Arbre>(lignes.get(lig - 1)).get(col - 1) == vrai;
+	}
+}
+
+
+// Classe représentant une grille de Sudoku. Celle-ci est constituée d'un
+// ensemble de 81 cases, pouvant être accédées par ligne, par colonne, ou par
+// bloc. Chacune de ces trois entités contient 9 cases, et existe en 9
+// exemplaires.
+class Grille {
+	protected Object vrai, faux;
+	protected Arbre lignes   = new Arbre().init(9),
+		        colonnes = new Arbre().init(9),
+	        	blocs    = new Arbre().init(9);
+
+	Arbre getLigne(int lig) {
+		return cast<Arbre>(lignes.get(lig - 1));
+	}
+
+	Arbre getColonne(int col) {
+		return cast<Arbre>(colonnes.get(col - 1));
+	}
+
+	Arbre getBloc(int blc) {
+		return cast<Arbre>(blocs.get(blc - 1));
+	}
+
+	Grille init(Object vrai, Object faux)
+		int i = 0, j, k;
+		Case c;
+	{
+		this.vrai = vrai;
+		this.faux = faux;
+
+		// Construction des structures
+		while (i < 9) {
+			lignes.set(i, new Arbre().init(9));
+			colonnes.set(i, new Arbre().init(9));
+			blocs.set(i, new Arbre().init(9));
+			i = i + 1;
+		}
+
+		// Initialisation des données
+		i = 0;
+		while (i < 9) {
+			j = 0;
+			while (j < 9) {
+				k = (j / 3) + 3 * (i / 3);
+				c = new Case().init(this, i + 1, j + 1, k + 1,
+						    vrai, faux);
+				getLigne(i + 1).set(j, c);
+				getColonne(j + 1).set(i, c);
+				getBloc(k + 1).set((j % 3) + 3 * (i % 3), c);
+				j = j + 1;
+			}
+			i = i + 1;
+		}
+		return this;
+	}
+
+	void afficher()
+		Arbre ligne;
+		int i = 0, j, chiffre;
+	{
+		println("+-----------+-----------+-----------+");
+		while (i < 9) {
+			print("|");
+			ligne = getLigne(i + 1);
+			j = 0;
+			while (j < 9) {
+				chiffre = cast<Case>(ligne.get(j)).getChiffre();
+				
+				if (chiffre == 0) {print("   ");}
+				else {print(" ", chiffre, " ");}
+
+				if (j % 3 == 2) {print("|");}
+				else {print(" ");}
+				
+				j = j + 1;
+			}
+			
+			println();
+			if (i % 3 == 2) {
+				println("+-----------+-----------",
+					"+-----------+");
+			} else {
+				println("|           |           ",
+					"|           |");
+			}
+			
+			i = i + 1;
+		}
+	}
+
+	void reset()
+		int i = 0, j;
+		Arbre ligne;
+	{
+		while (i < 9) {
+			ligne = getLigne(i + 1);
+
+			j = 0;
+			while (j < 9) {
+				cast<Case>(ligne.get(j)).reset();
+				j = j + 1;
+			}
+
+			i = i + 1;
+		}
+	}
+
+	Case getCase(int lig, int col) {
+		return cast<Case>(getLigne(lig).get(col - 1));
+	}
+
+	boolean isDef()
+		int i = 0, j;
+		Arbre ligne;
+	{
+		while (i < 9) {
+			ligne = getLigne(i + 1);
+
+			j = 0;
+			while (j < 9) {
+				if (! cast<Case>(ligne.get(j)).isDef()) {
+					return false;
+				}
+				j = j + 1;
+			}
+
+			i = i + 1;
+		}
+		return true;
+	}
+
+	boolean isMorte()
+		int i = 0, j;
+		Arbre ligne;
+	{
+		while (i < 9) {
+			ligne = getLigne(i + 1);
+
+			j = 0;
+			while (j < 9) {
+				if (cast<Case>(ligne.get(j)).isMorte()) {
+					return true;
+				}
+				j = j + 1;
+			}
+
+			i = i + 1;
+		}
+		return false;
+	}
+
+	int generer(Random r)
+		int lig, col, val;
+		boolean morte;
+		int nbEchecs = 0;
+	{
+		while (! isDef()) {
+			lig = r.nextChiffre();
+			col = r.nextChiffre();
+			while (getCase(lig, col).isDef()) {
+				lig = r.nextChiffre();
+				col = r.nextChiffre();
+			}
+			
+			val = r.nextChiffre();
+			while (! getCase(lig, col).isPossible(val)) {
+				val = r.nextChiffre();
+			}
+			
+			morte = getCase(lig, col).appliquer(val);
+
+			if (morte) {
+				reset();
+				nbEchecs = nbEchecs + 1;
+			}
+		}
+		
+		return nbEchecs;
+	}
+
+	boolean resoudre()
+		int i = 0, j;
+		Arbre ligne;
+		Case c;
+	{
+		while (i < 9) {
+			ligne = getLigne(i + 1);
+
+			j = 0;
+			while (j < 9) {
+				c = cast<Case>(ligne.get(j));
+				if (c.isDef()) {
+					if (c.propager(c.getChiffre())) {
+						return false;
+					}
+				}
+				j = j + 1;
+			}
+			
+			i = i + 1;
+		}
+		return isDef();
+	}
+
+	void copier(Grille copie)
+		int i = 0, j;
+		Arbre ligne, ligneCopie;
+	{
+		while (i < 9) {
+			ligne = getLigne(i + 1);
+			ligneCopie = copie.getLigne(i + 1);
+
+			j = 0;
+			while (j < 9) {
+				cast<Case>(ligne.get(j))
+					.copier(cast<Case>(ligneCopie.get(j)));
+				
+				j = j + 1;
+			}
+			
+			i = i + 1;
+		}
+	}
+
+	int effacer(Random r)
+		int nbIndices = 81, nbEssais = 0;
+		int lig, col;
+		Grille essai = new Grille().init(vrai, faux);
+		IterateurAlea itr = new IterateurAlea().init(r, essai.lignes);
+		Case c;
+	{
+		while (itr.hasNext()) {
+			essai.copier(this);
+			nbEssais = nbEssais + 1;
+			
+			c = itr.next();
+			c.reset();
+
+			if (essai.resoudre()) {
+				getCase(c.getLig(), c.getCol()).reset();
+				nbIndices = nbIndices - 1;
+			}
+
+			if (nbEssais < 81) {print("#");}
+		}
+
+		return nbIndices;
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// PROGRAMME PRINCIPAL //
+/////////////////////////
+
+Object vrai = new Object(), faux = new Object();
+Grille grille = new Grille().init(vrai, faux);
+Random r;
+int nbEchecs, nbIndices;
+{
+	print("seed = ");
+	r = new Random().init(readInt());
+
+	print("Génération d'une grille pleine, cela peut prendre du temps... ");
+	nbEchecs = grille.generer(r);
+	println("OK (", nbEchecs, " échecs)");
+	grille.afficher();
+
+	println("Génération de grilles jouables ",
+		"(environ 5 minutes par grille)...");
+	while (true) {
+		println("========================================",
+			"========================================");
+		nbIndices = grille.effacer(r);
+		println("========================================",
+			"========================================");
+		println("Grille obtenue (", nbIndices, " indices) :");
+		grille.afficher();
+		grille.resoudre();
+	}
+}

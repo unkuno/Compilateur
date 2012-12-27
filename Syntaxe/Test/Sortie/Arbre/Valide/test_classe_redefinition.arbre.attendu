@@ -1,0 +1,127 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 4) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT A                                      -- Ligne 13
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 3) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 15
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 15
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 15
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 17
+. . . . . . . NOEUD_IDENT int                              -- Ligne 17
+. . . . . . . NOEUD_IDENT getX                             -- Ligne 17
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 18
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 18
+. . . . . # NOEUD_METHODE                                  -- Ligne 21
+. . . . . . . NOEUD_IDENT int                              -- Ligne 21
+. . . . . . . NOEUD_IDENT getY                             -- Ligne 21
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 22
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 22
+. . # NOEUD_CLASSE                                         -- Ligne 26
+. . . . NOEUD_IDENT B                                      -- Ligne 26
+. . . . NOEUD_IDENT A                                      -- Ligne 26
+. . . . <Liste (longueur 3) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 28
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 28
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 28
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 28
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 30
+. . . . . . . NOEUD_IDENT int                              -- Ligne 30
+. . . . . . . NOEUD_IDENT getY                             -- Ligne 30
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 31
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 31
+. . . . . # NOEUD_METHODE                                  -- Ligne 34
+. . . . . . . NOEUD_IDENT int                              -- Ligne 34
+. . . . . . . NOEUD_IDENT getZ                             -- Ligne 34
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 35
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 35
+. . # NOEUD_CLASSE                                         -- Ligne 40
+. . . . NOEUD_IDENT C                                      -- Ligne 40
+. . . . NOEUD_IDENT A                                      -- Ligne 40
+. . . . <Liste (longueur 4) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 42
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 42
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 42
+. . . . . . . . . . NOEUD_IDENT nom                        -- Ligne 42
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 44
+. . . . . . . NOEUD_IDENT int                              -- Ligne 44
+. . . . . . . NOEUD_IDENT getAlpha                         -- Ligne 44
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 45
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 45
+. . . . . # NOEUD_METHODE                                  -- Ligne 48
+. . . . . . . NOEUD_IDENT int                              -- Ligne 48
+. . . . . . . NOEUD_IDENT getBeta                          -- Ligne 48
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 49
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 49
+. . . . . # NOEUD_METHODE                                  -- Ligne 52
+. . . . . . . NOEUD_IDENT int                              -- Ligne 52
+. . . . . . . NOEUD_IDENT getZ                             -- Ligne 52
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 53
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 53
+. . # NOEUD_CLASSE                                         -- Ligne 59
+. . . . NOEUD_IDENT D                                      -- Ligne 59
+. . . . NOEUD_IDENT C                                      -- Ligne 59
+. . . . <Liste (longueur 4) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 61
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 61
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 61
+. . . . . . . . . . NOEUD_IDENT nom                        -- Ligne 61
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 63
+. . . . . . . NOEUD_IDENT int                              -- Ligne 63
+. . . . . . . NOEUD_IDENT getAlpha                         -- Ligne 63
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 64
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 64
+. . . . . # NOEUD_METHODE                                  -- Ligne 67
+. . . . . . . NOEUD_IDENT int                              -- Ligne 67
+. . . . . . . NOEUD_IDENT getBeta                          -- Ligne 67
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 68
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 68
+. . . . . # NOEUD_METHODE                                  -- Ligne 71
+. . . . . . . NOEUD_IDENT int                              -- Ligne 71
+. . . . . . . NOEUD_IDENT getZ                             -- Ligne 71
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 72
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 72
+. NOEUD_VIDE

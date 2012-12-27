@@ -1,0 +1,10 @@
+// Description:
+//    tests de programme incorrect lexicalement (chaine non terminee)
+//
+// Resultats:
+//    Ligne 10 : Caractere illegal : "
+//
+// Historique:
+//    cree le 01/01/2012
+
+"chaine pas finie

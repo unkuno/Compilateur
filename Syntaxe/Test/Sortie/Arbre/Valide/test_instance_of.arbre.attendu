@@ -1,0 +1,79 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT A                                      -- Ligne 13
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 16
+. . . . NOEUD_IDENT B                                      -- Ligne 16
+. . . . NOEUD_IDENT A                                      -- Ligne 16
+. . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 6) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 20
+. . . . . NOEUD_IDENT A                                    -- Ligne 20
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 20
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 20
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 21
+. . . . . NOEUD_IDENT B                                    -- Ligne 21
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 21
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 21
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 22
+. . . . . NOEUD_IDENT Object                               -- Ligne 22
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 22
+. . . . . . . . NOEUD_IDENT o                              -- Ligne 22
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 23
+. . . . . NOEUD_IDENT int                                  -- Ligne 23
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 23
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 23
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 24
+. . . . . NOEUD_IDENT float                                -- Ligne 24
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 24
+. . . . . . . . NOEUD_IDENT f                              -- Ligne 24
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 25
+. . . . . NOEUD_IDENT boolean                              -- Ligne 25
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 25
+. . . . . . . . NOEUD_IDENT bool                           -- Ligne 25
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 6) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 28
+. . . . . NOEUD_IDENT bool                                 -- Ligne 28
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 28
+. . . . . . NOEUD_IDENT b                                  -- Ligne 28
+. . . . . . NOEUD_IDENT A                                  -- Ligne 28
+. . . # NOEUD_AFFECT                                       -- Ligne 29
+. . . . . NOEUD_IDENT bool                                 -- Ligne 29
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 29
+. . . . . . NOEUD_IDENT a                                  -- Ligne 29
+. . . . . . NOEUD_IDENT B                                  -- Ligne 29
+. . . # NOEUD_AFFECT                                       -- Ligne 30
+. . . . . NOEUD_IDENT bool                                 -- Ligne 30
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 30
+. . . . . . NOEUD_NULL                                     -- Ligne 30
+. . . . . . NOEUD_IDENT A                                  -- Ligne 30
+. . . # NOEUD_AFFECT                                       -- Ligne 31
+. . . . . NOEUD_IDENT bool                                 -- Ligne 31
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 31
+. . . . . . NOEUD_IDENT a                                  -- Ligne 31
+. . . . . . NOEUD_IDENT Object                             -- Ligne 31
+. . . # NOEUD_AFFECT                                       -- Ligne 32
+. . . . . NOEUD_IDENT bool                                 -- Ligne 32
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 32
+. . . . . . NOEUD_IDENT a                                  -- Ligne 32
+. . . . . . NOEUD_IDENT A                                  -- Ligne 32
+. . . # NOEUD_AFFECT                                       -- Ligne 33
+. . . . . NOEUD_IDENT bool                                 -- Ligne 33
+. . . . . NOEUD_INSTANCEOF                                 -- Ligne 33
+. . . . . . NOEUD_IDENT b                                  -- Ligne 33
+. . . . . . NOEUD_IDENT B                                  -- Ligne 33

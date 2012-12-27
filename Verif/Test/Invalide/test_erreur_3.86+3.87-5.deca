@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.86/3.87).1
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Objet attendu à gauche de '.' (règle 3.86 / 3.87)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void v(){
+   }
+}
+
+int y;
+A a;
+{
+ y = a.v().x;
+} 

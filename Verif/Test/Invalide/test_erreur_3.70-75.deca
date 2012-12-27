@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.70)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Les types 'void' et 'type_null' sont incompatibles avec l'opérateur binaire '+' (règle 3.70)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x() {
+   }
+}
+
+int var;
+A a;
+{
+   var = a.x() + null;
+}

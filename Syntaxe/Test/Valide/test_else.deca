@@ -1,0 +1,19 @@
+// Description:
+//    Programme minimaliste utilisant  else.
+//
+// Resultats:
+//    Condition fausse, affichage de else
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 09/01/2012
+
+{
+        if(false) {
+	    println("if");
+	}
+	else {
+	  println("else");
+	} 
+}

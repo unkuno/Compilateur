@@ -1,0 +1,549 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 3) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT T                                      -- Ligne 14
+. . . . . -- Defn : (classe, type_classe(T))
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Te                                     -- Ligne 17
+. . . . . -- Defn : (classe, type_classe(Te))
+. . . . NOEUD_IDENT T                                      -- Ligne 17
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 20
+. . . . NOEUD_IDENT T2                                     -- Ligne 20
+. . . . . -- Defn : (classe, type_classe(T2))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 8) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 22
+. . . . . . . NOEUD_IDENT int                              -- Ligne 22
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_IDENT test1                            -- Ligne 22
+. . . . . . . . -- Defn : (methode([]), int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 23
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 23
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 26
+. . . . . . . NOEUD_IDENT float                            -- Ligne 26
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . NOEUD_IDENT test2                            -- Ligne 26
+. . . . . . . . -- Defn : (methode([]), float)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 27
+. . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_CONV_FLOTTANT                    -- Ligne 27
+. . . . . . . . . . . -- Type : float
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 27
+. . . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 29
+. . . . . . . NOEUD_IDENT float                            -- Ligne 29
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . NOEUD_IDENT test3                            -- Ligne 29
+. . . . . . . . -- Defn : (methode([]), float)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 30
+. . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_FLOTTANT  1.00000E+00            -- Ligne 30
+. . . . . . . . . . . -- Type : float
+. . . . . # NOEUD_METHODE                                  -- Ligne 33
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 33
+. . . . . . . . -- Defn : (type, boolean)
+. . . . . . . . -- Type : boolean
+. . . . . . . NOEUD_IDENT test4                            -- Ligne 33
+. . . . . . . . -- Defn : (methode([]), boolean)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 34
+. . . . . . . . . . -- Type : boolean
+. . . . . . . . . . NOEUD_VRAI                             -- Ligne 34
+. . . . . . . . . . . -- Type : boolean
+. . . . . # NOEUD_METHODE                                  -- Ligne 36
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 36
+. . . . . . . . -- Defn : (type, boolean)
+. . . . . . . . -- Type : boolean
+. . . . . . . NOEUD_IDENT test5                            -- Ligne 36
+. . . . . . . . -- Defn : (methode([]), boolean)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 37
+. . . . . . . . . . -- Type : boolean
+. . . . . . . . . . NOEUD_FAUX                             -- Ligne 37
+. . . . . . . . . . . -- Type : boolean
+. . . . . # NOEUD_METHODE                                  -- Ligne 40
+. . . . . . . NOEUD_IDENT void                             -- Ligne 40
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT test6                            -- Ligne 40
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 43
+. . . . . . . NOEUD_IDENT T                                -- Ligne 43
+. . . . . . . . -- Defn : (classe, type_classe(T))
+. . . . . . . . -- Type : type_classe(T)
+. . . . . . . NOEUD_IDENT test7                            -- Ligne 43
+. . . . . . . . -- Defn : (methode([]), type_classe(T))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 44
+. . . . . . . . . . NOEUD_IDENT T                          -- Ligne 44
+. . . . . . . . . . . -- Defn : (classe, type_classe(T))
+. . . . . . . . . . . -- Type : type_classe(T)
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 44
+. . . . . . . . . . . . . NOEUD_IDENT x                    -- Ligne 44
+. . . . . . . . . . . . . . -- Defn : (var, type_classe(T))
+. . . . . . . . . . . . . NOEUD_NULL                       -- Ligne 44
+. . . . . . . . . . . . . . -- Type : type_null
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 46
+. . . . . . . . . . -- Type : type_classe(T)
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 46
+. . . . . . . . . . . -- Defn : (var, type_classe(T))
+. . . . . . . . . . . -- Type : type_classe(T)
+. . . . . # NOEUD_METHODE                                  -- Ligne 48
+. . . . . . . NOEUD_IDENT T                                -- Ligne 48
+. . . . . . . . -- Defn : (classe, type_classe(T))
+. . . . . . . . -- Type : type_classe(T)
+. . . . . . . NOEUD_IDENT test8                            -- Ligne 48
+. . . . . . . . -- Defn : (methode([]), type_classe(T))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 49
+. . . . . . . . . . NOEUD_IDENT Te                         -- Ligne 49
+. . . . . . . . . . . -- Defn : (classe, type_classe(Te))
+. . . . . . . . . . . -- Type : type_classe(Te)
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 49
+. . . . . . . . . . . . . NOEUD_IDENT x                    -- Ligne 49
+. . . . . . . . . . . . . . -- Defn : (var, type_classe(Te))
+. . . . . . . . . . . . . NOEUD_VIDE
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 51
+. . . . . . . . . . -- Type : type_classe(T)
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 51
+. . . . . . . . . . . -- Defn : (var, type_classe(Te))
+. . . . . . . . . . . -- Type : type_classe(Te)
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 57
+. . . . . NOEUD_IDENT int                                  -- Ligne 57
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 57
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 57
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 57
+. . . . . . . . . -- Type : int
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 58
+. . . . . NOEUD_IDENT boolean                              -- Ligne 58
+. . . . . . -- Defn : (type, boolean)
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 58
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 58
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 58
+. . . . . . . . . -- Type : boolean
+. . <Liste (longueur 22) :>
+. . . # NOEUD_SI                                           -- Ligne 60
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 60
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 60
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 61
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 61
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 61
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 61
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 61
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 63
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 63
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 63
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 64
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 64
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 64
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 64
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 64
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 66
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 66
+. . . . . . . . NOEUD_INF                                  -- Ligne 66
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 66
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 66
+. . . . . . . . . . -- Type : int
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 67
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 67
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 67
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 67
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 67
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 69
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 69
+. . . . . . . . NOEUD_INF_EGAL                             -- Ligne 69
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 69
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 69
+. . . . . . . . . . -- Type : int
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 70
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 70
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 70
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 70
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 70
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste vide>
+. . . # NOEUD_TANTQUE                                      -- Ligne 73
+. . . . . NOEUD_VRAI                                       -- Ligne 73
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 74
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 74
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 74
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 74
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 74
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_TANTQUE                                      -- Ligne 76
+. . . . . NOEUD_FAUX                                       -- Ligne 76
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 77
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 77
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 77
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 77
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 77
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_TANTQUE                                      -- Ligne 79
+. . . . . NOEUD_INF                                        -- Ligne 79
+. . . . . . -- Type : boolean
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 79
+. . . . . . . -- Type : int
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 79
+. . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 80
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 80
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 80
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 80
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 80
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_TANTQUE                                      -- Ligne 82
+. . . . . NOEUD_INF_EGAL                                   -- Ligne 82
+. . . . . . -- Type : boolean
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 82
+. . . . . . . -- Type : int
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 82
+. . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 83
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 83
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 83
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 83
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 83
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_SI                                           -- Ligne 87
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 87
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 87
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 88
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 88
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 88
+. . . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_COND                                   -- Ligne 90
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 90
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 91
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 91
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 91
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 91
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 91
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 94
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 94
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 94
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 94
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 94
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_SI                                           -- Ligne 98
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 98
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 98
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 99
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 99
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 99
+. . . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_COND                                   -- Ligne 101
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 101
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 102
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 102
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 102
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 102
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 102
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 105
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 105
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 105
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 105
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 105
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_SI                                           -- Ligne 108
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 108
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 108
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 109
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 109
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 109
+. . . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_COND                                   -- Ligne 111
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 111
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 112
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 112
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 112
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 112
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 112
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 115
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 115
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 115
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 115
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 115
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_SI                                           -- Ligne 119
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 119
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 119
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 120
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 120
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 120
+. . . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_COND                                   -- Ligne 122
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 122
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 123
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 123
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 123
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 123
+. . . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 123
+. . . . . . . . . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 126
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 126
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 126
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 126
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 126
+. . . . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 131
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 131
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 132
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ENTIER  1                              -- Ligne 132
+. . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 133
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_FLOTTANT  1.00000E+00                  -- Ligne 133
+. . . . . . . . -- Type : float
+. . . # NOEUD_ECRITURE                                     -- Ligne 134
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_MULT                                   -- Ligne 134
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 134
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 134
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 134
+. . . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 134
+. . . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 135
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "hello"                         -- Ligne 135
+. . . . . . . . -- Type : String
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 137
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 137
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 138
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ENTIER  1                              -- Ligne 138
+. . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 139
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_FLOTTANT  1.00000E+00                  -- Ligne 139
+. . . . . . . . -- Type : float
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 140
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_MULT                                   -- Ligne 140
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 140
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 140
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 140
+. . . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 140
+. . . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 141
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "hello"                         -- Ligne 141
+. . . . . . . . -- Type : String

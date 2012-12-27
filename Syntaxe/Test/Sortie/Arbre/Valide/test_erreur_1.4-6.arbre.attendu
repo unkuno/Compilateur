@@ -1,0 +1,13 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 15
+. . . . NOEUD_IDENT A                                      -- Ligne 15
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste vide>

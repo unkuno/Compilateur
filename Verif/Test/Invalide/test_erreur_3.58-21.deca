@@ -1,0 +1,15 @@
+// Description:
+//	   test règle 3.58 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'String' et 'int' sont incompatibles avec l'opérateur 'instanceof' (règle 3.58)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+boolean b;
+{
+   b = "a" instanceof int;
+}

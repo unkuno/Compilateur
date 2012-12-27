@@ -1,0 +1,58 @@
+// Description:
+//    test d'évaluation d'ordre des expressions
+//
+// Resultats:
+//    affiche gauche et pas droit
+//
+// Historique:
+//    cree le 19/01/2012
+
+class Eval
+{
+
+   boolean evalGauche(boolean bo) {
+      println("evaluation gauche");
+      return bo;
+   }
+
+   boolean evalDroit(boolean bo) {
+      println("evaluation droite");
+      return bo;
+   }
+
+}
+
+
+
+Eval v = new Eval();
+{
+   println("Evaluation AND : ");
+   if (v.evalGauche(false) && v.evalDroit(true)) {
+      println("KO");
+   }
+   else {
+      println("OK");
+      println("Evaluation OR : ");
+      if (v.evalGauche(true) || v.evalDroit(false)) {
+         println("OK");
+      }
+   }
+
+   println("Evaluation AND et OR : ");
+   if (v.evalGauche(true) && v.evalGauche(true) || v.evalGauche(false)) {
+      println("OK");
+   }
+
+   println("Evaluation AND dans WHILE : ");
+   while (v.evalGauche(false) && v.evalDroit(true)) {
+      println("KO");
+   }
+   println("OK");
+   println("Evaluation OR dans WHILE : ");
+   while ( !(v.evalGauche(true) || v.evalDroit(false))) {
+      println("KO");
+   }
+   println("OK");
+
+   
+}

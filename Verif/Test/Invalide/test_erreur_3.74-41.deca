@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.74)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'String' et 'type_null' sont incompatibles avec l'opérateur binaire '%' (règle 3.74)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+float var;
+{
+   var = "a" % null;
+}

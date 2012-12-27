@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.30)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Identificateur 'a' déjà déclaré (règle 3.30)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+int a = 1;
+int a;
+{
+}

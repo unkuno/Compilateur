@@ -1,0 +1,22 @@
+// Description:
+//    tests des clases
+//
+// Resultats:
+//    Ligne 12 : Erreur de syntaxe aux alentours de 'null'
+//    test_lex ne doit pas donner d'erreur.
+//
+// Historique:
+//    crée le 19/01/2012
+
+
+class A
+null
+class B Extends A
+new A()
+int getX()
+setX(int X)
+void
+return
+protected
+a.x
+a.setX(6)

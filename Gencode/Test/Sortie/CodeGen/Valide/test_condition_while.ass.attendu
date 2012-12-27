@@ -1,0 +1,310 @@
+; Initialisation du programme
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #3
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 12.
+
+
+; Instruction ligne n° 14.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 15.
+while.0 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.0
+
+; Instruction ligne n° 16.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 17.
+while.1 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.1
+
+; Instruction ligne n° 18.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 19.
+while.2 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.2
+
+; Instruction ligne n° 20.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 21.
+while.3 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.3
+
+; Instruction ligne n° 22.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 23.
+while.4 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.4
+
+; Instruction ligne n° 24.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 25.
+while.5 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.5
+
+; Instruction ligne n° 26.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 27.
+while.6 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.6
+
+; Instruction ligne n° 28.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 29.
+while.7 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.7
+
+; Instruction ligne n° 30.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 31.
+while.8 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.8
+
+; Instruction ligne n° 32.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 33.
+while.9 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.9
+
+; Instruction ligne n° 34.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 35.
+while.10 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.10
+
+; Instruction ligne n° 36.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 37.
+while.11 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.11
+
+; Instruction ligne n° 38.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 39.
+while.12 :
+     LOAD 3 (LB), R1
+     CMP #0, R1
+     BEQ fin.12
+
+; Instruction ligne n° 40.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 41.
+while.13 :
+     LOAD 3 (LB), R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.13
+
+; Instruction ligne n° 42.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.13
+fin.13 :
+
+; Instruction ligne n° 44.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.12
+fin.12 :
+
+; Instruction ligne n° 46.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.11
+fin.11 :
+
+; Instruction ligne n° 48.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.10
+fin.10 :
+
+; Instruction ligne n° 50.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.9
+fin.9 :
+
+; Instruction ligne n° 52.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.8
+fin.8 :
+
+; Instruction ligne n° 54.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.7
+fin.7 :
+
+; Instruction ligne n° 56.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.6
+fin.6 :
+
+; Instruction ligne n° 58.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.5
+fin.5 :
+
+; Instruction ligne n° 60.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.4
+fin.4 :
+
+; Instruction ligne n° 62.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.3
+fin.3 :
+
+; Instruction ligne n° 64.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.2
+fin.2 :
+
+; Instruction ligne n° 66.
+     LOAD #1, R2
+     STORE R2, 3 (LB)
+     BRA while.1
+fin.1 :
+
+; Instruction ligne n° 68.
+     LOAD #0, R2
+     STORE R2, 3 (LB)
+     BRA while.0
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

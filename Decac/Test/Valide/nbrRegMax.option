@@ -1,0 +1,13 @@
+// Description:
+//    test nombre de registre max trop gros
+//
+// Resultats:
+//    Affiche le message Nombre de registres maximum : 16. Cette valeur maximum sera utilisé pour la suite.
+//    La compilation est effectuée avec 16 registres.
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-r 50 ./echecs.deca

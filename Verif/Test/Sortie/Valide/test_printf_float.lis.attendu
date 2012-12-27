@@ -1,0 +1,22 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 13
+. . . . . NOEUD_IDENT float                                -- Ligne 13
+. . . . . . -- Defn : (type, float)
+. . . . . . -- Type : float
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 13
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 13
+. . . . . . . . . -- Defn : (var, float)
+. . . . . . . . NOEUD_FLOTTANT  5.00000E+00                -- Ligne 13
+. . . . . . . . . -- Type : float
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 15
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 15
+. . . . . . . . -- Defn : (var, float)
+. . . . . . . . -- Type : float

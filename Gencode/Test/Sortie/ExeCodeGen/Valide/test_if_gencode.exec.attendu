@@ -1,0 +1,5 @@
+OK : La condition true marche
+OK : La condition false passe dans le else
+OK : La condition true passe dans le elsif
+OK : La condition passe dans le else
+OK : La condition passe dans le elsif

@@ -1,0 +1,18 @@
+// Description:
+//    tests l'écriture directe ou indirecte de lectures
+//
+// Resultats:
+//    ne plante pas, interactif
+// 
+// Attributs: exec correct interactif
+//
+// Historique:
+//    cree le 22/01/2012
+{
+    println("i :", readInt());
+    println("f :", readFloat());
+    println("i+i :", readInt()+readInt());
+    println("f+f :", readFloat()+readFloat());
+    println(42);
+    println(160000.00);
+}

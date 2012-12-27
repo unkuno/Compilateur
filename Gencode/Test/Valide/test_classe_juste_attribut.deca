@@ -1,0 +1,19 @@
+// Description:
+//    test d'une classe avec juste des attributs
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class Vide {
+  
+  int X;
+
+
+}

@@ -1,0 +1,132 @@
+// Description:
+//    test gestion de tableau
+//
+// Resultats:
+//		affichage de
+//    Erreur : tableau plein
+//    1-2-3-4-5-
+//    1-2-3-4-5-6-7-8-9-10-5
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+class Cellule {
+   int value;
+   Cellule suivant;
+
+   void init(int value) {
+      this.value = value;
+   }
+}
+
+class Liste {
+
+   Cellule racine, courante;
+
+   void ajouter(int elem) {
+      if (racine == null) {
+         racine = new Cellule();
+         racine.init(elem);
+         courante = racine;
+      }
+      else {
+          courante.suivant = new Cellule();
+          courante = courante.suivant;
+          courante.value = elem;
+      }
+   }
+
+   void afficherTous()
+   Cellule temp = new Cellule();
+    {
+      temp = racine;
+      while (temp != null ) {
+         print(temp.value, "-");
+         temp = temp.suivant;
+      }      
+   }
+
+   void afficher(int indice)
+      int i = 0;
+      Cellule temp = new Cellule();
+   {
+      temp = racine;
+      while (i < indice ) {
+         temp = temp.suivant;
+         i = i +1;
+      }    
+      print(temp.value);
+   }
+}
+
+
+
+class Tableau {
+   
+   int indice = 0;
+   int max = 0;
+   Liste tab;
+
+   void init(int max) {
+      this.max = max;
+      tab = new Liste();
+   }
+
+   void ajouter(int elem) {
+      if (indice == max) {
+         println("Erreur : tableau plein");
+      }
+      else {
+         tab.ajouter(elem);
+         indice = indice + 1;
+      }
+
+   }
+   void afficher(int indice) {
+      if (indice < max) {
+         tab.afficher(indice);
+      }
+      else {
+         println("Erreur : le tableau est d'indice max ", max);
+      }  
+   }
+
+   void afficherTous() {
+      tab.afficherTous();
+   }
+
+   void copier(Tableau tab ) {
+      this.tab = tab.tab;
+   }
+
+}
+
+
+
+Tableau numero,note; 
+{
+   numero = new Tableau();
+   numero.init(5);
+   note = new Tableau();
+   note.init(10);
+
+   numero.ajouter(1);
+   numero.ajouter(2);
+   numero.ajouter(3);
+   numero.ajouter(4);
+   numero.ajouter(5);
+   numero.ajouter(6);
+   note.copier(numero);
+   numero.afficherTous();
+   println("");
+   note.ajouter(6);
+   note.ajouter(7);
+   note.ajouter(8);
+   note.ajouter(9);
+   note.ajouter(10);
+   note.afficherTous();
+   note.afficher(4);
+}

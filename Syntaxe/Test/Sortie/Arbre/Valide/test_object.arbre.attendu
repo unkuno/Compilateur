@@ -1,0 +1,12 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT Object                               -- Ligne 12
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT o                              -- Ligne 12
+. . . . . . . . NOEUD_CREATION                             -- Ligne 12
+. . . . . . . . . NOEUD_IDENT Object                       -- Ligne 12
+. . <Liste vide>

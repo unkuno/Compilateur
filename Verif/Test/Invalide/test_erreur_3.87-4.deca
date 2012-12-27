@@ -1,0 +1,27 @@
+// Description:
+//    Programme soulevant l'erreur (3.87)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 25 : Champ non visible dans ce contexte (règle 3.87)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+class A {   
+   protected int x;
+}
+
+class B extends A {
+}
+
+class C extends B {
+   int y() 
+   int x;
+   B b;
+   {
+      x = b.x;
+   }
+}

@@ -1,0 +1,29 @@
+// Description:
+//    Programme classe derivant de object
+//
+// Resultats:
+//    Ne doit pas soulever d'erreur
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+class A extends Object {
+   int i;
+   boolean equals(Object o) {
+      if (o instanceof A) {
+         return true;
+      }
+      else {
+         return false;
+      }
+   }
+}
+
+
+A a = new A();
+{
+   a.equals(a);
+}

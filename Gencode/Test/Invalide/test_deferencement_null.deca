@@ -1,0 +1,25 @@
+// Description:
+//	Teste déférencement null d'une classe
+//
+// Resultats:
+// Erreur : dereferencement de null
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+class A {
+
+   int x = 0;
+}
+
+
+A a;
+{
+ a = new A();
+ a = null;
+ println(a.x);
+}
+

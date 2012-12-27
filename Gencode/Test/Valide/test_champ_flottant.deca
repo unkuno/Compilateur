@@ -1,0 +1,27 @@
+// Description:
+//    tests des déclaations de champs flottants
+//
+// Resultats:
+//    ne plante pas, n'affiche rien
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 22/01/2012
+
+class Point2D {
+    int val;
+    float x,y;
+}
+
+class Point3D extends Point2D {
+    float val;
+    float z;
+}
+
+Point2D p2;
+Point3D p3 = new Point3D();
+{
+
+
+}

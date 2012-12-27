@@ -1,0 +1,16 @@
+// Description:
+//    Programme soulevant l'erreur (3.45)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Expression booléenne attendue (règle 3.45)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+int i = 1;
+{
+   while(i) {
+   }
+}

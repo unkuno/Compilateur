@@ -1,0 +1,48 @@
+.TH DECAC 1 "14 janvier 2012" "Version 1.0" "Compilateur pour le langage Deca"
+.SH NOM
+decac - Compilateur pour le langage deca dans le cadre du projet GL
+
+.SH SYNOPSYS
+[[-p | -v] [-n] [-r X] [répertoire/]nom_fichier_source.deca] | [-b]
+
+.SH DESCRIPTION
+Compile automatiquement un fichier .deca en fichier .ass interprétable par la machine ima.
+
+.SS Options
+
+.TP
+-b
+(banner) : Affiche une bannière indiquant le nom de l'équipe
+
+.TP
+-p
+(parse) : Arrête decac apres l'étape de construction de l'arbre, et affiche la décompilation de ce dernier (i.e. la sortie doit être un programme deca syntaxiquement correct)
+
+.TP
+-v
+(verification) : Arrête decac après l'étape de vérifications lexical et syntaxique
+
+.TP
+-n
+(no check) : Supprime les tests de débordement à l'exécution (débordement arithmétique, débordement mémoire, déférancement de null)
+
+.TP
+-r X
+(registers) : Limite les registres banalisés disponibles à R0 .. R{X-1}, avec 4 <= X <= 16
+
+.TP
+-w
+(warnings) : Affiche les warnings lors de la compilation
+
+.TP
+fichier.deca
+Fichier deca à compiler
+
+.SH AUTEURS
+
+.TP
+Remerciement à 
+BOUSSON Valentin, CONNES Cédric, LENTINI Sébastien, NGUY Thomas
+
+.SH BOGUE
+Nécessite parfois une relecture orthographique 

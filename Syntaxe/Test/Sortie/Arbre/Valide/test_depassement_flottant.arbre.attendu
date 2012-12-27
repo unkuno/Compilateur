@@ -1,0 +1,22 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 13
+. . . . . NOEUD_IDENT float                                -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 13
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 13
+. . . . . . . . NOEUD_FLOTTANT  3.40282E+38                -- Ligne 13
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 14
+. . . . . NOEUD_IDENT float                                -- Ligne 14
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 14
+. . . . . . . . NOEUD_IDENT j                              -- Ligne 14
+. . . . . . . . NOEUD_FLOTTANT  3.40282E+38                -- Ligne 14
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE                                     -- Ligne 17
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_PLUS                                   -- Ligne 17
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 17
+. . . . . . . . NOEUD_IDENT j                              -- Ligne 17

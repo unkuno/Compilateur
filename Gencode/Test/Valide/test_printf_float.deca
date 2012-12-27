@@ -1,0 +1,16 @@
+// Description:
+//	Teste affectation d'un flottant et affichage de ce dernier
+//
+// Resultats:
+//	affichage du flottant
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+float i = 5.0;
+{
+   println(i);
+}

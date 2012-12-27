@@ -1,0 +1,31 @@
+// Description:
+//    tests l'appel a la fonctionnalité purger
+//
+// Resultats:
+//    avant l'appel de méthode, rend manuellement tous les registres sales
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 22/01/2012
+
+class A {
+    int a;
+    int get() {
+	return a;
+    }
+    A init(int b) {
+	a = b;
+	return this;
+    }
+    void affiche() {
+	println("a=",a);
+    }
+}
+
+A a;
+{
+    (a=new A().init(1+(2+(3+((4+((5+6)+7))+(8+9)))))).affiche();
+    (1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+1)+1)+1)+(a.init(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+1))))))))))))))).get()))))))))));
+    a.affiche();
+}

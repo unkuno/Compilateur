@@ -1,0 +1,134 @@
+// Description:
+//    Tests sur les classes
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+class A { 
+   protected int i1 ;
+   int i2 = 1;
+   protected float f1;
+   float f2 = 1.0;
+   protected boolean b1;
+   boolean b2 = true;
+      
+   int Entier(){
+      return 1;
+   }   
+   
+   float Flottant1(){
+      return 1.0;
+   }
+   
+   float Flottant2(){
+      return 1;
+   }   
+   
+   boolean Vrai(){
+      return true;
+   }
+   boolean Faux(){
+      return false;
+   }
+   
+   void Rien() {
+   }
+   
+   
+   void Test ( int i, int i1, float f, boolean b) 
+   {
+    this.i1 = i1;
+    f1 = i1;   
+   }   
+
+
+}
+
+class B extends A { 
+   protected int i3;
+   int i2;
+   
+   int Entier(){
+      return 1;
+   }   
+   
+   int Entier2(){
+      return 1;
+   }   
+
+   A ObjetA()
+   A a; 
+   {
+    return a;
+   }
+
+   void Test2(A a) 
+   {
+    this.i1 = i1;
+    f1 = i1; 
+    f2 = 2.0;  
+   }
+
+}
+
+class C extends B { 
+   protected float f1;
+   int i2;
+   
+   int Entier(){
+      return 1;
+   }   
+   
+   int Entier2(){
+      return 2;
+   }    
+   
+   int Entier3(){
+      return 1;
+   }    
+   
+   float Flottant1(){
+      return 1.0;
+   }
+
+   B ObjetA()
+   B b; 
+   {
+    return b;
+   } 
+
+
+   void Test3(A a, B b) 
+   {
+    this.f1 = 1.0;
+    i2 = 3;  
+   }
+
+}
+
+A a;
+B b;
+C c;
+{
+   a.Test(1,1,1,true);
+   a.Test(1,1,1.0,false);
+   b.Test2(a);
+   b.Test2(b);
+   b.Test2(c);
+   c.Test3(a,b);
+   c.Test3(b,c);
+   
+   a.i2 = 1;
+   a.f2 = 1;
+   a.f2 =1.0;
+   b.i2 =2;
+   c.i2=2;
+   a=c;
+   a.i2= 2;
+}

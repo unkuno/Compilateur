@@ -1,0 +1,10 @@
+// Description:
+//    Test droits insuffisant 
+//
+// Resultats:
+// ne compile pas
+//
+// Attributs: exec incorrect en lancant le script shell
+//
+// Historique:
+//    cree le 21/01/2012

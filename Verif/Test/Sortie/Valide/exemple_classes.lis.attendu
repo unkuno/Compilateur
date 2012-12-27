@@ -1,0 +1,221 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 3) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT Animal                                 -- Ligne 10
+. . . . . -- Defn : (classe, type_classe(Animal))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 11
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 11
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 11
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 11
+. . . . . . . . . . . -- Defn : (champ(valfalse, Animal), float)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 12
+. . . . . . . NOEUD_IDENT void                             -- Ligne 12
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 12
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 13
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "..."                 -- Ligne 13
+. . . . . . . . . . . . . -- Type : String
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Chien                                  -- Ligne 17
+. . . . . -- Defn : (classe, type_classe(Chien))
+. . . . NOEUD_IDENT Animal                                 -- Ligne 17
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 18
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 18
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 18
+. . . . . . . . . . . -- Defn : (champ(valfalse, Chien), int)
+. . . . . . . . . . NOEUD_ENTIER  80                       -- Ligne 18
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 19
+. . . . . . . NOEUD_IDENT void                             -- Ligne 19
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 19
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 20
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "Waf !"               -- Ligne 20
+. . . . . . . . . . . . . -- Type : String
+. . # NOEUD_CLASSE                                         -- Ligne 24
+. . . . NOEUD_IDENT Chat                                   -- Ligne 24
+. . . . . -- Defn : (classe, type_classe(Chat))
+. . . . NOEUD_IDENT Animal                                 -- Ligne 24
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 25
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 25
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 25
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 25
+. . . . . . . . . . . -- Defn : (champ(valfalse, Chat), float)
+. . . . . . . . . . NOEUD_FLOTTANT  5.34500E+00            -- Ligne 25
+. . . . . . . . . . . -- Type : float
+. . . . . # NOEUD_METHODE                                  -- Ligne 26
+. . . . . . . NOEUD_IDENT void                             -- Ligne 26
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 26
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 27
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "Meow.."              -- Ligne 27
+. . . . . . . . . . . . . -- Type : String
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 31
+. . . . . NOEUD_IDENT Animal                               -- Ligne 31
+. . . . . . -- Defn : (classe, type_classe(Animal))
+. . . . . . -- Type : type_classe(Animal)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 31
+. . . . . . . . NOEUD_IDENT compagnon1                     -- Ligne 31
+. . . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 31
+. . . . . . . . . -- Type : type_classe(Chien)
+. . . . . . . . . NOEUD_IDENT Chien                        -- Ligne 31
+. . . . . . . . . . -- Defn : (classe, type_classe(Chien))
+. . . . . . . . . . -- Type : type_classe(Chien)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 32
+. . . . . NOEUD_IDENT Animal                               -- Ligne 32
+. . . . . . -- Defn : (classe, type_classe(Animal))
+. . . . . . -- Type : type_classe(Animal)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 32
+. . . . . . . . NOEUD_IDENT compagnon2                     -- Ligne 32
+. . . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 32
+. . . . . . . . . -- Type : type_classe(Chat)
+. . . . . . . . . NOEUD_IDENT Chat                         -- Ligne 32
+. . . . . . . . . . -- Defn : (classe, type_classe(Chat))
+. . . . . . . . . . -- Type : type_classe(Chat)
+. . <Liste (longueur 7) :>
+. . . # NOEUD_APPEL                                        -- Ligne 34
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 34
+. . . . . . NOEUD_IDENT compagnon1                         -- Ligne 34
+. . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . -- Type : type_classe(Animal)
+. . . . . . NOEUD_IDENT crie                               -- Ligne 34
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_APPEL                                        -- Ligne 35
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 35
+. . . . . . NOEUD_CONVERSION                               -- Ligne 35
+. . . . . . . -- Type : type_classe(Animal)
+. . . . . . . NOEUD_IDENT Animal                           -- Ligne 35
+. . . . . . . . -- Defn : (classe, type_classe(Animal))
+. . . . . . . . -- Type : type_classe(Animal)
+. . . . . . . NOEUD_IDENT compagnon1                       -- Ligne 35
+. . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . -- Type : type_classe(Animal)
+. . . . . . NOEUD_IDENT crie                               -- Ligne 35
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 36
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 36
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_SELECTION                              -- Ligne 36
+. . . . . . . . -- Type : float
+. . . . . . . . NOEUD_IDENT compagnon1                     -- Ligne 36
+. . . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . . -- Type : type_classe(Animal)
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 36
+. . . . . . . . . -- Defn : (champ(valfalse, Animal), float)
+. . . . . . . . . -- Type : float
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 36
+. . . . . . . . -- Type : String
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 37
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 37
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_SELECTION                              -- Ligne 37
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_CONVERSION                           -- Ligne 37
+. . . . . . . . . -- Type : type_classe(Chien)
+. . . . . . . . . NOEUD_IDENT Chien                        -- Ligne 37
+. . . . . . . . . . -- Defn : (classe, type_classe(Chien))
+. . . . . . . . . . -- Type : type_classe(Chien)
+. . . . . . . . . NOEUD_IDENT compagnon1                   -- Ligne 37
+. . . . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . . . -- Type : type_classe(Animal)
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 37
+. . . . . . . . . -- Defn : (champ(valfalse, Chien), int)
+. . . . . . . . . -- Type : int
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 37
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 39
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 39
+. . . . . . NOEUD_IDENT compagnon2                         -- Ligne 39
+. . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . -- Type : type_classe(Animal)
+. . . . . . NOEUD_IDENT crie                               -- Ligne 39
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 40
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 40
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_SELECTION                              -- Ligne 40
+. . . . . . . . -- Type : float
+. . . . . . . . NOEUD_CONVERSION                           -- Ligne 40
+. . . . . . . . . -- Type : type_classe(Chat)
+. . . . . . . . . NOEUD_IDENT Chat                         -- Ligne 40
+. . . . . . . . . . -- Defn : (classe, type_classe(Chat))
+. . . . . . . . . . -- Type : type_classe(Chat)
+. . . . . . . . . NOEUD_IDENT compagnon2                   -- Ligne 40
+. . . . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . . . -- Type : type_classe(Animal)
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 40
+. . . . . . . . . -- Defn : (champ(valfalse, Chat), float)
+. . . . . . . . . -- Type : float
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 40
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 41
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 41
+. . . . . . NOEUD_CONVERSION                               -- Ligne 41
+. . . . . . . -- Type : type_classe(Chien)
+. . . . . . . NOEUD_IDENT Chien                            -- Ligne 41
+. . . . . . . . -- Defn : (classe, type_classe(Chien))
+. . . . . . . . -- Type : type_classe(Chien)
+. . . . . . . NOEUD_IDENT compagnon2                       -- Ligne 41
+. . . . . . . . -- Defn : (var, type_classe(Animal))
+. . . . . . . . -- Type : type_classe(Animal)
+. . . . . . NOEUD_IDENT crie                               -- Ligne 41
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>

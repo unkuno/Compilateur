@@ -1,0 +1,562 @@
+; Initialisation du programme
+     TSTO #33
+     BOV pile_pleine
+     ADDSP #31
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Toto
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+
+; Table des méthode de la classe A
+     LEA 3 (GB), R0
+     STORE R0, 5 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 6 (GB)
+
+; Table des méthode de la classe A1
+     LEA 5 (GB), R0
+     STORE R0, 7 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 8 (GB)
+
+; Table des méthode de la classe A2
+     LEA 7 (GB), R0
+     STORE R0, 9 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 10 (GB)
+
+; Table des méthode de la classe A3
+     LEA 9 (GB), R0
+     STORE R0, 11 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 12 (GB)
+
+; Table des méthode de la classe A4
+     LEA 11 (GB), R0
+     STORE R0, 13 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 14 (GB)
+
+; Table des méthode de la classe A5
+     LEA 13 (GB), R0
+     STORE R0, 15 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 16 (GB)
+
+; Table des méthode de la classe A6
+     LEA 15 (GB), R0
+     STORE R0, 17 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 18 (GB)
+
+; Table des méthode de la classe A7
+     LEA 17 (GB), R0
+     STORE R0, 19 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 20 (GB)
+
+; Table des méthode de la classe A8
+     LEA 19 (GB), R0
+     STORE R0, 21 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 22 (GB)
+
+; Table des méthode de la classe A9
+     LEA 21 (GB), R0
+     STORE R0, 23 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 24 (GB)
+
+; Table des méthode de la classe A10
+     LEA 23 (GB), R0
+     STORE R0, 25 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 26 (GB)
+
+; Table des méthode de la classe A11
+     LEA 25 (GB), R0
+     STORE R0, 27 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 28 (GB)
+
+; Table des méthode de la classe A12
+     LEA 27 (GB), R0
+     STORE R0, 29 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 30 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 62.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 29 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     BSR init.A9
+     BSR init.A10
+     BSR init.A11
+     BSR init.A12
+     POP R2
+     STORE R2, 31 (LB)
+
+
+; Instruction ligne n° 65.
+if.0.0 :
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.1
+while_instanceof.1 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.1
+     LEA 29 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.1
+     BRA while_instanceof.1
+true_instanceof.1 :
+     LOAD #1, R2
+     BRA fin_instanceof.1
+false_instanceof.1 :
+     LOAD #0, R2
+fin_instanceof.1 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.2
+while_instanceof.2 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.2
+     LEA 27 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.2
+     BRA while_instanceof.2
+true_instanceof.2 :
+     LOAD #1, R2
+     BRA fin_instanceof.2
+false_instanceof.2 :
+     LOAD #0, R2
+fin_instanceof.2 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.3
+while_instanceof.3 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.3
+     LEA 25 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.3
+     BRA while_instanceof.3
+true_instanceof.3 :
+     LOAD #1, R2
+     BRA fin_instanceof.3
+false_instanceof.3 :
+     LOAD #0, R2
+fin_instanceof.3 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.4
+while_instanceof.4 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.4
+     LEA 23 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.4
+     BRA while_instanceof.4
+true_instanceof.4 :
+     LOAD #1, R2
+     BRA fin_instanceof.4
+false_instanceof.4 :
+     LOAD #0, R2
+fin_instanceof.4 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.5
+while_instanceof.5 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.5
+     LEA 21 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.5
+     BRA while_instanceof.5
+true_instanceof.5 :
+     LOAD #1, R2
+     BRA fin_instanceof.5
+false_instanceof.5 :
+     LOAD #0, R2
+fin_instanceof.5 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.6
+while_instanceof.6 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.6
+     LEA 19 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.6
+     BRA while_instanceof.6
+true_instanceof.6 :
+     LOAD #1, R2
+     BRA fin_instanceof.6
+false_instanceof.6 :
+     LOAD #0, R2
+fin_instanceof.6 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.7
+while_instanceof.7 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.7
+     LEA 17 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.7
+     BRA while_instanceof.7
+true_instanceof.7 :
+     LOAD #1, R2
+     BRA fin_instanceof.7
+false_instanceof.7 :
+     LOAD #0, R2
+fin_instanceof.7 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.8
+while_instanceof.8 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.8
+     LEA 15 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.8
+     BRA while_instanceof.8
+true_instanceof.8 :
+     LOAD #1, R2
+     BRA fin_instanceof.8
+false_instanceof.8 :
+     LOAD #0, R2
+fin_instanceof.8 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.9
+while_instanceof.9 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.9
+     LEA 13 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.9
+     BRA while_instanceof.9
+true_instanceof.9 :
+     LOAD #1, R2
+     BRA fin_instanceof.9
+false_instanceof.9 :
+     LOAD #0, R2
+fin_instanceof.9 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.10
+while_instanceof.10 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.10
+     LEA 11 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.10
+     BRA while_instanceof.10
+true_instanceof.10 :
+     LOAD #1, R2
+     BRA fin_instanceof.10
+false_instanceof.10 :
+     LOAD #0, R2
+fin_instanceof.10 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.11
+while_instanceof.11 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.11
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.11
+     BRA while_instanceof.11
+true_instanceof.11 :
+     LOAD #1, R2
+     BRA fin_instanceof.11
+false_instanceof.11 :
+     LOAD #0, R2
+fin_instanceof.11 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.12
+while_instanceof.12 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.12
+     LEA 7 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.12
+     BRA while_instanceof.12
+true_instanceof.12 :
+     LOAD #1, R2
+     BRA fin_instanceof.12
+false_instanceof.12 :
+     LOAD #0, R2
+fin_instanceof.12 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.13
+while_instanceof.13 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.13
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.13
+     BRA while_instanceof.13
+true_instanceof.13 :
+     LOAD #1, R2
+     BRA fin_instanceof.13
+false_instanceof.13 :
+     LOAD #0, R2
+fin_instanceof.13 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 31 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.14
+while_instanceof.14 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.14
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.14
+     BRA while_instanceof.14
+true_instanceof.14 :
+     LOAD #1, R2
+     BRA fin_instanceof.14
+false_instanceof.14 :
+     LOAD #0, R2
+fin_instanceof.14 :
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 66.
+     WSTR "ok"
+     WNL
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 69.
+     WSTR "ko"
+     WNL
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Toto #
+; ##########################
+
+; Initialisation des champs de la classe Toto
+init.Toto :
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Initialisation des champs de la classe A
+init.A :
+     RTS
+
+; ########################
+; # Code de la classe A1 #
+; ########################
+
+; Initialisation des champs de la classe A1
+init.A1 :
+     RTS
+
+; ########################
+; # Code de la classe A2 #
+; ########################
+
+; Initialisation des champs de la classe A2
+init.A2 :
+     RTS
+
+; ########################
+; # Code de la classe A3 #
+; ########################
+
+; Initialisation des champs de la classe A3
+init.A3 :
+     RTS
+
+; ########################
+; # Code de la classe A4 #
+; ########################
+
+; Initialisation des champs de la classe A4
+init.A4 :
+     RTS
+
+; ########################
+; # Code de la classe A5 #
+; ########################
+
+; Initialisation des champs de la classe A5
+init.A5 :
+     RTS
+
+; ########################
+; # Code de la classe A6 #
+; ########################
+
+; Initialisation des champs de la classe A6
+init.A6 :
+     RTS
+
+; ########################
+; # Code de la classe A7 #
+; ########################
+
+; Initialisation des champs de la classe A7
+init.A7 :
+     RTS
+
+; ########################
+; # Code de la classe A8 #
+; ########################
+
+; Initialisation des champs de la classe A8
+init.A8 :
+     RTS
+
+; ########################
+; # Code de la classe A9 #
+; ########################
+
+; Initialisation des champs de la classe A9
+init.A9 :
+     RTS
+
+; #########################
+; # Code de la classe A10 #
+; #########################
+
+; Initialisation des champs de la classe A10
+init.A10 :
+     RTS
+
+; #########################
+; # Code de la classe A11 #
+; #########################
+
+; Initialisation des champs de la classe A11
+init.A11 :
+     RTS
+
+; #########################
+; # Code de la classe A12 #
+; #########################
+
+; Initialisation des champs de la classe A12
+init.A12 :
+     RTS

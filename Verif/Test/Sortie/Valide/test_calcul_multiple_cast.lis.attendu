@@ -1,0 +1,46 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 13
+. . . . . NOEUD_IDENT int                                  -- Ligne 13
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 13
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 13
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_CONVERSION                           -- Ligne 13
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT int                          -- Ligne 13
+. . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_CONVERSION                         -- Ligne 13
+. . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_IDENT float                      -- Ligne 13
+. . . . . . . . . . . -- Defn : (type, float)
+. . . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_DIV                              -- Ligne 13
+. . . . . . . . . . . -- Type : float
+. . . . . . . . . . . NOEUD_CONVERSION                     -- Ligne 13
+. . . . . . . . . . . . -- Type : float
+. . . . . . . . . . . . NOEUD_IDENT float                  -- Ligne 13
+. . . . . . . . . . . . . -- Defn : (type, float)
+. . . . . . . . . . . . . -- Type : float
+. . . . . . . . . . . . NOEUD_ENTIER  11                   -- Ligne 13
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_CONVERSION                     -- Ligne 13
+. . . . . . . . . . . . -- Type : float
+. . . . . . . . . . . . NOEUD_IDENT float                  -- Ligne 13
+. . . . . . . . . . . . . -- Defn : (type, float)
+. . . . . . . . . . . . . -- Type : float
+. . . . . . . . . . . . NOEUD_ENTIER  2                    -- Ligne 13
+. . . . . . . . . . . . . -- Type : int
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 15
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT res                              -- Ligne 15
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int

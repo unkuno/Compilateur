@@ -1,0 +1,617 @@
+; Initialisation du programme
+     TSTO #16
+     BOV pile_pleine
+     ADDSP #14
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+
+; Table des méthode de la classe B
+     LEA 3 (GB), R0
+     STORE R0, 5 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 6 (GB)
+
+; Table des méthode de la classe C
+     LEA 3 (GB), R0
+     STORE R0, 7 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 8 (GB)
+
+; Table des méthode de la classe D
+     LEA 7 (GB), R0
+     STORE R0, 9 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 10 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 29.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.C
+     BSR init.D
+     POP R2
+     STORE R2, 11 (LB)
+
+; Declarations ligne n° 30.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 7 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.C
+     POP R2
+     STORE R2, 12 (LB)
+
+; Declarations ligne n° 31.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 5 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.B
+     POP R2
+     STORE R2, 13 (LB)
+
+; Declarations ligne n° 32.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 14 (LB)
+
+
+; Instruction ligne n° 34.
+if.0.0 :
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.1
+while_instanceof.1 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.1
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.1
+     BRA while_instanceof.1
+true_instanceof.1 :
+     LOAD #1, R2
+     BRA fin_instanceof.1
+false_instanceof.1 :
+     LOAD #0, R2
+fin_instanceof.1 :
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 35.
+     WSTR "od instanceof D"
+     WNL
+     BRA fin.0
+else.0 :
+fin.0 :
+
+; Instruction ligne n° 38.
+if.2.0 :
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.3
+while_instanceof.3 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.3
+     LEA 7 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.3
+     BRA while_instanceof.3
+true_instanceof.3 :
+     LOAD #1, R2
+     BRA fin_instanceof.3
+false_instanceof.3 :
+     LOAD #0, R2
+fin_instanceof.3 :
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 39.
+     WSTR "od instanceof C"
+     WNL
+     BRA fin.2
+else.2 :
+fin.2 :
+
+; Instruction ligne n° 42.
+if.4.0 :
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.5
+while_instanceof.5 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.5
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.5
+     BRA while_instanceof.5
+true_instanceof.5 :
+     LOAD #1, R2
+     BRA fin_instanceof.5
+false_instanceof.5 :
+     LOAD #0, R2
+fin_instanceof.5 :
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 43.
+     WSTR "od instanceof B"
+     WNL
+     BRA fin.4
+else.4 :
+fin.4 :
+
+; Instruction ligne n° 46.
+if.6.0 :
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.7
+while_instanceof.7 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.7
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.7
+     BRA while_instanceof.7
+true_instanceof.7 :
+     LOAD #1, R2
+     BRA fin_instanceof.7
+false_instanceof.7 :
+     LOAD #0, R2
+fin_instanceof.7 :
+     CMP #0, R2
+     BEQ else.6
+
+; Instruction ligne n° 47.
+     WSTR "od instanceof A"
+     WNL
+     BRA fin.6
+else.6 :
+fin.6 :
+
+; Instruction ligne n° 50.
+if.8.0 :
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.9
+while_instanceof.9 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.9
+     LEA 1 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.9
+     BRA while_instanceof.9
+true_instanceof.9 :
+     LOAD #1, R2
+     BRA fin_instanceof.9
+false_instanceof.9 :
+     LOAD #0, R2
+fin_instanceof.9 :
+     CMP #0, R2
+     BEQ else.8
+
+; Instruction ligne n° 51.
+     WSTR "od instanceof Object"
+     WNL
+     BRA fin.8
+else.8 :
+fin.8 :
+
+; Instruction ligne n° 55.
+if.10.0 :
+     LOAD 14 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.11
+while_instanceof.11 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.11
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.11
+     BRA while_instanceof.11
+true_instanceof.11 :
+     LOAD #1, R2
+     BRA fin_instanceof.11
+false_instanceof.11 :
+     LOAD #0, R2
+fin_instanceof.11 :
+     CMP #0, R2
+     BEQ else.10
+
+; Instruction ligne n° 56.
+     WSTR "oa instanceof D"
+     WNL
+     BRA fin.10
+else.10 :
+fin.10 :
+
+; Instruction ligne n° 59.
+if.12.0 :
+     LOAD 14 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.13
+while_instanceof.13 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.13
+     LEA 7 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.13
+     BRA while_instanceof.13
+true_instanceof.13 :
+     LOAD #1, R2
+     BRA fin_instanceof.13
+false_instanceof.13 :
+     LOAD #0, R2
+fin_instanceof.13 :
+     CMP #0, R2
+     BEQ else.12
+
+; Instruction ligne n° 60.
+     WSTR "oa instanceof C"
+     WNL
+     BRA fin.12
+else.12 :
+fin.12 :
+
+; Instruction ligne n° 63.
+if.14.0 :
+     LOAD 14 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.15
+while_instanceof.15 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.15
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.15
+     BRA while_instanceof.15
+true_instanceof.15 :
+     LOAD #1, R2
+     BRA fin_instanceof.15
+false_instanceof.15 :
+     LOAD #0, R2
+fin_instanceof.15 :
+     CMP #0, R2
+     BEQ else.14
+
+; Instruction ligne n° 64.
+     WSTR "oa instanceof B"
+     WNL
+     BRA fin.14
+else.14 :
+fin.14 :
+
+; Instruction ligne n° 67.
+if.16.0 :
+     LOAD 14 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.17
+while_instanceof.17 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.17
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.17
+     BRA while_instanceof.17
+true_instanceof.17 :
+     LOAD #1, R2
+     BRA fin_instanceof.17
+false_instanceof.17 :
+     LOAD #0, R2
+fin_instanceof.17 :
+     CMP #0, R2
+     BEQ else.16
+
+; Instruction ligne n° 68.
+     WSTR "oa instanceof A"
+     WNL
+     BRA fin.16
+else.16 :
+fin.16 :
+
+; Instruction ligne n° 71.
+if.18.0 :
+     LOAD 14 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.19
+while_instanceof.19 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.19
+     LEA 1 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.19
+     BRA while_instanceof.19
+true_instanceof.19 :
+     LOAD #1, R2
+     BRA fin_instanceof.19
+false_instanceof.19 :
+     LOAD #0, R2
+fin_instanceof.19 :
+     CMP #0, R2
+     BEQ else.18
+
+; Instruction ligne n° 72.
+     WSTR "oa instanceof Object"
+     WNL
+     BRA fin.18
+else.18 :
+fin.18 :
+
+; Instruction ligne n° 76.
+if.20.0 :
+     LOAD #null, R2
+     CMP #null, R2
+     BEQ true_instanceof.21
+while_instanceof.21 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.21
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.21
+     BRA while_instanceof.21
+true_instanceof.21 :
+     LOAD #1, R2
+     BRA fin_instanceof.21
+false_instanceof.21 :
+     LOAD #0, R2
+fin_instanceof.21 :
+     CMP #0, R2
+     BEQ else.20
+
+; Instruction ligne n° 77.
+     WSTR "null instanceof D"
+     WNL
+     BRA fin.20
+else.20 :
+fin.20 :
+
+; Instruction ligne n° 80.
+if.22.0 :
+     LOAD #null, R2
+     CMP #null, R2
+     BEQ true_instanceof.23
+while_instanceof.23 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.23
+     LEA 7 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.23
+     BRA while_instanceof.23
+true_instanceof.23 :
+     LOAD #1, R2
+     BRA fin_instanceof.23
+false_instanceof.23 :
+     LOAD #0, R2
+fin_instanceof.23 :
+     CMP #0, R2
+     BEQ else.22
+
+; Instruction ligne n° 81.
+     WSTR "null instanceof C"
+     WNL
+     BRA fin.22
+else.22 :
+fin.22 :
+
+; Instruction ligne n° 84.
+if.24.0 :
+     LOAD #null, R2
+     CMP #null, R2
+     BEQ true_instanceof.25
+while_instanceof.25 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.25
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.25
+     BRA while_instanceof.25
+true_instanceof.25 :
+     LOAD #1, R2
+     BRA fin_instanceof.25
+false_instanceof.25 :
+     LOAD #0, R2
+fin_instanceof.25 :
+     CMP #0, R2
+     BEQ else.24
+
+; Instruction ligne n° 85.
+     WSTR "null instanceof B"
+     WNL
+     BRA fin.24
+else.24 :
+fin.24 :
+
+; Instruction ligne n° 88.
+if.26.0 :
+     LOAD #null, R2
+     CMP #null, R2
+     BEQ true_instanceof.27
+while_instanceof.27 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.27
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.27
+     BRA while_instanceof.27
+true_instanceof.27 :
+     LOAD #1, R2
+     BRA fin_instanceof.27
+false_instanceof.27 :
+     LOAD #0, R2
+fin_instanceof.27 :
+     CMP #0, R2
+     BEQ else.26
+
+; Instruction ligne n° 89.
+     WSTR "null instanceof A"
+     WNL
+     BRA fin.26
+else.26 :
+fin.26 :
+
+; Instruction ligne n° 92.
+if.28.0 :
+     LOAD #null, R2
+     CMP #null, R2
+     BEQ true_instanceof.29
+while_instanceof.29 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.29
+     LEA 1 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.29
+     BRA while_instanceof.29
+true_instanceof.29 :
+     LOAD #1, R2
+     BRA fin_instanceof.29
+false_instanceof.29 :
+     LOAD #0, R2
+fin_instanceof.29 :
+     CMP #0, R2
+     BEQ else.28
+
+; Instruction ligne n° 93.
+     WSTR "null instanceof Object"
+     WNL
+     BRA fin.28
+else.28 :
+fin.28 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #18, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Initialisation des champs de la classe B
+init.B :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R0
+     STORE R2, 2 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; #######################
+; # Code de la classe C #
+; #######################
+
+; Initialisation des champs de la classe C
+init.C :
+     LOAD #42, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; #######################
+; # Code de la classe D #
+; #######################
+
+; Initialisation des champs de la classe D
+init.D :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     RTS

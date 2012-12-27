@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.70)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'int' et 'boolean' sont incompatibles avec l'opérateur binaire '+' (règle 3.70)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+float var;
+{
+   var = 1 + true;
+}

@@ -1,0 +1,16 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    Affichage d'un entier, d'un float et de la chaine "Hello"
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+{
+        println(5);
+        println(5.0);
+        println("Hello");
+}

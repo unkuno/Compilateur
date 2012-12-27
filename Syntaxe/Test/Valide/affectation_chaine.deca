@@ -1,0 +1,15 @@
+// Description:
+//    test sur l'affectation des chaines et leur affichage
+//
+// Resultats: Affiche la chaine toto
+//
+//
+// Historique:
+//    crée le 11/01/2012
+
+
+string s;
+{
+	s = "toto";
+	println(s);
+}

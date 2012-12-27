@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.78)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'boolean' et 'boolean' sont incompatibles avec l'opérateur binaire '>' (règle 3.78)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+boolean var;
+{
+   var = true > true;
+}

@@ -1,0 +1,19 @@
+// Description:
+//    tests conditionnelle
+//
+// Resultats:
+//    ok
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 01/01/2012
+
+{
+   if (1 >= 0) {
+      println("ok"); 
+   } else { 
+      println("erreur");
+   }
+}
+

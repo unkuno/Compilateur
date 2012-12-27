@@ -1,0 +1,128 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 3) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT Animal                                 -- Ligne 10
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 11
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 11
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 11
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 11
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 12
+. . . . . . . NOEUD_IDENT void                             -- Ligne 12
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 12
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 13
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "..."                 -- Ligne 13
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Chien                                  -- Ligne 17
+. . . . NOEUD_IDENT Animal                                 -- Ligne 17
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 18
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 18
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 18
+. . . . . . . . . . NOEUD_ENTIER  80                       -- Ligne 18
+. . . . . # NOEUD_METHODE                                  -- Ligne 19
+. . . . . . . NOEUD_IDENT void                             -- Ligne 19
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 19
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 20
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "Waf !"               -- Ligne 20
+. . # NOEUD_CLASSE                                         -- Ligne 24
+. . . . NOEUD_IDENT Chat                                   -- Ligne 24
+. . . . NOEUD_IDENT Animal                                 -- Ligne 24
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 25
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 25
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 25
+. . . . . . . . . . NOEUD_IDENT poids                      -- Ligne 25
+. . . . . . . . . . NOEUD_FLOTTANT  5.34500E+00            -- Ligne 25
+. . . . . # NOEUD_METHODE                                  -- Ligne 26
+. . . . . . . NOEUD_IDENT void                             -- Ligne 26
+. . . . . . . NOEUD_IDENT crie                             -- Ligne 26
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 27
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "Meow.."              -- Ligne 27
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 31
+. . . . . NOEUD_IDENT Animal                               -- Ligne 31
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 31
+. . . . . . . . NOEUD_IDENT compagnon1                     -- Ligne 31
+. . . . . . . . NOEUD_CREATION                             -- Ligne 31
+. . . . . . . . . NOEUD_IDENT Chien                        -- Ligne 31
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 32
+. . . . . NOEUD_IDENT Animal                               -- Ligne 32
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 32
+. . . . . . . . NOEUD_IDENT compagnon2                     -- Ligne 32
+. . . . . . . . NOEUD_CREATION                             -- Ligne 32
+. . . . . . . . . NOEUD_IDENT Chat                         -- Ligne 32
+. . <Liste (longueur 7) :>
+. . . # NOEUD_APPEL                                        -- Ligne 34
+. . . . . NOEUD_SELECTION                                  -- Ligne 34
+. . . . . . NOEUD_IDENT compagnon1                         -- Ligne 34
+. . . . . . NOEUD_IDENT crie                               -- Ligne 34
+. . . . . <Liste vide>
+. . . # NOEUD_APPEL                                        -- Ligne 35
+. . . . . NOEUD_SELECTION                                  -- Ligne 35
+. . . . . . NOEUD_CONVERSION                               -- Ligne 35
+. . . . . . . NOEUD_IDENT Animal                           -- Ligne 35
+. . . . . . . NOEUD_IDENT compagnon1                       -- Ligne 35
+. . . . . . NOEUD_IDENT crie                               -- Ligne 35
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 36
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 36
+. . . . . . # NOEUD_SELECTION                              -- Ligne 36
+. . . . . . . . NOEUD_IDENT compagnon1                     -- Ligne 36
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 36
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 36
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 37
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 37
+. . . . . . # NOEUD_SELECTION                              -- Ligne 37
+. . . . . . . . NOEUD_CONVERSION                           -- Ligne 37
+. . . . . . . . . NOEUD_IDENT Chien                        -- Ligne 37
+. . . . . . . . . NOEUD_IDENT compagnon1                   -- Ligne 37
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 37
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 37
+. . . # NOEUD_APPEL                                        -- Ligne 39
+. . . . . NOEUD_SELECTION                                  -- Ligne 39
+. . . . . . NOEUD_IDENT compagnon2                         -- Ligne 39
+. . . . . . NOEUD_IDENT crie                               -- Ligne 39
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 40
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_CHAINE "Poids : "                      -- Ligne 40
+. . . . . . # NOEUD_SELECTION                              -- Ligne 40
+. . . . . . . . NOEUD_CONVERSION                           -- Ligne 40
+. . . . . . . . . NOEUD_IDENT Chat                         -- Ligne 40
+. . . . . . . . . NOEUD_IDENT compagnon2                   -- Ligne 40
+. . . . . . . . NOEUD_IDENT poids                          -- Ligne 40
+. . . . . . # NOEUD_CHAINE "kg"                            -- Ligne 40
+. . . # NOEUD_APPEL                                        -- Ligne 41
+. . . . . NOEUD_SELECTION                                  -- Ligne 41
+. . . . . . NOEUD_CONVERSION                               -- Ligne 41
+. . . . . . . NOEUD_IDENT Chien                            -- Ligne 41
+. . . . . . . NOEUD_IDENT compagnon2                       -- Ligne 41
+. . . . . . NOEUD_IDENT crie                               -- Ligne 41
+. . . . . <Liste vide>

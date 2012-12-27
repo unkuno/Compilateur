@@ -1,0 +1,9 @@
+Test de la classe Integer
+i = l ? false
+i = j ? true
+i = null ? false
+
+Test des listes doublement chaînées
+On insère les valeurs suivantes : 3, 2, 1, 4, 5
+Affichage normal : 3 2 1 4 5 
+Affichage inversé : 5 4 1 2 3 

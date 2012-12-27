@@ -1,0 +1,18 @@
+// Description:
+//    Programme soulevant l'erreur (3.88 / 3.89 / 3.90)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Identificateur de champ, de paramètre ou de variable attendu (règle 3.88 / 3.89 / 3.90)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   int x() {
+      x;
+   }
+}
+
+

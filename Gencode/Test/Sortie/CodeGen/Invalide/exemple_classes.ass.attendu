@@ -1,0 +1,319 @@
+; Initialisation du programme
+     TSTO #16
+     BOV pile_pleine
+     ADDSP #13
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Animal
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Animal.crie, R0
+     STORE R0, 5 (GB)
+
+; Table des méthode de la classe Chien
+     LEA 3 (GB), R0
+     STORE R0, 6 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 7 (GB)
+     LOAD code.Chien.crie, R0
+     STORE R0, 8 (GB)
+
+; Table des méthode de la classe Chat
+     LEA 3 (GB), R0
+     STORE R0, 9 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 10 (GB)
+     LOAD code.Chat.crie, R0
+     STORE R0, 11 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 31.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 6 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Animal
+     BSR init.Chien
+     POP R2
+     STORE R2, 12 (LB)
+
+; Declarations ligne n° 32.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Animal
+     BSR init.Chat
+     POP R2
+     STORE R2, 13 (LB)
+
+
+; Instruction ligne n° 34.
+     ADDSP #1
+     LOAD 12 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 35.
+     ADDSP #1
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.0
+while_instanceof.0 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.0
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.0
+     BRA while_instanceof.0
+true_instanceof.0 :
+     LOAD #1, R2
+     BRA fin_instanceof.0
+false_instanceof.0 :
+     LOAD #0, R2
+fin_instanceof.0 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 12 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 36.
+     WSTR "Poids : "
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WFLOAT
+     WSTR "kg"
+     WNL
+
+; Instruction ligne n° 37.
+     WSTR "Poids : "
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.1
+while_instanceof.1 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.1
+     LEA 6 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.1
+     BRA while_instanceof.1
+true_instanceof.1 :
+     LOAD #1, R2
+     BRA fin_instanceof.1
+false_instanceof.1 :
+     LOAD #0, R2
+fin_instanceof.1 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R1
+     WINT
+     WSTR "kg"
+     WNL
+
+; Instruction ligne n° 39.
+     ADDSP #1
+     LOAD 13 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 40.
+     WSTR "Poids : "
+     LOAD 13 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.2
+while_instanceof.2 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.2
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.2
+     BRA while_instanceof.2
+true_instanceof.2 :
+     LOAD #1, R2
+     BRA fin_instanceof.2
+false_instanceof.2 :
+     LOAD #0, R2
+fin_instanceof.2 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 13 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R1
+     WFLOAT
+     WSTR "kg"
+     WNL
+
+; Instruction ligne n° 41.
+     ADDSP #1
+     LOAD 13 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.3
+while_instanceof.3 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.3
+     LEA 6 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.3
+     BRA while_instanceof.3
+true_instanceof.3 :
+     LOAD #1, R2
+     BRA fin_instanceof.3
+false_instanceof.3 :
+     LOAD #0, R2
+fin_instanceof.3 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 13 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ############################
+; # Code de la classe Animal #
+; ############################
+
+; Méthode Animal.crie
+code.Animal.crie :
+
+; Instruction ligne n° 13.
+     WSTR "..."
+     WNL
+fin.Animal.crie :
+     RTS
+
+; Initialisation des champs de la classe Animal
+init.Animal :
+     LOAD #0.00000E+00, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; ###########################
+; # Code de la classe Chien #
+; ###########################
+
+; Méthode Chien.crie
+code.Chien.crie :
+
+; Instruction ligne n° 20.
+     WSTR "Waf !"
+     WNL
+fin.Chien.crie :
+     RTS
+
+; Initialisation des champs de la classe Chien
+init.Chien :
+     LOAD #80, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; ##########################
+; # Code de la classe Chat #
+; ##########################
+
+; Méthode Chat.crie
+code.Chat.crie :
+
+; Instruction ligne n° 27.
+     WSTR "Meow.."
+     WNL
+fin.Chat.crie :
+     RTS
+
+; Initialisation des champs de la classe Chat
+init.Chat :
+     LOAD #5.34500E+00, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS

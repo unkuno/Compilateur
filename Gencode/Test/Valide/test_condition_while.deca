@@ -1,0 +1,74 @@
+// Description:
+//	Teste multiple instance of
+//
+// Resultats:
+//	affichage du bon nombre
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+boolean res;
+{
+res = true;
+while (res) {
+   res = false;
+   while(!res) {
+      res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+      while (res) {
+        res = false;
+        while(!res) {
+            res = true;
+         }
+   res = false;
+      }
+   res = true;
+         }
+   res = false;
+      }
+   res = true;
+         }
+   res = false;
+      }
+   res = true;
+         }
+   res = false;
+      }
+   res = true;
+         }
+   res = false;
+      }
+   res = true;
+         }
+   res = false;
+      }
+   res = true;
+   }
+   res = false;
+}
+
+
+}
+
+

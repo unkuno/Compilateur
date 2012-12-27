@@ -1,0 +1,80 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT Rec                                    -- Ligne 13
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 14
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . NOEUD_IDENT ackermann                        -- Ligne 14
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT m                          -- Ligne 14
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT n                          -- Ligne 14
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_SI                                 -- Ligne 15
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_COND                         -- Ligne 15
+. . . . . . . . . . . . . NOEUD_EGAL_EGAL                  -- Ligne 15
+. . . . . . . . . . . . . . NOEUD_IDENT m                  -- Ligne 15
+. . . . . . . . . . . . . . NOEUD_ENTIER  0                -- Ligne 15
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_RETOUR                 -- Ligne 16
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 16
+. . . . . . . . . . . . . . . . . NOEUD_IDENT n            -- Ligne 16
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 16
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_SI                           -- Ligne 19
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_COND                   -- Ligne 19
+. . . . . . . . . . . . . . . . NOEUD_EGAL_EGAL            -- Ligne 19
+. . . . . . . . . . . . . . . . . NOEUD_IDENT n            -- Ligne 19
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  0          -- Ligne 19
+. . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . # NOEUD_RETOUR           -- Ligne 20
+. . . . . . . . . . . . . . . . . . . NOEUD_APPEL          -- Ligne 20
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT ackermann-- Ligne 20
+. . . . . . . . . . . . . . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_MOINS    -- Ligne 20
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT m-- Ligne 20
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 20
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_ENTIER  1-- Ligne 20
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_RETOUR                 -- Ligne 23
+. . . . . . . . . . . . . . . . NOEUD_APPEL                -- Ligne 23
+. . . . . . . . . . . . . . . . . NOEUD_IDENT ackermann    -- Ligne 23
+. . . . . . . . . . . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . . . . . . . . . . # NOEUD_MOINS          -- Ligne 23
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT m      -- Ligne 23
+. . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1    -- Ligne 23
+. . . . . . . . . . . . . . . . . . # NOEUD_APPEL          -- Ligne 23
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT ackermann-- Ligne 23
+. . . . . . . . . . . . . . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_IDENT m  -- Ligne 23
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_MOINS    -- Ligne 23
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT n-- Ligne 23
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 23
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 29
+. . . . . NOEUD_IDENT Rec                                  -- Ligne 29
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 29
+. . . . . . . . NOEUD_IDENT calcule                        -- Ligne 29
+. . . . . . . . NOEUD_CREATION                             -- Ligne 29
+. . . . . . . . . NOEUD_IDENT Rec                          -- Ligne 29
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 31
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "Ackermann(3,1) = "             -- Ligne 31
+. . . . . . # NOEUD_APPEL                                  -- Ligne 31
+. . . . . . . . NOEUD_SELECTION                            -- Ligne 31
+. . . . . . . . . NOEUD_IDENT calcule                      -- Ligne 31
+. . . . . . . . . NOEUD_IDENT ackermann                    -- Ligne 31
+. . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . # NOEUD_ENTIER  3                        -- Ligne 31
+. . . . . . . . . # NOEUD_ENTIER  1                        -- Ligne 31

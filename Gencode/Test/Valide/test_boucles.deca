@@ -1,0 +1,22 @@
+// Description:
+//    test d'une boucle
+//
+// Resultats:
+//		aucun affichage, pas d'erreur
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+int i = 9999;
+{
+
+   while ((i = i-1) > 0) {
+   
+   
+   }
+
+}
+
+

@@ -1,0 +1,20 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT Object                               -- Ligne 12
+. . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . -- Type : type_classe(Object)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT o                              -- Ligne 12
+. . . . . . . . . -- Defn : (var, type_classe(Object))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 12
+. . . . . . . . . -- Type : type_classe(Object)
+. . . . . . . . . NOEUD_IDENT Object                       -- Ligne 12
+. . . . . . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . . . . . -- Type : type_classe(Object)
+. . <Liste vide>

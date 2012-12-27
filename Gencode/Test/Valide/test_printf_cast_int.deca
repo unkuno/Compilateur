@@ -1,0 +1,16 @@
+// Description:
+//	Teste affectation d'un flottant casté en entier et affichage de ce dernier
+//
+// Resultats:
+//	affichage de l'entier
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+int i = cast<int>(5.0);
+{
+   println(i);
+}

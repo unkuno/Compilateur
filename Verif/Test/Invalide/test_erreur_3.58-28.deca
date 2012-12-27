@@ -1,0 +1,15 @@
+// Description:
+//	   test règle 3.58 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'type_null' et 'boolean' sont incompatibles avec l'opérateur 'instanceof' (règle 3.58)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+boolean b;
+{
+   b = null instanceof boolean;
+}

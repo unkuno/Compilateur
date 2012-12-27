@@ -1,0 +1,554 @@
+; Initialisation du programme
+     TSTO #16
+     BOV pile_pleine
+     ADDSP #12
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+
+; Table des méthode de la classe B
+     LEA 1 (GB), R0
+     STORE R0, 5 (GB)
+     LOAD code.B.equals, R0
+     STORE R0, 6 (GB)
+     LOAD code.B.afficher, R0
+     STORE R0, 7 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 29.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 8 (LB)
+
+; Declarations ligne n° 30.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 9 (LB)
+
+; Declarations ligne n° 31.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 5 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.B
+     POP R2
+     STORE R2, 10 (LB)
+
+; Declarations ligne n° 32.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 5 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.B
+     POP R2
+     STORE R2, 11 (LB)
+
+; Declarations ligne n° 33.
+     NEW #2, R2
+     BOV tas_plein
+     LEA 5 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.B
+     POP R2
+     STORE R2, 12 (LB)
+
+
+; Instruction ligne n° 35.
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD #42, R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 37.
+     WSTR "ob1 : "
+
+; Instruction ligne n° 37.
+     ADDSP #1
+     LOAD 10 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 38.
+     WSTR "ob2 : "
+
+; Instruction ligne n° 38.
+     ADDSP #1
+     LOAD 11 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 39.
+     WSTR "ob3 : "
+
+; Instruction ligne n° 39.
+     ADDSP #1
+     LOAD 12 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 42.
+if.0.0 :
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 9 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 43.
+     WSTR "! oa1.equals(oa2)"
+     WNL
+     BRA fin.0
+else.0 :
+fin.0 :
+
+; Instruction ligne n° 46.
+if.1.0 :
+     ADDSP #2
+     LOAD 9 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 8 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 47.
+     WSTR "! oa2.equals(oa1)"
+     WNL
+     BRA fin.1
+else.1 :
+fin.1 :
+
+; Instruction ligne n° 50.
+if.2.0 :
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 8 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 51.
+     WSTR "oa1.equals(oa1)"
+     WNL
+     BRA fin.2
+else.2 :
+fin.2 :
+
+; Instruction ligne n° 54.
+if.3.0 :
+     ADDSP #2
+     LOAD 9 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 9 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.3
+
+; Instruction ligne n° 55.
+     WSTR "oa2.equals(oa2)"
+     WNL
+     BRA fin.3
+else.3 :
+fin.3 :
+
+; Instruction ligne n° 58.
+if.4.0 :
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 10 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 59.
+     WSTR "! oa1.equals(ob1)"
+     WNL
+     BRA fin.4
+else.4 :
+fin.4 :
+
+; Instruction ligne n° 62.
+if.5.0 :
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #null, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.5
+
+; Instruction ligne n° 63.
+     WSTR "! oa1.equals(null)"
+     WNL
+     BRA fin.5
+else.5 :
+fin.5 :
+
+; Instruction ligne n° 66.
+if.6.0 :
+     ADDSP #2
+     LOAD 10 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #null, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.6
+
+; Instruction ligne n° 67.
+     WSTR "! ob1.equals(null)"
+     WNL
+     BRA fin.6
+else.6 :
+fin.6 :
+
+; Instruction ligne n° 70.
+if.7.0 :
+     ADDSP #2
+     LOAD 10 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 11 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.7
+
+; Instruction ligne n° 71.
+     WSTR "ob1.equals(ob2)"
+     WNL
+     BRA fin.7
+else.7 :
+fin.7 :
+
+; Instruction ligne n° 74.
+if.8.0 :
+     ADDSP #2
+     LOAD 10 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 12 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.8
+
+; Instruction ligne n° 75.
+     WSTR "! ob1.equals(ob3)"
+     WNL
+     BRA fin.8
+else.8 :
+fin.8 :
+
+; Instruction ligne n° 78.
+if.9.0 :
+     ADDSP #2
+     LOAD 12 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 11 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.9
+
+; Instruction ligne n° 79.
+     WSTR "! ob3.equals(ob2)"
+     WNL
+     BRA fin.9
+else.9 :
+fin.9 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #3, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Méthode B.equals
+code.B.equals :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 22.
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.12
+while_instanceof.12 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.12
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.12
+     BRA while_instanceof.12
+true_instanceof.12 :
+     LOAD #1, R2
+     BRA fin_instanceof.12
+false_instanceof.12 :
+     LOAD #0, R2
+fin_instanceof.12 :
+     CMP #0, R2
+     BEQ fin.ET.11
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+fin.ET.11 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.10
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.13
+while_instanceof.13 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.13
+     LEA 5 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.13
+     BRA while_instanceof.13
+true_instanceof.13 :
+     LOAD #1, R2
+     BRA fin_instanceof.13
+false_instanceof.13 :
+     LOAD #0, R2
+fin_instanceof.13 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison EQ
+     CMP 1 (R3), R2
+     SEQ R2
+fin.ET.10 :
+; Fin d'un calcul ET
+     LOAD R2, R0
+     BRA fin.B.equals
+     WSTR "Erreur : sortie de la méthode B.equals sans return"
+     WNL
+     ERROR
+fin.B.equals :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode B.afficher
+code.B.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 25.
+     WSTR "b = "
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R1
+     WINT
+     WNL
+fin.B.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe B
+init.B :
+     LOAD #4, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS

@@ -1,0 +1,66 @@
+// Description:
+//	Teste instanceof d'une sous classe  
+//
+// Resultats:
+//	affiche OK
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+}
+
+class B1 extends A {
+
+}
+
+class B2 extends  B1 {
+
+}
+class B3 extends  B2 {
+
+}
+class B4 extends  B3 {
+
+}
+class B5 extends  B4 {
+
+}
+class B6 extends  B5 {
+
+}
+class B7 extends  B6 {
+
+}
+class B8 extends  B7 {
+
+}
+class B9 extends  B8 {
+
+}
+class B10 extends  B9 {
+
+}
+class B11 extends  B10 {
+
+}
+class B12 extends  B11 {
+
+}
+class B13 extends  B12 {
+
+}
+
+B13 b = new B13();
+{
+
+   if (b instanceof A) { 
+      println("OK");
+   }
+   else {
+      println("KO");
+   }
+}

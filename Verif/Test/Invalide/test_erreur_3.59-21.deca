@@ -1,0 +1,27 @@
+// Description:
+//    Programme soulevant l'erreur (3.59)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 25 : Conversion de 'type_classe(A)' en 'type_classe(B)' impossible (règle 3.59)
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x(){
+   }
+}
+
+class B {
+   void x(){
+   }
+}
+
+A a;
+B b;
+{
+
+   b = cast<B> (a);
+
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Test option -r invalide 
+//
+// Resultats:
+// Erreur, l'argument qui suit -r n'est pas un entier correct
+//
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-r a ./echec.deca

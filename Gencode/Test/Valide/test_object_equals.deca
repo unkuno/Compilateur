@@ -1,0 +1,82 @@
+// Description:
+//    tests object equals
+//    	    
+// Resultats:
+//    Sortie cohérente :
+//    A ne redéfini pas equals
+//    B oui avec l'égalité des champs
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 16/01/2012
+
+
+class A {
+      int a = 3;
+}
+
+class B {
+      int b = 4;
+      boolean equals(Object o) {
+      	      return (o instanceof B && o != null && cast<B>(o).b == this.b);
+      }
+      void afficher() {
+      	      println ("b = ", b);
+      }
+}
+
+A oa1 = new A();
+A oa2 = new A();
+B ob1 = new B();
+B ob2 = new B();
+B ob3 = new B();
+{
+	ob3.b = 42;
+
+	print("ob1 : ");ob1.afficher();
+	print("ob2 : ");ob2.afficher();
+	print("ob3 : ");ob3.afficher();
+
+
+	if (! oa1.equals(oa2)) {
+	   println("! oa1.equals(oa2)");
+	}
+
+	if (! oa2.equals(oa1)) {
+	   println("! oa2.equals(oa1)");
+	}	   
+
+	if (oa1.equals(oa1)) {
+	   println("oa1.equals(oa1)");
+	}
+
+	if (oa2.equals(oa2)) {
+	   println("oa2.equals(oa2)");
+	}
+
+	if (! oa1.equals(ob1)) {
+	   println("! oa1.equals(ob1)");
+	}
+
+	if (! oa1.equals(null)) {
+	   println("! oa1.equals(null)");
+	}
+
+	if (! ob1.equals(null)) {
+	   println("! ob1.equals(null)");
+	}
+
+	if (ob1.equals(ob2)) {
+	   println("ob1.equals(ob2)");
+	}
+	
+ 	if (! ob1.equals(ob3)) {
+	   println("! ob1.equals(ob3)");
+	}
+
+	if (! ob3.equals(ob2)) {
+	   println("! ob3.equals(ob2)");
+	}
+	
+}

@@ -1,0 +1,17 @@
+// Description:
+//    Programme soulevant l'erreur (2.12/ 2.13)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Un champ ne peut pas être de type 'void' (règle 2.12 / 2.13)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   void i=0;
+}
+
+{
+}

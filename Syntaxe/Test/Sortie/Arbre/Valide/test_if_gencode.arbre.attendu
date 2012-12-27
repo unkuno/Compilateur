@@ -1,0 +1,113 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 5) :>
+. . . # NOEUD_SI                                           -- Ligne 15
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 15
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 15
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 16
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "OK : La condition true marche"-- Ligne 16
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 19
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 19
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 19
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 20
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer"-- Ligne 20
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 23
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "OK : La condition false passe dans le else"-- Ligne 23
+. . . # NOEUD_SI                                           -- Ligne 27
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 27
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 27
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 29
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer"-- Ligne 29
+. . . . . . # NOEUD_COND                                   -- Ligne 31
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 31
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 33
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "OK : La condition true passe dans le elsif"-- Ligne 33
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 37
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 37
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 37
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 39
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer"-- Ligne 39
+. . . . . . # NOEUD_COND                                   -- Ligne 41
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 41
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 43
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer dans le elsif"-- Ligne 43
+. . . . . . # NOEUD_COND                                   -- Ligne 45
+. . . . . . . . NOEUD_ET                                   -- Ligne 45
+. . . . . . . . . NOEUD_SUP                                -- Ligne 45
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 45
+. . . . . . . . . . . NOEUD_ENTIER  2                      -- Ligne 45
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 45
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 45
+. . . . . . . . . NOEUD_OU                                 -- Ligne 45
+. . . . . . . . . . NOEUD_FAUX                             -- Ligne 45
+. . . . . . . . . . NOEUD_EGAL_EGAL                        -- Ligne 45
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 45
+. . . . . . . . . . . . NOEUD_FLOTTANT  6.00000E+00        -- Ligne 45
+. . . . . . . . . . . . NOEUD_ENTIER  2                    -- Ligne 45
+. . . . . . . . . . . NOEUD_ENTIER  8                      -- Ligne 45
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 47
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition ne devrait pas passer dans le elsif"-- Ligne 47
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 50
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "OK : La condition passe dans le else"-- Ligne 50
+. . . # NOEUD_SI                                           -- Ligne 53
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 53
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 53
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 55
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer"-- Ligne 55
+. . . . . . # NOEUD_COND                                   -- Ligne 57
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 57
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 59
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "KO : La condition false ne devrait pas passer dans le elsif"-- Ligne 59
+. . . . . . # NOEUD_COND                                   -- Ligne 61
+. . . . . . . . NOEUD_ET                                   -- Ligne 61
+. . . . . . . . . NOEUD_SUP                                -- Ligne 61
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 61
+. . . . . . . . . . . NOEUD_ENTIER  2                      -- Ligne 61
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 61
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 61
+. . . . . . . . . NOEUD_OU                                 -- Ligne 61
+. . . . . . . . . . NOEUD_FAUX                             -- Ligne 61
+. . . . . . . . . . NOEUD_EGAL_EGAL                        -- Ligne 61
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 61
+. . . . . . . . . . . . NOEUD_FLOTTANT  6.00000E+00        -- Ligne 61
+. . . . . . . . . . . . NOEUD_ENTIER  2                    -- Ligne 61
+. . . . . . . . . . . NOEUD_ENTIER  8                      -- Ligne 61
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 63
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "OK : La condition passe dans le elsif"-- Ligne 63
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 66
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "KO : La condition ne devrait pas passer dans le else"-- Ligne 66

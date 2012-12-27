@@ -1,0 +1,560 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pdfpages}
+
+
+%%%%%%%%%%
+% Taille des pages (A4 serré)
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-.7cm}
+\setlength{\evensidemargin}{-.7cm}
+\setlength{\topmargin}{-.5in}
+
+
+%%%%%%%%%%
+% En-têtes et pied de pages
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{1.6pt}
+\addtolength{\headheight}{2.6pt}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\sf \thepage/\pageref{LastPage}}
+\lhead{\footnotesize\sf Projet GL}
+\rhead{\footnotesize\sf Equipe 16} % numéro d'équipe Teide 
+
+%%%%%%%%%%
+% Informations sur le document
+
+\title{Projet Génie Logiciel\\\emph{Manuel utilisateur}}
+
+\author{BOUSSON Valentin, CONNES Cédric,\\LENTINI Sébastien, NGUY Thomas\\\emph{Equipe 16}}
+
+\date{10 Janvier 2012}
+
+
+%%%%%%%%%%
+% Début du document
+
+\begin{document}
+
+\maketitle
+Le manuel utilisateur contient les informations nécessaires à une utilisation correcte du compilateur. Ce document contient :
+\begin{itemize}
+\item Les limitations et les points propres à l'implémentation, incluant les erreurs et les limitations recensées
+\item Les différents messages d'erreur qui peuvent être retournés à l'utilisateur. La nature et le contexte des erreurs sont précisées dans le manuel.
+\item Des exemples d'utilisation du compilateur illustrant ses performances, tels que des exemples de programmes DECA et les programmes assembleur correspondants. 
+\end{itemize} 
+
+   \section{Caractéristique de l'implémentation et limitations}
+
+   \subsection{Limitations du compilateur}
+
+   Le compilateur deca fournit permet de compiler tout code deca, y compris les instructions "cast" et "instanceof".
+   Les limitations de notre compilateur sont les suivantes :
+   \begin{itemize}
+      \item les identifiants ont une longueur maximale de 1024 caractères.
+      \item les chaines ont une longueur maximale de 1024 caractères, incluant les guillements et caractères spéciaux. (ex : le caractère d'échappement \verb!\! )
+      \item les entiers ont une valeur absolue limite : $2^{31}$ - 1
+      \item les flottants ont une valeur absolue limite : 3.40282E+38
+      \item le nombre de registres minimum est de 4, et le nombre de registres maximum est de 16
+   \end{itemize}
+
+   Les expressions sont évaluées de gauche à droite et de manière paresseuse. Ainsi, dans l'expression suivante :
+     \lstset{language=Java}
+    \begin{lstlisting}
+      ( 1 == 1 && 3 != 4 || 3==4)
+    \end{lstlisting}
+   L'expression 1==1 sera évaluée en premier, suivie de 3 != 4. L'évaluation 3 == 4 ne sera pas faite car son résultat ne changera pas la valeur de la condition.
+   
+\newpage
+
+   \section{Les messages d'erreurs}
+   Les erreurs peuvent être classées en 5 catégories:
+   \begin{itemize}
+   \item Les erreurs de lexicographie
+   \item Les erreurs de syntaxe hors-contexte
+   \item Les erreurs de syntaxe contextuelle
+   \item Les erreurs liées aux entrées de l'utilisateur
+   \item Les erreurs possibles à l'éxécution
+   \end{itemize}
+
+
+
+   \subsection{Les erreurs de lexicographie}
+      Les erreurs de lexicographie correspondent aux erreurs soulevées lorsque le compilateur rencontre un caractère illégal ou lors d'un dépassement de capacité.
+      On distingue les messages suivants :
+      \\
+      \begin{itemize}
+      \item   Message : Ligne XX : Identifiant trop long : dépassement de capacité \\
+	      Raison : L'utilisateur a saisi un identifiant trop long ($>1024$ caractères).
+      \item   Message : Ligne XX : Entier trop grand : dépassement de capacité \\
+	      Raison : L'utilisateur a saisi un nombre entier trop grand ($> 2^{31}$ - 1).
+      \item   Message : Ligne XX : Flottant trop grand : dépassement de capacité \\
+	      Raison : L'utilisateur a saisi un nombre flottant trop grand ($> 3.40282E+38$).
+      \item   Message : Ligne XX : Chaine trop longue : dépassement de capacité \\
+	      Raison : L'utilisateur a saisi une chaine trop longue ($>1024$ caractères, guillemets compris).
+      \item   Message : Ligne XX : "Char" : Caractère illégal \\
+	      Raison : Utilisation d'un caractère illégal dans le programme.
+      \end{itemize}
+   \newpage
+
+
+
+
+   \subsection{Les erreurs de syntaxe hors-contexte}
+      Les erreurs de syntaxe hors-contexte correspondent aux erreurs soulevées lorsque les règles de grammaire ne sont pas respectées.\\
+      Le programme retourne le message suivant :
+      \\
+      \begin{itemize}
+      \item   Message : Erreur de syntaxe aux alentours de "Text" \\ 
+	      Raison :  Faute dans la syntaxe. 	          
+      \end{itemize}
+
+
+
+   \subsection{Les erreurs de syntaxe contextuelle}
+      Les erreurs de syntaxe contextuelle sont liées à un contexte incorrect. Elles sont de nature diverses et variées.\\
+      Voici la liste des différents messages d'erreurs contextuelles numérotés selon la règle renvoyée.
+      \\
+      \\
+      \begin{tabular}{lll}
+      (0.1 / 0.2) & Message & Erreur interne du compilateur\\      
+      & Raison & Nature incorrecte, type ou classe attendue\\
+      \\
+      (0.3)& Message & Identificateur "nom" non déclaré\\
+      & Raison & L'identificateur "nom" n'est pas un type de base ou n'a pas été déclaré\\
+
+      \\
+      (1.4) & Message & Identificateur de type classe attendu\\
+      & Raison & L'identificateur "super", qui apparaît après "extends", doit être un identificateur \\
+      && de classe.\\
+      \\
+      & Message & Identificateur "super" non déclaré\\
+      & Raison & L'identificateur "super", qui apparaît après "extends" doit être déclaré.\\
+      \\
+      & Message & Identificateur "nom" déjà déclaré\\
+      & Raison  & Le nom de classe "nom" à déjà été déclaré\\
+      \\
+      (2.4 )& Message & Erreur interne du compilateur\\ 
+      & Raison & L'identificateur "super", qui apparaît après "extends" doit être déclaré.\\      
+      \\
+      & Message & Erreur interne du compilateur\\
+      & Raison & L'identificateur "super", qui apparaît après "extends", doit être un identificateur \\
+      && de classe.\\
+      \\
+      (2.9)& Message & Identificateurs de même nom dans la classe "class"\\ 
+      & Raison & Déclaration de deux constituants de même nom.\\      
+      \\
+      (2.12 / 2.13) & Message & Un champ ne peut pas être de type "void"\\ 
+      & Raison & Le type du champ doit être différent de void.\\    
+      \\
+      \end{tabular}
+      
+      \begin{tabular}{lll}
+      (2.14) & Message & Champs de même nom dans la classe "class"\\
+      & Raison & Declaration de deux champs portant le même nom.\\    
+      \\
+      (2.16) & Message & "nom" est déjà une méthode dans une super-classe\\  
+      & Raison & Déclaration d'un champ portant le nom d'une méthode dans la super-classe\\  
+      \\
+      (2.17) & Message & "nom" est déjà un champ dans une super-classe\\
+      & Raison & Déclaration d'une méthode portant le nom d'un champ dans la super-classe\\
+      \\
+      & Message & La signature de la méthode "nom" diffère dans la super-classe\\      
+      & Raison & Redéfinition incorrecte car les signatures des méthodes sont différentes\\
+      \\
+      & Message & Le type de retour de "nom" doit être un sous-type de "type2"\\
+      & Raison & Type de retour incorrect dans la redéfinition\\
+      \\
+      (2.22) & Message & Un paramètre ne peut pas être de type "void"\\
+      & Raison & Impossible de déclarer un paramètre de type void\\
+      \\
+      (3.6) & Message & Erreur interne du compilateur\\
+       & Raison &  La classe n'a pas été identifiée correctement\\
+      \\
+      (3.23) & Message & Paramètres de même nom\\
+      & Raison & La méthode contient deux paramètres de nom identique\\
+      \\
+      (3.27) & Message & Une variable ne peut pas être de type "void"\\
+      & Raison & Impossible de déclarer une variable de type void\\
+      \\
+      (3.30) & Message & Identificateur "nom" déjà déclaré\\
+      & Raison & Déclaration de deux variables de même nom\\
+      \\      
+      (3.34) & Message & Impossible de retourner "void"\\ 
+      & Raison & void est incorrect après un "return"\\      
+      \\
+      (3.44) & Message & Les types "type1" et "type2" sont incompatibles pour l'affectation\\
+      & Raison & Affectation entre deux types incompatibles\\
+      \\
+      (3.45) & Message & Expression booléenne attendue\\
+      & Raison & Le type de l'expression n'est pas booléen\\
+      \\
+      (3.50) & Message & Entier, flottant ou chaine de caractère attendu\\
+      & Raison & Expression incorrecte dans l'utilisation du print ou println\\
+      \\
+      (3.54) & Message & "this" ne peut pas être utilisé dans le programme principal\\
+      & Raison & Utilisation du this dans le programme principal\\
+      \\
+      (3.57) & Message & Identificateur de classe attendu\\
+      & Raison & Un identificateur de classe préalablement déclaré doit être utilisé ici\\           
+      \\
+      \end{tabular}
+      
+      \begin{tabular}{lll}
+      (3.58) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur "instanceof"\\
+      & Raison & Types incompatibles pour "instanceof"\\
+      \\
+      (3.59) & Message & Conversion de "type2" en "type" impossible\\
+      & Raison & Types incompatibles pour le "cast"\\
+      \\
+      (3.70) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "+"\\
+      & Raison & Types incompatibles pour l'opérateur "+"\\
+      \\
+      (3.71) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "-"\\
+      & Raison & Types incompatibles pour l'opérateur "-"\\
+      \\
+      (3.72) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "*"\\
+      & Raison & Types incompatibles pour l'opérateur "*"\\
+      \\
+      (3.73) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "/"\\
+      & Raison & Types incompatibles pour l'opérateur "/"\\
+      \\
+      (3.74) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "\%"\\
+      & Raison & Types incompatibles pour l'opérateur "\%"\\
+      \\
+      (3.75) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "=="\\
+      & Raison & Types incompatibles pour l'opérateur "=="\\
+      \\
+      (3.76) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "!="\\
+      & Raison & Types incompatibles pour l'opérateur "!="\\
+      \\
+      (3.77) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "$<$"\\
+      & Raison & Types incompatibles pour l'opérateur "$<$"\\
+      \\
+      (3.78) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "$>$"\\
+      & Raison & Types incompatibles pour l'opérateur "$>$"\\
+      \\
+      (3.79) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "$<=$"\\
+      & Raison & Types incompatibles pour l'opérateur "$<=$"\\
+      \\
+      (3.80) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "$>=$"\\
+      & Raison & Types incompatibles pour l'opérateur "$>=$"\\
+      \\
+      (3.81) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "\&\&"\\
+      & Raison & Types incompatibles pour l'opérateur "\&\&"\\
+      \\
+      (3.82) & Message & Les types "type1" et "type2" sont incompatibles avec l'opérateur binaire "$||$"\\
+      & Raison & Types incompatibles pour l'opérateur "$||$"\\
+      \\
+      (3.83) & Message & Le type "type1" est incompatible avec l'opérateur unaire "-"\\
+      & Raison & Type incompatible pour l'opérateur "-"\\
+      \\
+      (3.84) & Message & Le type "type1" est incompatible avec l'opérateur unaire "!"\\
+      & Raison & Type incompatible pour l'opérateur "!"\\           
+      \\
+      \end{tabular}
+      
+      \begin{tabular}{lll}
+      (3.86 / 3.87) & Message & Objet attendu à gauche de '.'\\
+      & Raison & L'objet à gauche de '.' doit être de type classe\\
+      \\
+      & Message & Erreur interne du compilateur\\
+      & Raison & cf. erreur (0.3) \\
+      \\
+      (3.87) & Message & Champ non visible dans ce contexte\\
+      & Raison & Utilisation d'un champ protégé dans un mauvais contexte\\
+      \\
+      (3.88 / 3.89 / 3.90) & Message & Identificateur de champ, de paramêtre ou de variable attendu\\
+      & Raison & L'identificateur doit être soit de type champ, de type paramètre \\
+      && ou de type variable\\
+      \\      
+      (3.91) & Message & Identificateur de champ attendu\\
+      & Raison & L'objet à droite de '.' doit être un champ de la classe\\
+      \\
+      (3.93) & Message & Objet attendu à gauche de '.'\\
+      & Raison & L'objet à gauche de '.' doit être de type classe\\
+      \\
+      & Message & Erreur interne du compilateur\\
+      & Raison & La classe, le champ ou la méthode n'existe pas\\
+      \\
+      (3.94) & Message & Identificateur de méthode attendu\\
+      & Raison & L'objet à droite de '.' doit être une méthode de la classe\\
+      \\
+      (3.96) & Message & Nombre de paramètres incorrect\\ 
+      & Raison & La méthode a été appelé avec un nombre de paramètre incorrect\\
+      \\
+      \end{tabular}
+
+
+
+   \subsection{Les erreurs liées aux entrées de l'utilisateur}
+   Les erreurs suivantes peuvent survenir suite à un paramètre de \verb!decac! incorrect.
+   \begin{itemize}
+   \item Message : Nombre de registres minimum : 4. Cette valeur minimum sera utilisée pour la suite. \\
+         Raison : L'utilisateur a essayé, via la commande -r, de spécifier un nombre de registre $<$ 4
+   \item Message : Nombre de registres maximum : 16. Cette valeur maximum sera utilisée pour la suite. \\
+         Raison : L'utilisateur a essayé, via la commande -r, de spécifier un nombre de registre $>$ 16
+   \item Message : Warning : Options -p et -v incompatibles. Seul l'option -p sera prise en compte ! \\
+         Raison : Les arguments -p et -v sont incompatibles. Par défaut, l'option -p est choisie.
+   \item Message : Erreur : l'argument qui suit -r n'est pas un entier correct \\
+         Raison : L'argument suivant -r doit être obligatoirement un entier.
+   \item Message : Fichier votrefichier.deca inexistant \\
+         Raison : Le fichier deca spécifié semble ne pas être présent sur le disque à l'endroit indiqué.
+   \item Message : Fichier votrefichier.deca impossible à ouvrir\\
+         Raison : Le fichier deca spécifié semble impossible à ouvrir : merci de vérifier que vous possédez les droits de lecture sur le fichier ou qu'un autre programme n'utilise pas ce fichier.
+   \end{itemize}
+
+   \subsection{Les erreurs possibles à l'éxécution}
+   \begin{itemize}
+   \item Message : Erreur : pile pleine. \\
+         Raison : Il y a eu trop d'empilement dans la pile.
+   \item Message : Erreur : dereferencement de null. \\
+         Raison : Le programme essaie de déréférencer un pointeur null.
+   \item Message : Erreur : tas plein \\
+         Raison : Plus de mémoire disponible pour allouer des objets
+   \item Message : Erreur : dépassement de capacité  \\
+         Raison : division par 0, débordement arithmétique sur les flottants, entrée éronnée
+   \item Message : Erreur : conversion impossible \\
+         Raison : Types ou objets incompatible pour l'opérateur \verb!cast<>!
+   \end{itemize}
+   
+   De plus, en cas de boucles infinies, ou de variables non initialisées, notre compilateur deca ne permet pas d'afficher des avertissements et par conséquent des erreurs peuvent survenir avec la machine ima.
+
+   \newpage
+
+   \section{Exemples et performances}
+   
+\subsection{exemple complet}
+   Un autre exemple, plus complet, concerne la création d'un programme complet (la factorielle en deca) :
+        \lstset{numbers=left,
+numberstyle=\tiny \bf \color{blue},
+stepnumber=1,
+firstnumber=14,
+numberfirstline=true,
+language=Java}
+    \begin{lstlisting}
+class Factorielle {
+  
+   int calculFacto(int i)
+   {
+      if (i == 0) {
+         return 1;
+      }
+      else {
+         return this.calculFacto(i-1) * (i);
+      }
+   
+   }
+
+
+}
+
+
+int res;
+int i = 0;
+Factorielle F;
+{
+   while ( i < 10) {
+
+      print("Factorielle de ", i, " = ");
+      F = new Factorielle();
+      res = F.calculFacto(i); 
+      println(res);
+      i = i +1;
+       
+   }
+}
+
+    \end{lstlisting}
+
+et son code assembleur sur la page suivante : 
+%\newpage
+%   {\includegraphics[width=16cm]{test_factorielle.pdf} 
+\includepdf{test_factorielle.pdf}
+
+\newpage
+   Tout code assembleur produit par notre compilateur est structuré en 5 zones : 
+\begin{enumerate}
+\item L'initialisation du programme
+
+\hspace{1cm} On teste dès le lancement du programme si on aura une place suffisante dans la pile pour stocker la table des méthodes, les variables du programme principal ainsi que la sauvegarde éventuelle de registres, l'empilement des contextes de pile lors de l'appel de méthodes. (TSTO + BOV)\\
+\hspace{1cm} On réserve également la place nécessaire à la table des méthodes et aux variables. (ADDSP)
+Ainsi, dans l'exemple test\_factorielle, on retrouve le fait que la table des méthodes et les variables locales prennent 8 places en mémoire.
+Le programme principal contenant l'appel à une méthode simple, on compte une place dans la pile pour le paramètre, une pour l'adresse de l'objet, et deux pour l'initialisation du contexte de pile (l'adresse de retour et l'adresse du dernier contexte) \\
+
+\item Le code d'initialisation de la table des méthodes
+
+\hspace{1cm} Dans la table des méthodes, on retrouve la classe Object, commun à tout programme, avec l'empilement de l'adresse de sa super classe (null), et l'étiquette de sa méthode equals. La classe factorielle est construite suivant le même modèle : nous stockons l'adresse (1(GB)) de Object, sa super classe, dans la pile ainsi que l'étiquette de ses méthodes (equals de Object, calculFacto de Factorielle). Remarquons de suite le format des étiquettes : code.Nom\_Classe.Nom\_Methode. \\
+
+\item Le code du programme principal
+
+\hspace{1cm} Cette partie commence avec une étape de déclaration des variables du programme principal : la place dans la pile leur étant réservée lors de l'initialisation du programme, seules les variables initialisées imposent une valeur à l'adresse correspondante. Ici, on retrouve bien un stockage de la valeur 0 à l'adresse liée à la variable i.
+
+Les intructions à l'intérieur du bloc sont traitées une à une : \\
+
+\hspace{1cm}L'instruction while qui suit nous permet de voir la gestion des étiquettes pour les structures conditionnelles : pour un while, les étiquettes correspondantes sont while.X et fin.X ou X est le numéro courant de la structure de condition. Les étiquettes pour la condition if seront traitées plus loin. \\
+
+\hspace{1cm}L'instruction print utilise le code assembleur WSTR, permettant d'afficher des chaines de caractères, ou le code WINT/WFLOAT pour afficher des Entier/Flottant. \\
+
+\hspace{1cm}L'instruction ligne 38 correspond à l'instanciation de la classe Factorielle : l'expression 
+
+\verb!new Factorielle()! alloue sur le tas la place nécessaire au stockage d'un objet de classe Factorielle (soit un pointeur vers la table des méthode adaptée et tous les champs spécifiques ou hérités), et un appel est fait à la méthode implicite d'initialisation (étiquette init.Factorielle). Le comportement de cette fonction sera décrit plus loin.\\
+
+\hspace{1cm} Enfin, l'adresse de ce nouvel objet est placé dans la pile à l'adresse de la variable F. \\
+La ligne suivante effectue un appel à la méthode calculFacto de l'objet F : les instructions assembleur coresspondent à l'empilement des paramètres (n'oublions pas le paramètre implicite F) puis un appel à la fonction dont l'adresse est trouvée dans la table des méthodes pointée par l'objet. \\
+
+Le reste du programme principal reste assez simple de compréhension. Il se termine par l'instruction HALT. \\
+
+\item La définition des erreurs levées
+
+\hspace{1cm}Les erreurs levées ont un format commun : L'impression du message d'erreur, puis un arrêt de la machine abstraite. Des étiquettes explicites leurs sont associées pour pouvoir les lever par un simple branchement.
+
+\item Le code des méthodes de chaque classe
+
+\hspace{1cm} Cette partie commence toujours par le code Object.equals, et continue classe par classe, méthode par méthode. \\
+
+\hspace{1cm} Au début de chaque méthode, nous testons si il y a suffisament de place dans la pile (instruction TSTO) (variables + sauvegarde de registres + appels de fonctions). Puis on réserve de l'espace pour la variable locale, i, et on traite l'instruction if. Les étiquettes gérant cela respectent le schéma suivant : \\
+\hspace{1cm}if.X.Y, else.X, fin.X, avec X le numéro courant de la structure conditionnelle et le Y permettant de distinguer le numéro courant du if (if aura pour numéro Y=0, else if a Y=1, un autre else if a Y=2, etc...)
+\\
+\hspace{1cm}Le return est géré par l'instruction BRA qui fait un branchement sur la fin du code de la fonction (fin.Classe.methode). Le deuxième BRA ici ne sera jamais exécuté, et si c'était le cas, cela voudrait dire que l'on a pas exécuté d'instruction return, dans une fonction, ce qui provoque une erreur.\\
+
+\hspace{1cm}Dans le Else, nous avons un appel récursif, qui reprend la même structure que l'appel à cette méthode depuis le programme principal. 
+
+\hspace{1cm}Enfin, nous avons le code d'initialisation des champs de la classe Factorielle. (étiquette 
+
+init.Factorielle.calculFacto). Comme cette dernière n'en dispose pas, nous retrouvons de suite l'instruction RTS.
+\end{enumerate}
+   
+\newpage
+\subsection{Gestion des registres}
+      Le programme suivant été compilé avec l'option \verb!-r 5! (utilisant uniquement 5 registres).
+      \lstset{language=Java}
+    \begin{lstlisting}
+{
+	println("1+(2+(3+((4+((5+6)+7))+(8+9)))) = ",
+	         1+(2+(3+((4+((5+6)+7))+(8+9)))));
+}
+    \end{lstlisting}
+
+   et voila la traduction en code assembleur : 
+
+   \includegraphics[width=\textwidth,page=1]{test_registres.pdf}
+
+   Cet exemple illustre bien la gestion des registres par le compilateur.
+
+  \hspace{1cm} Le programme est simple mais nécessite le stockage de plusieurs valeurs intermédiaires. En effet, l'évaluation des opérandes étant effectuée de gauche à droite, il faut sauvegarder la valeur $5$ pour ensuite lui ajouter le résultat de $2+(3+((4+((5+6)+7))+(8+9)))$. Or, pour calculer cette dernière valeur, il faut sauvegarder la valeur $2$ pour ensuite lui ajouter le résultat du reste de l'expression, et ainsi de suite.
+
+\hspace{1cm}Pour l'évaluation de $(5+6)+7$, il faut utiliser un registre pour stocker $5$. Ensuite, on peut ajouter directement $6$ à ce registre, et idem pour $7$.
+Au final, seul un registre aura été nécessaire pour évaluer cette sous-expression. De plus, ce registre sera disponible pour d'autres calculs dès qu'il aura été ajouté au registre contenant $4$.
+
+\hspace{1cm}En suivant ce raisonnement, l'évaluation de cette expression devrait nécessiter 5 registres non scratchs (car nous ne devons pas perdre de valeurs intermédiaires). Or, le paramètre \verb!-r 5! force le compilateur à n'utiliser que 5 registres au total, soit seulement 3 registres non scratchs (\verb!R2!, \verb!R3! et \verb!R4!).
+
+\hspace{1cm}Pour parvenir à évaluer cette expression, on sauvegarde donc dans la pile les registres qui ont les valeurs intermédiaires les plus anciennes. On observe ainsi des sauvegardes successives (\verb!PUSH!) pour \verb!R2! et \verb!R3! (intermédiaires $1$ et $2$). De même, lorsque ces valeurs deviennent nécessaires, on remarque une restauration de celles-ci dans leur registre d'origine (\verb!POP!).
+
+\hspace{1cm}Ce mécanisme est optimisé pour limiter le nombre de restaurations (\verb!POP!).
+Ainsi, lorsque le registre \verb!R3! n'est plus utilisé (après l'ajout de $(5+6)+7$ au registre contenant $4$), on constate que la valeur précédemment stockée dans la pile n'est pas immédiatement restaurée. En effet, cela permet de réutiliser directement \verb!R3! pour y placer la valeur $8$. La valeur sauvegardée dans la pile ($2$) n'est quant à elle restaurée que lorsqu'elle est nécessaire, c'est à dire en fin d'évaluation.
+
+\emph{Remarque} : on constate que l'expression complète aurait pu être évaluée statiquement (lors de la compilation). Cette optimisation n'est pas encore implémentée mais sera certainement ajoutée dans les futures versions.
+
+
+\newpage
+\subsection{Classes, objets, héritage}
+% Autres exemples
+\lstset{numbers=left,
+numberstyle=\tiny \bf \color{blue},
+stepnumber=1,
+firstnumber=10,
+numberfirstline=true,
+language=Java}
+    \begin{lstlisting}
+class Animal {
+    float poids;
+    void crie() {
+	println("...");
+    }
+}
+
+class Chien extends Animal {
+    int poids = 80;
+    void crie() {
+	println("Waf !");
+    }
+}
+
+class Chat extends Animal {
+    float poids = 5.345;
+    void crie() {
+	println("Meow..");
+    }
+}
+
+Animal compagnon1 = new Chien();
+Animal compagnon2 = new Chat();
+{
+    compagnon1.crie();
+    cast<Animal>(compagnon1).crie();
+    println("Poids : ", compagnon1.poids ,"kg");
+    println("Poids : ", cast<Chien>(compagnon1).poids ,"kg");
+    
+    compagnon2.crie();
+    println("Poids : ",cast<Chat>(compagnon2).poids ,"kg");
+    cast<Chien>(compagnon2).crie();
+}
+    \end{lstlisting}
+
+La sortie correspondante :
+\begin{verbatim}
+Waf !
+Waf !
+Poids : 0.00000E+00kg
+Poids : 80kg
+Meow..
+Poids : 5.34500E+00kg
+Erreur : conversion impossible
+\end{verbatim}
+
+Le code assembleur correspondant :
+%\newpage
+%   {\includegraphics[width=16cm]{test_factorielle.pdf} 
+\includepdf[page=-]{exemple_classes.pdf}
+
+\newpage
+
+\hspace{1cm} Dans cet exemple, on définit des relations simples d'héritage : \\
+Les classes Chien et Chat héritent de la classe Animal, et redéfinissent chacune la méthode crie. 
+On voit alors que leurs tables de méthodes respectives ne contient qu'une seule méthode crie.
+Par exemple, un objet ayant comme type statique Chien ne pourra en aucun cas appeller la méthode Animal.crie (les deux premières lignes du résultat le remontrent). \\
+
+\hspace{1cm}Lors de la phase de déclaration, les objets sont bien créés et les procédures d'initialisation des champs sont appelées dans l'ordre descendant (la classe mère d'abord, la classe fille ensuite).
+Les instructions comportant un cast comportent un bout de code assembleur similaire à une boucle : il s'agit de la recherche de la classe demandée dans le chaînage présent dans la table des méthodes.
+Ce bout de code est commun avec l'évaluation d'un appel à instanceof, que nous ne détaillons pas ici. \\
+
+\hspace{1cm}L'accès au champ d'un objet se fait par rapport à son type dynamique, on peut ainsi comparer les lignes 36 et 37 du programme principal : \\
+
+En effet, hormis une vérification effectuée lors du cast, l'accès au champ désiré se fait de la même façon, seule l'adresse de ce champ est différente (l'objet stocke bien un champ qui lui est spécifique, plus un champ spécifique à sa super-classe). \\
+
+\hspace{1cm}Une erreur est levée quand un cast est interdit, et les champs des méthodes sont initialisés à 0 (0, 0.0, false ou null suivant le type) si aucune initialisation n'est spécifiée.
+
+
+\newpage
+
+
+   \section{Page de man}
+   {\includegraphics[width=18cm,page=1]{Man-Decac.pdf}} 
+
+
+\end{document}

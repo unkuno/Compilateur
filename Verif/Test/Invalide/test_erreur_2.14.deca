@@ -1,0 +1,17 @@
+// Description:
+//    Programme soulevant l'erreur (2.14)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Champs de même nom dans la classe 'A' (règle 2.14)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   int i,i;
+}
+
+{
+}

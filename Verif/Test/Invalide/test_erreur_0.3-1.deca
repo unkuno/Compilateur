@@ -1,0 +1,16 @@
+// Description:
+//    tests affectation d'une variable non déclaré
+//
+// Resultats:
+//    Erreur contextuelle  
+//    Ligne 13 : Identificateur 'a' non déclaré (règle 0.3)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+int a = a;
+{
+
+}

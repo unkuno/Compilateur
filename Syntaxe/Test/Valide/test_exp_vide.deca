@@ -1,0 +1,14 @@
+// Description:
+//    Programme testant une expression vide
+//
+// Resultats:
+//    Syntaxiquement correct
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+{
+       print();
+}

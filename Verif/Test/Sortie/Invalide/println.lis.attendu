@@ -1,0 +1,14 @@
+/* Programme syntaxiquement correct */
+Verif_passe3 : entree de Verifier_Decorer_3
+Verif_passe3 : entree de Verif_Program
+Verif_passe3 : entree de Verif_Principal
+Verif_passe3 : entree de Verif_Liste_Declarations
+Verif_passe3 : entree de Verif_Bloc
+Verif_passe3 : entree de Verif_Inst
+Verif_passe3 : entree de Verif_Liste_Exp_Print
+Verif_passe3 : entree de Verif_Exp_Print
+Verif_passe3 : entree de Verif_Expression
+Verif_passe3 : entree de Verif_Place_Ident
+Verif_Commun : entree de Verif_Ident
+Ligne 13 : Identificateur 'toto' non déclaré (règle 0.3)
+Exception VERIF.ERREUR_VERIF levee

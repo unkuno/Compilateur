@@ -1,0 +1,158 @@
+// Description:
+//    tests avec des listes doublement chaînées
+//
+// Resultats:
+//    doit fonctionner normalement
+//
+// Historique:
+//    cree le 21/01/2012
+
+class Cellule {
+	Object val;
+	Cellule suiv;
+	Cellule prec;
+
+	void setSuiv (Cellule suiv) {
+		suiv.prec = this;
+		this.suiv = suiv;
+	}
+}
+
+class Liste {
+	protected Cellule senti = new Cellule();
+
+	Liste init() {
+		senti.setSuiv (senti);
+		return this;
+	}
+	
+	void insererTete (Object val)
+		Cellule tmp = new Cellule();
+	{
+		tmp.val = val;
+		tmp.setSuiv (senti.suiv);
+		senti.setSuiv (tmp);
+	}
+
+	void insererQueue (Object val)
+		Cellule tmp = new Cellule();
+	{
+		tmp.val = val;
+		senti.prec.setSuiv (tmp);
+		tmp.setSuiv (senti);
+	}
+
+	Iterateur iterateurNormal () {
+		return new IterateurNormal().init(senti);
+	}
+
+	Iterateur iterateurInverse () {
+		return new IterateurInverse().init(senti);
+	}
+}
+
+class Iterateur {
+	protected Cellule senti;
+	protected Cellule prochain;
+
+	Iterateur init (Cellule senti) {
+		// A Réécrire !
+		println("Implémentation incomplète !");
+		0/0;
+		return this;
+	}
+
+	boolean hasNext () {
+		return prochain != senti;
+	}
+
+	void avancer () {
+		// A Réécrire !
+		println("Implémentation incomplète !");
+		0/0;
+	}
+
+	Object next ()
+		Object val = prochain.val;
+	{
+		avancer();
+		return val;
+	}
+}
+
+class IterateurNormal extends Iterateur {
+	Iterateur init (Cellule senti) {
+		this.senti = senti;
+		prochain = senti.suiv;
+		return this;
+	}
+
+	void avancer () {
+		prochain = prochain.suiv;
+	}
+}
+
+class IterateurInverse extends Iterateur {
+	Iterateur init (Cellule senti) {
+		this.senti = senti;
+		prochain = senti.prec;
+		return this;
+	}
+
+	void avancer () {
+		prochain = prochain.prec;
+	}
+}
+
+class Integer {
+	int val;
+
+	Integer init (int val) {
+		this.val = val;
+		return this;
+	}
+
+	boolean equals (Object o) {
+		return o != null && o instanceof Integer &&
+			cast<Integer>(o).val == val;
+	}
+}
+
+Liste l = new Liste().init();
+Iterateur itr;
+
+Integer i = new Integer().init(2), j = new Integer().init(2);
+{
+	println("Test de la classe Integer");
+	print("i = l ? ");
+	if (i.equals(l)) {println("true");} else {println("false");}
+
+	print("i = j ? ");
+	if (i.equals(j)) {println("true");} else {println("false");}
+
+	print("i = null ? ");
+	if (i.equals(null)) {println("true");} else {println("false");}
+
+	println();
+	println("Test des listes doublement chaînées");
+	println("On insère les valeurs suivantes : 3, 2, 1, 4, 5");
+	l.insererTete(new Integer().init(1));
+	l.insererTete(new Integer().init(2));
+	l.insererTete(new Integer().init(3));
+	l.insererQueue(new Integer().init(4));
+	l.insererQueue(new Integer().init(5));
+
+	print("Affichage normal : ");
+	itr = l.iterateurNormal();
+	while (itr.hasNext()) {
+		print(cast<Integer>(itr.next()).val, " ");
+	}
+	println();
+
+	print("Affichage inversé : ");
+	itr = l.iterateurInverse();
+	while (itr.hasNext()) {
+		print(cast<Integer>(itr.next()).val, " ");
+	}
+	println();	
+}

@@ -1,0 +1,31 @@
+// Description:
+//    test d'un empilement d'appel de fonction de meme nom que la classe 
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class add {
+  
+   int add(int i) {
+      return i+1;
+   }
+
+}
+
+
+
+add add = new add();
+{
+
+   
+   println(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(add.add(1))))))))))))))))))))))))))))))))))))))))))))))))));
+}
+
+

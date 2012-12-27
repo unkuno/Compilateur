@@ -1,0 +1,22 @@
+// Description:
+//    Programme soulevant l'erreur (2.16)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 21 : 'y' est déjà une méthode dans une super-classe (règle 2.16)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   int x;
+   
+   int y(){
+   }
+   
+}
+
+class B extends A {   
+   int y;   
+}

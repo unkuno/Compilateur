@@ -1,0 +1,18 @@
+int Solution = 138, Proposition;
+int Nb_Essais = 0;
+{
+Proposition=0;
+   while (Solution != Proposition) {
+      print("Devinez à quel nombre je pense (Essai n°",Nb_Essais = Nb_Essais+1,") : ");
+      Proposition = readInt();
+      if (Proposition < Solution) {
+            println("C'est plus !");
+      }
+      elsif (Proposition > Solution) {
+      	    println("C'est moins !");
+      }
+      else {
+      	   println("BRAVO, c'était bien ", Solution," ! (",Nb_Essais," coups)");
+      }
+   }
+}

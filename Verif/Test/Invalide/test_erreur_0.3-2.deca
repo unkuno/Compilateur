@@ -1,0 +1,14 @@
+// Description:
+//    Programme soulevant l'erreur (0.3)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Identificateur 'toto' non déclaré (règle 0.3)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+{
+        println(toto);
+}

@@ -1,0 +1,16 @@
+// Description:
+//    Programme minimaliste utilisant la condition if.
+//
+// Resultats:
+//    La condition est vraie : ok!
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 09/01/2012
+
+{
+        if(true) {
+	    println("la condition est vraie");
+	}
+}

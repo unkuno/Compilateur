@@ -1,0 +1,19 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT Vide                                   -- Ligne 14
+. . . . . -- Defn : (classe, type_classe(Vide))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 16
+. . . . . . . NOEUD_IDENT int                              -- Ligne 16
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_IDENT getX                             -- Ligne 16
+. . . . . . . . -- Defn : (methode([]), int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. NOEUD_VIDE

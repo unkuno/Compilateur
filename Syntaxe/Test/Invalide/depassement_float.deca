@@ -1,0 +1,13 @@
+// Description:
+//    test sur le dépassement sur la lecture d'un flottant
+//
+// Resultats: Erreur ligne 10 : dépassement de capacité
+//
+//
+// Historique:
+//    crée le 18/01/2012
+
+float A = 3.40283E+38;
+{
+   println("salut");
+}

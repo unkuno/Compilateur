@@ -1,0 +1,12 @@
+// Description:
+//    Test decac sur fichier inexistant
+//
+// Resultats:
+// Fichier votrefichier.deca inexistant
+//
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-p ./fichier_qui_existe_pas.deca

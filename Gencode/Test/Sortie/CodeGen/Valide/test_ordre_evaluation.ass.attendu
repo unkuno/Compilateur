@@ -1,0 +1,391 @@
+; Initialisation du programme
+     TSTO #11
+     BOV pile_pleine
+     ADDSP #7
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Eval
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Eval.evalGauche, R0
+     STORE R0, 5 (GB)
+     LOAD code.Eval.evalDroit, R0
+     STORE R0, 6 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 27.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Eval
+     POP R2
+     STORE R2, 7 (LB)
+
+
+; Instruction ligne n° 29.
+     WSTR "Evaluation AND : "
+     WNL
+
+; Instruction ligne n° 30.
+if.0.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ fin.ET.1
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.ET.1 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 31.
+     WSTR "KO"
+     WNL
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 34.
+     WSTR "OK"
+     WNL
+
+; Instruction ligne n° 35.
+     WSTR "Evaluation OR : "
+     WNL
+
+; Instruction ligne n° 36.
+if.2.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BNE fin.OU.3
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.OU.3 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 37.
+     WSTR "OK"
+     WNL
+     BRA fin.2
+else.2 :
+fin.2 :
+fin.0 :
+
+; Instruction ligne n° 41.
+     WSTR "Evaluation AND et OR : "
+     WNL
+
+; Instruction ligne n° 42.
+if.4.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ fin.ET.6
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.ET.6 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BNE fin.OU.5
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.OU.5 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 43.
+     WSTR "OK"
+     WNL
+     BRA fin.4
+else.4 :
+fin.4 :
+
+; Instruction ligne n° 46.
+     WSTR "Evaluation AND dans WHILE : "
+     WNL
+
+; Instruction ligne n° 47.
+while.7 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ fin.ET.8
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.ET.8 :
+; Fin d'un calcul ET
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.7
+
+; Instruction ligne n° 48.
+     WSTR "KO"
+     WNL
+     BRA while.7
+fin.7 :
+
+; Instruction ligne n° 50.
+     WSTR "OK"
+     WNL
+
+; Instruction ligne n° 51.
+     WSTR "Evaluation OR dans WHILE : "
+     WNL
+
+; Instruction ligne n° 52.
+while.9 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BNE fin.OU.10
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD 7 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+fin.OU.10 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.9
+
+; Instruction ligne n° 53.
+     WSTR "KO"
+     WNL
+     BRA while.9
+fin.9 :
+
+; Instruction ligne n° 55.
+     WSTR "OK"
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Eval #
+; ##########################
+
+; Méthode Eval.evalGauche
+code.Eval.evalGauche :
+
+; Instruction ligne n° 14.
+     WSTR "evaluation gauche"
+     WNL
+
+; Instruction ligne n° 15.
+     LOAD -3 (LB), R0
+     BRA fin.Eval.evalGauche
+     WSTR "Erreur : sortie de la méthode Eval.evalGauche sans return"
+     WNL
+     ERROR
+fin.Eval.evalGauche :
+     RTS
+
+; Méthode Eval.evalDroit
+code.Eval.evalDroit :
+
+; Instruction ligne n° 19.
+     WSTR "evaluation droite"
+     WNL
+
+; Instruction ligne n° 20.
+     LOAD -3 (LB), R0
+     BRA fin.Eval.evalDroit
+     WSTR "Erreur : sortie de la méthode Eval.evalDroit sans return"
+     WNL
+     ERROR
+fin.Eval.evalDroit :
+     RTS
+
+; Initialisation des champs de la classe Eval
+init.Eval :
+     RTS

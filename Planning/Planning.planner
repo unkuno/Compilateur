@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<project name="Projet GL" company="Ensimag" manager="" phase="" project-start="20120103T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Working" description="A default working day"/>
+      <day-type id="1" name="Nonworking" description="A default non working day"/>
+      <day-type id="2" name="Use base" description="Use day from base calendar"/>
+      <day-type id="3" name="Travail - cours" description=""/>
+    </day-types>
+    <calendar id="1" name="Default">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="3">
+          <interval start="1400" end="1800"/>
+        </overridden-day-type>
+        <overridden-day-type id="0">
+          <interval start="0900" end="1245"/>
+          <interval start="1400" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days>
+        <day date="20120115" type="day-type" id="0"/>
+        <day date="20090130" type="day-type" id="0"/>
+        <day date="20120113" type="day-type" id="0"/>
+        <day date="20090128" type="day-type" id="0"/>
+        <day date="20120122" type="day-type" id="0"/>
+        <day date="20120109" type="day-type" id="3"/>
+        <day date="20120107" type="day-type" id="0"/>
+        <day date="20090102" type="day-type" id="1"/>
+        <day date="20120105" type="day-type" id="3"/>
+        <day date="20120114" type="day-type" id="0"/>
+        <day date="20090129" type="day-type" id="0"/>
+        <day date="20120112" type="day-type" id="0"/>
+        <day date="20090127" type="day-type" id="0"/>
+        <day date="20120110" type="day-type" id="3"/>
+        <day date="20120121" type="day-type" id="0"/>
+        <day date="20120108" type="day-type" id="1"/>
+        <day date="20120106" type="day-type" id="3"/>
+        <day date="20090101" type="day-type" id="1"/>
+      </days>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Mise en place" note="" work="194400" duration="48600" start="20120103T000000Z" end="20120104T170000Z" work-start="20120103T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="2" name="Test suite" note="" work="80100" duration="298800" start="20120104T170000Z" end="20120119T163000Z" work-start="20120105T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="1" type="FS"/>
+      </predecessors>
+      <task id="3" name="Base" note="" work="55800" duration="55800" start="20120104T170000Z" end="20120109T144500Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="4" name="Maintenance" note="" work="24300" duration="243000" start="20120109T144500Z" end="20120119T163000Z" work-start="20120109T144500Z" percent-complete="70" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="5" name="Organisation" note="" work="32400" duration="72000" start="20120104T170000Z" end="20120110T151500Z" work-start="20120105T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Charte de travail" note="" work="14400" duration="57600" start="20120104T170000Z" end="20120109T151500Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="7" name="Planning pr&#xE9;visionnel" note="" work="18000" duration="72000" start="20120104T170000Z" end="20120110T151500Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="8" name="Analyse lexicosyntaxique" note="" work="137700" duration="56700" start="20120104T170000Z" end="20120109T150000Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="1" type="FS"/>
+      </predecessors>
+      <task id="9" name="Lexeur" note="" work="48600" duration="48600" start="20120104T170000Z" end="20120107T154500Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="10" name="Parseur" note="" work="72900" duration="48600" start="20120104T170000Z" end="20120107T154500Z" work-start="20120105T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="11" name="Tests" note="" work="16200" duration="8100" start="20120107T154500Z" end="20120109T150000Z" work-start="20120107T154500Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="10" type="FS"/>
+          <predecessor id="1" predecessor-id="9" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="12" name="SUIVI 1 (A/ORGANISATION/PREVISION)" note="" work="0" duration="0" start="20120111T000000Z" end="20120111T000000Z" work-start="20120111T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120111T000000Z"/>
+      <predecessors>
+        <predecessor id="1" predecessor-id="8" type="FS"/>
+        <predecessor id="1" predecessor-id="5" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="13" name="Compilateur g&#xE9;rant Hello World" note="" work="94860" duration="60300" start="20120109T000000Z" end="20120112T110000Z" work-start="20120109T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="10" type="FS"/>
+        <predecessor id="1" predecessor-id="9" type="FS"/>
+      </predecessors>
+      <task id="14" name="Analyse contextuelle" note="" work="38700" duration="24200" start="20120109T000000Z" end="20120110T164140Z" work-start="20120109T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120109T000000Z"/>
+      </task>
+      <task id="15" name="G&#xE9;n&#xE9;ration de code" note="&#10;" work="41760" duration="28800" start="20120109T000000Z" end="20120110T180000Z" work-start="20120109T140000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120109T000000Z"/>
+      </task>
+      <task id="16" name="Tests" note="" work="14400" duration="7200" start="20120112T000000Z" end="20120112T110000Z" work-start="20120112T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="17" name="Boite blanche" note="" work="7200" duration="7200" start="20120112T000000Z" end="20120112T110000Z" work-start="20120112T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120112T000000Z"/>
+        </task>
+        <task id="18" name="Boite noire" note="" work="7200" duration="7200" start="20120112T000000Z" end="20120112T110000Z" work-start="20120112T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120112T000000Z"/>
+        </task>
+      </task>
+    </task>
+    <task id="19" name="Compilateur sans objet" note="" work="451800" duration="122100" start="20120110T180000Z" end="20120116T091000Z" work-start="20120111T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="15" type="FS"/>
+        <predecessor id="1" predecessor-id="14" type="FS"/>
+      </predecessors>
+      <task id="20" name="Analyse contextuelle ss objet" note="" work="63000" duration="48600" start="20120110T180000Z" end="20120112T170000Z" work-start="20120111T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="21" name="analyse" note="" work="48600" duration="48600" start="20120110T180000Z" end="20120112T170000Z" work-start="20120111T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="22" name="gestion erreur" note="" work="14400" duration="28800" start="20120110T180000Z" end="20120112T101500Z" work-start="20120111T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="23" name="G&#xE9;n&#xE9;ration de code ss objet" note="" work="243000" duration="97200" start="20120110T180000Z" end="20120114T170000Z" work-start="20120111T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="24" name="Print" note="" work="24300" duration="25600" start="20120110T180000Z" end="20120112T092000Z" work-start="20120111T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="25" name="Litteraux" note="" work="24300" duration="25600" start="20120110T180000Z" end="20120112T092000Z" work-start="20120111T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="26" name="op. arith/bool" note="" work="24300" duration="25600" start="20120112T000000Z" end="20120113T092000Z" work-start="20120112T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120112T000000Z"/>
+        </task>
+        <task id="27" name="Input" note="" work="24300" duration="25600" start="20120112T000000Z" end="20120113T092000Z" work-start="20120112T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120112T000000Z"/>
+        </task>
+        <task id="28" name="variable" note="" work="48600" duration="16800" start="20120114T000000Z" end="20120114T145320Z" work-start="20120114T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120114T000000Z"/>
+        </task>
+        <task id="29" name="Struct controle" note="" work="48600" duration="25600" start="20120113T000000Z" end="20120114T092000Z" work-start="20120113T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120113T000000Z"/>
+        </task>
+        <task id="30" name="Gestion Registre" note="" work="48600" duration="48600" start="20120113T000000Z" end="20120114T170000Z" work-start="20120113T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120113T000000Z"/>
+        </task>
+      </task>
+      <task id="31" name="Tests" note="" work="48600" duration="48600" start="20120112T170000Z" end="20120114T170000Z" work-start="20120113T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="32" name="Boite blanche" note="" work="24300" duration="24300" start="20120112T170000Z" end="20120113T170000Z" work-start="20120113T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="20" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="33" name="Boite noire" note="" work="24300" duration="24300" start="20120114T000000Z" end="20120114T170000Z" work-start="20120114T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120114T000000Z"/>
+        </task>
+      </task>
+      <task id="34" name="Documentation" note="" work="97200" duration="25000" start="20120115T000000Z" end="20120116T091000Z" work-start="20120115T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120115T000000Z"/>
+      </task>
+    </task>
+    <task id="35" name="Rendu version interm&#xE9;diaire" note="" work="0" duration="0" start="20120116T000000Z" end="20120116T000000Z" work-start="20120116T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120116T000000Z"/>
+      <predecessors>
+        <predecessor id="1" predecessor-id="19" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="36" name="Compilateur pour la totalit&#xE9; du langage" note="" work="478800" duration="145800" start="20120116T000000Z" end="20120121T170000Z" work-start="20120116T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="19" type="FS"/>
+      </predecessors>
+      <task id="37" name="Analyse contextuelle totalit&#xE9;" note="" work="54000" duration="91800" start="20120116T000000Z" end="20120119T153000Z" work-start="20120116T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120116T000000Z"/>
+        <task id="38" name="passe 1" note="" work="14400" duration="28800" start="20120116T000000Z" end="20120117T101500Z" work-start="20120116T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120116T000000Z"/>
+        </task>
+        <task id="39" name="passe 2" note="" work="18000" duration="36000" start="20120117T000000Z" end="20120118T121500Z" work-start="20120117T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120117T000000Z"/>
+        </task>
+        <task id="40" name="passe 3" note="" work="21600" duration="43200" start="20120118T000000Z" end="20120119T153000Z" work-start="20120118T090000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120118T000000Z"/>
+        </task>
+      </task>
+      <task id="41" name="G&#xE9;n&#xE9;ration de code totalit&#xE9;" note="" work="254700" duration="92500" start="20120116T091000Z" end="20120119T155140Z" work-start="20120116T091000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120116T000000Z"/>
+        <task id="42" name="Am&#xE9;lioration gestion registres" note="" work="18000" duration="30000" start="20120116T091000Z" end="20120117T104500Z" work-start="20120116T091000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="43" name="gencode No check" note="" work="18000" duration="25800" start="20120116T091000Z" end="20120117T093320Z" work-start="20120116T091000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="44" name="Table m&#xE9;thode" note="" work="24300" duration="22100" start="20120116T091000Z" end="20120116T163140Z" work-start="20120116T091000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="45" name="m&#xE9;thode" note="" work="72900" duration="63400" start="20120117T000000Z" end="20120119T142000Z" work-start="20120117T090000Z" percent-complete="80" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120117T000000Z"/>
+        </task>
+        <task id="46" name="attributs" note="" work="72900" duration="63400" start="20120117T000000Z" end="20120119T142000Z" work-start="20120117T090000Z" percent-complete="75" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120117T000000Z"/>
+        </task>
+        <task id="47" name="class" note="" work="48600" duration="20300" start="20120119T000000Z" end="20120119T155140Z" work-start="20120119T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120119T000000Z"/>
+        </task>
+      </task>
+      <task id="48" name="Tests" note="" work="97200" duration="97200" start="20120116T000000Z" end="20120119T170000Z" work-start="20120116T090000Z" percent-complete="25" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120116T000000Z"/>
+      </task>
+      <task id="49" name="Documentation" note="" work="72900" duration="72900" start="20120119T000000Z" end="20120121T170000Z" work-start="20120119T090000Z" percent-complete="25" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120119T000000Z"/>
+      </task>
+    </task>
+    <task id="50" name="Compilateur maxi deca" note="" work="218700" duration="107300" start="20120119T155140Z" end="20120124T104000Z" work-start="20120119T155140Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="37" type="FS"/>
+        <predecessor id="1" predecessor-id="41" type="FS"/>
+      </predecessors>
+      <task id="51" name="Analyse contextuelle" note="" work="24300" duration="32400" start="20120119T155140Z" end="20120121T100640Z" work-start="20120119T155140Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="52" name="G&#xE9;n&#xE9;ration de code" note="" work="48600" duration="32400" start="20120119T155140Z" end="20120121T100640Z" work-start="20120119T155140Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="53" name="Tests" note="" work="121500" duration="52700" start="20120119T155140Z" end="20120121T170000Z" work-start="20120119T155140Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="54" name="Test" note="" work="24300" duration="32400" start="20120119T155140Z" end="20120121T100640Z" work-start="20120119T155140Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="55" name="Tests finaux" note="" work="97200" duration="24300" start="20120121T000000Z" end="20120121T170000Z" work-start="20120121T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <constraint type="must-start-on" time="20120121T000000Z"/>
+        </task>
+      </task>
+      <task id="56" name="doc concept, bilan .." note="" work="24300" duration="6100" start="20120124T000000Z" end="20120124T104000Z" work-start="20120124T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="must-start-on" time="20120124T000000Z"/>
+      </task>
+    </task>
+    <task id="57" name="DEAD LINE" note="" work="0" duration="0" start="20120121T000000Z" end="20120121T000000Z" work-start="20120121T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120121T000000Z"/>
+    </task>
+    <task id="58" name="Rendu Final" note="" work="0" duration="0" start="20120123T000000Z" end="20120123T000000Z" work-start="20120123T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120123T000000Z"/>
+    </task>
+    <task id="59" name="Rendu documentation" note="" work="0" duration="0" start="20120123T000000Z" end="20120123T000000Z" work-start="20120123T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120123T000000Z"/>
+    </task>
+    <task id="60" name="Rendu Bilan" note="" work="0" duration="0" start="20120125T000000Z" end="20120125T000000Z" work-start="20120125T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120125T000000Z"/>
+    </task>
+    <task id="61" name="Soutenance" note="" work="0" duration="0" start="20120126T000000Z" end="20120126T000000Z" work-start="20120126T090000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20120126T000000Z"/>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources>
+    <resource id="1" name="C&#xE9;dric Connes" short-name="C&#xE9;d" type="1" units="0" email="Cedric.Connes@ensimag.imag.fr" note="" std-rate="0"/>
+    <resource id="2" name="Valentin Bousson" short-name="Val" type="1" units="0" email="Valentin.Bousson@ensimag.imag.fr" note="" std-rate="0"/>
+    <resource id="3" name="Thomas Nguy" short-name="Tom" type="1" units="0" email="Thomas.Nguy@ensimag.imag.fr" note="" std-rate="0"/>
+    <resource id="4" name="S&#xE9;bastien Lentini" short-name="S&#xE9;b" type="1" units="0" email="Sebastien.Lentini@ensimag.imag.fr" note="" std-rate="0"/>
+  </resources>
+  <allocations>
+    <allocation task-id="56" resource-id="1" units="100"/>
+    <allocation task-id="55" resource-id="1" units="100"/>
+    <allocation task-id="52" resource-id="1" units="75"/>
+    <allocation task-id="49" resource-id="1" units="25"/>
+    <allocation task-id="48" resource-id="1" units="10"/>
+    <allocation task-id="43" resource-id="1" units="30"/>
+    <allocation task-id="47" resource-id="1" units="90"/>
+    <allocation task-id="46" resource-id="1" units="45"/>
+    <allocation task-id="45" resource-id="1" units="45"/>
+    <allocation task-id="42" resource-id="1" units="60"/>
+    <allocation task-id="34" resource-id="1" units="100"/>
+    <allocation task-id="30" resource-id="1" units="100"/>
+    <allocation task-id="28" resource-id="1" units="100"/>
+    <allocation task-id="16" resource-id="1" units="50"/>
+    <allocation task-id="22" resource-id="1" units="50"/>
+    <allocation task-id="14" resource-id="1" units="80"/>
+    <allocation task-id="10" resource-id="1" units="50"/>
+    <allocation task-id="11" resource-id="1" units="100"/>
+    <allocation task-id="1" resource-id="1" units="100"/>
+    <allocation task-id="9" resource-id="1" units="50"/>
+    <allocation task-id="56" resource-id="2" units="100"/>
+    <allocation task-id="55" resource-id="2" units="100"/>
+    <allocation task-id="52" resource-id="2" units="75"/>
+    <allocation task-id="49" resource-id="2" units="25"/>
+    <allocation task-id="46" resource-id="2" units="35"/>
+    <allocation task-id="48" resource-id="2" units="10"/>
+    <allocation task-id="43" resource-id="2" units="40"/>
+    <allocation task-id="47" resource-id="2" units="80"/>
+    <allocation task-id="45" resource-id="2" units="35"/>
+    <allocation task-id="44" resource-id="2" units="40"/>
+    <allocation task-id="27" resource-id="2" units="45"/>
+    <allocation task-id="26" resource-id="2" units="45"/>
+    <allocation task-id="25" resource-id="2" units="45"/>
+    <allocation task-id="24" resource-id="2" units="45"/>
+    <allocation task-id="29" resource-id="2" units="90"/>
+    <allocation task-id="34" resource-id="2" units="90"/>
+    <allocation task-id="28" resource-id="2" units="90"/>
+    <allocation task-id="4" resource-id="2" units="10"/>
+    <allocation task-id="3" resource-id="2" units="100"/>
+    <allocation task-id="15" resource-id="2" units="80"/>
+    <allocation task-id="1" resource-id="2" units="100"/>
+    <allocation task-id="56" resource-id="3" units="100"/>
+    <allocation task-id="55" resource-id="3" units="100"/>
+    <allocation task-id="51" resource-id="3" units="75"/>
+    <allocation task-id="49" resource-id="3" units="25"/>
+    <allocation task-id="40" resource-id="3" units="50"/>
+    <allocation task-id="39" resource-id="3" units="50"/>
+    <allocation task-id="38" resource-id="3" units="50"/>
+    <allocation task-id="48" resource-id="3" units="50"/>
+    <allocation task-id="34" resource-id="3" units="100"/>
+    <allocation task-id="33" resource-id="3" units="100"/>
+    <allocation task-id="32" resource-id="3" units="100"/>
+    <allocation task-id="21" resource-id="3" units="100"/>
+    <allocation task-id="14" resource-id="3" units="80"/>
+    <allocation task-id="9" resource-id="3" units="50"/>
+    <allocation task-id="11" resource-id="3" units="100"/>
+    <allocation task-id="1" resource-id="3" units="100"/>
+    <allocation task-id="10" resource-id="3" units="50"/>
+    <allocation task-id="56" resource-id="4" units="100"/>
+    <allocation task-id="54" resource-id="4" units="75"/>
+    <allocation task-id="55" resource-id="4" units="100"/>
+    <allocation task-id="49" resource-id="4" units="25"/>
+    <allocation task-id="48" resource-id="4" units="30"/>
+    <allocation task-id="47" resource-id="4" units="70"/>
+    <allocation task-id="46" resource-id="4" units="35"/>
+    <allocation task-id="45" resource-id="4" units="35"/>
+    <allocation task-id="44" resource-id="4" units="70"/>
+    <allocation task-id="27" resource-id="4" units="50"/>
+    <allocation task-id="26" resource-id="4" units="50"/>
+    <allocation task-id="25" resource-id="4" units="50"/>
+    <allocation task-id="24" resource-id="4" units="50"/>
+    <allocation task-id="29" resource-id="4" units="100"/>
+    <allocation task-id="34" resource-id="4" units="100"/>
+    <allocation task-id="28" resource-id="4" units="100"/>
+    <allocation task-id="15" resource-id="4" units="65"/>
+    <allocation task-id="6" resource-id="4" units="25"/>
+    <allocation task-id="7" resource-id="4" units="25"/>
+    <allocation task-id="10" resource-id="4" units="50"/>
+    <allocation task-id="1" resource-id="4" units="100"/>
+  </allocations>
+</project>

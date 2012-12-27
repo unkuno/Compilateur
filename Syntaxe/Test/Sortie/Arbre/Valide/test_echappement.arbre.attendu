@@ -1,0 +1,8 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 11
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "C'est la "classe" de porter des shirt\tshirt"-- Ligne 11

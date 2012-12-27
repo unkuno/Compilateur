@@ -1,0 +1,29 @@
+// Description:
+//    test d'une classe extends vide (et une avec un attribut)
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class Vide {
+  
+
+}
+
+
+class Vide2 extends Vide {
+
+
+}
+
+
+class PasVide extends Vide2 {
+
+   int x;
+}

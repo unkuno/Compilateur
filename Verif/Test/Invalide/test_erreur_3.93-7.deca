@@ -1,0 +1,17 @@
+// Description:
+//    Programme soulevant l'erreur (3.93)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 16 : Objet attendu à gauche de '.' (règle 3.93)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+int y;
+
+{
+ y = true.x();
+} 

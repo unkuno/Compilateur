@@ -1,0 +1,674 @@
+class Calc {
+   int min(int a, int b)
+   {
+      if (a < b) {
+         return a;
+      } else {
+         return b;
+      }
+   }
+   int max(int a, int b)
+   {
+      if (a > b) {
+         return a;
+      } else {
+         return b;
+      }
+   }
+   int borne(int a, int x, int b)
+   {
+      return min(max(a, x), b);
+   }
+   int abs(int a)
+   {
+      if (a < 0) {
+         return -a;
+      } else {
+         return a;
+      }
+   }
+}
+
+class Position {
+   int i;
+   int j;
+   void afficher()
+   {
+      print("(", i, ",", j, ")");
+   }
+   boolean surPlateau()
+   {
+      return i >= 0 && i < 8 && j >= 0 && j < 8;
+   }
+   void deplace(int di, int dj)
+   {
+      i = i + di;
+      j = j + dj;
+   }
+   Position copie()
+      Position nouv = new Position();
+   {
+      nouv.i = i;
+      nouv.j = j;
+      return nouv;
+   }
+   Position set(int i, int j)
+   {
+      this.i = i;
+      this.j = j;
+      return this;
+   }
+   Position lirePosition()
+      int X;
+   {
+      print("(ij) ");
+      X = readInt();
+      i = X / 10;
+      j = X % 10;
+      return this;
+   }
+   boolean equals(Object o)
+   {
+      return o != null && o instanceof Position && cast<Position>(o).i == i && cast<Position>(o).j == j;
+   }
+}
+
+class Joueur {
+   int numero;
+   int ligneDepart;
+   int facteur;
+   GestionnairePieces armee;
+   Joueur setAt(int num, int lig, int fac)
+   {
+      numero = num;
+      ligneDepart = lig;
+      facteur = fac;
+      armee = new GestionnairePieces().creeArmee(this);
+      return this;
+   }
+   void afficher()
+   {
+      print("Joueur n°", numero);
+   }
+   int score()
+   {
+      return armee.score();
+   }
+   boolean aSonRoi()
+   {
+      return armee.R.vivante;
+   }
+   Coup joue()
+      Coup c = new Coup();
+   {
+      print("Source ? ");
+      c.Source = new Position().lirePosition();
+      print("Destination ? ");
+      c.Destination = new Position().lirePosition();
+      return c;
+   }
+}
+
+class Piece {
+   Joueur possesseur;
+   boolean vivante;
+   Position position;
+   Piece place(Joueur j, Position p)
+   {
+      possesseur = j;
+      vivante = true;
+      position = p;
+      return this;
+   }
+   void afficher()
+   {
+      0 / 0;
+   }
+}
+
+class Pion extends Piece {
+   void afficher()
+   {
+      print(" p", possesseur.numero, " ");
+   }
+}
+
+class Roi extends Piece {
+   void afficher()
+   {
+      print(" R", possesseur.numero, " ");
+   }
+}
+
+class Reine extends Piece {
+   void afficher()
+   {
+      print(" D", possesseur.numero, " ");
+   }
+}
+
+class Tour extends Piece {
+   void afficher()
+   {
+      print(" T", possesseur.numero, " ");
+   }
+}
+
+class Cavalier extends Piece {
+   void afficher()
+   {
+      print(" C", possesseur.numero, " ");
+   }
+}
+
+class Fou extends Piece {
+   void afficher()
+   {
+      print(" F", possesseur.numero, " ");
+   }
+}
+
+class GestionnairePieces {
+   Joueur possesseur;
+   Roi R;
+   Reine D;
+   Fou Fg, Fd;
+   Cavalier Cg, Cd;
+   Tour Tg, Td;
+   Pion p1, p2, p3, p4, p5, p6, p7, p8;
+   GestionnairePieces creeArmee(Joueur j)
+      int i = 0;
+   {
+      possesseur = j;
+      R = cast<Roi>(new Roi().place(j, new Position().set(3, j.ligneDepart)));
+      D = cast<Reine>(new Reine().place(j, new Position().set(4, j.ligneDepart)));
+      Fg = cast<Fou>(new Fou().place(j, new Position().set(2, j.ligneDepart)));
+      Fd = cast<Fou>(new Fou().place(j, new Position().set(5, j.ligneDepart)));
+      Cg = cast<Cavalier>(new Cavalier().place(j, new Position().set(1, j.ligneDepart)));
+      Cd = cast<Cavalier>(new Cavalier().place(j, new Position().set(6, j.ligneDepart)));
+      Tg = cast<Tour>(new Tour().place(j, new Position().set(0, j.ligneDepart)));
+      Td = cast<Tour>(new Tour().place(j, new Position().set(7, j.ligneDepart)));
+      p1 = cast<Pion>(new Pion().place(j, new Position().set(0, j.ligneDepart + j.facteur)));
+      p2 = cast<Pion>(new Pion().place(j, new Position().set(1, j.ligneDepart + j.facteur)));
+      p3 = cast<Pion>(new Pion().place(j, new Position().set(2, j.ligneDepart + j.facteur)));
+      p4 = cast<Pion>(new Pion().place(j, new Position().set(3, j.ligneDepart + j.facteur)));
+      p5 = cast<Pion>(new Pion().place(j, new Position().set(4, j.ligneDepart + j.facteur)));
+      p6 = cast<Pion>(new Pion().place(j, new Position().set(5, j.ligneDepart + j.facteur)));
+      p7 = cast<Pion>(new Pion().place(j, new Position().set(6, j.ligneDepart + j.facteur)));
+      p8 = cast<Pion>(new Pion().place(j, new Position().set(7, j.ligneDepart + j.facteur)));
+      return this;
+   }
+   void afficher()
+   {
+      print("R -> ");
+      R.position.afficher();
+      println();
+      print("D -> ");
+      D.position.afficher();
+      println();
+      print("Fg -> ");
+      Fg.position.afficher();
+      println();
+      print("Fd -> ");
+      Fd.position.afficher();
+      println();
+      print("Cg -> ");
+      Cg.position.afficher();
+      println();
+      print("Cd -> ");
+      Cd.position.afficher();
+      println();
+      print("Tg -> ");
+      Tg.position.afficher();
+      println();
+      print("Td -> ");
+      Td.position.afficher();
+      println();
+      print("p1 -> ");
+      p1.position.afficher();
+      println();
+      print("p2 -> ");
+      p2.position.afficher();
+      println();
+      print("p3 -> ");
+      p3.position.afficher();
+      println();
+      print("p4 -> ");
+      p4.position.afficher();
+      println();
+      print("p5 -> ");
+      p5.position.afficher();
+      println();
+      print("p6 -> ");
+      p6.position.afficher();
+      println();
+      print("p7 -> ");
+      p7.position.afficher();
+      println();
+      print("p8 -> ");
+      p8.position.afficher();
+      println();
+   }
+   int score()
+      int compt = 0;
+   {
+      if (D.vivante) {
+         compt = compt + 9;
+      }
+      if (Fg.vivante) {
+         compt = compt + 3;
+      }
+      if (Fd.vivante) {
+         compt = compt + 3;
+      }
+      if (Cg.vivante) {
+         compt = compt + 3;
+      }
+      if (Cd.vivante) {
+         compt = compt + 3;
+      }
+      if (Tg.vivante) {
+         compt = compt + 5;
+      }
+      if (Td.vivante) {
+         compt = compt + 5;
+      }
+      if (p1.vivante) {
+         compt = compt + 1;
+      }
+      if (p2.vivante) {
+         compt = compt + 1;
+      }
+      if (p3.vivante) {
+         compt = compt + 1;
+      }
+      if (p4.vivante) {
+         compt = compt + 1;
+      }
+      if (p5.vivante) {
+         compt = compt + 1;
+      }
+      if (p6.vivante) {
+         compt = compt + 1;
+      }
+      if (p7.vivante) {
+         compt = compt + 1;
+      }
+      if (p8.vivante) {
+         compt = compt + 1;
+      }
+      return compt;
+   }
+}
+
+class Cellule {
+   protected Piece val;
+   Piece getVal()
+   {
+      return val;
+   }
+   void setVal(Piece val)
+   {
+      this.val = val;
+   }
+}
+
+class Tab2x2 {
+   protected Cellule hg = new Cellule();
+   protected Cellule hd = new Cellule();
+   protected Cellule bg = new Cellule();
+   protected Cellule bd = new Cellule();
+   Piece getVal(int i, int j)
+   {
+      if (i == 0) {
+         if (j == 0) {
+            return hg.getVal();
+         } elsif (j == 1) {
+            return hd.getVal();
+         }
+      } elsif (i == 1) {
+         if (j == 0) {
+            return bg.getVal();
+         } elsif (j == 1) {
+            return bd.getVal();
+         }
+      }
+   }
+   void setVal(int i, int j, Piece val)
+   {
+      if (i == 0) {
+         if (j == 0) {
+            hg.setVal(val);
+         } elsif (j == 1) {
+            hd.setVal(val);
+         }
+      } elsif (i == 1) {
+         if (j == 0) {
+            bg.setVal(val);
+         } elsif (j == 1) {
+            bd.setVal(val);
+         }
+      }
+   }
+}
+
+class Tab4x4 {
+   protected Tab2x2 hg = new Tab2x2();
+   protected Tab2x2 hd = new Tab2x2();
+   protected Tab2x2 bg = new Tab2x2();
+   protected Tab2x2 bd = new Tab2x2();
+   Piece getVal(int i, int j)
+   {
+      if (i % 2 == 0) {
+         if (j % 2 == 0) {
+            return hg.getVal(i / 2, j / 2);
+         } elsif (j % 2 == 1) {
+            return hd.getVal(i / 2, j / 2);
+         }
+      } elsif (i % 2 == 1) {
+         if (j % 2 == 0) {
+            return bg.getVal(i / 2, j / 2);
+         } elsif (j % 2 == 1) {
+            return bd.getVal(i / 2, j / 2);
+         }
+      }
+   }
+   void setVal(int i, int j, Piece val)
+   {
+      if (i % 2 == 0) {
+         if (j % 2 == 0) {
+            hg.setVal(i / 2, j / 2, val);
+         } elsif (j % 2 == 1) {
+            hd.setVal(i / 2, j / 2, val);
+         }
+      } elsif (i % 2 == 1) {
+         if (j % 2 == 0) {
+            bg.setVal(i / 2, j / 2, val);
+         } elsif (j % 2 == 1) {
+            bd.setVal(i / 2, j / 2, val);
+         }
+      }
+   }
+}
+
+class Echiquier {
+   protected Tab4x4 hg = new Tab4x4();
+   protected Tab4x4 hd = new Tab4x4();
+   protected Tab4x4 bg = new Tab4x4();
+   protected Tab4x4 bd = new Tab4x4();
+   Piece getVal(int i, int j)
+   {
+      if (i % 2 == 0) {
+         if (j % 2 == 0) {
+            return hg.getVal(i / 2, j / 2);
+         } elsif (j % 2 == 1) {
+            return hd.getVal(i / 2, j / 2);
+         }
+      } elsif (i % 2 == 1) {
+         if (j % 2 == 0) {
+            return bg.getVal(i / 2, j / 2);
+         } elsif (j % 2 == 1) {
+            return bd.getVal(i / 2, j / 2);
+         }
+      }
+   }
+   Piece getValP(Position p)
+   {
+      return getVal(p.i, p.j);
+   }
+   void setVal(int i, int j, Piece val)
+   {
+      if (i % 2 == 0) {
+         if (j % 2 == 0) {
+            hg.setVal(i / 2, j / 2, val);
+         } elsif (j % 2 == 1) {
+            hd.setVal(i / 2, j / 2, val);
+         }
+      } elsif (i % 2 == 1) {
+         if (j % 2 == 0) {
+            bg.setVal(i / 2, j / 2, val);
+         } elsif (j % 2 == 1) {
+            bd.setVal(i / 2, j / 2, val);
+         }
+      }
+   }
+   void setValP(Position p, Piece val)
+   {
+      setVal(p.i, p.j, val);
+   }
+   void installe(Joueur j1, Joueur j2)
+   {
+      setValP(j1.armee.R.position, j1.armee.R);
+      setValP(j1.armee.D.position, j1.armee.D);
+      setValP(j1.armee.Fg.position, j1.armee.Fg);
+      setValP(j1.armee.Fd.position, j1.armee.Fd);
+      setValP(j1.armee.Cg.position, j1.armee.Cg);
+      setValP(j1.armee.Cd.position, j1.armee.Cd);
+      setValP(j1.armee.Tg.position, j1.armee.Tg);
+      setValP(j1.armee.Td.position, j1.armee.Td);
+      setValP(j1.armee.p1.position, j1.armee.p1);
+      setValP(j1.armee.p2.position, j1.armee.p2);
+      setValP(j1.armee.p3.position, j1.armee.p3);
+      setValP(j1.armee.p4.position, j1.armee.p4);
+      setValP(j1.armee.p5.position, j1.armee.p5);
+      setValP(j1.armee.p6.position, j1.armee.p6);
+      setValP(j1.armee.p7.position, j1.armee.p7);
+      setValP(j1.armee.p8.position, j1.armee.p8);
+      setValP(j2.armee.R.position, j2.armee.R);
+      setValP(j2.armee.D.position, j2.armee.D);
+      setValP(j2.armee.Fg.position, j2.armee.Fg);
+      setValP(j2.armee.Fd.position, j2.armee.Fd);
+      setValP(j2.armee.Cg.position, j2.armee.Cg);
+      setValP(j2.armee.Cd.position, j2.armee.Cd);
+      setValP(j2.armee.Tg.position, j2.armee.Tg);
+      setValP(j2.armee.Td.position, j2.armee.Td);
+      setValP(j2.armee.p1.position, j2.armee.p1);
+      setValP(j2.armee.p2.position, j2.armee.p2);
+      setValP(j2.armee.p3.position, j2.armee.p3);
+      setValP(j2.armee.p4.position, j2.armee.p4);
+      setValP(j2.armee.p5.position, j2.armee.p5);
+      setValP(j2.armee.p6.position, j2.armee.p6);
+      setValP(j2.armee.p7.position, j2.armee.p7);
+      setValP(j2.armee.p8.position, j2.armee.p8);
+   }
+   void afficher()
+      int i, j;
+      Piece p;
+   {
+      i = 7;
+      while (i >= 0) {
+         if (i == 7) {
+            println(" j ");
+            println("   +----+----+----+----+----+----+----+----+");
+         }
+         j = 0;
+         while (j < 8) {
+            if (j == 0) {
+               print(" ", i, " |");
+            }
+            p = getVal(j, i);
+            if (p == null) {
+               print("    ");
+            } else {
+               p.afficher();
+            }
+            print("|");
+            j = j + 1;
+         }
+         println();
+         println("   +----+----+----+----+----+----+----+----+");
+         i = i - 1;
+      }
+      println("     0    1    2    3    4    5    6    7    i");
+   }
+}
+
+class Coup {
+   Position Source;
+   Position Destination;
+   Calc math = new Calc();
+   boolean valide(Echiquier e, Joueur j)
+      Piece ps, pd;
+      int di, dj;
+      Position tmp;
+      int fdi, fdj;
+   {
+      if (!Source.surPlateau()) {
+         println("Source invalide.");
+         return false;
+      }
+      if (!Destination.surPlateau()) {
+         println("Destination invalide.");
+         return false;
+      }
+      ps = e.getValP(Source);
+      pd = e.getValP(Destination);
+      di = Destination.i - Source.i;
+      dj = Destination.j - Source.j;
+      if (ps == null || ps.possesseur != j) {
+         println("Source invalide.");
+         return false;
+      }
+      if (pd != null && pd.possesseur == j) {
+         println("Destination occuppée par vous.");
+         return false;
+      }
+      if (Source.equals(Destination)) {
+         println("Identité interdite.");
+         return false;
+      }
+      if (ps instanceof Pion) {
+         if (!(di == 0 && dj == j.facteur && pd == null || Source.j == j.ligneDepart + j.facteur && di == 0 && dj == j.facteur * 2 && e.getVal(Destination.i, Source.j + j.facteur) == null && pd == null || math.abs(di) == 1 && dj == j.facteur && pd != null && pd.possesseur != j)) {
+            println("Mouvement du Pion interdit !");
+            return false;
+         }
+      } elsif (ps instanceof Roi) {
+         if (math.max(math.abs(di), math.abs(dj)) > 1) {
+            println("Mouvement du Roi interdit !");
+            return false;
+         }
+      } elsif (ps instanceof Reine) {
+         if (di == 0 || dj == 0 || math.abs(di) == math.abs(dj)) {
+            tmp = Source.copie();
+            if (di == 0) {
+               fdi = 0;
+               fdj = dj / math.abs(dj);
+            } elsif (dj == 0) {
+               fdj = 0;
+               fdi = di / math.abs(di);
+            } else {
+               fdi = di / math.abs(di);
+               fdj = dj / math.abs(dj);
+            }
+            tmp.deplace(fdi, fdj);
+            while (!tmp.equals(Destination)) {
+               if (e.getValP(tmp) != null) {
+                  println("Mouvement de la Reine interdit : Génée !");
+                  return false;
+               }
+               tmp.deplace(fdi, fdj);
+            }
+         } else {
+            println("Mouvement de la Reine interdit !");
+            return false;
+         }
+      } elsif (ps instanceof Tour) {
+         if (di == 0 || dj == 0) {
+            tmp = Source.copie();
+            if (di == 0) {
+               fdi = 0;
+               fdj = dj / math.abs(dj);
+            } else {
+               fdj = 0;
+               fdi = di / math.abs(di);
+            }
+            tmp.deplace(fdi, fdj);
+            while (!tmp.equals(Destination)) {
+               if (e.getValP(tmp) != null) {
+                  println("Mouvement de la Tour interdit : Génée !");
+                  return false;
+               }
+               tmp.deplace(fdi, fdj);
+            }
+         } else {
+            println("Mouvement de la Tour interdit !");
+            return false;
+         }
+      } elsif (ps instanceof Cavalier) {
+         if (!(math.abs(di) == 1 && math.abs(dj) == 2 || math.abs(di) == 2 && math.abs(dj) == 1)) {
+            println("Mouvement du Cavalier interdit !");
+            return false;
+         }
+      } elsif (ps instanceof Fou) {
+         if (math.abs(di) == math.abs(dj)) {
+            tmp = Source.copie();
+            fdi = di / math.abs(di);
+            fdj = dj / math.abs(dj);
+            tmp.deplace(fdi, fdj);
+            while (!tmp.equals(Destination)) {
+               if (e.getValP(tmp) != null) {
+                  println("Mouvement du Fou interdit : Géné !");
+                  return false;
+               }
+               tmp.deplace(fdi, fdj);
+            }
+         } else {
+            println("Mouvement du Fou interdit !");
+            return false;
+         }
+      } else {
+         println("Erreur interne : piece inconnue");
+         0 / 0;
+      }
+      return true;
+   }
+   void applique(Echiquier e)
+      Piece aDepl = e.getValP(Source);
+      Piece aEcr = e.getValP(Destination);
+   {
+      e.setValP(Source, null);
+      if (aEcr != null) {
+         aEcr.vivante = false;
+      }
+      e.setValP(Destination, aDepl);
+   }
+}
+
+
+Echiquier plateau = new Echiquier();
+Joueur joueur1 = new Joueur().setAt(1, 0, 1);
+Joueur joueur2 = new Joueur().setAt(2, 7, -1);
+Joueur joueurCour = joueur1;
+Coup coup;
+{
+   plateau.installe(joueur1, joueur2);
+   while (joueurCour.aSonRoi()) {
+      plateau.afficher();
+      joueur1.afficher();
+      print(" = ", joueur1.score());
+      print("       &       ");
+      joueur2.afficher();
+      print(" = ", joueur2.score());
+      println();
+      println();
+      print("Joueur : ");
+      joueurCour.afficher();
+      println();
+      coup = null;
+      while (coup == null || !coup.valide(plateau, joueurCour)) {
+         if (coup != null) {
+            println("Ceci n'est pas un coup valide.");
+         }
+         coup = joueurCour.joue();
+      }
+      coup.applique(plateau);
+      if (joueurCour == joueur1) {
+         joueurCour = joueur2;
+      } else {
+         joueurCour = joueur1;
+      }
+   }
+   print("Le joueur ");
+   joueurCour.afficher();
+   println(" a perdu !");
+}

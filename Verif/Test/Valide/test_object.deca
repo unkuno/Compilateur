@@ -1,0 +1,15 @@
+// Description:
+//    Programme écrivant un new object
+//
+// Resultats:
+//    Ne doit pas soulever d'erreur
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+Object o = new Object();
+{
+
+}

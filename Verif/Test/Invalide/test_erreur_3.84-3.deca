@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.84)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Le type 'type_null' est incompatible avec  l'opérateur unaire '!' (règle 3.84)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+boolean b;
+{
+   b = !null;
+}

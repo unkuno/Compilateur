@@ -1,0 +1,108 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 14) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT Toto                                   -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 16
+. . . . NOEUD_IDENT A                                      -- Ligne 16
+. . . . NOEUD_IDENT Toto                                   -- Ligne 16
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 20
+. . . . NOEUD_IDENT A1                                     -- Ligne 20
+. . . . NOEUD_IDENT A                                      -- Ligne 20
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 24
+. . . . NOEUD_IDENT A2                                     -- Ligne 24
+. . . . NOEUD_IDENT A1                                     -- Ligne 24
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 28
+. . . . NOEUD_IDENT A3                                     -- Ligne 28
+. . . . NOEUD_IDENT A2                                     -- Ligne 28
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 32
+. . . . NOEUD_IDENT A4                                     -- Ligne 32
+. . . . NOEUD_IDENT A3                                     -- Ligne 32
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 36
+. . . . NOEUD_IDENT A5                                     -- Ligne 36
+. . . . NOEUD_IDENT A4                                     -- Ligne 36
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 40
+. . . . NOEUD_IDENT A6                                     -- Ligne 40
+. . . . NOEUD_IDENT A5                                     -- Ligne 40
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 43
+. . . . NOEUD_IDENT A7                                     -- Ligne 43
+. . . . NOEUD_IDENT A6                                     -- Ligne 43
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 46
+. . . . NOEUD_IDENT A8                                     -- Ligne 46
+. . . . NOEUD_IDENT A7                                     -- Ligne 46
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 49
+. . . . NOEUD_IDENT A9                                     -- Ligne 49
+. . . . NOEUD_IDENT A8                                     -- Ligne 49
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 52
+. . . . NOEUD_IDENT A10                                    -- Ligne 52
+. . . . NOEUD_IDENT A9                                     -- Ligne 52
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 55
+. . . . NOEUD_IDENT A11                                    -- Ligne 55
+. . . . NOEUD_IDENT A10                                    -- Ligne 55
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 58
+. . . . NOEUD_IDENT A12                                    -- Ligne 58
+. . . . NOEUD_IDENT A11                                    -- Ligne 58
+. . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 62
+. . . . . NOEUD_IDENT Toto                                 -- Ligne 62
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 62
+. . . . . . . . NOEUD_IDENT moi                            -- Ligne 62
+. . . . . . . . NOEUD_CREATION                             -- Ligne 62
+. . . . . . . . . NOEUD_IDENT A12                          -- Ligne 62
+. . <Liste (longueur 1) :>
+. . . # NOEUD_SI                                           -- Ligne 65
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 65
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 65
+. . . . . . . . . NOEUD_CONVERSION                         -- Ligne 65
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 65
+. . . . . . . . . . NOEUD_CONVERSION                       -- Ligne 65
+. . . . . . . . . . . NOEUD_IDENT A1                       -- Ligne 65
+. . . . . . . . . . . NOEUD_CONVERSION                     -- Ligne 65
+. . . . . . . . . . . . NOEUD_IDENT A2                     -- Ligne 65
+. . . . . . . . . . . . NOEUD_CONVERSION                   -- Ligne 65
+. . . . . . . . . . . . . NOEUD_IDENT A3                   -- Ligne 65
+. . . . . . . . . . . . . NOEUD_CONVERSION                 -- Ligne 65
+. . . . . . . . . . . . . . NOEUD_IDENT A4                 -- Ligne 65
+. . . . . . . . . . . . . . NOEUD_CONVERSION               -- Ligne 65
+. . . . . . . . . . . . . . . NOEUD_IDENT A5               -- Ligne 65
+. . . . . . . . . . . . . . . NOEUD_CONVERSION             -- Ligne 65
+. . . . . . . . . . . . . . . . NOEUD_IDENT A6             -- Ligne 65
+. . . . . . . . . . . . . . . . NOEUD_CONVERSION           -- Ligne 65
+. . . . . . . . . . . . . . . . . NOEUD_IDENT A7           -- Ligne 65
+. . . . . . . . . . . . . . . . . NOEUD_CONVERSION         -- Ligne 65
+. . . . . . . . . . . . . . . . . . NOEUD_IDENT A8         -- Ligne 65
+. . . . . . . . . . . . . . . . . . NOEUD_CONVERSION       -- Ligne 65
+. . . . . . . . . . . . . . . . . . . NOEUD_IDENT A9       -- Ligne 65
+. . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION     -- Ligne 65
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A10    -- Ligne 65
+. . . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION   -- Ligne 65
+. . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A11  -- Ligne 65
+. . . . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION -- Ligne 65
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A12-- Ligne 65
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT moi-- Ligne 65
+. . . . . . . . . NOEUD_IDENT Toto                         -- Ligne 65
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 66
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "ok"                -- Ligne 66
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 69
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "ko"                      -- Ligne 69

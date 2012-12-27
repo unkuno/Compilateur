@@ -1,0 +1,17 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT toto                                   -- Ligne 14
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 16
+. . . . . . . NOEUD_IDENT void                             -- Ligne 16
+. . . . . . . NOEUD_IDENT printf                           -- Ligne 16
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT printf                     -- Ligne 18
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "toto"                -- Ligne 18
+. NOEUD_VIDE

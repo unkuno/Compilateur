@@ -1,0 +1,45 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 13
+. . . . . NOEUD_IDENT int                                  -- Ligne 13
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 13
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 13
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 4) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 15
+. . . . . -- Type : int
+. . . . . NOEUD_IDENT i                                    -- Ligne 15
+. . . . . . -- Defn : (var, int)
+. . . . . . -- Type : int
+. . . . . NOEUD_ENTIER  1                                  -- Ligne 15
+. . . . . . -- Type : int
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 16
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 16
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int
+. . . # NOEUD_AFFECT                                       -- Ligne 17
+. . . . . -- Type : int
+. . . . . NOEUD_IDENT i                                    -- Ligne 17
+. . . . . . -- Defn : (var, int)
+. . . . . . -- Type : int
+. . . . . NOEUD_PLUS                                       -- Ligne 17
+. . . . . . -- Type : int
+. . . . . . NOEUD_IDENT i                                  -- Ligne 17
+. . . . . . . -- Defn : (var, int)
+. . . . . . . -- Type : int
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 17
+. . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 18
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 18
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int

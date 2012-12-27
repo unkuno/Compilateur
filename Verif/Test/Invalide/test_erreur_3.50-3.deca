@@ -1,0 +1,23 @@
+// Description:
+//    Programme soulevant l'erreur (3.50)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 22 : Entier, flottant ou chaine de caractère attendu (règle 3.50)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+class A {
+   
+   int getX() {
+      return void;
+   }
+}
+
+A a = new A();
+{
+   print(a);
+}   

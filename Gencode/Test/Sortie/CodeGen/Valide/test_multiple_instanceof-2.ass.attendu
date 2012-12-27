@@ -1,0 +1,1135 @@
+; Initialisation du programme
+     TSTO #47
+     BOV pile_pleine
+     ADDSP #45
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Toto
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Toto.get, R0
+     STORE R0, 5 (GB)
+
+; Table des méthode de la classe A
+     LEA 3 (GB), R0
+     STORE R0, 6 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 7 (GB)
+     LOAD code.A.get, R0
+     STORE R0, 8 (GB)
+
+; Table des méthode de la classe A1
+     LEA 6 (GB), R0
+     STORE R0, 9 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 10 (GB)
+     LOAD code.A1.get, R0
+     STORE R0, 11 (GB)
+
+; Table des méthode de la classe A2
+     LEA 9 (GB), R0
+     STORE R0, 12 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 13 (GB)
+     LOAD code.A2.get, R0
+     STORE R0, 14 (GB)
+
+; Table des méthode de la classe A3
+     LEA 12 (GB), R0
+     STORE R0, 15 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 16 (GB)
+     LOAD code.A3.get, R0
+     STORE R0, 17 (GB)
+
+; Table des méthode de la classe A4
+     LEA 15 (GB), R0
+     STORE R0, 18 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 19 (GB)
+     LOAD code.A4.get, R0
+     STORE R0, 20 (GB)
+
+; Table des méthode de la classe A5
+     LEA 18 (GB), R0
+     STORE R0, 21 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 22 (GB)
+     LOAD code.A5.get, R0
+     STORE R0, 23 (GB)
+
+; Table des méthode de la classe A6
+     LEA 21 (GB), R0
+     STORE R0, 24 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 25 (GB)
+     LOAD code.A6.get, R0
+     STORE R0, 26 (GB)
+
+; Table des méthode de la classe A7
+     LEA 24 (GB), R0
+     STORE R0, 27 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 28 (GB)
+     LOAD code.A7.get, R0
+     STORE R0, 29 (GB)
+
+; Table des méthode de la classe A8
+     LEA 27 (GB), R0
+     STORE R0, 30 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 31 (GB)
+     LOAD code.A8.get, R0
+     STORE R0, 32 (GB)
+
+; Table des méthode de la classe A9
+     LEA 30 (GB), R0
+     STORE R0, 33 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 34 (GB)
+     LOAD code.A9.get, R0
+     STORE R0, 35 (GB)
+
+; Table des méthode de la classe A10
+     LEA 33 (GB), R0
+     STORE R0, 36 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 37 (GB)
+     LOAD code.A10.get, R0
+     STORE R0, 38 (GB)
+
+; Table des méthode de la classe A11
+     LEA 36 (GB), R0
+     STORE R0, 39 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 40 (GB)
+     LOAD code.A11.get, R0
+     STORE R0, 41 (GB)
+
+; Table des méthode de la classe A12
+     LEA 39 (GB), R0
+     STORE R0, 42 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 43 (GB)
+     LOAD code.A12.get, R0
+     STORE R0, 44 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 92.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 42 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     BSR init.A9
+     BSR init.A10
+     BSR init.A11
+     BSR init.A12
+     POP R2
+     STORE R2, 45 (LB)
+
+
+; Instruction ligne n° 95.
+if.0.0 :
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.1
+while_instanceof.1 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.1
+     LEA 42 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.1
+     BRA while_instanceof.1
+true_instanceof.1 :
+     LOAD #1, R2
+     BRA fin_instanceof.1
+false_instanceof.1 :
+     LOAD #0, R2
+fin_instanceof.1 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.2
+while_instanceof.2 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.2
+     LEA 39 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.2
+     BRA while_instanceof.2
+true_instanceof.2 :
+     LOAD #1, R2
+     BRA fin_instanceof.2
+false_instanceof.2 :
+     LOAD #0, R2
+fin_instanceof.2 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.3
+while_instanceof.3 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.3
+     LEA 36 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.3
+     BRA while_instanceof.3
+true_instanceof.3 :
+     LOAD #1, R2
+     BRA fin_instanceof.3
+false_instanceof.3 :
+     LOAD #0, R2
+fin_instanceof.3 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.4
+while_instanceof.4 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.4
+     LEA 33 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.4
+     BRA while_instanceof.4
+true_instanceof.4 :
+     LOAD #1, R2
+     BRA fin_instanceof.4
+false_instanceof.4 :
+     LOAD #0, R2
+fin_instanceof.4 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.5
+while_instanceof.5 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.5
+     LEA 30 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.5
+     BRA while_instanceof.5
+true_instanceof.5 :
+     LOAD #1, R2
+     BRA fin_instanceof.5
+false_instanceof.5 :
+     LOAD #0, R2
+fin_instanceof.5 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.6
+while_instanceof.6 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.6
+     LEA 27 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.6
+     BRA while_instanceof.6
+true_instanceof.6 :
+     LOAD #1, R2
+     BRA fin_instanceof.6
+false_instanceof.6 :
+     LOAD #0, R2
+fin_instanceof.6 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.7
+while_instanceof.7 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.7
+     LEA 24 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.7
+     BRA while_instanceof.7
+true_instanceof.7 :
+     LOAD #1, R2
+     BRA fin_instanceof.7
+false_instanceof.7 :
+     LOAD #0, R2
+fin_instanceof.7 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.8
+while_instanceof.8 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.8
+     LEA 21 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.8
+     BRA while_instanceof.8
+true_instanceof.8 :
+     LOAD #1, R2
+     BRA fin_instanceof.8
+false_instanceof.8 :
+     LOAD #0, R2
+fin_instanceof.8 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.9
+while_instanceof.9 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.9
+     LEA 18 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.9
+     BRA while_instanceof.9
+true_instanceof.9 :
+     LOAD #1, R2
+     BRA fin_instanceof.9
+false_instanceof.9 :
+     LOAD #0, R2
+fin_instanceof.9 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.10
+while_instanceof.10 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.10
+     LEA 15 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.10
+     BRA while_instanceof.10
+true_instanceof.10 :
+     LOAD #1, R2
+     BRA fin_instanceof.10
+false_instanceof.10 :
+     LOAD #0, R2
+fin_instanceof.10 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.11
+while_instanceof.11 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.11
+     LEA 12 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.11
+     BRA while_instanceof.11
+true_instanceof.11 :
+     LOAD #1, R2
+     BRA fin_instanceof.11
+false_instanceof.11 :
+     LOAD #0, R2
+fin_instanceof.11 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.12
+while_instanceof.12 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.12
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.12
+     BRA while_instanceof.12
+true_instanceof.12 :
+     LOAD #1, R2
+     BRA fin_instanceof.12
+false_instanceof.12 :
+     LOAD #0, R2
+fin_instanceof.12 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.13
+while_instanceof.13 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.13
+     LEA 6 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.13
+     BRA while_instanceof.13
+true_instanceof.13 :
+     LOAD #1, R2
+     BRA fin_instanceof.13
+false_instanceof.13 :
+     LOAD #0, R2
+fin_instanceof.13 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 45 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.14
+while_instanceof.14 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.14
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.14
+     BRA while_instanceof.14
+true_instanceof.14 :
+     LOAD #1, R2
+     BRA fin_instanceof.14
+false_instanceof.14 :
+     LOAD #0, R2
+fin_instanceof.14 :
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 96.
+     WSTR "ok"
+     WNL
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 99.
+     WSTR "ko"
+     WNL
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Toto #
+; ##########################
+
+; Méthode Toto.get
+code.Toto.get :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 15.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     POP R2
+     LOAD R2, R0
+     BRA fin.Toto.get
+     WSTR "Erreur : sortie de la méthode Toto.get sans return"
+     WNL
+     ERROR
+fin.Toto.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Toto
+init.Toto :
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.get
+code.A.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 21.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A.get
+     WSTR "Erreur : sortie de la méthode A.get sans return"
+     WNL
+     ERROR
+fin.A.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     RTS
+
+; ########################
+; # Code de la classe A1 #
+; ########################
+
+; Méthode A1.get
+code.A1.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 27.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 6 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A1.get
+     WSTR "Erreur : sortie de la méthode A1.get sans return"
+     WNL
+     ERROR
+fin.A1.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A1
+init.A1 :
+     RTS
+
+; ########################
+; # Code de la classe A2 #
+; ########################
+
+; Méthode A2.get
+code.A2.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 33.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A2.get
+     WSTR "Erreur : sortie de la méthode A2.get sans return"
+     WNL
+     ERROR
+fin.A2.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A2
+init.A2 :
+     RTS
+
+; ########################
+; # Code de la classe A3 #
+; ########################
+
+; Méthode A3.get
+code.A3.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 39.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 12 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A3.get
+     WSTR "Erreur : sortie de la méthode A3.get sans return"
+     WNL
+     ERROR
+fin.A3.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A3
+init.A3 :
+     RTS
+
+; ########################
+; # Code de la classe A4 #
+; ########################
+
+; Méthode A4.get
+code.A4.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 45.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 15 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A4.get
+     WSTR "Erreur : sortie de la méthode A4.get sans return"
+     WNL
+     ERROR
+fin.A4.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A4
+init.A4 :
+     RTS
+
+; ########################
+; # Code de la classe A5 #
+; ########################
+
+; Méthode A5.get
+code.A5.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 51.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 18 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A5.get
+     WSTR "Erreur : sortie de la méthode A5.get sans return"
+     WNL
+     ERROR
+fin.A5.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A5
+init.A5 :
+     RTS
+
+; ########################
+; # Code de la classe A6 #
+; ########################
+
+; Méthode A6.get
+code.A6.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 57.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 21 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A6.get
+     WSTR "Erreur : sortie de la méthode A6.get sans return"
+     WNL
+     ERROR
+fin.A6.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A6
+init.A6 :
+     RTS
+
+; ########################
+; # Code de la classe A7 #
+; ########################
+
+; Méthode A7.get
+code.A7.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 62.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 24 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A7.get
+     WSTR "Erreur : sortie de la méthode A7.get sans return"
+     WNL
+     ERROR
+fin.A7.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A7
+init.A7 :
+     RTS
+
+; ########################
+; # Code de la classe A8 #
+; ########################
+
+; Méthode A8.get
+code.A8.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 67.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 27 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A8.get
+     WSTR "Erreur : sortie de la méthode A8.get sans return"
+     WNL
+     ERROR
+fin.A8.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A8
+init.A8 :
+     RTS
+
+; ########################
+; # Code de la classe A9 #
+; ########################
+
+; Méthode A9.get
+code.A9.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 72.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 30 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A9.get
+     WSTR "Erreur : sortie de la méthode A9.get sans return"
+     WNL
+     ERROR
+fin.A9.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A9
+init.A9 :
+     RTS
+
+; #########################
+; # Code de la classe A10 #
+; #########################
+
+; Méthode A10.get
+code.A10.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 77.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 33 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     BSR init.A9
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A10.get
+     WSTR "Erreur : sortie de la méthode A10.get sans return"
+     WNL
+     ERROR
+fin.A10.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A10
+init.A10 :
+     RTS
+
+; #########################
+; # Code de la classe A11 #
+; #########################
+
+; Méthode A11.get
+code.A11.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 82.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 36 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     BSR init.A9
+     BSR init.A10
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A11.get
+     WSTR "Erreur : sortie de la méthode A11.get sans return"
+     WNL
+     ERROR
+fin.A11.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A11
+init.A11 :
+     RTS
+
+; #########################
+; # Code de la classe A12 #
+; #########################
+
+; Méthode A12.get
+code.A12.get :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 87.
+     ADDSP #1
+     NEW #1, R2
+     BOV tas_plein
+     LEA 39 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Toto
+     BSR init.A
+     BSR init.A1
+     BSR init.A2
+     BSR init.A3
+     BSR init.A4
+     BSR init.A5
+     BSR init.A6
+     BSR init.A7
+     BSR init.A8
+     BSR init.A9
+     BSR init.A10
+     BSR init.A11
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.A12.get
+     WSTR "Erreur : sortie de la méthode A12.get sans return"
+     WNL
+     ERROR
+fin.A12.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A12
+init.A12 :
+     RTS

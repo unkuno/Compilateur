@@ -1,0 +1,227 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 4) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT A                                      -- Ligne 10
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 11
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 11
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 11
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 11
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . NOEUD_ENTIER  18                       -- Ligne 11
+. . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT B                                      -- Ligne 14
+. . . . . -- Defn : (classe, type_classe(B))
+. . . . NOEUD_IDENT A                                      -- Ligne 14
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 15
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 15
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT b                          -- Ligne 15
+. . . . . . . . . . . -- Defn : (champ(valfalse, B), int)
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 15
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_THIS                           -- Ligne 15
+. . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . NOEUD_IDENT a                        -- Ligne 15
+. . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 18
+. . . . NOEUD_IDENT C                                      -- Ligne 18
+. . . . . -- Defn : (classe, type_classe(C))
+. . . . NOEUD_IDENT A                                      -- Ligne 18
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 19
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 19
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 19
+. . . . . . . . . . NOEUD_IDENT c                          -- Ligne 19
+. . . . . . . . . . . -- Defn : (champ(valfalse, C), int)
+. . . . . . . . . . NOEUD_ENTIER  42                       -- Ligne 19
+. . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 22
+. . . . NOEUD_IDENT D                                      -- Ligne 22
+. . . . . -- Defn : (classe, type_classe(D))
+. . . . NOEUD_IDENT C                                      -- Ligne 22
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 23
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 23
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 23
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 23
+. . . . . . . . . . . -- Defn : (champ(valfalse, D), int)
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 23
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_CONVERSION                     -- Ligne 23
+. . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . NOEUD_IDENT A                      -- Ligne 23
+. . . . . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . NOEUD_THIS                         -- Ligne 23
+. . . . . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . . . NOEUD_IDENT a                        -- Ligne 23
+. . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . -- Type : int
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 4) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 26
+. . . . . NOEUD_IDENT D                                    -- Ligne 26
+. . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . -- Type : type_classe(D)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 26
+. . . . . . . . NOEUD_IDENT od                             -- Ligne 26
+. . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 26
+. . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT D                            -- Ligne 26
+. . . . . . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 27
+. . . . . NOEUD_IDENT C                                    -- Ligne 27
+. . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . -- Type : type_classe(C)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 27
+. . . . . . . . NOEUD_IDENT oc                             -- Ligne 27
+. . . . . . . . . -- Defn : (var, type_classe(C))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 27
+. . . . . . . . . -- Type : type_classe(C)
+. . . . . . . . . NOEUD_IDENT C                            -- Ligne 27
+. . . . . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . . . . -- Type : type_classe(C)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 28
+. . . . . NOEUD_IDENT B                                    -- Ligne 28
+. . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 28
+. . . . . . . . NOEUD_IDENT ob                             -- Ligne 28
+. . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 28
+. . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 28
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 29
+. . . . . NOEUD_IDENT A                                    -- Ligne 29
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 29
+. . . . . . . . NOEUD_IDENT oa                             -- Ligne 29
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 29
+. . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 29
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . <Liste (longueur 8) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 31
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "od.a = "                       -- Ligne 31
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_SELECTION                              -- Ligne 31
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT od                             -- Ligne 31
+. . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 31
+. . . . . . . . . -- Defn : (champ(valfalse, D), int)
+. . . . . . . . . -- Type : int
+. . . # NOEUD_AFFECT                                       -- Ligne 33
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT oa                                   -- Ligne 33
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 33
+. . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT A                                  -- Ligne 33
+. . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT oa                                 -- Ligne 33
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_AFFECT                                       -- Ligne 35
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT oa                                   -- Ligne 35
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT ob                                   -- Ligne 35
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . # NOEUD_AFFECT                                       -- Ligne 36
+. . . . . -- Type : type_classe(B)
+. . . . . NOEUD_IDENT ob                                   -- Ligne 36
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 36
+. . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT B                                  -- Ligne 36
+. . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT oa                                 -- Ligne 36
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_AFFECT                                       -- Ligne 38
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT oa                                   -- Ligne 38
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT od                                   -- Ligne 38
+. . . . . . -- Defn : (var, type_classe(D))
+. . . . . . -- Type : type_classe(D)
+. . . # NOEUD_AFFECT                                       -- Ligne 39
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT oa                                   -- Ligne 39
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 39
+. . . . . . -- Type : type_classe(C)
+. . . . . . NOEUD_IDENT C                                  -- Ligne 39
+. . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . -- Type : type_classe(C)
+. . . . . . NOEUD_IDENT oa                                 -- Ligne 39
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 41
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "cast<int>(3.14) = "            -- Ligne 41
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 41
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT int                            -- Ligne 41
+. . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_FLOTTANT  3.14000E+00                -- Ligne 41
+. . . . . . . . . -- Type : float
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 42
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "cast<float>(42) = "            -- Ligne 42
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 42
+. . . . . . . . -- Type : float
+. . . . . . . . NOEUD_IDENT float                          -- Ligne 42
+. . . . . . . . . -- Defn : (type, float)
+. . . . . . . . . -- Type : float
+. . . . . . . . NOEUD_ENTIER  42                           -- Ligne 42
+. . . . . . . . . -- Type : int

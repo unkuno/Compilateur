@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.59)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Conversion de 'String' en 'boolean' impossible (règle 3.59)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+boolean b;
+{
+   b = cast<boolean> ("a");
+}

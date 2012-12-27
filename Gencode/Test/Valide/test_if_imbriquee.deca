@@ -1,0 +1,701 @@
+// Description:
+//    test if imbriquee
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+{
+
+    if(true) {
+	if(true) {
+	    if(true) {
+		if(true) {
+		    if(true) {
+			if(true) {
+			    if(true) {
+				if(true) {
+				    if(true) {
+					if(true) {
+					    if(true) {
+						if(true) {
+						    if(true) {
+							if(true) {
+							    if(true) {
+								if(true) {
+								    if(true) {
+									if(true) {
+									    if(true) {
+										if(true) {
+										    if(true) {
+											if(true) {
+											    if(true) {
+												if(true) {
+												    if(true) {
+													if(true) {
+													    if(true) {
+														if(true) {
+														    if(true) {
+															if(true) {
+															    if(true) {
+																if(true) {
+
+																} 
+																elsif(true) {
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+
+																    }
+																    else {
+
+																    }
+																}
+																else {
+
+																}
+															    } 
+															    elsif(true) {
+
+															    }
+															    else {
+
+															    }
+															} 
+															elsif(true) {
+
+															}
+															else {
+
+															}
+														    } 
+														    elsif(true) {
+
+														    }
+														    else {
+
+														    }
+														} 
+														elsif(true) {
+
+														}
+														else {
+
+														}
+													    } 
+													    elsif(true) {
+
+													    }
+													    else {
+
+													    }
+													} 
+													elsif(true) {
+
+													}
+													else {
+
+													}
+												    } 
+												    elsif(true) {
+
+												    }
+												    else {
+
+												    }
+												} 
+												elsif(true) {
+
+												}
+												else {
+
+												}
+											    } 
+											    elsif(true) {
+
+											    }
+											    else {
+
+											    }
+											} 
+											elsif(true) {
+
+											}
+											else {
+
+											}
+										    } 
+										    elsif(true) {
+
+										    }
+										    else {
+
+										    }
+										} 
+										elsif(true) {
+
+										}
+										else {
+
+										}
+									    } 
+									    elsif(true) {
+
+									    }
+									    else {
+
+									    }
+									} 
+									elsif(true) {
+
+									}
+									else {
+
+									}
+								    } 
+								    elsif(true) {
+
+								    }
+								    else {
+
+								    }
+								} 
+								elsif(true) {
+
+								}
+								else {
+
+								}
+							    } 
+							    elsif(true) {
+								if(true) {
+								    if(true) {
+									if(true) {
+									    if(true) {
+										if(true) {
+										    if(true) {
+											if(true) {
+											    if(true) {
+												if(true) {
+												    if(true) {
+
+												    } 
+												    elsif(true) {
+													if(true) {
+
+													} 
+													elsif(true) {
+													    if(true) {
+
+													    } 
+													    elsif(true) {
+														if(true) {
+
+														} 
+														elsif(true) {
+														    if(true) {
+
+														    } 
+														    elsif(true) {
+															if(true) {
+
+															} 
+															elsif(true) {
+															    if(true) {
+
+															    } 
+															    elsif(true) {
+																if(true) {
+
+																} 
+																elsif(true) {
+																    if(true) {
+
+																    } 
+																    elsif(true) {
+																	if(true) {
+
+																	} 
+																	elsif(true) {
+																	    if(true) {
+
+																	    } 
+																	    elsif(true) {
+
+																	    }
+																	    else {
+
+																	    }
+																	}
+																	else {
+
+																	}
+																    }
+																    else {
+
+																    }
+																}
+																else {
+
+																}
+															    }
+															    else {
+
+															    }
+															}
+															else {
+
+															}
+														    }
+														    else {
+
+														    }
+														}
+														else {
+
+														}
+													    }
+													    else {
+
+													    }
+													}
+													else {
+
+													}
+												    }
+												    else {
+
+												    }
+												} 
+												elsif(true) {
+
+												}
+												else {
+
+												}
+											    } 
+											    elsif(true) {
+
+											    }
+											    else {
+
+											    }
+											} 
+											elsif(true) {
+
+											}
+											else {
+
+											}
+										    } 
+										    elsif(true) {
+
+										    }
+										    else {
+
+										    }
+										} 
+										elsif(true) {
+
+										}
+										else {
+
+										}
+									    } 
+									    elsif(true) {
+
+									    }
+									    else {
+
+									    }
+									} 
+									elsif(true) {
+
+									}
+									else {
+
+									}
+								    } 
+								    elsif(true) {
+
+								    }
+								    else {
+
+								    }
+								} 
+								elsif(true) {
+
+								}
+								else {
+
+								}
+							    }
+							    else {
+
+							    }
+							} 
+							elsif(true) {
+
+							}
+							else {
+
+							}
+						    } 
+						    elsif(true) {
+
+						    }
+						    else {
+
+						    }
+						} 
+						elsif(true) {
+
+						}
+						else {
+
+						}
+					    } 
+					    elsif(true) {
+
+					    }
+					    else {
+
+					    }
+					} 
+					elsif(true) {
+
+					}
+					else {
+
+					}
+				    } 
+				    elsif(true) {
+
+				    }
+				    else {
+
+				    }
+				} 
+				elsif(true) {
+
+				}
+				else {
+
+				}
+			    } 
+			    elsif(true) {
+
+			    }
+			    else {
+
+			    }
+			} 
+			elsif(true) {
+
+			}
+			else {
+
+			}
+		    } 
+		    elsif(true) {
+
+		    }
+		    else {
+
+		    }
+		} 
+		elsif(true) {
+
+		}
+		else {
+
+		}
+	    } 
+	    elsif(true) {
+
+	    }
+	    else {
+
+	    }
+	} 
+	elsif(true) {
+
+	}
+	else {
+
+	}
+    } 
+    elsif(true) {
+
+    }
+    else {
+
+    }
+}

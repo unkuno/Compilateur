@@ -1,0 +1,30 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT Test                                   -- Ligne 10
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 11
+. . . . . . . NOEUD_IDENT void                             -- Ligne 11
+. . . . . . . NOEUD_IDENT recursif                         -- Ligne 11
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT recursif                   -- Ligne 13
+. . . . . . . . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 17
+. . . . . NOEUD_IDENT Test                                 -- Ligne 17
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 17
+. . . . . . . . NOEUD_IDENT t                              -- Ligne 17
+. . . . . . . . NOEUD_CREATION                             -- Ligne 17
+. . . . . . . . . NOEUD_IDENT Test                         -- Ligne 17
+. . <Liste (longueur 1) :>
+. . . # NOEUD_APPEL                                        -- Ligne 19
+. . . . . NOEUD_SELECTION                                  -- Ligne 19
+. . . . . . NOEUD_IDENT t                                  -- Ligne 19
+. . . . . . NOEUD_IDENT recursif                           -- Ligne 19
+. . . . . <Liste vide>

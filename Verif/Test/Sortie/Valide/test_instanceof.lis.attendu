@@ -1,0 +1,377 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 4) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 13
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . NOEUD_ENTIER  18                       -- Ligne 13
+. . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 16
+. . . . NOEUD_IDENT B                                      -- Ligne 16
+. . . . . -- Defn : (classe, type_classe(B))
+. . . . NOEUD_IDENT A                                      -- Ligne 16
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 17
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 17
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 17
+. . . . . . . . . . NOEUD_IDENT b                          -- Ligne 17
+. . . . . . . . . . . -- Defn : (champ(valfalse, B), int)
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 17
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_THIS                           -- Ligne 17
+. . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . NOEUD_IDENT a                        -- Ligne 17
+. . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 20
+. . . . NOEUD_IDENT C                                      -- Ligne 20
+. . . . . -- Defn : (classe, type_classe(C))
+. . . . NOEUD_IDENT A                                      -- Ligne 20
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 21
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 21
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 21
+. . . . . . . . . . NOEUD_IDENT c                          -- Ligne 21
+. . . . . . . . . . . -- Defn : (champ(valfalse, C), int)
+. . . . . . . . . . NOEUD_ENTIER  42                       -- Ligne 21
+. . . . . . . . . . . -- Type : int
+. . # NOEUD_CLASSE                                         -- Ligne 24
+. . . . NOEUD_IDENT D                                      -- Ligne 24
+. . . . . -- Defn : (classe, type_classe(D))
+. . . . NOEUD_IDENT C                                      -- Ligne 24
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 26
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 26
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 26
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 26
+. . . . . . . . . . . -- Defn : (champ(valfalse, D), int)
+. . . . . . . . . . NOEUD_VIDE
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 4) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 29
+. . . . . NOEUD_IDENT D                                    -- Ligne 29
+. . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . -- Type : type_classe(D)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 29
+. . . . . . . . NOEUD_IDENT od                             -- Ligne 29
+. . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 29
+. . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT D                            -- Ligne 29
+. . . . . . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 30
+. . . . . NOEUD_IDENT C                                    -- Ligne 30
+. . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . -- Type : type_classe(C)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 30
+. . . . . . . . NOEUD_IDENT oc                             -- Ligne 30
+. . . . . . . . . -- Defn : (var, type_classe(C))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 30
+. . . . . . . . . -- Type : type_classe(C)
+. . . . . . . . . NOEUD_IDENT C                            -- Ligne 30
+. . . . . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . . . . -- Type : type_classe(C)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 31
+. . . . . NOEUD_IDENT B                                    -- Ligne 31
+. . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 31
+. . . . . . . . NOEUD_IDENT ob                             -- Ligne 31
+. . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 31
+. . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 31
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 32
+. . . . . NOEUD_IDENT A                                    -- Ligne 32
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 32
+. . . . . . . . NOEUD_IDENT oa                             -- Ligne 32
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 32
+. . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 32
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . <Liste (longueur 15) :>
+. . . # NOEUD_SI                                           -- Ligne 34
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 34
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 34
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT od                           -- Ligne 34
+. . . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT D                            -- Ligne 34
+. . . . . . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 35
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "od instanceof D"   -- Ligne 35
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 38
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 38
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 38
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT od                           -- Ligne 38
+. . . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT C                            -- Ligne 38
+. . . . . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . . . . -- Type : type_classe(C)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 39
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "od instanceof C"   -- Ligne 39
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 42
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 42
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 42
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT od                           -- Ligne 42
+. . . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 42
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 43
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "od instanceof B"   -- Ligne 43
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 46
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 46
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 46
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT od                           -- Ligne 46
+. . . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 46
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 47
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "od instanceof A"   -- Ligne 47
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 50
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 50
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 50
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT od                           -- Ligne 50
+. . . . . . . . . . -- Defn : (var, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . . NOEUD_IDENT Object                       -- Ligne 50
+. . . . . . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . . . . . -- Type : type_classe(Object)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 51
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "od instanceof Object"-- Ligne 51
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 55
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 55
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 55
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT oa                           -- Ligne 55
+. . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT D                            -- Ligne 55
+. . . . . . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 56
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "oa instanceof D"   -- Ligne 56
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 59
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 59
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 59
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT oa                           -- Ligne 59
+. . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT C                            -- Ligne 59
+. . . . . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . . . . -- Type : type_classe(C)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 60
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "oa instanceof C"   -- Ligne 60
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 63
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 63
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 63
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT oa                           -- Ligne 63
+. . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 63
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 64
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "oa instanceof B"   -- Ligne 64
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 67
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 67
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 67
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT oa                           -- Ligne 67
+. . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 67
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 68
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "oa instanceof A"   -- Ligne 68
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 71
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 71
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 71
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT oa                           -- Ligne 71
+. . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT Object                       -- Ligne 71
+. . . . . . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . . . . . -- Type : type_classe(Object)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 72
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "oa instanceof Object"-- Ligne 72
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 76
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 76
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 76
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_NULL                               -- Ligne 76
+. . . . . . . . . . -- Type : type_null
+. . . . . . . . . NOEUD_IDENT D                            -- Ligne 76
+. . . . . . . . . . -- Defn : (classe, type_classe(D))
+. . . . . . . . . . -- Type : type_classe(D)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 77
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "null instanceof D" -- Ligne 77
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 80
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 80
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 80
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_NULL                               -- Ligne 80
+. . . . . . . . . . -- Type : type_null
+. . . . . . . . . NOEUD_IDENT C                            -- Ligne 80
+. . . . . . . . . . -- Defn : (classe, type_classe(C))
+. . . . . . . . . . -- Type : type_classe(C)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 81
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "null instanceof C" -- Ligne 81
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 84
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 84
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 84
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_NULL                               -- Ligne 84
+. . . . . . . . . . -- Type : type_null
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 84
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 85
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "null instanceof B" -- Ligne 85
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 88
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 88
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 88
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_NULL                               -- Ligne 88
+. . . . . . . . . . -- Type : type_null
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 88
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 89
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "null instanceof A" -- Ligne 89
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 92
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 92
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 92
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_NULL                               -- Ligne 92
+. . . . . . . . . . -- Type : type_null
+. . . . . . . . . NOEUD_IDENT Object                       -- Ligne 92
+. . . . . . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . . . . . -- Type : type_classe(Object)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 93
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "null instanceof Object"-- Ligne 93
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>

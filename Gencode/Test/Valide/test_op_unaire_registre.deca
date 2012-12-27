@@ -1,0 +1,16 @@
+// Description:
+//	Teste les opérations unaires via des registres
+//
+// Resultats:
+//	Ne plante pas
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 22/01/2012
+
+{
+    if (-(2+2+2+2)>3) {
+	print("logic");
+    }
+}

@@ -1,0 +1,21 @@
+// Description:
+//    tests des entiers.
+//
+// Resultats:
+//    Ligne 11 : Erreur de syntaxe.
+//    test_lex ne doit pas donner d'erreur.
+//
+// Historique:
+//    crée le 08/01/2012
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1234567890

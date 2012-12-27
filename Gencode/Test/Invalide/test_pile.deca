@@ -1,0 +1,20 @@
+// Description:
+//    test de débordement de pile
+//
+// Resultats:
+//    débordement de pile à l'exéction
+//
+// Historique:
+//    cree le 19/01/2012
+
+class Test {
+	void recursif()
+	{
+		recursif();
+	}
+}
+
+Test t = new Test();
+{
+	t.recursif();
+}

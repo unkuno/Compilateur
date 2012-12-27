@@ -1,0 +1,23 @@
+// Description:
+//    Programme soulevant l'erreur (2.17)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 21 : 'x' est déjà un champ dans une super-classe (règle 2.17)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   int x;
+   
+   int y(){
+   }
+   
+}
+
+class B extends A {   
+   int x(){
+   }  
+}

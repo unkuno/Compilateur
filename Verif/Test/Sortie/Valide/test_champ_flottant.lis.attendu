@@ -1,0 +1,83 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT Point2D                                -- Ligne 12
+. . . . . -- Defn : (classe, type_classe(Point2D))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 13
+. . . . . . . . . . . -- Defn : (champ(valfalse, Point2D), int)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 14
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 14
+. . . . . . . . . . . -- Defn : (champ(valfalse, Point2D), float)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT y                          -- Ligne 14
+. . . . . . . . . . . -- Defn : (champ(valfalse, Point2D), float)
+. . . . . . . . . . NOEUD_VIDE
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Point3D                                -- Ligne 17
+. . . . . -- Defn : (classe, type_classe(Point3D))
+. . . . NOEUD_IDENT Point2D                                -- Ligne 17
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 18
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 18
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 18
+. . . . . . . . . . NOEUD_IDENT val                        -- Ligne 18
+. . . . . . . . . . . -- Defn : (champ(valfalse, Point3D), float)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 19
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 19
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 19
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 19
+. . . . . . . . . . . -- Defn : (champ(valfalse, Point3D), float)
+. . . . . . . . . . NOEUD_VIDE
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 22
+. . . . . NOEUD_IDENT Point2D                              -- Ligne 22
+. . . . . . -- Defn : (classe, type_classe(Point2D))
+. . . . . . -- Type : type_classe(Point2D)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 22
+. . . . . . . . NOEUD_IDENT p2                             -- Ligne 22
+. . . . . . . . . -- Defn : (var, type_classe(Point2D))
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 23
+. . . . . NOEUD_IDENT Point3D                              -- Ligne 23
+. . . . . . -- Defn : (classe, type_classe(Point3D))
+. . . . . . -- Type : type_classe(Point3D)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 23
+. . . . . . . . NOEUD_IDENT p3                             -- Ligne 23
+. . . . . . . . . -- Defn : (var, type_classe(Point3D))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 23
+. . . . . . . . . -- Type : type_classe(Point3D)
+. . . . . . . . . NOEUD_IDENT Point3D                      -- Ligne 23
+. . . . . . . . . . -- Defn : (classe, type_classe(Point3D))
+. . . . . . . . . . -- Type : type_classe(Point3D)
+. . <Liste vide>

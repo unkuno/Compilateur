@@ -1,0 +1,173 @@
+; Initialisation du programme
+     TSTO #13
+     BOV pile_pleine
+     ADDSP #9
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.A.m, R0
+     STORE R0, 5 (GB)
+
+; Table des méthode de la classe B
+     LEA 3 (GB), R0
+     STORE R0, 6 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 7 (GB)
+     LOAD code.B.m, R0
+     STORE R0, 8 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 26.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 6 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.B
+     POP R2
+     STORE R2, 9 (LB)
+
+
+; Instruction ligne n° 28.
+     LOAD 9 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD #3.00000E+00, R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 29.
+     WSTR "a.c = "
+     ADDSP #2
+     LOAD 9 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 9 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     INT 2 (R2), R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.m
+code.A.m :
+
+; Instruction ligne n° 15.
+     LOAD -3 (LB), R0
+     BRA fin.A.m
+     WSTR "Erreur : sortie de la méthode A.m sans return"
+     WNL
+     ERROR
+fin.A.m :
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Méthode B.m
+code.B.m :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 22.
+     LOAD #2, R2
+     MUL -3 (LB), R2
+     LOAD R2, R0
+     BRA fin.B.m
+     WSTR "Erreur : sortie de la méthode B.m sans return"
+     WNL
+     ERROR
+fin.B.m :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe B
+init.B :
+     LOAD #0.00000E+00, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS

@@ -1,0 +1,303 @@
+; Initialisation du programme
+     TSTO #21
+     BOV pile_pleine
+     ADDSP #8
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.A.get, R0
+     STORE R0, 5 (GB)
+     LOAD code.A.init, R0
+     STORE R0, 6 (GB)
+     LOAD code.A.affiche, R0
+     STORE R0, 7 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 26.
+
+
+; Instruction ligne n° 28.
+     ADDSP #1
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #1, R2
+     LOAD #2, R3
+     LOAD #3, R4
+     LOAD #4, R5
+     LOAD #5, R6
+     ADD #6, R6
+     ADD #7, R6
+     ADD R6, R5
+     LOAD #8, R6
+     ADD #9, R6
+     ADD R6, R5
+     ADD R5, R4
+     ADD R4, R3
+     ADD R3, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 8 (LB)
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 29.
+     LOAD #1, R2
+     LOAD #1, R3
+     LOAD #1, R4
+     LOAD #1, R5
+     LOAD #1, R6
+     LOAD #1, R7
+     LOAD #1, R8
+     LOAD #1, R9
+     LOAD #1, R10
+     LOAD #1, R11
+     LOAD #1, R12
+     LOAD #1, R13
+     ADD #1, R13
+     ADD R13, R12
+     ADD #1, R12
+     ADD R12, R11
+     ADD #1, R11
+     ADD R11, R10
+     ADDSP #1
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R11
+     LOAD #1, R12
+     LOAD #1, R13
+     LOAD #1, R14
+     LOAD #1, R15
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD #1, R2
+     PUSH R3                           ; Sauvegarde de R3
+     LOAD #1, R3
+     PUSH R4                           ; Sauvegarde de R4
+     LOAD #1, R4
+     PUSH R5                           ; Sauvegarde de R5
+     LOAD #1, R5
+     PUSH R6                           ; Sauvegarde de R6
+     LOAD #1, R6
+     PUSH R7                           ; Sauvegarde de R7
+     LOAD #1, R7
+     PUSH R8                           ; Sauvegarde de R8
+     LOAD #1, R8
+     PUSH R9                           ; Sauvegarde de R9
+     LOAD #1, R9
+     PUSH R10                          ; Sauvegarde de R10
+     LOAD #1, R10
+     PUSH R11                          ; Sauvegarde de R11
+     LOAD #1, R11
+     ADD #1, R11
+     ADD R11, R10
+     ADD R10, R9
+     ADD R9, R8
+     ADD R8, R7
+     ADD R7, R6
+     ADD R6, R5
+     ADD R5, R4
+     ADD R4, R3
+     ADD R3, R2
+     ADD R2, R15
+     ADD R15, R14
+     ADD R14, R13
+     ADD R13, R12
+     POP R11                           ; Restauration de R11
+     ADD R12, R11
+     POP R10                           ; Restauration de R10
+     STORE R11, -1 (SP)
+     POP R9                            ; Restauration de R9
+     POP R8                            ; Restauration de R8
+     POP R7                            ; Restauration de R7
+     POP R6                            ; Restauration de R6
+     POP R5                            ; Restauration de R5
+     POP R4                            ; Restauration de R4
+     POP R3                            ; Restauration de R3
+     POP R2                            ; Restauration de R2
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R11
+     CMP #null, R11
+     BEQ dereferencement_null
+     STORE R11, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R11
+     ADD R11, R10
+     ADD R10, R9
+     ADD R9, R8
+     ADD R8, R7
+     ADD R7, R6
+     ADD R6, R5
+     ADD R5, R4
+     ADD R4, R3
+     ADD R3, R2
+
+; Instruction ligne n° 30.
+     ADDSP #1
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.get
+code.A.get :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 15.
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R0
+     BRA fin.A.get
+     WSTR "Erreur : sortie de la méthode A.get sans return"
+     WNL
+     ERROR
+fin.A.get :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.init
+code.A.init :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 18.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 19.
+     LOAD -2 (LB), R0
+     BRA fin.A.init
+     WSTR "Erreur : sortie de la méthode A.init sans return"
+     WNL
+     ERROR
+fin.A.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode A.affiche
+code.A.affiche :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 22.
+     WSTR "a="
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R1
+     WINT
+     WNL
+fin.A.affiche :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS

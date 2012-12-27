@@ -1,0 +1,195 @@
+.TH TEST-SUITE 1 "10 janvier 2012" "Version 1.1" "Test-suite projet GL"
+.SH NOM
+lanceur.sh - lanceur de la test-suite
+
+.SH SYNOPSYS
+.B lanceur.sh  [-e 
+.I LISTE_ETAPES
+.B ]
+.B            [-c | --no-compilation]
+.B            [-v | --no-validation]
+.B            [-x]
+.B            [-nXC ]
+.B            [-h|--help|?]
+
+
+.SH DESCRIPTION
+Lance les batteries de tests associées aux options demandées en 
+gérant des oracles automatiques et des tests de non-régression. 
+Le script est modulaire et chaque étape de test définit ses propres 
+fonctions de vérifications ainsi que la structure d'organisation des 
+résultats des tests.
+
+
+.SH OPTIONS
+
+.TP 
+.BI -e " LISTE_ETAPES"
+Permet de restreindre la compilation des tests aux seules étapes mentionnées.
+
+.TP
+.BI -x
+Permet de restreindre la compilation des tests
+aux fichiers concernés par l'étape courante.
+(On ne suit pas les liens symboliques)
+
+.TP
+.B -c, --no-compilation  
+Désactive la phase de compilation des tests.
+Les vérifications se basent sur les résultats de
+la dernière compilation.
+ATTENTION : Erreurs s'ils n'existent pas.
+
+.TP
+.B -v, --no-validation 	
+Désactive les phases de validation manuelle.
+Marque comme non vérifiés les fichiers concernés.
+Considérés comme non valide dans le rapport final.
+
+
+.TP
+.B -nXC  (X dans [0-4], C dans c?)
+Place le niveau des traces de la test-suite :
+ - 0 (défaut) : Aucune trace
+ - 1 : Ajout d'un pourcentage de validation étape par étape
+ - 2 : Ajout d'une liste des fichiers invalides
+ - 3 : Ajout du détail des tests invalides 
+       (rien affiché : RAS)
+ - 4 : Ajout du détail de tous les tests
+ - sans 'c' (default) : rien de plus
+ - avec 'c' : ajout des en-têtes commentés de tous les 
+   tests traités (niveau >= 3)
+
+.TP
+.B -h, --help, ?
+Affiche cette page de manuel avec la commande less.
+
+
+.SH COMPORTEMENT
+
+Chaque étape va comporter son propre pilote de test et sa propre
+batterie de tests. Le pilote va créer pour chaque fichier un ensemble de
+sorties (ex: une sortie standard, une sortie d'erreur, ...).
+
+Le script va ranger ces sorties de façon organisée pour stocker 
+ces sorties et les réutiliser.
+A un endroit défini par le .conf, l'utilisateur trouvera :
+
+   - resultat_test1.res : le résultat de la dernière compilation 
+                          du test 1.
+   - resultat_test1.res.valide : le dernier résultat validé.
+   - resultat_test1.res.attendu : le résultat attendu 
+                                 (éditable par l'utilisateur)
+
+.br
+
+A chaque lancement de lanceur.sh, pour les fichiers considérés, 
+on va éxécuter les pilotes qui vont fournir une ou des sorties et les comparer 
+par rapport aux attendus et valides s'il en existe. Si ces comparaisons 
+ne sont pas concluantes, on fait appel aux fonctions de vérification 
+automatique définies dans le .conf ou on demande à comparer "à l'oeil".
+
+
+.SH MISE EN PLACE
+        
+Pour la mise en place de ce script, les sources doivent être organisées 
+comme sur la représentation en arbre qui suit :
+
+   RACINE DU PROJET
+      |-ETAPE1
+      : |-Test
+      :   |-.conf (fichier de configuration détaillé plus bas)
+      :   |-Valide
+      :     |-...(les tests organisés d'une façon quelconque)
+      :   |-Invalide
+      :     |-...(les tests organisés d'une façon quelconque)
+      : |-...(les sources de l'étape ou autre)
+      |-ETAPE2
+      : |-Test
+      :     |-...
+      :     |-...
+      |-ETAPEn
+      : |-...(Autres dossiers du projet)
+
+Les noms des étapes sont à écrire en dur dans le script lanceur.sh sous 
+la forme d'une liste dans la variable LISTE_ETAPES.
+(néanmoins le script s'arrête avec un message d'erreur si on essaie 
+de compiler une étape qui ne correspond pas à un sous-dossier de la 
+racine, ou qu'il ne contient pas le .conf)
+
+
+.SH .CONF
+Le .conf est un script bash correct lu pendant l'éxecution de lanceur 
+et qui doit comprendre les éléments suivants :
+   - Dans une variable globale EXE :
+      le chemin relatif (à partir de la racine du projet) de
+      l'éxécutable à lancer sur la batterie de tests.
+      ex : EXE=Scripts/test_lexsynt.sh
+      cf contraintes sur les pilotes.
+   
+   - Dans une variable globale ENTREE :
+      l'extension commune à tous les fichiers de tests
+      ex : ENTREE=.deca
+
+   - La déclaration de toutes les fonctions servant d'oracle 
+     automatique pour la vérification des tests.
+
+         ex : est_vide() {  
+                  test $(cat $2 | wc -c) -le 1
+              }
+	  
+
+     cf contraintes sur les fonctions de vérification
+	         
+
+   - la déclaration de deux variables : 
+     SORTIES_VALIDE et SORTIES_INVALIDE
+     ex : 
+         SORTIES_VALIDE=".lex:Lexical/Valide:est_vide" 
+         SORTIES_VALIDE="$SORTIES_VALIDE .errlex:Lexical/Valide:AUTO"
+
+	Ces deux variables sont des listes (séparateur " ") de triplets
+        (extention:chemin:vérification)
+
+
+   - extension -> d'une sortie du pilote de test. 
+
+   - chemin -> (relatif) de l'emplacement du fichier ayant
+               cette extension. C'est le pilote qui l'y place.
+               On donne ici l'indication au script lanceur.
+
+   - vérification -> le nom de la fonction d'oracle 
+                     automatique qui doit être appelée et 
+                     qui retourne si oui ou non la sortie 
+                     est conforme à l'entrée. 
+                     Pour demander à vérifier soi-même une 
+                     sortie particulière, on met "AUTO". 
+
+.SH CONTRAINTES SUR LES EXECUTABLES
+
+L' éxécutable qui est cité par un .conf doit être parfaitement 
+en accord avec celui-ci : 
+   1) Il prend en premier et seul paramètre le chemin absolu 
+      du fichier de test à compiler.
+   2) Il crée en sortie tous les fichiers que le .conf a promis
+      aux endroits également promis. 	  
+      Attention : ne pas oublier de créer des fichiers vides
+      TOUS les fichiers doivent y être.
+
+Rq: Il n'y a pas de limite sur le nombre de sorties, du moment qu'elles
+sont renseignées dans le .conf.
+
+.SH CONTRAINTES SUR LES FONCTIONS DE VERIFICATION
+Les fonctions de vérif sont des fonctions bash simples prenant en
+paramètres
+   1) le fichier qu'on a cherché à tester
+   2) un des fichiers de sortie (défini par les listes de sorties)
+
+
+.SH AUTEUR
+.TP
+BOUSSON Valentin (valentin.bousson@ensimag.imag.fr)
+
+.SH BOGUES
+Pour tout bug détécté, question à propos ou suggestions :
+contactez valentin.bousson@ensimag.imag.fr

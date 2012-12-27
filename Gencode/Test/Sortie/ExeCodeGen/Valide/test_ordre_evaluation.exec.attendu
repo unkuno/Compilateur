@@ -1,0 +1,16 @@
+Evaluation AND : 
+evaluation gauche
+OK
+Evaluation OR : 
+evaluation gauche
+OK
+Evaluation AND et OR : 
+evaluation gauche
+evaluation gauche
+OK
+Evaluation AND dans WHILE : 
+evaluation gauche
+OK
+Evaluation OR dans WHILE : 
+evaluation gauche
+OK

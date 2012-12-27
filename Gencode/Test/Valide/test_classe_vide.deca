@@ -1,0 +1,18 @@
+// Description:
+//    test d'une classe vide
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class Vide {
+  
+
+
+}

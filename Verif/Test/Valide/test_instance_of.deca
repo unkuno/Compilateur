@@ -1,0 +1,34 @@
+// Description:
+//    Tests sur la instanceof
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+class A {
+}
+
+class B extends A {
+}
+
+
+A a;
+B b;
+Object o;
+int i;
+float f;
+boolean bool;
+{
+
+   bool = b instanceof A;
+   bool = a instanceof B;
+   bool = null instanceof A;
+   bool = a instanceof Object;
+   bool = a instanceof A;
+   bool = b instanceof B;
+}

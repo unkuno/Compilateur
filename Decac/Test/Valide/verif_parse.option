@@ -1,0 +1,12 @@
+// Description:
+//    Test la vérification et le parse option -v -p
+//
+// Resultats:
+// Warning : Options -p et -v incompatibles. Seul l’option -p sera prise en compte !
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-p -v ./echecs.deca

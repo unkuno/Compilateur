@@ -1,0 +1,25 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 11
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "1+(2+(3+((4+((5+6)+7))+(8+9)))) = "-- Ligne 11
+. . . . . . # NOEUD_PLUS                                   -- Ligne 12
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 12
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 12
+. . . . . . . . . NOEUD_ENTIER  2                          -- Ligne 12
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 12
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 12
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 12
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 12
+. . . . . . . . . . . . NOEUD_ENTIER  4                    -- Ligne 12
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 12
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 12
+. . . . . . . . . . . . . . NOEUD_ENTIER  5                -- Ligne 12
+. . . . . . . . . . . . . . NOEUD_ENTIER  6                -- Ligne 12
+. . . . . . . . . . . . . NOEUD_ENTIER  7                  -- Ligne 12
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 12
+. . . . . . . . . . . . NOEUD_ENTIER  8                    -- Ligne 12
+. . . . . . . . . . . . NOEUD_ENTIER  9                    -- Ligne 12

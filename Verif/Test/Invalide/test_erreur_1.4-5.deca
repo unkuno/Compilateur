@@ -1,0 +1,16 @@
+// Description:
+//    Programme soulevant l'erreur (1.4)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 12 : Identificateur de classe attendu (règle 1.4)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A extends void {
+}
+
+{
+}

@@ -1,0 +1,2748 @@
+; Initialisation du programme
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 15.
+     WSTR "true -> "
+
+; Instruction ligne n° 16.
+if.0.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 17.
+     WSTR "true"
+     WNL
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 20.
+     WSTR "false"
+     WNL
+fin.0 :
+
+; Instruction ligne n° 23.
+     WSTR "false -> "
+
+; Instruction ligne n° 24.
+if.1.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 25.
+     WSTR "true"
+     WNL
+     BRA fin.1
+else.1 :
+
+; Instruction ligne n° 28.
+     WSTR "false"
+     WNL
+fin.1 :
+
+; Instruction ligne n° 31.
+     WSTR "0==0 -> "
+
+; Instruction ligne n° 32.
+if.2.0 :
+     LOAD #0, R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 33.
+     WSTR "true"
+     WNL
+     BRA fin.2
+else.2 :
+
+; Instruction ligne n° 36.
+     WSTR "false"
+     WNL
+fin.2 :
+
+; Instruction ligne n° 39.
+     WSTR "40+2==43 -> "
+
+; Instruction ligne n° 40.
+if.3.0 :
+     LOAD #40, R2
+     ADD #2, R2
+
+; Comparaison EQ
+     CMP #43, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.3
+
+; Instruction ligne n° 41.
+     WSTR "true"
+     WNL
+     BRA fin.3
+else.3 :
+
+; Instruction ligne n° 44.
+     WSTR "false"
+     WNL
+fin.3 :
+
+; Instruction ligne n° 47.
+     WSTR "40-2+4==10*4+3-1 -> "
+
+; Instruction ligne n° 48.
+if.4.0 :
+     LOAD #40, R2
+     SUB #2, R2
+     ADD #4, R2
+     LOAD #10, R3
+     MUL #4, R3
+     ADD #3, R3
+     SUB #1, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 49.
+     WSTR "true"
+     WNL
+     BRA fin.4
+else.4 :
+
+; Instruction ligne n° 52.
+     WSTR "false"
+     WNL
+fin.4 :
+
+; Instruction ligne n° 55.
+     WSTR "1>2 -> "
+
+; Instruction ligne n° 56.
+if.5.0 :
+     LOAD #1, R2
+
+; Comparaison GT
+     CMP #2, R2
+     SGT R2
+     CMP #0, R2
+     BEQ else.5
+
+; Instruction ligne n° 57.
+     WSTR "true"
+     WNL
+     BRA fin.5
+else.5 :
+
+; Instruction ligne n° 60.
+     WSTR "false"
+     WNL
+fin.5 :
+
+; Instruction ligne n° 63.
+     WSTR "2>1 -> "
+
+; Instruction ligne n° 64.
+if.6.0 :
+     LOAD #2, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+     CMP #0, R2
+     BEQ else.6
+
+; Instruction ligne n° 65.
+     WSTR "true"
+     WNL
+     BRA fin.6
+else.6 :
+
+; Instruction ligne n° 68.
+     WSTR "false"
+     WNL
+fin.6 :
+
+; Instruction ligne n° 71.
+     WSTR "1<2 -> "
+
+; Instruction ligne n° 72.
+if.7.0 :
+     LOAD #1, R2
+
+; Comparaison LT
+     CMP #2, R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.7
+
+; Instruction ligne n° 73.
+     WSTR "true"
+     WNL
+     BRA fin.7
+else.7 :
+
+; Instruction ligne n° 76.
+     WSTR "false"
+     WNL
+fin.7 :
+
+; Instruction ligne n° 79.
+     WSTR "3<2 -> "
+
+; Instruction ligne n° 80.
+if.8.0 :
+     LOAD #3, R2
+
+; Comparaison LT
+     CMP #2, R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.8
+
+; Instruction ligne n° 81.
+     WSTR "true"
+     WNL
+     BRA fin.8
+else.8 :
+
+; Instruction ligne n° 84.
+     WSTR "false"
+     WNL
+fin.8 :
+
+; Instruction ligne n° 87.
+     WSTR "1>=2 -> "
+
+; Instruction ligne n° 88.
+if.9.0 :
+     LOAD #1, R2
+
+; Comparaison GE
+     CMP #2, R2
+     SGE R2
+     CMP #0, R2
+     BEQ else.9
+
+; Instruction ligne n° 89.
+     WSTR "true"
+     WNL
+     BRA fin.9
+else.9 :
+
+; Instruction ligne n° 92.
+     WSTR "false"
+     WNL
+fin.9 :
+
+; Instruction ligne n° 95.
+     WSTR "3>=2 -> "
+
+; Instruction ligne n° 96.
+if.10.0 :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #2, R2
+     SGE R2
+     CMP #0, R2
+     BEQ else.10
+
+; Instruction ligne n° 97.
+     WSTR "true"
+     WNL
+     BRA fin.10
+else.10 :
+
+; Instruction ligne n° 100.
+     WSTR "false"
+     WNL
+fin.10 :
+
+; Instruction ligne n° 103.
+     WSTR "1<=2 -> "
+
+; Instruction ligne n° 104.
+if.11.0 :
+     LOAD #1, R2
+
+; Comparaison LE
+     CMP #2, R2
+     SLE R2
+     CMP #0, R2
+     BEQ else.11
+
+; Instruction ligne n° 105.
+     WSTR "true"
+     WNL
+     BRA fin.11
+else.11 :
+
+; Instruction ligne n° 108.
+     WSTR "false"
+     WNL
+fin.11 :
+
+; Instruction ligne n° 111.
+     WSTR "3<=2 -> "
+
+; Instruction ligne n° 112.
+if.12.0 :
+     LOAD #3, R2
+
+; Comparaison LE
+     CMP #2, R2
+     SLE R2
+     CMP #0, R2
+     BEQ else.12
+
+; Instruction ligne n° 113.
+     WSTR "true"
+     WNL
+     BRA fin.12
+else.12 :
+
+; Instruction ligne n° 116.
+     WSTR "false"
+     WNL
+fin.12 :
+
+; Instruction ligne n° 119.
+     WSTR "1==2  -> "
+
+; Instruction ligne n° 120.
+if.13.0 :
+     LOAD #1, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.13
+
+; Instruction ligne n° 121.
+     WSTR "true"
+     WNL
+     BRA fin.13
+else.13 :
+
+; Instruction ligne n° 124.
+     WSTR "false"
+     WNL
+fin.13 :
+
+; Instruction ligne n° 127.
+     WSTR "3==2  -> "
+
+; Instruction ligne n° 128.
+if.14.0 :
+     LOAD #3, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.14
+
+; Instruction ligne n° 129.
+     WSTR "true"
+     WNL
+     BRA fin.14
+else.14 :
+
+; Instruction ligne n° 132.
+     WSTR "false"
+     WNL
+fin.14 :
+
+; Instruction ligne n° 135.
+     WSTR "1!=2 -> "
+
+; Instruction ligne n° 136.
+if.15.0 :
+     LOAD #1, R2
+
+; Comparaison NE
+     CMP #2, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.15
+
+; Instruction ligne n° 137.
+     WSTR "true"
+     WNL
+     BRA fin.15
+else.15 :
+
+; Instruction ligne n° 140.
+     WSTR "false"
+     WNL
+fin.15 :
+
+; Instruction ligne n° 143.
+     WSTR "4!=2 -> "
+
+; Instruction ligne n° 144.
+if.16.0 :
+     LOAD #4, R2
+
+; Comparaison NE
+     CMP #2, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.16
+
+; Instruction ligne n° 145.
+     WSTR "true"
+     WNL
+     BRA fin.16
+else.16 :
+
+; Instruction ligne n° 148.
+     WSTR "false"
+     WNL
+fin.16 :
+
+; Instruction ligne n° 151.
+     WSTR "2>2 -> "
+
+; Instruction ligne n° 152.
+if.17.0 :
+     LOAD #2, R2
+
+; Comparaison GT
+     CMP #2, R2
+     SGT R2
+     CMP #0, R2
+     BEQ else.17
+
+; Instruction ligne n° 153.
+     WSTR "true"
+     WNL
+     BRA fin.17
+else.17 :
+
+; Instruction ligne n° 156.
+     WSTR "false"
+     WNL
+fin.17 :
+
+; Instruction ligne n° 159.
+     WSTR "2<2 -> "
+
+; Instruction ligne n° 160.
+if.18.0 :
+     LOAD #2, R2
+
+; Comparaison LT
+     CMP #2, R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.18
+
+; Instruction ligne n° 161.
+     WSTR "true"
+     WNL
+     BRA fin.18
+else.18 :
+
+; Instruction ligne n° 164.
+     WSTR "false"
+     WNL
+fin.18 :
+
+; Instruction ligne n° 167.
+     WSTR "2>=2 -> "
+
+; Instruction ligne n° 168.
+if.19.0 :
+     LOAD #2, R2
+
+; Comparaison GE
+     CMP #2, R2
+     SGE R2
+     CMP #0, R2
+     BEQ else.19
+
+; Instruction ligne n° 169.
+     WSTR "true"
+     WNL
+     BRA fin.19
+else.19 :
+
+; Instruction ligne n° 172.
+     WSTR "false"
+     WNL
+fin.19 :
+
+; Instruction ligne n° 175.
+     WSTR "2<=2 -> "
+
+; Instruction ligne n° 176.
+if.20.0 :
+     LOAD #2, R2
+
+; Comparaison LE
+     CMP #2, R2
+     SLE R2
+     CMP #0, R2
+     BEQ else.20
+
+; Instruction ligne n° 177.
+     WSTR "true"
+     WNL
+     BRA fin.20
+else.20 :
+
+; Instruction ligne n° 180.
+     WSTR "false"
+     WNL
+fin.20 :
+
+; Instruction ligne n° 183.
+     WSTR "2==2 -> "
+
+; Instruction ligne n° 184.
+if.21.0 :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.21
+
+; Instruction ligne n° 185.
+     WSTR "true"
+     WNL
+     BRA fin.21
+else.21 :
+
+; Instruction ligne n° 188.
+     WSTR "false"
+     WNL
+fin.21 :
+
+; Instruction ligne n° 191.
+     WSTR "2!=2 -> "
+
+; Instruction ligne n° 192.
+if.22.0 :
+     LOAD #2, R2
+
+; Comparaison NE
+     CMP #2, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.22
+
+; Instruction ligne n° 193.
+     WSTR "true"
+     WNL
+     BRA fin.22
+else.22 :
+
+; Instruction ligne n° 196.
+     WSTR "false"
+     WNL
+fin.22 :
+
+; Instruction ligne n° 199.
+     WNL
+
+; Instruction ligne n° 200.
+     WSTR "----------------------------------"
+     WNL
+
+; Instruction ligne n° 201.
+     WNL
+
+; Instruction ligne n° 203.
+     WSTR "true || true -> "
+
+; Instruction ligne n° 204.
+if.23.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BNE fin.OU.24
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.OU.24 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.23
+
+; Instruction ligne n° 205.
+     WSTR "true"
+     WNL
+     BRA fin.23
+else.23 :
+
+; Instruction ligne n° 208.
+     WSTR "false"
+     WNL
+fin.23 :
+
+; Instruction ligne n° 211.
+     WSTR "false || true -> "
+
+; Instruction ligne n° 212.
+if.25.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.26
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.OU.26 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.25
+
+; Instruction ligne n° 213.
+     WSTR "true"
+     WNL
+     BRA fin.25
+else.25 :
+
+; Instruction ligne n° 216.
+     WSTR "false"
+     WNL
+fin.25 :
+
+; Instruction ligne n° 219.
+     WSTR "false || false -> "
+
+; Instruction ligne n° 220.
+if.27.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.28
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.28 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.27
+
+; Instruction ligne n° 221.
+     WSTR "true"
+     WNL
+     BRA fin.27
+else.27 :
+
+; Instruction ligne n° 224.
+     WSTR "false"
+     WNL
+fin.27 :
+
+; Instruction ligne n° 227.
+     WSTR "true || false -> "
+
+; Instruction ligne n° 228.
+if.29.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BNE fin.OU.30
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.30 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.29
+
+; Instruction ligne n° 229.
+     WSTR "true"
+     WNL
+     BRA fin.29
+else.29 :
+
+; Instruction ligne n° 232.
+     WSTR "false"
+     WNL
+fin.29 :
+
+; Instruction ligne n° 235.
+     WSTR "2==2 || true -> "
+
+; Instruction ligne n° 236.
+if.31.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.32
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.OU.32 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.31
+
+; Instruction ligne n° 237.
+     WSTR "true"
+     WNL
+     BRA fin.31
+else.31 :
+
+; Instruction ligne n° 240.
+     WSTR "false"
+     WNL
+fin.31 :
+
+; Instruction ligne n° 243.
+     WSTR "2==2 || false -> "
+
+; Instruction ligne n° 244.
+if.33.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.34
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.34 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.33
+
+; Instruction ligne n° 245.
+     WSTR "true"
+     WNL
+     BRA fin.33
+else.33 :
+
+; Instruction ligne n° 248.
+     WSTR "false"
+     WNL
+fin.33 :
+
+; Instruction ligne n° 251.
+     WSTR "true || 2==2 -> "
+
+; Instruction ligne n° 252.
+if.35.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BNE fin.OU.36
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.OU.36 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.35
+
+; Instruction ligne n° 253.
+     WSTR "true"
+     WNL
+     BRA fin.35
+else.35 :
+
+; Instruction ligne n° 256.
+     WSTR "false"
+     WNL
+fin.35 :
+
+; Instruction ligne n° 259.
+     WSTR "false || 2==2 -> "
+
+; Instruction ligne n° 260.
+if.37.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.38
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.OU.38 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.37
+
+; Instruction ligne n° 261.
+     WSTR "true"
+     WNL
+     BRA fin.37
+else.37 :
+
+; Instruction ligne n° 264.
+     WSTR "false"
+     WNL
+fin.37 :
+
+; Instruction ligne n° 267.
+     WSTR "2==2 || 3 >= 18 -> "
+
+; Instruction ligne n° 268.
+if.39.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.40
+; Evaluation seconde opérande :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+fin.OU.40 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.39
+
+; Instruction ligne n° 269.
+     WSTR "true"
+     WNL
+     BRA fin.39
+else.39 :
+
+; Instruction ligne n° 272.
+     WSTR "false"
+     WNL
+fin.39 :
+
+; Instruction ligne n° 275.
+     WSTR "3 >= 18 || 2==2 -> "
+
+; Instruction ligne n° 276.
+if.41.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+     CMP #0, R2
+     BNE fin.OU.42
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.OU.42 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.41
+
+; Instruction ligne n° 277.
+     WSTR "true"
+     WNL
+     BRA fin.41
+else.41 :
+
+; Instruction ligne n° 280.
+     WSTR "false"
+     WNL
+fin.41 :
+
+; Instruction ligne n° 283.
+     WSTR "2!=3 || (9+10) >= 18 -> "
+
+; Instruction ligne n° 284.
+if.43.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison NE
+     CMP #3, R2
+     SNE R2
+     CMP #0, R2
+     BNE fin.OU.44
+; Evaluation seconde opérande :
+     LOAD #9, R2
+     ADD #10, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+fin.OU.44 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.43
+
+; Instruction ligne n° 285.
+     WSTR "true"
+     WNL
+     BRA fin.43
+else.43 :
+
+; Instruction ligne n° 288.
+     WSTR "false"
+     WNL
+fin.43 :
+
+; Instruction ligne n° 291.
+     WSTR "(9+10) >= 18 || 2!=3 -> "
+
+; Instruction ligne n° 292.
+if.45.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #9, R2
+     ADD #10, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+     CMP #0, R2
+     BNE fin.OU.46
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison NE
+     CMP #3, R2
+     SNE R2
+fin.OU.46 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.45
+
+; Instruction ligne n° 293.
+     WSTR "true"
+     WNL
+     BRA fin.45
+else.45 :
+
+; Instruction ligne n° 296.
+     WSTR "false"
+     WNL
+fin.45 :
+
+; Instruction ligne n° 299.
+     WSTR "2==3 || 2==26 || (0 > 0 || 2 > 1) -> "
+
+; Instruction ligne n° 300.
+if.47.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.49
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #26, R2
+     SEQ R2
+fin.OU.49 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BNE fin.OU.48
+; Evaluation seconde opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+
+; Comparaison GT
+     CMP #0, R2
+     SGT R2
+     CMP #0, R2
+     BNE fin.OU.50
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+fin.OU.50 :
+; Fin d'un calcul OU
+fin.OU.48 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.47
+
+; Instruction ligne n° 301.
+     WSTR "true"
+     WNL
+     BRA fin.47
+else.47 :
+
+; Instruction ligne n° 304.
+     WSTR "false"
+     WNL
+fin.47 :
+
+; Instruction ligne n° 307.
+     WSTR "2==3 || 2==26 || 0 > 0 -> "
+
+; Instruction ligne n° 308.
+if.51.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.53
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #26, R2
+     SEQ R2
+fin.OU.53 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BNE fin.OU.52
+; Evaluation seconde opérande :
+     LOAD #0, R2
+
+; Comparaison GT
+     CMP #0, R2
+     SGT R2
+fin.OU.52 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.51
+
+; Instruction ligne n° 309.
+     WSTR "true"
+     WNL
+     BRA fin.51
+else.51 :
+
+; Instruction ligne n° 312.
+     WSTR "false"
+     WNL
+fin.51 :
+
+; Instruction ligne n° 315.
+     WNL
+
+; Instruction ligne n° 316.
+     WSTR "----------------------------------"
+     WNL
+
+; Instruction ligne n° 317.
+     WNL
+
+; Instruction ligne n° 319.
+     WSTR "true && true -> "
+
+; Instruction ligne n° 320.
+if.54.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ fin.ET.55
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.55 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.54
+
+; Instruction ligne n° 321.
+     WSTR "true"
+     WNL
+     BRA fin.54
+else.54 :
+
+; Instruction ligne n° 324.
+     WSTR "false"
+     WNL
+fin.54 :
+
+; Instruction ligne n° 327.
+     WSTR "false && true -> "
+
+; Instruction ligne n° 328.
+if.56.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ fin.ET.57
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.57 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.56
+
+; Instruction ligne n° 329.
+     WSTR "true"
+     WNL
+     BRA fin.56
+else.56 :
+
+; Instruction ligne n° 332.
+     WSTR "false"
+     WNL
+fin.56 :
+
+; Instruction ligne n° 335.
+     WSTR "false && false -> "
+
+; Instruction ligne n° 336.
+if.58.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ fin.ET.59
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.59 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.58
+
+; Instruction ligne n° 337.
+     WSTR "true"
+     WNL
+     BRA fin.58
+else.58 :
+
+; Instruction ligne n° 340.
+     WSTR "false"
+     WNL
+fin.58 :
+
+; Instruction ligne n° 343.
+     WSTR "true && false -> "
+
+; Instruction ligne n° 344.
+if.60.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ fin.ET.61
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.61 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.60
+
+; Instruction ligne n° 345.
+     WSTR "true"
+     WNL
+     BRA fin.60
+else.60 :
+
+; Instruction ligne n° 348.
+     WSTR "false"
+     WNL
+fin.60 :
+
+; Instruction ligne n° 351.
+     WSTR "true && 2==2 -> "
+
+; Instruction ligne n° 352.
+if.62.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ fin.ET.63
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.ET.63 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.62
+
+; Instruction ligne n° 353.
+     WSTR "true"
+     WNL
+     BRA fin.62
+else.62 :
+
+; Instruction ligne n° 356.
+     WSTR "false"
+     WNL
+fin.62 :
+
+; Instruction ligne n° 359.
+     WSTR "2==2 && true -> "
+
+; Instruction ligne n° 360.
+if.64.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.65
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.65 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.64
+
+; Instruction ligne n° 361.
+     WSTR "true"
+     WNL
+     BRA fin.64
+else.64 :
+
+; Instruction ligne n° 364.
+     WSTR "false"
+     WNL
+fin.64 :
+
+; Instruction ligne n° 367.
+     WSTR "false && 2==2 -> "
+
+; Instruction ligne n° 368.
+if.66.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ fin.ET.67
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.ET.67 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.66
+
+; Instruction ligne n° 369.
+     WSTR "true"
+     WNL
+     BRA fin.66
+else.66 :
+
+; Instruction ligne n° 372.
+     WSTR "false"
+     WNL
+fin.66 :
+
+; Instruction ligne n° 375.
+     WSTR "2==2 && false -> "
+
+; Instruction ligne n° 376.
+if.68.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.69
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.69 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.68
+
+; Instruction ligne n° 377.
+     WSTR "true"
+     WNL
+     BRA fin.68
+else.68 :
+
+; Instruction ligne n° 380.
+     WSTR "false"
+     WNL
+fin.68 :
+
+; Instruction ligne n° 383.
+     WSTR "2==2 && 3 >= 18 -> "
+
+; Instruction ligne n° 384.
+if.70.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.71
+; Evaluation seconde opérande :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+fin.ET.71 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.70
+
+; Instruction ligne n° 385.
+     WSTR "true"
+     WNL
+     BRA fin.70
+else.70 :
+
+; Instruction ligne n° 388.
+     WSTR "false"
+     WNL
+fin.70 :
+
+; Instruction ligne n° 391.
+     WSTR "3 >= 18 && 2==2 -> "
+
+; Instruction ligne n° 392.
+if.72.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+     CMP #0, R2
+     BEQ fin.ET.73
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.ET.73 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.72
+
+; Instruction ligne n° 393.
+     WSTR "true"
+     WNL
+     BRA fin.72
+else.72 :
+
+; Instruction ligne n° 396.
+     WSTR "false"
+     WNL
+fin.72 :
+
+; Instruction ligne n° 399.
+     WSTR "2!=3 && (9+10) >= 18 -> "
+
+; Instruction ligne n° 400.
+if.74.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison NE
+     CMP #3, R2
+     SNE R2
+     CMP #0, R2
+     BEQ fin.ET.75
+; Evaluation seconde opérande :
+     LOAD #9, R2
+     ADD #10, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+fin.ET.75 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.74
+
+; Instruction ligne n° 401.
+     WSTR "true"
+     WNL
+     BRA fin.74
+else.74 :
+
+; Instruction ligne n° 404.
+     WSTR "false"
+     WNL
+fin.74 :
+
+; Instruction ligne n° 407.
+     WSTR "2==3 && 2==26 && (0 > 0 && 2 > 1) -> "
+
+; Instruction ligne n° 408.
+if.76.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.78
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #26, R2
+     SEQ R2
+fin.ET.78 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.77
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+
+; Comparaison GT
+     CMP #0, R2
+     SGT R2
+     CMP #0, R2
+     BEQ fin.ET.79
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+fin.ET.79 :
+; Fin d'un calcul ET
+fin.ET.77 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.76
+
+; Instruction ligne n° 409.
+     WSTR "true"
+     WNL
+     BRA fin.76
+else.76 :
+
+; Instruction ligne n° 412.
+     WSTR "false"
+     WNL
+fin.76 :
+
+; Instruction ligne n° 415.
+     WSTR "2==3 && 2==26 && 0 > 0 -> "
+
+; Instruction ligne n° 416.
+if.80.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.82
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #26, R2
+     SEQ R2
+fin.ET.82 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.81
+; Evaluation seconde opérande :
+     LOAD #0, R2
+
+; Comparaison GT
+     CMP #0, R2
+     SGT R2
+fin.ET.81 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.80
+
+; Instruction ligne n° 417.
+     WSTR "true"
+     WNL
+     BRA fin.80
+else.80 :
+
+; Instruction ligne n° 420.
+     WSTR "false"
+     WNL
+fin.80 :
+
+; Instruction ligne n° 423.
+     WNL
+
+; Instruction ligne n° 424.
+     WSTR "----------------------------------"
+     WNL
+
+; Instruction ligne n° 425.
+     WNL
+
+; Instruction ligne n° 427.
+     WSTR "!true -> "
+
+; Instruction ligne n° 428.
+if.83.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.83
+
+; Instruction ligne n° 429.
+     WSTR "true"
+     WNL
+     BRA fin.83
+else.83 :
+
+; Instruction ligne n° 432.
+     WSTR "false"
+     WNL
+fin.83 :
+
+; Instruction ligne n° 435.
+     WSTR "!false -> "
+
+; Instruction ligne n° 436.
+if.84.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.84
+
+; Instruction ligne n° 437.
+     WSTR "true"
+     WNL
+     BRA fin.84
+else.84 :
+
+; Instruction ligne n° 440.
+     WSTR "false"
+     WNL
+fin.84 :
+
+; Instruction ligne n° 443.
+     WSTR "!true && true -> "
+
+; Instruction ligne n° 444.
+if.85.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.86
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.86 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.85
+
+; Instruction ligne n° 445.
+     WSTR "true"
+     WNL
+     BRA fin.85
+else.85 :
+
+; Instruction ligne n° 448.
+     WSTR "false"
+     WNL
+fin.85 :
+
+; Instruction ligne n° 451.
+     WSTR "true && !true -> "
+
+; Instruction ligne n° 452.
+if.87.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ fin.ET.88
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.88 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.87
+
+; Instruction ligne n° 453.
+     WSTR "true"
+     WNL
+     BRA fin.87
+else.87 :
+
+; Instruction ligne n° 456.
+     WSTR "false"
+     WNL
+fin.87 :
+
+; Instruction ligne n° 459.
+     WSTR "!true && !true -> "
+
+; Instruction ligne n° 460.
+if.89.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.90
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.90 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.89
+
+; Instruction ligne n° 461.
+     WSTR "true"
+     WNL
+     BRA fin.89
+else.89 :
+
+; Instruction ligne n° 464.
+     WSTR "false"
+     WNL
+fin.89 :
+
+; Instruction ligne n° 467.
+     WSTR "!false && false -> "
+
+; Instruction ligne n° 468.
+if.91.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.92
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.92 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.91
+
+; Instruction ligne n° 469.
+     WSTR "true"
+     WNL
+     BRA fin.91
+else.91 :
+
+; Instruction ligne n° 472.
+     WSTR "false"
+     WNL
+fin.91 :
+
+; Instruction ligne n° 475.
+     WSTR "false && !false -> "
+
+; Instruction ligne n° 476.
+if.93.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ fin.ET.94
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.94 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.93
+
+; Instruction ligne n° 477.
+     WSTR "true"
+     WNL
+     BRA fin.93
+else.93 :
+
+; Instruction ligne n° 480.
+     WSTR "false"
+     WNL
+fin.93 :
+
+; Instruction ligne n° 483.
+     WSTR "!false && !false -> "
+
+; Instruction ligne n° 484.
+if.95.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.96
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.96 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.95
+
+; Instruction ligne n° 485.
+     WSTR "true"
+     WNL
+     BRA fin.95
+else.95 :
+
+; Instruction ligne n° 488.
+     WSTR "false"
+     WNL
+fin.95 :
+
+; Instruction ligne n° 491.
+     WSTR "!true && false -> "
+
+; Instruction ligne n° 492.
+if.97.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.98
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.98 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.97
+
+; Instruction ligne n° 493.
+     WSTR "true"
+     WNL
+     BRA fin.97
+else.97 :
+
+; Instruction ligne n° 496.
+     WSTR "false"
+     WNL
+fin.97 :
+
+; Instruction ligne n° 499.
+     WSTR "!true && !false -> "
+
+; Instruction ligne n° 500.
+if.99.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.100
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.100 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.99
+
+; Instruction ligne n° 501.
+     WSTR "true"
+     WNL
+     BRA fin.99
+else.99 :
+
+; Instruction ligne n° 504.
+     WSTR "false"
+     WNL
+fin.99 :
+
+; Instruction ligne n° 507.
+     WSTR "!false && !true -> "
+
+; Instruction ligne n° 508.
+if.101.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.102
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.102 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.101
+
+; Instruction ligne n° 509.
+     WSTR "true"
+     WNL
+     BRA fin.101
+else.101 :
+
+; Instruction ligne n° 512.
+     WSTR "false"
+     WNL
+fin.101 :
+
+; Instruction ligne n° 515.
+     WSTR "!false && true -> "
+
+; Instruction ligne n° 516.
+if.103.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.104
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.104 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.103
+
+; Instruction ligne n° 517.
+     WSTR "true"
+     WNL
+     BRA fin.103
+else.103 :
+
+; Instruction ligne n° 520.
+     WSTR "false"
+     WNL
+fin.103 :
+
+; Instruction ligne n° 523.
+     WSTR "!true || true -> "
+
+; Instruction ligne n° 524.
+if.105.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.106
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.OU.106 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.105
+
+; Instruction ligne n° 525.
+     WSTR "true"
+     WNL
+     BRA fin.105
+else.105 :
+
+; Instruction ligne n° 528.
+     WSTR "false"
+     WNL
+fin.105 :
+
+; Instruction ligne n° 531.
+     WSTR "true || !true -> "
+
+; Instruction ligne n° 532.
+if.107.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BNE fin.OU.108
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.108 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.107
+
+; Instruction ligne n° 533.
+     WSTR "true"
+     WNL
+     BRA fin.107
+else.107 :
+
+; Instruction ligne n° 536.
+     WSTR "false"
+     WNL
+fin.107 :
+
+; Instruction ligne n° 539.
+     WSTR "!true || !true -> "
+
+; Instruction ligne n° 540.
+if.109.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.110
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.110 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.109
+
+; Instruction ligne n° 541.
+     WSTR "true"
+     WNL
+     BRA fin.109
+else.109 :
+
+; Instruction ligne n° 544.
+     WSTR "false"
+     WNL
+fin.109 :
+
+; Instruction ligne n° 547.
+     WSTR "!false || false -> "
+
+; Instruction ligne n° 548.
+if.111.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.112
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.112 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.111
+
+; Instruction ligne n° 549.
+     WSTR "true"
+     WNL
+     BRA fin.111
+else.111 :
+
+; Instruction ligne n° 552.
+     WSTR "false"
+     WNL
+fin.111 :
+
+; Instruction ligne n° 555.
+     WSTR "false || !false -> "
+
+; Instruction ligne n° 556.
+if.113.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.114
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.114 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.113
+
+; Instruction ligne n° 557.
+     WSTR "true"
+     WNL
+     BRA fin.113
+else.113 :
+
+; Instruction ligne n° 560.
+     WSTR "false"
+     WNL
+fin.113 :
+
+; Instruction ligne n° 563.
+     WSTR "!false || !false -> "
+
+; Instruction ligne n° 564.
+if.115.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.116
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.116 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.115
+
+; Instruction ligne n° 565.
+     WSTR "true"
+     WNL
+     BRA fin.115
+else.115 :
+
+; Instruction ligne n° 568.
+     WSTR "false"
+     WNL
+fin.115 :
+
+; Instruction ligne n° 571.
+     WSTR "!true || false -> "
+
+; Instruction ligne n° 572.
+if.117.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.118
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.118 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.117
+
+; Instruction ligne n° 573.
+     WSTR "true"
+     WNL
+     BRA fin.117
+else.117 :
+
+; Instruction ligne n° 576.
+     WSTR "false"
+     WNL
+fin.117 :
+
+; Instruction ligne n° 579.
+     WSTR "!true || !false -> "
+
+; Instruction ligne n° 580.
+if.119.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.120
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.120 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.119
+
+; Instruction ligne n° 581.
+     WSTR "true"
+     WNL
+     BRA fin.119
+else.119 :
+
+; Instruction ligne n° 584.
+     WSTR "false"
+     WNL
+fin.119 :
+
+; Instruction ligne n° 587.
+     WSTR "!false || !true -> "
+
+; Instruction ligne n° 588.
+if.121.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.122
+; Evaluation seconde opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.122 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.121
+
+; Instruction ligne n° 589.
+     WSTR "true"
+     WNL
+     BRA fin.121
+else.121 :
+
+; Instruction ligne n° 592.
+     WSTR "false"
+     WNL
+fin.121 :
+
+; Instruction ligne n° 595.
+     WSTR "!false || true -> "
+
+; Instruction ligne n° 596.
+if.123.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.124
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.OU.124 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.123
+
+; Instruction ligne n° 597.
+     WSTR "true"
+     WNL
+     BRA fin.123
+else.123 :
+
+; Instruction ligne n° 600.
+     WSTR "false"
+     WNL
+fin.123 :
+
+; Instruction ligne n° 603.
+     WSTR "!!!true || false -> "
+
+; Instruction ligne n° 604.
+if.125.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.126
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.126 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.125
+
+; Instruction ligne n° 605.
+     WSTR "true"
+     WNL
+     BRA fin.125
+else.125 :
+
+; Instruction ligne n° 608.
+     WSTR "false"
+     WNL
+fin.125 :
+
+; Instruction ligne n° 611.
+     WSTR "!!!false || false -> "
+
+; Instruction ligne n° 612.
+if.127.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.128
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.OU.128 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.127
+
+; Instruction ligne n° 613.
+     WSTR "true"
+     WNL
+     BRA fin.127
+else.127 :
+
+; Instruction ligne n° 616.
+     WSTR "false"
+     WNL
+fin.127 :
+
+; Instruction ligne n° 619.
+     WSTR "!!!true && false -> "
+
+; Instruction ligne n° 620.
+if.129.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.130
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.130 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.129
+
+; Instruction ligne n° 621.
+     WSTR "true"
+     WNL
+     BRA fin.129
+else.129 :
+
+; Instruction ligne n° 624.
+     WSTR "false"
+     WNL
+fin.129 :
+
+; Instruction ligne n° 627.
+     WSTR "!!!false && false -> "
+
+; Instruction ligne n° 628.
+if.131.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.132
+; Evaluation seconde opérande :
+     LOAD #0, R2
+fin.ET.132 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.131
+
+; Instruction ligne n° 629.
+     WSTR "true"
+     WNL
+     BRA fin.131
+else.131 :
+
+; Instruction ligne n° 632.
+     WSTR "false"
+     WNL
+fin.131 :
+
+; Instruction ligne n° 635.
+     WSTR "true || !!!false -> "
+
+; Instruction ligne n° 636.
+if.133.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BNE fin.OU.134
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.134 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.133
+
+; Instruction ligne n° 637.
+     WSTR "true"
+     WNL
+     BRA fin.133
+else.133 :
+
+; Instruction ligne n° 640.
+     WSTR "false"
+     WNL
+fin.133 :
+
+; Instruction ligne n° 643.
+     WSTR "false || !!!false -> "
+
+; Instruction ligne n° 644.
+if.135.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.136
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.136 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.135
+
+; Instruction ligne n° 645.
+     WSTR "true"
+     WNL
+     BRA fin.135
+else.135 :
+
+; Instruction ligne n° 648.
+     WSTR "false"
+     WNL
+fin.135 :
+
+; Instruction ligne n° 651.
+     WSTR "true && !!!false -> "
+
+; Instruction ligne n° 652.
+if.137.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ fin.ET.138
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.138 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.137
+
+; Instruction ligne n° 653.
+     WSTR "true"
+     WNL
+     BRA fin.137
+else.137 :
+
+; Instruction ligne n° 656.
+     WSTR "false"
+     WNL
+fin.137 :
+
+; Instruction ligne n° 659.
+     WSTR "false && !!!false -> "
+
+; Instruction ligne n° 660.
+if.139.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ fin.ET.140
+; Evaluation seconde opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.140 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.139
+
+; Instruction ligne n° 661.
+     WSTR "true"
+     WNL
+     BRA fin.139
+else.139 :
+
+; Instruction ligne n° 664.
+     WSTR "false"
+     WNL
+fin.139 :
+
+; Instruction ligne n° 667.
+     WSTR "2==2 && true -> "
+
+; Instruction ligne n° 668.
+if.141.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.142
+; Evaluation seconde opérande :
+     LOAD #1, R2
+fin.ET.142 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.141
+
+; Instruction ligne n° 669.
+     WSTR "true"
+     WNL
+     BRA fin.141
+else.141 :
+
+; Instruction ligne n° 672.
+     WSTR "false"
+     WNL
+fin.141 :
+
+; Instruction ligne n° 675.
+     WSTR "2==2 && 3 >= 18 -> "
+
+; Instruction ligne n° 676.
+if.143.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.144
+; Evaluation seconde opérande :
+     LOAD #3, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+fin.ET.144 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.143
+
+; Instruction ligne n° 677.
+     WSTR "true"
+     WNL
+     BRA fin.143
+else.143 :
+
+; Instruction ligne n° 680.
+     WSTR "false"
+     WNL
+fin.143 :
+
+; Instruction ligne n° 683.
+     WSTR "2!=3 || ! ((9+10) >= 18) -> "
+
+; Instruction ligne n° 684.
+if.145.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison NE
+     CMP #3, R2
+     SNE R2
+     CMP #0, R2
+     BNE fin.OU.146
+; Evaluation seconde opérande :
+     LOAD #9, R2
+     ADD #10, R2
+
+; Comparaison GE
+     CMP #18, R2
+     SGE R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.146 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.145
+
+; Instruction ligne n° 685.
+     WSTR "true"
+     WNL
+     BRA fin.145
+else.145 :
+
+; Instruction ligne n° 688.
+     WSTR "false"
+     WNL
+fin.145 :
+
+; Instruction ligne n° 691.
+     WSTR "2==3 && 2==26 || (0 > 0 && 2 > 1) -> "
+
+; Instruction ligne n° 692.
+if.147.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.149
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #26, R2
+     SEQ R2
+fin.ET.149 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BNE fin.OU.148
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #0, R2
+
+; Comparaison GT
+     CMP #0, R2
+     SGT R2
+     CMP #0, R2
+     BEQ fin.ET.150
+; Evaluation seconde opérande :
+     LOAD #2, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+fin.ET.150 :
+; Fin d'un calcul ET
+fin.OU.148 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.147
+
+; Instruction ligne n° 693.
+     WSTR "true"
+     WNL
+     BRA fin.147
+else.147 :
+
+; Instruction ligne n° 696.
+     WSTR "false"
+     WNL
+fin.147 :
+
+; Instruction ligne n° 699.
+     WSTR "!! (2==3) || 2==2 && ! (0 >= 0) -> "
+
+; Instruction ligne n° 700.
+if.151.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #3, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.152
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.153
+; Evaluation seconde opérande :
+     LOAD #0, R2
+
+; Comparaison GE
+     CMP #0, R2
+     SGE R2
+     CMP #0, R2
+     SEQ R2
+fin.ET.153 :
+; Fin d'un calcul ET
+fin.OU.152 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.151
+
+; Instruction ligne n° 701.
+     WSTR "true"
+     WNL
+     BRA fin.151
+else.151 :
+
+; Instruction ligne n° 704.
+     WSTR "false"
+     WNL
+fin.151 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

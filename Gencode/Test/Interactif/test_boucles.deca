@@ -1,0 +1,22 @@
+// Description:
+//    Teste les boucles WHILE 
+//
+// Resultats:
+//   NE passe pas dans la première boucle et répète la demande d'entiers
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+{
+while (false) {
+   println("Ne devrait pas s'afficher");
+}
+
+while(true) {
+   println(readInt());
+}
+
+}

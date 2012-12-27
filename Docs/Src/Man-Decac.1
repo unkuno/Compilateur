@@ -1,0 +1,56 @@
+.TH DECAC 1 "14 janvier 2012" "Version 1.0" "Compilateur pour le langage Deca"
+.SH NOM
+decac - Compilateur pour le langage deca dans le cadre du projet GL
+
+.SH SYNOPSYS
+.B [[-p | -v] [-n] [-r 
+.I X
+.B ] [
+.I répertoire/
+.B ]
+.I nom_fichier_source.deca
+.B ] | [-b]
+
+.SH DESCRIPTION
+Compile automatiquement un fichier .deca en fichier .ass interprétable par la machine ima.
+
+.SH OPTIONS
+
+.TP
+.B -b
+(banner) : Affiche une bannière indiquant le nom de l'équipe. Cette option prime sur toutes les autres : ainsi, si cette option est utilisée avec d'autres commandes, seule la bannière s'affichera.
+
+.TP
+.B -p
+(parse) : Arrête decac après l'étape de construction de l'arbre, et affiche la décompilation de ce dernier (i.e. la sortie doit être un programme deca syntaxiquement correct). Cette option prime sur l'option -v.
+
+.TP
+.B -v
+(verification) : Arrête decac après les étapes de vérifications lexicale et syntaxique
+
+.TP
+.B -n
+(no check) : Supprime les tests de débordement à l'exécution (débordement arithmétique, débordement mémoire, déréférencement de null)
+
+.TP
+.BI -r " X"
+(registers) : Limite les registres banalisés disponibles à R0 .. R{X-1}, avec 4 <= X <= 16
+
+.TP
+.B -w
+(warnings) : Affiche les warnings lors de la compilation
+
+.TP
+.I nom_fichier_source.deca
+(warnings) : Fichier deca à compiler
+
+.SH REMARQUES
+.TP
+Decac ignore par défaut toutes les options invalides.
+
+.SH AUTEURS
+.TP
+BOUSSON Valentin, CONNES Cédric, LENTINI Sébastien, NGUY Thomas
+
+.SH BOGUE
+Des fautes d'orthographes ont pu se glisser dans le programme.

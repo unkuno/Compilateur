@@ -1,0 +1,16 @@
+// Description:
+//    Programme testant l'instruction vide
+//
+// Resultats:
+//   
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+
+
+{
+   ;
+}

@@ -1,0 +1,14 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    Hello
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 01/01/2012
+
+{
+        println("Hello, world!");
+}

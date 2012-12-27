@@ -1,0 +1,14 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT float                                -- Ligne 12
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT f                              -- Ligne 12
+. . . . . . . . NOEUD_FLOTTANT  1.00000E+00                -- Ligne 12
+. . <Liste (longueur 1) :>
+. . . # NOEUD_TANTQUE                                      -- Ligne 14
+. . . . . NOEUD_IDENT f                                    -- Ligne 14
+. . . . . <Liste vide>

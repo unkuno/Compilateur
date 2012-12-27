@@ -1,0 +1,12 @@
+// Description:
+//    test nombre de registre
+//
+// Resultats:
+//    ne provoque pas d'erreur et utilise uniquement 4 registres au maximum
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-r 4 ./echecs.deca

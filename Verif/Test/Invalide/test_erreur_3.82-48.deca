@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.82)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Les types 'String' et 'void' sont incompatibles avec l'opérateur binaire '||' (règle 3.82)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x() {
+   }
+}
+
+int var;
+A a;
+{
+   var = "a" || a.x();
+}

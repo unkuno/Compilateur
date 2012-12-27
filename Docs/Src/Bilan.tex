@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pdfpages}
+
+
+%%%%%%%%%%
+% Taille des pages (A4 serré)
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-.7cm}
+\setlength{\evensidemargin}{-.7cm}
+\setlength{\topmargin}{-.5in}
+
+
+%%%%%%%%%%
+% En-têtes et pied de pages
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{1.6pt}
+\addtolength{\headheight}{2.6pt}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\sf \thepage/\pageref{LastPage}}
+\lhead{\footnotesize\sf Projet GL}
+\rhead{\footnotesize\sf Equipe 16} % numéro d'équipe Teide 
+
+%%%%%%%%%%
+% Informations sur le document
+
+\title{Projet Génie Logiciel\\\emph{Bilan}}
+
+\author{BOUSSON Valentin, CONNES Cédric,\\LENTINI Sébastien, NGUY Thomas\\\emph{Equipe 16}}
+
+\date{23 Janvier 2012}
+
+
+%%%%%%%%%%
+% Début du document
+
+\begin{document}
+
+\maketitle
+
+Le bilan est l'occasion pour nous de faire le point sur 1 mois de travail en équipe, de savoir si notre organisation a été efficace ou pas, mais aussi de pouvoir mieux se connaître.
+
+\section{Evolution de l'organisation du projet}
+Au début du projet, nous avions défini une charte d'équipe (cf. \verb!Charte.pdf!), formalisant l'organisation ainsi que les règles à respecter. Les réunions en début de journée ont été respectées et très utiles pour la coordination entre équipiers. Les journées de travail en commun ont été suffisantes en début de projet, mais il nous est apparu nécessaire de devoir travailler le week end (notamment le samedi) à l'Ensimag, et les horaires se sont progressivement élargis (9h - 12h45 / 13h30 - 18h, soit environ 2h de plus qu'en début de projet).
+
+L'outil \emph{Planner} nous a été d'une très grande utilité : en effet, après la réalisation du sous-langage ``Hello World'', le fait de décomposer les différentes parties en incréments progressifs nous a permis de mieux jauger la quantité et la durée de travail nécessaire à chacune des parties. Nous avions prévu au tout début du projet de faire évoluer les groupes de travail (Cédric et Thomas sur la partie B, Sébastien et Valentin sur la partie C, puis de changer) mais nous nous sommes aperçus de la difficulté de réaliser cette rotation en cours de projet. Cependant, nous avons progressivement permuté 2 membres, Cédric et Sébastien, afin que ces deux derniers, de par leur connaissance globale du projet, puisse établir des liens entre les deux parties (vérification de l'arbre et génération de code), tandis que 2 spécialistes (Thomas pour la partie B, Valentin pour la partie C) permettait de former rapidement respectivement Sébastien et Cédric sur les parties qu'ils n'avaient pas traité auparavant.
+
+Cette organisation (entre connaissance globale et connaissance pointue) nous a permis d'avancer et de pouvoir apporter un regard neuf sur le code, tout en connaissant les élements dont l'autre partie avait besoin. 
+
+
+\section{Evolution de l'équipe}
+
+Durant le projet, aucun conflit majeur n'a eu lieu. Le chef de projet, Sébastien, a du trancher à de rares reprises (sur 2 choix proposés par l'équipe), mais globalement l'équipe n'a pas rencontré de difficulté particulière. Afin d'éviter une menace possible que nous avons soulevé en début de projet (division de l'équipe en 2 sous groupe : Valentin et Thomas contre Sébastien et Cédric), nous avons préféré mixer les équipes dès le début. Ainsi, Thomas a travaillé avec Cédric puis avec Sébastien, et Valentin avec Sébastien et Cédric. Cette organisation a permis à chacun d'apprendre à se connaître et à travailler ensemble, et de par le fait d'avoir été ensemble tous les jours pendant près d'1 mois, a créé des liens qui survivront au projet. 
+
+
+Il est important pour l'équipe de savoir que les objectifs définis en début de projet ont été réalisé, à savoir : 
+\begin{quotation}
+«Le but de l’équipe est de pouvoir rendre les livrables (maxi déca) en temps et en heure, tout en permettant l’apprentissage des méthodes de gestion d’équipe et en se respectant les uns les autres.»
+\end{quotation}
+
+Il nous apparaît aussi intéressant de revenir sur notre analyse de début de projet, en regardant pour chaque élement de la matrice SWOT si il s'est avéré correct ou incorrect.
+
+Les forces et les opportunités de l'équipe se sont avérées exactes. Nous avons formé une bonne équipe, soudée et nous avons réussi à implémenter chacunes des fonctionnalités demandées, de manière propre et efficace.
+
+Concernant les faiblesses, l'absence de vraie compétence oratoire ou écrite s'est fait ressentir. Ainsi, l'écriture des différents documents a pris plus de temps que prévu. Les autres faiblesses de l'équipe, même si elles se sont avérés vraies, n'ont pas été pénalisantes pour le projet : en effet, chacun a fait son possible pour effectuer le plus de tests possible afin de rendre le compilateur le plus débuggé possible, et chacun est content du résultat.
+
+Comme exprimée précédemment, la division du groupe a pu être évitée via un mélange des équipes. 
+
+
+\section{Le projet GL : un bon moyen d'apprendre sur soi-même et sur les autres}
+
+D'un point de vue technique, il est évident que chacun d'entre nous a appris comment se construit et fonctionne un compilateur.
+Cependant, il nous apparaît plus parlant dans ce bilan de s'intéresser à l'aspect SHEME et de ce que nous a appris le projet GL à la fois sur nous et sur les autres. 
+
+Le projet GL demande, de par la quantité de travail, une très bonne organisation. Les suivis et rendus étaient nombreux et nous avons dû préparer ces derniers avec attention. Il nous a fallu à, certains moments, modifier les priorités de certaines tâches afin de pouvoir rendre des documents de suivi à temps : il peut être perturbant de devoir reporter son travail en cours, pour s'attacher à une tâche plus prioritaire. 
+
+Nous avons aussi, dans ce projet, appris à nous faire confiance : en effet, comme la quantité de code à produire est importante, il est clairement impossible qu'une personne vérifie ce que tout le monde fait en plus de s'occuper de sa partie. Une discussion en commun au préalable a permis de vérifier la bonne compréhension du sujet par chacun de nous et a permis ainsi d'éviter de grosses erreurs de conception.
+Cette confiance va de paire avec la conception d'équipe : si une faute est commise, il ne sert a rien de gaspiller son énergie à savoir qui est le coupable, car après tout l'erreur est humaine. Il vaut mieux au contraire utiliser notre énergie à la réparation de la faute, ainsi qu'à connaître la raison qui a poussé tel ou tel membre à faire celle-ci, afin de pouvoir éviter que quelqu'un la reproduise plus tard.
+
+La pression imposée par les deadlines du projet peuvent créer des faux-conflits. Une personne, qui croyant bien faire, modifie un fichier à la dernière minute et provoque une erreur est un des risques les plus importants dans ce genre de projet. Nous avons pu éviter ce problème en nous fixant une limite, à savoir de ne plus toucher au dépôt git 1h avant le rendu sans en parler à toute l'équipe. 
+
+Cependant, nous avons subit une autre forme de pression : celle des autres groupes. En effet, au début, nous avons préféré mieux comprendre le sujet que de se lancer tête baisée, et cela nous a fait prendre du retard sur les autres groupes. Cette pression nous a fait douter sur le choix que nous avons fait, et nous a même fait réfléchir à notre efficacité. Cependant nous nous sommes aperçus assez rapidement que cette étape de réfléxion a finalement permis de mieux développer la suite du projet, et surtout d'être plus rapide sur certaines étapes. Nous avons réussi à rattraper assez rapidement le retard et même être en avance sur certains groupes qui étaient au début plus avancés que nous ! Cette avance confortable nous a permis de prendre du temps pour mieux tester notre application, en fin de projet. 
+
+Si le projet GL était à refaire, voici ce que nous aurions conservé :
+\begin{itemize}
+\item Prendre du temps pour réfléchir au sujet.
+\item Favoriser l'esprit de groupe en mélangeant les équipes.
+\item User et abuser de \emph{Planner} pour s'organiser.
+\item Développer la test-suite dès le début.
+\item Travailler à l'Ensimag.
+\item Réunion à 9h.
+\item Pas de pression entre nous.
+\item Utiliser les possibilités de git (branches). 
+\item Automatiser les tests via des scripts.
+\end{itemize}
+
+et ce que nous aurions changé : 
+\begin{itemize}
+\item Ecrire des tests avant de commencer à développer pour être plus efficace.
+\item Amener nos machines personnelles afin de pouvoir travailler dans des endroits plus calmes (salles du bâtiment D par exemple).
+\item Dès le début, mieux découper les tâches sous \emph{Planner} et se fixer des objectifs moins modestes (Maxi-Deca de suite)
+\end{itemize}
+
+
+\section{Bilan personnel}
+\subsection{BOUSSON Valentin}
+\input{Bilan_Val.tex}
+\subsection{CONNES Cédric}
+\input{Bilan_Ced.tex}
+\subsection{NGUY Thomas}
+\input{Bilan_Tom.tex}
+\subsection{LENTINI Sébastien}
+\input{Bilan_Seb.tex}
+
+\end{document}
+

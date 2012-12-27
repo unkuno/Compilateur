@@ -1,0 +1,276 @@
+; Initialisation du programme
+     TSTO #25
+     BOV pile_pleine
+     ADDSP #25
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 5 (GB)
+     LOAD code.A.getY, R0
+     STORE R0, 6 (GB)
+
+; Table des méthode de la classe B
+     LEA 3 (GB), R0
+     STORE R0, 7 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 8 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 9 (GB)
+     LOAD code.B.getY, R0
+     STORE R0, 10 (GB)
+     LOAD code.B.getZ, R0
+     STORE R0, 11 (GB)
+
+; Table des méthode de la classe C
+     LEA 3 (GB), R0
+     STORE R0, 12 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 13 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 14 (GB)
+     LOAD code.A.getY, R0
+     STORE R0, 15 (GB)
+     LOAD code.C.getAlpha, R0
+     STORE R0, 16 (GB)
+     LOAD code.C.getBeta, R0
+     STORE R0, 17 (GB)
+     LOAD code.C.getZ, R0
+     STORE R0, 18 (GB)
+
+; Table des méthode de la classe D
+     LEA 12 (GB), R0
+     STORE R0, 19 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 20 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 21 (GB)
+     LOAD code.A.getY, R0
+     STORE R0, 22 (GB)
+     LOAD code.D.getAlpha, R0
+     STORE R0, 23 (GB)
+     LOAD code.D.getBeta, R0
+     STORE R0, 24 (GB)
+     LOAD code.D.getZ, R0
+     STORE R0, 25 (GB)
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.getX
+code.A.getX :
+
+; Instruction ligne n° 18.
+     LOAD #1, R0
+     BRA fin.A.getX
+     WSTR "Erreur : sortie de la méthode A.getX sans return"
+     WNL
+     ERROR
+fin.A.getX :
+     RTS
+
+; Méthode A.getY
+code.A.getY :
+
+; Instruction ligne n° 22.
+     LOAD #2, R0
+     BRA fin.A.getY
+     WSTR "Erreur : sortie de la méthode A.getY sans return"
+     WNL
+     ERROR
+fin.A.getY :
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Méthode B.getY
+code.B.getY :
+
+; Instruction ligne n° 31.
+     LOAD #3, R0
+     BRA fin.B.getY
+     WSTR "Erreur : sortie de la méthode B.getY sans return"
+     WNL
+     ERROR
+fin.B.getY :
+     RTS
+
+; Méthode B.getZ
+code.B.getZ :
+
+; Instruction ligne n° 35.
+     LOAD #3, R0
+     BRA fin.B.getZ
+     WSTR "Erreur : sortie de la méthode B.getZ sans return"
+     WNL
+     ERROR
+fin.B.getZ :
+     RTS
+
+; Initialisation des champs de la classe B
+init.B :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; #######################
+; # Code de la classe C #
+; #######################
+
+; Méthode C.getAlpha
+code.C.getAlpha :
+
+; Instruction ligne n° 45.
+     LOAD #2, R0
+     BRA fin.C.getAlpha
+     WSTR "Erreur : sortie de la méthode C.getAlpha sans return"
+     WNL
+     ERROR
+fin.C.getAlpha :
+     RTS
+
+; Méthode C.getBeta
+code.C.getBeta :
+
+; Instruction ligne n° 49.
+     LOAD #3, R0
+     BRA fin.C.getBeta
+     WSTR "Erreur : sortie de la méthode C.getBeta sans return"
+     WNL
+     ERROR
+fin.C.getBeta :
+     RTS
+
+; Méthode C.getZ
+code.C.getZ :
+
+; Instruction ligne n° 53.
+     LOAD #3, R0
+     BRA fin.C.getZ
+     WSTR "Erreur : sortie de la méthode C.getZ sans return"
+     WNL
+     ERROR
+fin.C.getZ :
+     RTS
+
+; Initialisation des champs de la classe C
+init.C :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; #######################
+; # Code de la classe D #
+; #######################
+
+; Méthode D.getAlpha
+code.D.getAlpha :
+
+; Instruction ligne n° 64.
+     LOAD #2, R0
+     BRA fin.D.getAlpha
+     WSTR "Erreur : sortie de la méthode D.getAlpha sans return"
+     WNL
+     ERROR
+fin.D.getAlpha :
+     RTS
+
+; Méthode D.getBeta
+code.D.getBeta :
+
+; Instruction ligne n° 68.
+     LOAD #3, R0
+     BRA fin.D.getBeta
+     WSTR "Erreur : sortie de la méthode D.getBeta sans return"
+     WNL
+     ERROR
+fin.D.getBeta :
+     RTS
+
+; Méthode D.getZ
+code.D.getZ :
+
+; Instruction ligne n° 72.
+     LOAD #3, R0
+     BRA fin.D.getZ
+     WSTR "Erreur : sortie de la méthode D.getZ sans return"
+     WNL
+     ERROR
+fin.D.getZ :
+     RTS
+
+; Initialisation des champs de la classe D
+init.D :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     RTS

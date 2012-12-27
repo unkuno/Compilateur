@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (2.17)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 19 : La signature de la méthode 'Get' diffère dans la super-classe (règle 2.17)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {  
+   int Get(){
+   }
+   
+}
+
+class B extends A {   
+   int Get(int x){
+   } 
+}

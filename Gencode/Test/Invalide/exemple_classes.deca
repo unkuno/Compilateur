@@ -1,0 +1,42 @@
+// Description:
+//    démo d'utilisation des classes et des cast
+//
+// Resultats:
+//    doit fonctionner normalement
+//
+// Historique:
+//    cree le 23/01/2012
+
+class Animal {
+    float poids;
+    void crie() {
+	println("...");
+    }
+}
+
+class Chien extends Animal {
+    int poids = 80;
+    void crie() {
+	println("Waf !");
+    }
+}
+
+class Chat extends Animal {
+    float poids = 5.345;
+    void crie() {
+	println("Meow..");
+    }
+}
+
+Animal compagnon1 = new Chien();
+Animal compagnon2 = new Chat();
+{
+    compagnon1.crie();
+    cast<Animal>(compagnon1).crie();
+    println("Poids : ", compagnon1.poids ,"kg");
+    println("Poids : ", cast<Chien>(compagnon1).poids ,"kg");
+    
+    compagnon2.crie();
+    println("Poids : ",cast<Chat>(compagnon2).poids ,"kg");
+    cast<Chien>(compagnon2).crie();
+}

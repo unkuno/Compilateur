@@ -1,0 +1,125 @@
+; Initialisation du programme
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #2
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 13.
+     WSTR "(1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1))))))))))))))))) = "
+     LOAD #1, R2
+     ADD #1, R2
+     LOAD #1, R3
+     ADD #1, R3
+     LOAD #1, R4
+     ADD #1, R4
+     LOAD #1, R5
+     ADD #1, R5
+     LOAD #1, R6
+     ADD #1, R6
+     LOAD #1, R7
+     ADD #1, R7
+     LOAD #1, R8
+     ADD #1, R8
+     LOAD #1, R9
+     ADD #1, R9
+     LOAD #1, R10
+     ADD #1, R10
+     LOAD #1, R11
+     ADD #1, R11
+     LOAD #1, R12
+     ADD #1, R12
+     LOAD #1, R13
+     ADD #1, R13
+     LOAD #1, R14
+     ADD #1, R14
+     LOAD #1, R15
+     ADD #1, R15
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD #1, R2
+     ADD #1, R2
+     PUSH R3                           ; Sauvegarde de R3
+     LOAD #1, R3
+     ADD #1, R3
+     PUSH R4                           ; Sauvegarde de R4
+     LOAD #1, R4
+     ADD #1, R4
+     MUL R4, R3
+     MUL R3, R2
+     MUL R2, R15
+     MUL R15, R14
+     MUL R14, R13
+     MUL R13, R12
+     MUL R12, R11
+     MUL R11, R10
+     MUL R10, R9
+     MUL R9, R8
+     MUL R8, R7
+     MUL R7, R6
+     MUL R6, R5
+     POP R4                            ; Restauration de R4
+     MUL R5, R4
+     POP R3                            ; Restauration de R3
+     MUL R4, R3
+     POP R2                            ; Restauration de R2
+     MUL R3, R2
+     LOAD R2, R1
+     WINT
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

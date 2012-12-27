@@ -1,0 +1,50 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT Test                                   -- Ligne 10
+. . . . . -- Defn : (classe, type_classe(Test))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 11
+. . . . . . . NOEUD_IDENT void                             -- Ligne 11
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT recursif                         -- Ligne 11
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 13
+. . . . . . . . . . -- Type : void
+. . . . . . . . . . NOEUD_IDENT recursif                   -- Ligne 13
+. . . . . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . . . . . -- Type : void
+. . . . . . . . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 17
+. . . . . NOEUD_IDENT Test                                 -- Ligne 17
+. . . . . . -- Defn : (classe, type_classe(Test))
+. . . . . . -- Type : type_classe(Test)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 17
+. . . . . . . . NOEUD_IDENT t                              -- Ligne 17
+. . . . . . . . . -- Defn : (var, type_classe(Test))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 17
+. . . . . . . . . -- Type : type_classe(Test)
+. . . . . . . . . NOEUD_IDENT Test                         -- Ligne 17
+. . . . . . . . . . -- Defn : (classe, type_classe(Test))
+. . . . . . . . . . -- Type : type_classe(Test)
+. . <Liste (longueur 1) :>
+. . . # NOEUD_APPEL                                        -- Ligne 19
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 19
+. . . . . . NOEUD_IDENT t                                  -- Ligne 19
+. . . . . . . -- Defn : (var, type_classe(Test))
+. . . . . . . -- Type : type_classe(Test)
+. . . . . . NOEUD_IDENT recursif                           -- Ligne 19
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>

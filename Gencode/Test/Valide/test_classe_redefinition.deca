@@ -1,0 +1,75 @@
+// Description:
+//	Teste les redefinitions de classe
+//
+// Resultats:
+//	Tables des méthodes correctements construites
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+class A {
+
+   int val;
+
+   int getX() {
+      return 1;
+   }
+
+   int getY() {
+      return 2;
+   }
+}
+
+class B extends A {
+
+   int val;
+
+   int getY() {
+      return 3;
+   }
+
+   int getZ() {
+      return 3;
+   }
+}  
+
+
+class C extends A {
+
+   int nom;
+
+   int getAlpha() {
+      return 2;
+   }
+
+   int getBeta() {
+      return 3;
+   }
+
+   int getZ() {
+      return 3;
+   }
+}  
+
+
+
+class D extends C {
+
+   int nom;
+
+   int getAlpha() {
+      return 2;
+   }
+
+   int getBeta() {
+      return 3;
+   }
+
+   int getZ() {
+      return 3;
+   }
+}  
+

@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+
+%%%%%%%%%%
+% Taille des pages (A4 serré)
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-.7cm}
+\setlength{\evensidemargin}{-.7cm}
+\setlength{\topmargin}{-.5in}
+
+
+%%%%%%%%%%
+% En-têtes et pied de pages
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{1.6pt}
+\addtolength{\headheight}{2.6pt}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\sf \thepage/\pageref{LastPage}}
+\lhead{\footnotesize\sf Projet GL}
+\rhead{\footnotesize\sf Equipe 16} % numéro d'équipe Teide 
+
+%%%%%%%%%%
+% Informations sur le document
+
+\title{Projet Génie Logiciel\\\emph{Documentation de validation}}
+
+\author{BOUSSON Valentin, CONNES Cédric,\\LENTINI Sébastien, NGUY Thomas\\\emph{Equipe 16}}
+
+\date{17 Janvier 2012}
+
+
+%%%%%%%%%%
+% Début du document
+
+\begin{document}
+
+\maketitle
+
+
+\section{Organisation des tests}
+Les tests du projet sont séparés en 4 étapes correspondant aux différentes phases du processus de compilation :
+\begin{itemize}
+\item Syntaxe
+\item Verif
+\item Gencode
+\item Decac
+\end{itemize}
+
+\subsection{Création des fichiers tests}
+De nombreux fichiers tests ont été conçus afin de vérifier le bon fonctionnement du compilateur dans les 4 étapes évoquées précédemment. 
+Ces tests se doivent d'être exhaustifs afin d'assurer une couverture du code la plus large possible. On distingue les tests en boîte blanche qui prennent en compte la structure de notre implémentation et les tests en boîte noire qui sont complètement dissociables de l'implémention.
+\begin{itemize}
+\item Syntaxe : Dans la partie vérification "lexicosyntaxique", les tests ont pour but de vérifier que notre compilateur détecte bien tous les différents types
+d'unités lexicales définies par le langage et construit bien l'arbre abstrait primitif, contraint par la syntaxe du code. D'autres tests seront effectués afin de 
+mettre en évidence les limites caractéristiques de l'implémentation, tels que les dépassements de capacité, la mémoire disponible etc.. et les mécanismes
+mis en jeu afin de traiter ces cas d'erreur (rattrapages d'exceptions)  
+\item Verif : Dans la partie de vérification "contextuelle", de nombreux tests ont été réalisés et peuvent être classés selon deux catégories,
+une partie des tests vérifie que le compilateur détecte correctement les erreurs contextuelles tandis qu'une autre partie garantit
+la génération des décorations de l'arbre abstrait dans le cas d'un programme contextuellement correct. Dans la partie vérifiant les erreurs contextuelles,
+les tests ont été générés de manière méthodique, à l'aide de scripts, afin de soulever toutes les erreurs possibles (voir Manuel Utilisateur), 
+dans toutes les configurations possibles. Dans la partie vérifiant la génération de l'arbre abstrait, il existe au moins un test pour chaque noeud différent
+dans l'arbre et on s'assure que les décorations et les noeuds "Conversion flottant" sont bien insérés dans l'arbre après vérification contextuelle pour toutes 
+les possibilités. Quelques tests en boîte noire on été crée afin de tester le bon fonctionnement de cette étape dans son ensemble.
+\item Gencode : Dans cette partie, les tests ont eu pour objectif de valider le fonctionnement 
+du compilateur au niveau de la génération du code. La majorité des tests ont été réalisés en boîte noire. 
+Ces tests ont été conçus de manière incrémentale, après chaque ajout de nouvelles fonctionnalités, afin de vérifier son bon fonctionnement 
+(gestion des registres, purge etc...). D'autre part, des tests ont aussi été conçu afin de soulever les différents messages d'erreur possibles 
+à l'exécution (déférencement de null, division par 0...). Au final, un répertoire \verb!Interactif! contient des tests mettant au
+défi les capacités du compilateur en proposant des programmes longs, et qui requiert l'interaction de l'utilisateur.  
+\item Decac : Les tests dans la partie "Decac" permettent de vérifier les différentes fonctionnalités du compilateur, tels que l'affichage bannière ou l'incompatibilité des options -p et -v. 
+\end{itemize}
+
+\subsection{Utilisation des scripts de tests}
+Pour traiter la quantité de tests déployés, un script permet de généraliser le traitement des tests de chaque partie et impose une norme à respecter dans les dossiers de test de chacune des étapes (cf. Man-Lanceur.pdf). Par exemple, le fichier .conf présent dans chacun des dossiers Test permet la mise en relation du pilote à appliquer à l'étape concernée et des oracles automatiques à appliquer aux sorties fournies par ce pilote. 
+
+Voici un exemple simple de .conf pour l'étape de vérification Lexico-syntaxique : \\
+  \lstset{numbers=left,
+numberstyle=\tiny \bf \color{blue},
+stepnumber=1,
+firstnumber=1,
+numberfirstline=true,
+language=bash}
+    \begin{lstlisting}
+# Chemin du pilote depuis la racine du projet
+EXE=Scripts/test_lexsynt.sh
+
+ENTREE=.deca
+
+# FONCTIONS ORACLE AUTOMATIQUE
+est_vide() {
+	   test $(cat $2 | wc -c) -le 1
+}
+	
+# DESCRIPTIONS DES SORTIES (Valide / Invalide)
+SORTIES_VALIDE=".decompil:Sortie/Decompilation/Valide:AUTO"
+SORTIES_INVALIDE=".decompil:Sortie/Decompilation/Invalide:est_vide"
+\end{lstlisting}
+
+\hspace{1cm} Ce fichier de configuration situe le pilote à exécuter pour l'étape en cours, le format des entrées de ce pilote, des fonctions bash définissant des oracles automatiques utiles à la vérification des sorties, et deux listes de triplet (format de sortie, adresse de stockage de ces sorties, oracle à utiliser). Si l'oracle attribué est AUTO, le lanceur effectue automatiquement une demande à l'utilisateur qui est en charge de dire si la sortie est conforme ou non. (c.f. Man-Lanceur.pdf)
+Les oracles automatiques peuvent cependant demander confirmation à l'utilisateur (en renvoyant une valeur 2)
+
+\hspace{1cm} Le lanceur générique (Script/lanceur.sh) permet alors de lancer l'ensemble des tests.
+On peut néanmoins, grâce à ses diverses options, n'effectuer que quelques étapes, fixer un niveau de détail dans les traces, briser l'interactivité, etc... (c.f. Man-Lanceur.pdf)
+
+\hspace{1cm} Ce script compile alors les tests en se référant au fichier de configuration de l'étape. Il effectue les vérifications dans l'ordre suivant : 
+\begin{enumerate}
+\item Comparaison avec l'attendu (Si égal : Valide, sinon : phase suivante)
+\item Comparaison avec un ancien valide (Si égal : Valide, sinon : phase suivante)
+\item Analyse avec l'oracle automatiqe (Si 0 : Valide, si 1 : Invalide, si 2 : demande manuelle)
+ou analyse avec le mot clé AUTO (demande manuelle)
+\end{enumerate}
+
+
+
+\subsection{Validation des tests}
+Chaque étape est associée à un dossier contenant les sources du code ainsi que les tests associés.
+Pour une étape donnée, le set de test est divisé en 2 ou 3 dossiers :
+\begin{itemize}
+\item Valide
+\item Invalide
+\item Interactifs (éventuellement)
+\end{itemize}
+
+Les tests contenus dans Invalide sont valides pour les étapes précédentes mais doivent soulever des exceptions propres à l'étape concernée.
+Les tests contenus dans Valide sont valides pour les étapes précédentes ainsi que pour l'étape en cours. Ils ne sont pas forcément valides pour l'étape suivante.
+
+Pour exploiter ces constats, des liens symboliques ont été ajoutés dans les dossiers Test. Ainsi, tous les tests d'une étape sont traités comme des tests valides par le pilote de l'étape précédente (l'étape Decac n'est pas concernée car les entrées ont un format différent).
+
+Des pilotes de tests sont écrits spécifiquement à chaque étape pour vérifier son bon fonctionnement.
+Voici les sorties utilisées : 
+\begin{itemize}
+\item Syntaxe :  L'affichage de l'arbre brut et de la décompilation sont des sorties qu'on analyse à la main pour les valides et qui doivent être vides pour les invalides.
+  On teste également les sorties standards et d'erreurs des étapes lexicales et syntaxiques, qui doivent être vides pour les valides et contenir le résultat d'une levée d'erreur propre dans le cas des invalides.
+  
+\emph{Note} : tout était fait pour que la décompilation soit comparée automatiquement au fichier d'entrée, mais le .conf comportait un défaut qui a masqué cette vérification.
+\item Verif : Pour les invalides, la sortie standard affiche le numéro de la règle qui est mise en défaut : on vérifie qu'elle est conforme à nos attentes (en comparant avec le nom du fichier). Pour les valides, on effectue une vérification manuelle.
+\item Gencode : Le code assembleur produit par un pilote simulant \verb!decac! (aucune option) ainsi que l'exécution du code produit sont deux indicateurs de validation de notre code (ils sont bien sur à valider à la main).
+\item Decac : Les différentes options (et combinaisons d'options) du compilateur sont testées sur un exemple complet.
+\end{itemize}
+Pour exporter notre base de test, les .attendu de toutes les sorties non vérifiées automatiquement ont été ajoutées à l'archive. Quelqu'un repassant la base de test  sur l'implémentation fournie verra un résultat automatiquement généré de $100\%$, puisqu'elle a été validée spécifiquement. La base de test appliquée à une autre implémentation demandera certainement de très nombreuses confirmations manuelles si les sorties générées ne sont pas exactement identiques.
+
+ \subsection {Manuel du lanceur}
+\includepdf[pages=-]{Man-Lanceur.pdf}
+
+
+\section{Gestion des risques}
+\begin{tabular}{|c|c|}
+\hline
+Risques & Solutions \\
+\hline
+\hline
+Oublier un rendu, une soutenance & Utiliser l'outil planner efficacement. \\
+\hline
+Planning non à jour, & Réunion matinale, \\
+membre du groupe surchargé ou désoeuvré & répartition des taches, \\
+ou taches prioritaires non traitées & et mise à jour du planning prévisionnel actuel\\
+\hline
+Tests invalides car implémentation incomplète & Vérification que la levée d'exception est propre.\\
+\hline
+Tests non concluant détectés & Correction immédiate ou enregistrement\\
+&du problème pour correction future.\\
+\hline
+Implémentation en régression & Validation grace aux scripts de tests automatisés.\\
+&Utilisation concertée de branches dans le dépôt. \\
+\hline
+Bug détecté dans les scripts de test & Correction immédiate ! \\
+\hline
+Tests manquants detectés. & Création de l'attendu et du test même. \\
+\hline
+\end{tabular}
+
+
+\section{Gestion des rendus}
+\begin{tabular}{|c|p{7cm}|p{7cm}|}
+\hline
+OK ? & A faire & Réalisation \\
+\hline
+\hline
+
+$\square$ & Vérifier que le projet rendu compile & Utiliser un clone du dépot et make \\
+\hline
+$\square$ & Vérifier que toutes les fonctionnalité sont implémentées & Retrouver les spécifications dans les tests \\
+\hline
+$\square$ & Vérifier que la suite de test est conforme & Lister les fichiers de tests et vérifier la version des scripts. \\
+\hline
+$\square$ & Vérifier que le projet passe correctement tous les tests & Lancer la suite de test sur le projet entier. \\
+\hline
+$\square$ & Vérifier le coding-style & Relecture des codes sources\\
+\hline
+$\square$ & Vérifier les annotations du code & Relecture des codes sources \\
+\hline 
+$\square$ & Vérifier les annotations des tests & Vérification par la suite de tests\\
+\hline
+$\square$ & Vérifier la cohérence des documents rendus & Relecture des documents\\
+\hline
+$\square$ & Vérifier l'orthographe des documents rendus & Relecture des documents par au moins 2 personnes\\
+\hline
+$\square$ & Vérifier l'encodage des documents rendus & Verifier le type des fichiers sur le git\\
+\hline
+\end{tabular}
+
+\end{document}

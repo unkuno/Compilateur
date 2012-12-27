@@ -1,0 +1,213 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT A                                      -- Ligne 13
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 16
+. . . . NOEUD_IDENT B                                      -- Ligne 16
+. . . . . -- Defn : (classe, type_classe(B))
+. . . . NOEUD_IDENT A                                      -- Ligne 16
+. . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 6) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 20
+. . . . . NOEUD_IDENT A                                    -- Ligne 20
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 20
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 20
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 21
+. . . . . NOEUD_IDENT B                                    -- Ligne 21
+. . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 21
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 21
+. . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 22
+. . . . . NOEUD_IDENT Object                               -- Ligne 22
+. . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . -- Type : type_classe(Object)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 22
+. . . . . . . . NOEUD_IDENT o                              -- Ligne 22
+. . . . . . . . . -- Defn : (var, type_classe(Object))
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 23
+. . . . . NOEUD_IDENT int                                  -- Ligne 23
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 23
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 23
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 24
+. . . . . NOEUD_IDENT float                                -- Ligne 24
+. . . . . . -- Defn : (type, float)
+. . . . . . -- Type : float
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 24
+. . . . . . . . NOEUD_IDENT f                              -- Ligne 24
+. . . . . . . . . -- Defn : (var, float)
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 25
+. . . . . NOEUD_IDENT boolean                              -- Ligne 25
+. . . . . . -- Defn : (type, boolean)
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 25
+. . . . . . . . NOEUD_IDENT bool                           -- Ligne 25
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 11) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 28
+. . . . . -- Type : int
+. . . . . NOEUD_IDENT i                                    -- Ligne 28
+. . . . . . -- Defn : (var, int)
+. . . . . . -- Type : int
+. . . . . NOEUD_CONVERSION                                 -- Ligne 28
+. . . . . . -- Type : int
+. . . . . . NOEUD_IDENT int                                -- Ligne 28
+. . . . . . . -- Defn : (type, int)
+. . . . . . . -- Type : int
+. . . . . . NOEUD_IDENT i                                  -- Ligne 28
+. . . . . . . -- Defn : (var, int)
+. . . . . . . -- Type : int
+. . . # NOEUD_AFFECT                                       -- Ligne 29
+. . . . . -- Type : int
+. . . . . NOEUD_IDENT i                                    -- Ligne 29
+. . . . . . -- Defn : (var, int)
+. . . . . . -- Type : int
+. . . . . NOEUD_CONVERSION                                 -- Ligne 29
+. . . . . . -- Type : int
+. . . . . . NOEUD_IDENT int                                -- Ligne 29
+. . . . . . . -- Defn : (type, int)
+. . . . . . . -- Type : int
+. . . . . . NOEUD_IDENT f                                  -- Ligne 29
+. . . . . . . -- Defn : (var, float)
+. . . . . . . -- Type : float
+. . . # NOEUD_AFFECT                                       -- Ligne 30
+. . . . . -- Type : float
+. . . . . NOEUD_IDENT f                                    -- Ligne 30
+. . . . . . -- Defn : (var, float)
+. . . . . . -- Type : float
+. . . . . NOEUD_CONVERSION                                 -- Ligne 30
+. . . . . . -- Type : float
+. . . . . . NOEUD_IDENT float                              -- Ligne 30
+. . . . . . . -- Defn : (type, float)
+. . . . . . . -- Type : float
+. . . . . . NOEUD_IDENT i                                  -- Ligne 30
+. . . . . . . -- Defn : (var, int)
+. . . . . . . -- Type : int
+. . . # NOEUD_AFFECT                                       -- Ligne 31
+. . . . . -- Type : float
+. . . . . NOEUD_IDENT f                                    -- Ligne 31
+. . . . . . -- Defn : (var, float)
+. . . . . . -- Type : float
+. . . . . NOEUD_CONVERSION                                 -- Ligne 31
+. . . . . . -- Type : float
+. . . . . . NOEUD_IDENT float                              -- Ligne 31
+. . . . . . . -- Defn : (type, float)
+. . . . . . . -- Type : float
+. . . . . . NOEUD_IDENT f                                  -- Ligne 31
+. . . . . . . -- Defn : (var, float)
+. . . . . . . -- Type : float
+. . . # NOEUD_AFFECT                                       -- Ligne 32
+. . . . . -- Type : boolean
+. . . . . NOEUD_IDENT bool                                 -- Ligne 32
+. . . . . . -- Defn : (var, boolean)
+. . . . . . -- Type : boolean
+. . . . . NOEUD_CONVERSION                                 -- Ligne 32
+. . . . . . -- Type : boolean
+. . . . . . NOEUD_IDENT boolean                            -- Ligne 32
+. . . . . . . -- Defn : (type, boolean)
+. . . . . . . -- Type : boolean
+. . . . . . NOEUD_IDENT bool                               -- Ligne 32
+. . . . . . . -- Defn : (var, boolean)
+. . . . . . . -- Type : boolean
+. . . # NOEUD_AFFECT                                       -- Ligne 33
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 33
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 33
+. . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT A                                  -- Ligne 33
+. . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT b                                  -- Ligne 33
+. . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . # NOEUD_AFFECT                                       -- Ligne 34
+. . . . . -- Type : type_classe(B)
+. . . . . NOEUD_IDENT b                                    -- Ligne 34
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 34
+. . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT B                                  -- Ligne 34
+. . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT a                                  -- Ligne 34
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_AFFECT                                       -- Ligne 35
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 35
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 35
+. . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT A                                  -- Ligne 35
+. . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT a                                  -- Ligne 35
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_AFFECT                                       -- Ligne 36
+. . . . . -- Type : type_classe(B)
+. . . . . NOEUD_IDENT b                                    -- Ligne 36
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 36
+. . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT B                                  -- Ligne 36
+. . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT b                                  -- Ligne 36
+. . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . # NOEUD_AFFECT                                       -- Ligne 37
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 37
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 37
+. . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT A                                  -- Ligne 37
+. . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_NULL                                     -- Ligne 37
+. . . . . . . -- Type : type_null
+. . . # NOEUD_AFFECT                                       -- Ligne 38
+. . . . . -- Type : type_classe(Object)
+. . . . . NOEUD_IDENT o                                    -- Ligne 38
+. . . . . . -- Defn : (var, type_classe(Object))
+. . . . . . -- Type : type_classe(Object)
+. . . . . NOEUD_CONVERSION                                 -- Ligne 38
+. . . . . . -- Type : type_classe(Object)
+. . . . . . NOEUD_IDENT Object                             -- Ligne 38
+. . . . . . . -- Defn : (classe, type_classe(Object))
+. . . . . . . -- Type : type_classe(Object)
+. . . . . . NOEUD_IDENT a                                  -- Ligne 38
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)

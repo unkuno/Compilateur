@@ -1,0 +1,49 @@
+// Description:
+//    tests sur l'appel de fonctions mutuellement récursives
+//
+// Resultats:
+//    doit toujours terminer
+//    
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+class A {
+      A copain;
+      int nb = 0;
+      void Bonjour () {
+      	   println("- Bonjour !");
+	   copain.Salut();      	  
+      }
+      void Bonne_Journee () {
+	   nb = nb + 1;
+      	   println("- Bonne journée !");
+	   copain.Tcho();     
+      }
+      void Comment_Ca_Va () {
+      	   println("- Commen ça va ?");
+	   copain.BienBien();     
+      }
+
+      void Salut () {
+      	   println("- Salut !");
+	   copain.Comment_Ca_Va();      	  
+      }
+      void BienBien () {
+      	   println("- Bien bien !");
+	   copain.Bonne_Journee();     
+      }
+      void Tcho () {
+	   nb = nb + 1;
+      	   println("- Tcho n°", nb);
+      }
+}
+
+
+A a1 = new A(), a2 = new A();
+{
+	a1.copain = a2;
+	a2.copain = a1;
+	a1.Bonjour();
+}

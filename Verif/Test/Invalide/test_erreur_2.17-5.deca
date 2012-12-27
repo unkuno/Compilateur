@@ -1,0 +1,22 @@
+// Description:
+//	   test règle 2.17 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : La signature de la méthode 'getX' diffère dans la super-classe (règle 2.17)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+   int getX(float i) {
+   }
+}
+
+class B extends A {
+
+   int getX(int i) {
+   }
+}

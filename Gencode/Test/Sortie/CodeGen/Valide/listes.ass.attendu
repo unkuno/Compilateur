@@ -1,0 +1,1269 @@
+; Initialisation du programme
+     TSTO #43
+     BOV pile_pleine
+     ADDSP #37
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Cellule
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Cellule.setSuiv, R0
+     STORE R0, 5 (GB)
+
+; Table des méthode de la classe Liste
+     LEA 1 (GB), R0
+     STORE R0, 6 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 7 (GB)
+     LOAD code.Liste.init, R0
+     STORE R0, 8 (GB)
+     LOAD code.Liste.insererTete, R0
+     STORE R0, 9 (GB)
+     LOAD code.Liste.insererQueue, R0
+     STORE R0, 10 (GB)
+     LOAD code.Liste.iterateurNormal, R0
+     STORE R0, 11 (GB)
+     LOAD code.Liste.iterateurInverse, R0
+     STORE R0, 12 (GB)
+
+; Table des méthode de la classe Iterateur
+     LEA 1 (GB), R0
+     STORE R0, 13 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 14 (GB)
+     LOAD code.Iterateur.init, R0
+     STORE R0, 15 (GB)
+     LOAD code.Iterateur.hasNext, R0
+     STORE R0, 16 (GB)
+     LOAD code.Iterateur.avancer, R0
+     STORE R0, 17 (GB)
+     LOAD code.Iterateur.next, R0
+     STORE R0, 18 (GB)
+
+; Table des méthode de la classe IterateurNormal
+     LEA 13 (GB), R0
+     STORE R0, 19 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 20 (GB)
+     LOAD code.IterateurNormal.init, R0
+     STORE R0, 21 (GB)
+     LOAD code.Iterateur.hasNext, R0
+     STORE R0, 22 (GB)
+     LOAD code.IterateurNormal.avancer, R0
+     STORE R0, 23 (GB)
+     LOAD code.Iterateur.next, R0
+     STORE R0, 24 (GB)
+
+; Table des méthode de la classe IterateurInverse
+     LEA 13 (GB), R0
+     STORE R0, 25 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 26 (GB)
+     LOAD code.IterateurInverse.init, R0
+     STORE R0, 27 (GB)
+     LOAD code.Iterateur.hasNext, R0
+     STORE R0, 28 (GB)
+     LOAD code.IterateurInverse.avancer, R0
+     STORE R0, 29 (GB)
+     LOAD code.Iterateur.next, R0
+     STORE R0, 30 (GB)
+
+; Table des méthode de la classe Integer
+     LEA 1 (GB), R0
+     STORE R0, 31 (GB)
+     LOAD code.Integer.equals, R0
+     STORE R0, 32 (GB)
+     LOAD code.Integer.init, R0
+     STORE R0, 33 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 121.
+     ADDSP #1
+     NEW #2, R2
+     BOV tas_plein
+     LEA 6 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Liste
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 34 (LB)
+
+; Declarations ligne n° 122.
+
+; Declarations ligne n° 124.
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 36 (LB)
+
+; Declarations ligne n° 124.
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 37 (LB)
+
+
+; Instruction ligne n° 126.
+     WSTR "Test de la classe Integer"
+     WNL
+
+; Instruction ligne n° 127.
+     WSTR "i = l ? "
+
+; Instruction ligne n° 128.
+if.0.0 :
+     ADDSP #2
+     LOAD 36 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 34 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 128.
+     WSTR "true"
+     WNL
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 128.
+     WSTR "false"
+     WNL
+fin.0 :
+
+; Instruction ligne n° 130.
+     WSTR "i = j ? "
+
+; Instruction ligne n° 131.
+if.1.0 :
+     ADDSP #2
+     LOAD 36 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 37 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 131.
+     WSTR "true"
+     WNL
+     BRA fin.1
+else.1 :
+
+; Instruction ligne n° 131.
+     WSTR "false"
+     WNL
+fin.1 :
+
+; Instruction ligne n° 133.
+     WSTR "i = null ? "
+
+; Instruction ligne n° 134.
+if.2.0 :
+     ADDSP #2
+     LOAD 36 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #null, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 134.
+     WSTR "true"
+     WNL
+     BRA fin.2
+else.2 :
+
+; Instruction ligne n° 134.
+     WSTR "false"
+     WNL
+fin.2 :
+
+; Instruction ligne n° 136.
+     WNL
+
+; Instruction ligne n° 137.
+     WSTR "Test des listes doublement chaînées"
+     WNL
+
+; Instruction ligne n° 138.
+     WSTR "On insère les valeurs suivantes : 3, 2, 1, 4, 5"
+     WNL
+
+; Instruction ligne n° 139.
+     ADDSP #2
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 140.
+     ADDSP #2
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 141.
+     ADDSP #2
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #3, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 142.
+     ADDSP #2
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 143.
+     ADDSP #2
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     ADDSP #2
+     NEW #2, R2
+     BOV tas_plein
+     LEA 31 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Integer
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #5, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 145.
+     WSTR "Affichage normal : "
+
+; Instruction ligne n° 146.
+     ADDSP #1
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 35 (LB)
+
+; Instruction ligne n° 147.
+while.3 :
+     ADDSP #1
+     LOAD 35 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.3
+
+; Instruction ligne n° 148.
+     ADDSP #1
+     LOAD 35 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R3
+     CMP #null, R3
+     BEQ true_instanceof.4
+while_instanceof.4 :
+     LOAD 0 (R3), R3
+     CMP #null, R3
+     BEQ false_instanceof.4
+     LEA 31 (GB), R1
+     CMP R1, R3
+     BEQ true_instanceof.4
+     BRA while_instanceof.4
+true_instanceof.4 :
+     LOAD #1, R3
+     BRA fin_instanceof.4
+false_instanceof.4 :
+     LOAD #0, R3
+fin_instanceof.4 :
+     CMP #0, R3
+     BEQ conversion_impossible
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+     BRA while.3
+fin.3 :
+
+; Instruction ligne n° 150.
+     WNL
+
+; Instruction ligne n° 152.
+     WSTR "Affichage inversé : "
+
+; Instruction ligne n° 153.
+     ADDSP #1
+     LOAD 34 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 35 (LB)
+
+; Instruction ligne n° 154.
+while.5 :
+     ADDSP #1
+     LOAD 35 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.5
+
+; Instruction ligne n° 155.
+     ADDSP #1
+     LOAD 35 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R3
+     CMP #null, R3
+     BEQ true_instanceof.6
+while_instanceof.6 :
+     LOAD 0 (R3), R3
+     CMP #null, R3
+     BEQ false_instanceof.6
+     LEA 31 (GB), R1
+     CMP R1, R3
+     BEQ true_instanceof.6
+     BRA while_instanceof.6
+true_instanceof.6 :
+     LOAD #1, R3
+     BRA fin_instanceof.6
+false_instanceof.6 :
+     LOAD #0, R3
+fin_instanceof.6 :
+     CMP #0, R3
+     BEQ conversion_impossible
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+     BRA while.5
+fin.5 :
+
+; Instruction ligne n° 157.
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #############################
+; # Code de la classe Cellule #
+; #############################
+
+; Méthode Cellule.setSuiv
+code.Cellule.setSuiv :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 16.
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -2 (LB), R3
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 17.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 2 (R2)
+fin.Cellule.setSuiv :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Cellule
+init.Cellule :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     RTS
+
+; ###########################
+; # Code de la classe Liste #
+; ###########################
+
+; Méthode Liste.init
+code.Liste.init :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 25.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 26.
+     LOAD -2 (LB), R0
+     BRA fin.Liste.init
+     WSTR "Erreur : sortie de la méthode Liste.init sans return"
+     WNL
+     ERROR
+fin.Liste.init :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Liste.insererTete
+code.Liste.insererTete :
+     TSTO #7
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 30.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 32.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 33.
+     ADDSP #2
+     LOAD 1 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 34.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 1 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+fin.Liste.insererTete :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode Liste.insererQueue
+code.Liste.insererQueue :
+     TSTO #7
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 38.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 40.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 41.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 1 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 42.
+     ADDSP #2
+     LOAD 1 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+fin.Liste.insererQueue :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode Liste.iterateurNormal
+code.Liste.iterateurNormal :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 46.
+     ADDSP #2
+     NEW #3, R2
+     BOV tas_plein
+     LEA 19 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Iterateur
+     BSR init.IterateurNormal
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Liste.iterateurNormal
+     WSTR "Erreur : sortie de la méthode Liste.iterateurNormal sans return"
+     WNL
+     ERROR
+fin.Liste.iterateurNormal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Liste.iterateurInverse
+code.Liste.iterateurInverse :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 50.
+     ADDSP #2
+     NEW #3, R2
+     BOV tas_plein
+     LEA 25 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Iterateur
+     BSR init.IterateurInverse
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Liste.iterateurInverse
+     WSTR "Erreur : sortie de la méthode Liste.iterateurInverse sans return"
+     WNL
+     ERROR
+fin.Liste.iterateurInverse :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Liste
+init.Liste :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     NEW #4, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 1 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; ###############################
+; # Code de la classe Iterateur #
+; ###############################
+
+; Méthode Iterateur.init
+code.Iterateur.init :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 60.
+     WSTR "Implémentation incomplète !"
+     WNL
+
+; Instruction ligne n° 61.
+     LOAD #0, R2
+     QUO #0, R2
+     BOV debordement
+
+; Instruction ligne n° 62.
+     LOAD -2 (LB), R0
+     BRA fin.Iterateur.init
+     WSTR "Erreur : sortie de la méthode Iterateur.init sans return"
+     WNL
+     ERROR
+fin.Iterateur.init :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Iterateur.hasNext
+code.Iterateur.hasNext :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 66.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison NE
+     CMP 1 (R3), R2
+     SNE R2
+     LOAD R2, R0
+     BRA fin.Iterateur.hasNext
+     WSTR "Erreur : sortie de la méthode Iterateur.hasNext sans return"
+     WNL
+     ERROR
+fin.Iterateur.hasNext :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Iterateur.avancer
+code.Iterateur.avancer :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 71.
+     WSTR "Implémentation incomplète !"
+     WNL
+
+; Instruction ligne n° 72.
+     LOAD #0, R2
+     QUO #0, R2
+     BOV debordement
+fin.Iterateur.avancer :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Iterateur.next
+code.Iterateur.next :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #2
+     STORE R2, 0 (SP)
+; Declarations ligne n° 76.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 78.
+     ADDSP #1
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 79.
+     LOAD 1 (LB), R0
+     BRA fin.Iterateur.next
+     WSTR "Erreur : sortie de la méthode Iterateur.next sans return"
+     WNL
+     ERROR
+fin.Iterateur.next :
+     LOAD 0 (SP), R2
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Iterateur
+init.Iterateur :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; #####################################
+; # Code de la classe IterateurNormal #
+; #####################################
+
+; Méthode IterateurNormal.init
+code.IterateurNormal.init :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 85.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 86.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 87.
+     LOAD -2 (LB), R0
+     BRA fin.IterateurNormal.init
+     WSTR "Erreur : sortie de la méthode IterateurNormal.init sans return"
+     WNL
+     ERROR
+fin.IterateurNormal.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode IterateurNormal.avancer
+code.IterateurNormal.avancer :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 91.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, 2 (R2)
+fin.IterateurNormal.avancer :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe IterateurNormal
+init.IterateurNormal :
+     RTS
+
+; ######################################
+; # Code de la classe IterateurInverse #
+; ######################################
+
+; Méthode IterateurInverse.init
+code.IterateurInverse.init :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 97.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 98.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 3 (R3), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 99.
+     LOAD -2 (LB), R0
+     BRA fin.IterateurInverse.init
+     WSTR "Erreur : sortie de la méthode IterateurInverse.init sans return"
+     WNL
+     ERROR
+fin.IterateurInverse.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode IterateurInverse.avancer
+code.IterateurInverse.avancer :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 103.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 3 (R3), R3
+     STORE R3, 2 (R2)
+fin.IterateurInverse.avancer :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe IterateurInverse
+init.IterateurInverse :
+     RTS
+
+; #############################
+; # Code de la classe Integer #
+; #############################
+
+; Méthode Integer.init
+code.Integer.init :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 111.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 112.
+     LOAD -2 (LB), R0
+     BRA fin.Integer.init
+     WSTR "Erreur : sortie de la méthode Integer.init sans return"
+     WNL
+     ERROR
+fin.Integer.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Integer.equals
+code.Integer.equals :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 116.
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD -3 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ fin.ET.8
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.9
+while_instanceof.9 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.9
+     LEA 31 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.9
+     BRA while_instanceof.9
+true_instanceof.9 :
+     LOAD #1, R2
+     BRA fin_instanceof.9
+false_instanceof.9 :
+     LOAD #0, R2
+fin_instanceof.9 :
+fin.ET.8 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.7
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.10
+while_instanceof.10 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.10
+     LEA 31 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.10
+     BRA while_instanceof.10
+true_instanceof.10 :
+     LOAD #1, R2
+     BRA fin_instanceof.10
+false_instanceof.10 :
+     LOAD #0, R2
+fin_instanceof.10 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison EQ
+     CMP 1 (R3), R2
+     SEQ R2
+fin.ET.7 :
+; Fin d'un calcul ET
+     LOAD R2, R0
+     BRA fin.Integer.equals
+     WSTR "Erreur : sortie de la méthode Integer.equals sans return"
+     WNL
+     ERROR
+fin.Integer.equals :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Integer
+init.Integer :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS

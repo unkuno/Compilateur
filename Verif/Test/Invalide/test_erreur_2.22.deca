@@ -1,0 +1,16 @@
+// Description:
+//    Programme soulevant l'erreur (2.22)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Un paramètre ne peut pas être de type 'void' (règle 2.22)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {  
+   void Get(void x){
+   }
+   
+}

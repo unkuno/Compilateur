@@ -1,0 +1,144 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT boolean                              -- Ligne 12
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 12
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 2) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 14
+. . . . . NOEUD_IDENT res                                  -- Ligne 14
+. . . . . NOEUD_VRAI                                       -- Ligne 14
+. . . # NOEUD_TANTQUE                                      -- Ligne 15
+. . . . . NOEUD_IDENT res                                  -- Ligne 15
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 16
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 16
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 16
+. . . . . . # NOEUD_TANTQUE                                -- Ligne 17
+. . . . . . . . NOEUD_NON                                  -- Ligne 17
+. . . . . . . . . NOEUD_IDENT res                          -- Ligne 17
+. . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 18
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 18
+. . . . . . . . . . . NOEUD_VRAI                           -- Ligne 18
+. . . . . . . . . # NOEUD_TANTQUE                          -- Ligne 19
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 19
+. . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . # NOEUD_AFFECT                     -- Ligne 20
+. . . . . . . . . . . . . . NOEUD_IDENT res                -- Ligne 20
+. . . . . . . . . . . . . . NOEUD_FAUX                     -- Ligne 20
+. . . . . . . . . . . . # NOEUD_TANTQUE                    -- Ligne 21
+. . . . . . . . . . . . . . NOEUD_NON                      -- Ligne 21
+. . . . . . . . . . . . . . . NOEUD_IDENT res              -- Ligne 21
+. . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . # NOEUD_AFFECT               -- Ligne 22
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 22
+. . . . . . . . . . . . . . . . . NOEUD_VRAI               -- Ligne 22
+. . . . . . . . . . . . . . . # NOEUD_TANTQUE              -- Ligne 23
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 23
+. . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . # NOEUD_AFFECT         -- Ligne 24
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res    -- Ligne 24
+. . . . . . . . . . . . . . . . . . . . NOEUD_FAUX         -- Ligne 24
+. . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE        -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . NOEUD_NON          -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res  -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT   -- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI   -- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE  -- Ligne 27
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 27
+. . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 31
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 31
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 35
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 35
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 39
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 39
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT   -- Ligne 58
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 58
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI   -- Ligne 58
+. . . . . . . . . . . . . . . . . . # NOEUD_AFFECT         -- Ligne 60
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res    -- Ligne 60
+. . . . . . . . . . . . . . . . . . . . NOEUD_FAUX         -- Ligne 60
+. . . . . . . . . . . . . . . # NOEUD_AFFECT               -- Ligne 62
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 62
+. . . . . . . . . . . . . . . . . NOEUD_VRAI               -- Ligne 62
+. . . . . . . . . . . . # NOEUD_AFFECT                     -- Ligne 64
+. . . . . . . . . . . . . . NOEUD_IDENT res                -- Ligne 64
+. . . . . . . . . . . . . . NOEUD_FAUX                     -- Ligne 64
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 66
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 66
+. . . . . . . . . . . NOEUD_VRAI                           -- Ligne 66
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 68
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 68
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 68

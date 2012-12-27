@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.54)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : 'this' ne peut pas être utilisé dans le programme principal (règle 3.54)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+{
+   this;
+}

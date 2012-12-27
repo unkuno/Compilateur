@@ -1,0 +1,9 @@
+lexico_io.ads
+lexico_io.adb
+lexico_dfa.ads
+lexico_dfa.adb
+lexico.adb
+syntax_tokens.ads
+syntax_goto.ads
+syntax_shift_reduce.ads
+syntax.adb

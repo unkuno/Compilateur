@@ -1,0 +1,28 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 16
+. . . . NOEUD_IDENT B                                      -- Ligne 16
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 20
+. . . . . NOEUD_IDENT A                                    -- Ligne 20
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 20
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 20
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 21
+. . . . . NOEUD_IDENT B                                    -- Ligne 21
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 21
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 21
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 1) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 25
+. . . . . NOEUD_IDENT a                                    -- Ligne 25
+. . . . . NOEUD_IDENT b                                    -- Ligne 25

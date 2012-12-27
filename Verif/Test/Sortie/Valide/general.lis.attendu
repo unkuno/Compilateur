@@ -1,0 +1,518 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 10
+. . . . NOEUD_IDENT A                                      -- Ligne 10
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 10) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 11
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT float                            -- Ligne 11
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 11
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 11
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), float)
+. . . . . . . . . . NOEUD_FLOTTANT  3.14000E+00            -- Ligne 11
+. . . . . . . . . . . -- Type : float
+. . . . . # NOEUD_CHAMP                                    -- Ligne 12
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 12
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 12
+. . . . . . . . . . NOEUD_IDENT y                          -- Ligne 12
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_PROTEGE                                -- Ligne 13
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 13
+. . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . NOEUD_ENTIER  42                       -- Ligne 13
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_PROTEGE                                -- Ligne 14
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 14
+. . . . . . . . -- Defn : (type, boolean)
+. . . . . . . . -- Type : boolean
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT t                          -- Ligne 14
+. . . . . . . . . . . -- Defn : (champ(valtrue, A), boolean)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 16
+. . . . . . . NOEUD_IDENT int                              -- Ligne 16
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_IDENT getZ                             -- Ligne 16
+. . . . . . . . -- Defn : (methode([]), int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 18
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 18
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_THIS                           -- Ligne 18
+. . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . NOEUD_IDENT z                        -- Ligne 18
+. . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 21
+. . . . . . . NOEUD_IDENT void                             -- Ligne 21
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT setZ                             -- Ligne 21
+. . . . . . . . -- Defn : (methode([int]), void)
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 21
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 21
+. . . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 21
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 22
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 22
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_THIS                           -- Ligne 22
+. . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . NOEUD_IDENT z                        -- Ligne 22
+. . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 22
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 25
+. . . . . . . NOEUD_IDENT float                            -- Ligne 25
+. . . . . . . . -- Defn : (type, float)
+. . . . . . . . -- Type : float
+. . . . . . . NOEUD_IDENT getX                             -- Ligne 25
+. . . . . . . . -- Defn : (methode([]), float)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 27
+. . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 27
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), float)
+. . . . . . . . . . . -- Type : float
+. . . . . # NOEUD_METHODE                                  -- Ligne 30
+. . . . . . . NOEUD_IDENT void                             -- Ligne 30
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT setX                             -- Ligne 30
+. . . . . . . . -- Defn : (methode([float]), void)
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 30
+. . . . . . . . . . NOEUD_IDENT float                      -- Ligne 30
+. . . . . . . . . . . -- Defn : (type, float)
+. . . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_IDENT newX                       -- Ligne 30
+. . . . . . . . . . . -- Defn : (param, float)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 32
+. . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 32
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), float)
+. . . . . . . . . . . -- Type : float
+. . . . . . . . . . NOEUD_IDENT newX                       -- Ligne 32
+. . . . . . . . . . . -- Defn : (param, float)
+. . . . . . . . . . . -- Type : float
+. . . . . # NOEUD_METHODE                                  -- Ligne 35
+. . . . . . . NOEUD_IDENT B                                -- Ligne 35
+. . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . -- Type : type_classe(B)
+. . . . . . . NOEUD_IDENT creerB                           -- Ligne 35
+. . . . . . . . -- Defn : (methode([int,
+                                    int]), type_classe(B))
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 35
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 35
+. . . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 35
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 35
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 35
+. . . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT y                          -- Ligne 35
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 36
+. . . . . . . . . . NOEUD_IDENT B                          -- Ligne 36
+. . . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 36
+. . . . . . . . . . . . . NOEUD_IDENT b                    -- Ligne 36
+. . . . . . . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . . . . . . NOEUD_CREATION                   -- Ligne 36
+. . . . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . . . . NOEUD_IDENT B                  -- Ligne 36
+. . . . . . . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . <Liste (longueur 5) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 38
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 38
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT b                        -- Ligne 38
+. . . . . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . NOEUD_IDENT x                        -- Ligne 38
+. . . . . . . . . . . . -- Defn : (champ(valfalse, B), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 38
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 39
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 39
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT b                        -- Ligne 39
+. . . . . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . NOEUD_IDENT y                        -- Ligne 39
+. . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT y                          -- Ligne 39
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 40
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 40
+. . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 40
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT z                        -- Ligne 40
+. . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 40
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 41
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 41
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_IDENT b                        -- Ligne 41
+. . . . . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . . NOEUD_IDENT z                        -- Ligne 41
+. . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT z                          -- Ligne 41
+. . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 42
+. . . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . . NOEUD_IDENT b                          -- Ligne 42
+. . . . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . . . . -- Type : type_classe(B)
+. . . . . # NOEUD_METHODE                                  -- Ligne 45
+. . . . . . . NOEUD_IDENT void                             -- Ligne 45
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT ecrire                           -- Ligne 45
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 3) :>
+. . . . . . . . # NOEUD_ECRITURE                           -- Ligne 47
+. . . . . . . . . . <Liste (longueur 7) :>
+. . . . . . . . . . . # NOEUD_CHAINE "A[x="                -- Ligne 47
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT x                      -- Ligne 47
+. . . . . . . . . . . . . -- Defn : (champ(valfalse, A), float)
+. . . . . . . . . . . . . -- Type : float
+. . . . . . . . . . . # NOEUD_CHAINE ", y="                -- Ligne 47
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT y                      -- Ligne 47
+. . . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . # NOEUD_CHAINE ", z="                -- Ligne 47
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT z                      -- Ligne 47
+. . . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . # NOEUD_CHAINE ", t="                -- Ligne 47
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . # NOEUD_SI                                 -- Ligne 48
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_COND                         -- Ligne 48
+. . . . . . . . . . . . . NOEUD_IDENT t                    -- Ligne 48
+. . . . . . . . . . . . . . -- Defn : (champ(valtrue, A), boolean)
+. . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_ECRITURE               -- Ligne 48
+. . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . # NOEUD_CHAINE "true"    -- Ligne 48
+. . . . . . . . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_ECRITURE                     -- Ligne 48
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_CHAINE "false"         -- Ligne 48
+. . . . . . . . . . . . . . . . -- Type : String
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 49
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "]"                   -- Ligne 49
+. . . . . . . . . . . . . -- Type : String
+. . # NOEUD_CLASSE                                         -- Ligne 54
+. . . . NOEUD_IDENT B                                      -- Ligne 54
+. . . . . -- Defn : (classe, type_classe(B))
+. . . . NOEUD_IDENT A                                      -- Ligne 54
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 55
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 55
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 55
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 55
+. . . . . . . . . . . -- Defn : (champ(valfalse, B), int)
+. . . . . . . . . . NOEUD_ENTIER  42                       -- Ligne 55
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 57
+. . . . . . . NOEUD_IDENT void                             -- Ligne 57
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT ecrire                           -- Ligne 57
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 3) :>
+. . . . . . . . # NOEUD_ECRITURE                           -- Ligne 59
+. . . . . . . . . . <Liste (longueur 7) :>
+. . . . . . . . . . . # NOEUD_CHAINE "B[x="                -- Ligne 59
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT x                      -- Ligne 59
+. . . . . . . . . . . . . -- Defn : (champ(valfalse, B), int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . # NOEUD_CHAINE ", y="                -- Ligne 59
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT y                      -- Ligne 59
+. . . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . # NOEUD_CHAINE ", z="                -- Ligne 59
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT z                      -- Ligne 59
+. . . . . . . . . . . . . -- Defn : (champ(valtrue, A), int)
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . # NOEUD_CHAINE ", t="                -- Ligne 59
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . # NOEUD_SI                                 -- Ligne 60
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_COND                         -- Ligne 60
+. . . . . . . . . . . . . NOEUD_IDENT t                    -- Ligne 60
+. . . . . . . . . . . . . . -- Defn : (champ(valtrue, A), boolean)
+. . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_ECRITURE               -- Ligne 60
+. . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . # NOEUD_CHAINE "true"    -- Ligne 60
+. . . . . . . . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_ECRITURE                     -- Ligne 60
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_CHAINE "false"         -- Ligne 60
+. . . . . . . . . . . . . . . . -- Type : String
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 61
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "]"                   -- Ligne 61
+. . . . . . . . . . . . . -- Type : String
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 4) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 65
+. . . . . NOEUD_IDENT int                                  -- Ligne 65
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 65
+. . . . . . . . NOEUD_IDENT x                              -- Ligne 65
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_ENTIER  0                            -- Ligne 65
+. . . . . . . . . -- Type : int
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 66
+. . . . . NOEUD_IDENT boolean                              -- Ligne 66
+. . . . . . -- Defn : (type, boolean)
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 66
+. . . . . . . . NOEUD_IDENT y                              -- Ligne 66
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 66
+. . . . . . . . . -- Type : boolean
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 68
+. . . . . NOEUD_IDENT A                                    -- Ligne 68
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 68
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 68
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 68
+. . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 68
+. . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 69
+. . . . . NOEUD_IDENT B                                    -- Ligne 69
+. . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 69
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 69
+. . . . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 69
+. . . . . . . . . -- Type : type_classe(B)
+. . . . . . . . . NOEUD_IDENT B                            -- Ligne 69
+. . . . . . . . . . -- Defn : (classe, type_classe(B))
+. . . . . . . . . . -- Type : type_classe(B)
+. . <Liste (longueur 19) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 72
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "x="                            -- Ligne 72
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_IDENT x                                -- Ligne 72
+. . . . . . . . -- Defn : (var, int)
+. . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 74
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "y="                            -- Ligne 74
+. . . . . . . . -- Type : String
+. . . # NOEUD_SI                                           -- Ligne 75
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 75
+. . . . . . . . NOEUD_IDENT y                              -- Ligne 75
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE                         -- Ligne 75
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "true"              -- Ligne 75
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE                               -- Ligne 75
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "false"                   -- Ligne 75
+. . . . . . . . . . . -- Type : String
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 76
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE                                     -- Ligne 78
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "a="                            -- Ligne 78
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 79
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 79
+. . . . . . NOEUD_IDENT a                                  -- Ligne 79
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT ecrire                             -- Ligne 79
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 80
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE                                     -- Ligne 82
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "b="                            -- Ligne 82
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 83
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 83
+. . . . . . NOEUD_IDENT b                                  -- Ligne 83
+. . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT ecrire                             -- Ligne 83
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 84
+. . . . . <Liste vide>
+. . . # NOEUD_AFFECT                                       -- Ligne 86
+. . . . . -- Type : type_classe(B)
+. . . . . NOEUD_IDENT b                                    -- Ligne 86
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . . . NOEUD_APPEL                                      -- Ligne 86
+. . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_SELECTION                                -- Ligne 86
+. . . . . . . NOEUD_IDENT a                                -- Ligne 86
+. . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . -- Type : type_classe(A)
+. . . . . . . NOEUD_IDENT creerB                           -- Ligne 86
+. . . . . . . . -- Defn : (methode([int,
+                                    int]), type_classe(B))
+. . . . . . . . -- Type : type_classe(B)
+. . . . . . <Liste (longueur 2) :>
+. . . . . . . # NOEUD_ENTIER  4                            -- Ligne 86
+. . . . . . . . . -- Type : int
+. . . . . . . # NOEUD_ENTIER  2                            -- Ligne 86
+. . . . . . . . . -- Type : int
+. . . # NOEUD_ECRITURE                                     -- Ligne 87
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "b="                            -- Ligne 87
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 88
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 88
+. . . . . . NOEUD_IDENT b                                  -- Ligne 88
+. . . . . . . -- Defn : (var, type_classe(B))
+. . . . . . . -- Type : type_classe(B)
+. . . . . . NOEUD_IDENT ecrire                             -- Ligne 88
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 89
+. . . . . <Liste vide>
+. . . # NOEUD_AFFECT                                       -- Ligne 91
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 91
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT b                                    -- Ligne 91
+. . . . . . -- Defn : (var, type_classe(B))
+. . . . . . -- Type : type_classe(B)
+. . . # NOEUD_ECRITURE                                     -- Ligne 92
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "a="                            -- Ligne 92
+. . . . . . . . -- Type : String
+. . . # NOEUD_APPEL                                        -- Ligne 93
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 93
+. . . . . . NOEUD_IDENT a                                  -- Ligne 93
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT ecrire                             -- Ligne 93
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 94
+. . . . . <Liste vide>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 96
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "a.x="                          -- Ligne 96
+. . . . . . . . -- Type : String
+. . . . . . # NOEUD_SELECTION                              -- Ligne 96
+. . . . . . . . -- Type : float
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 96
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . NOEUD_IDENT x                              -- Ligne 96
+. . . . . . . . . -- Defn : (champ(valfalse, A), float)
+. . . . . . . . . -- Type : float

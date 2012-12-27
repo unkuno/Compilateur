@@ -1,0 +1,16 @@
+// Description:
+//    Programme minimaliste utilisant la condition while.
+//
+// Resultats:
+//    La condition est vraie : ok!
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+{
+        while(true) {
+	    println("la condition est vraie");
+	}
+}

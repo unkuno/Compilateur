@@ -1,0 +1,16 @@
+// Description:
+//	Teste calcul avec cast 
+//
+// Resultats:
+//	affichage du bon nombre
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+float res = cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(cast<float>(11)/(cast<float>(2)))))))))))))))))))))))))))))))))))))))))))))))))));
+{
+   println(res);
+}

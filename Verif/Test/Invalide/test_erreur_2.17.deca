@@ -1,0 +1,24 @@
+// Description:
+//	   test règle 2.17 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 21 : Le type de retour de 'getX' doit être une sous-type de 'int' (règle 2.17)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+   int getX() {
+      return 2;
+   }
+}
+
+class B extends A {
+
+   float getX() {
+      return 1.0;
+   }
+}

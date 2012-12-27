@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+%%%%%%%%%%
+% Taille des pages (A4 serré)
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-.7cm}
+\setlength{\evensidemargin}{-.7cm}
+\setlength{\topmargin}{-.5in}
+
+
+%%%%%%%%%%
+% En-têtes et pied de pages
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{1.6pt}
+\addtolength{\headheight}{2.6pt}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\sf \thepage/\pageref{LastPage}}
+\lhead{\footnotesize\sf Projet GL}
+\rhead{\footnotesize\sf Equipe 16} % numéro d'équipe Teide 
+
+%%%%%%%%%%
+% Informations sur le document
+
+\title{Projet Génie Logiciel\\\emph{Documentation de conception}}
+
+\author{BOUSSON Valentin, CONNES Cédric,\\LENTINI Sébastien, NGUY Thomas\\\emph{Equipe 16}}
+
+\date{10 Janvier 2012}
+
+
+%%%%%%%%%%
+% Début du document
+
+\begin{document}
+
+\maketitle
+
+Ce document recense l'ensemble des choix de conception qui ont pu être effectués afin de mettre en place le compilateur Deca. Ces choix peuvent porter sur :
+\begin{itemize}
+\item l'architecture de l'implémentation (choix de paquetages, ...)
+\item l'utilisation des structures disponibles pour telle ou telle fonctionnalité
+\end{itemize}
+
+  Nous aborderons les différents points dans l'ordre de la chaîne de compilation (étapes A, B, C).
+
+\input{Conception_A}
+\newpage
+\input{Conception_B}
+\newpage
+\input{Conception_C}
+
+\end{document}

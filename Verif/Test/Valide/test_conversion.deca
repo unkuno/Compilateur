@@ -1,0 +1,41 @@
+// Description:
+//    Tests sur la conversion
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+class A {
+}
+
+class B extends A {
+}
+
+
+A a;
+B b;
+Object o;
+int i;
+float f;
+boolean bool;
+{
+
+   i = cast<int> (i);
+   i = cast<int> (f);
+   f = cast<float>(i);
+   f = cast<float> (f);
+   bool = cast<boolean>(bool);
+   a = cast<A>(b);
+   b = cast<B>(a);
+   a = cast<A>(a);
+   b = cast<B>(b);
+   a = cast<A>(null);
+   o = cast<Object>(a);
+
+
+}

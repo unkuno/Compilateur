@@ -1,0 +1,269 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 20) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 13
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "40 + 2 = "                     -- Ligne 13
+. . . . . . # NOEUD_PLUS                                   -- Ligne 13
+. . . . . . . . NOEUD_ENTIER  40                           -- Ligne 13
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 13
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 14
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "50 - 8 = "                     -- Ligne 14
+. . . . . . # NOEUD_MOINS                                  -- Ligne 14
+. . . . . . . . NOEUD_ENTIER  50                           -- Ligne 14
+. . . . . . . . NOEUD_ENTIER  8                            -- Ligne 14
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 15
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "-42 = "                        -- Ligne 15
+. . . . . . # NOEUD_MOINS_UNAIRE                           -- Ligne 15
+. . . . . . . . NOEUD_ENTIER  42                           -- Ligne 15
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 16
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "6 * 6 = "                      -- Ligne 16
+. . . . . . # NOEUD_MULT                                   -- Ligne 16
+. . . . . . . . NOEUD_ENTIER  6                            -- Ligne 16
+. . . . . . . . NOEUD_ENTIER  6                            -- Ligne 16
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 17
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "6 % 5 = "                      -- Ligne 17
+. . . . . . # NOEUD_RESTE                                  -- Ligne 17
+. . . . . . . . NOEUD_ENTIER  6                            -- Ligne 17
+. . . . . . . . NOEUD_ENTIER  5                            -- Ligne 17
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 18
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "9 / 3 = "                      -- Ligne 18
+. . . . . . # NOEUD_DIV                                    -- Ligne 18
+. . . . . . . . NOEUD_ENTIER  9                            -- Ligne 18
+. . . . . . . . NOEUD_ENTIER  3                            -- Ligne 18
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 19
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "9+9+9+9+9+9+9 = "              -- Ligne 19
+. . . . . . # NOEUD_PLUS                                   -- Ligne 19
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 19
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 19
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 19
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 19
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 19
+. . . . . . . . . . . . . NOEUD_ENTIER  9                  -- Ligne 19
+. . . . . . . . . . . . . NOEUD_ENTIER  9                  -- Ligne 19
+. . . . . . . . . . . . NOEUD_ENTIER  9                    -- Ligne 19
+. . . . . . . . . . . NOEUD_ENTIER  9                      -- Ligne 19
+. . . . . . . . . . NOEUD_ENTIER  9                        -- Ligne 19
+. . . . . . . . . NOEUD_ENTIER  9                          -- Ligne 19
+. . . . . . . . NOEUD_ENTIER  9                            -- Ligne 19
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 20
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "5*2*5*2 = "                    -- Ligne 20
+. . . . . . # NOEUD_MULT                                   -- Ligne 20
+. . . . . . . . NOEUD_MULT                                 -- Ligne 20
+. . . . . . . . . NOEUD_MULT                               -- Ligne 20
+. . . . . . . . . . NOEUD_ENTIER  5                        -- Ligne 20
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 20
+. . . . . . . . . NOEUD_ENTIER  5                          -- Ligne 20
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 20
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 21
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "-1-1-1-1-1 = "                 -- Ligne 21
+. . . . . . # NOEUD_MOINS                                  -- Ligne 21
+. . . . . . . . NOEUD_MOINS                                -- Ligne 21
+. . . . . . . . . NOEUD_MOINS                              -- Ligne 21
+. . . . . . . . . . NOEUD_MOINS                            -- Ligne 21
+. . . . . . . . . . . NOEUD_MOINS_UNAIRE                   -- Ligne 21
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 21
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 21
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 21
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 21
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 21
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 22
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "40/2/2/2 = "                   -- Ligne 22
+. . . . . . # NOEUD_DIV                                    -- Ligne 22
+. . . . . . . . NOEUD_DIV                                  -- Ligne 22
+. . . . . . . . . NOEUD_DIV                                -- Ligne 22
+. . . . . . . . . . NOEUD_ENTIER  40                       -- Ligne 22
+. . . . . . . . . . NOEUD_ENTIER  2                        -- Ligne 22
+. . . . . . . . . NOEUD_ENTIER  2                          -- Ligne 22
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 22
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 23
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "10%6%5%3 = "                   -- Ligne 23
+. . . . . . # NOEUD_RESTE                                  -- Ligne 23
+. . . . . . . . NOEUD_RESTE                                -- Ligne 23
+. . . . . . . . . NOEUD_RESTE                              -- Ligne 23
+. . . . . . . . . . NOEUD_ENTIER  10                       -- Ligne 23
+. . . . . . . . . . NOEUD_ENTIER  6                        -- Ligne 23
+. . . . . . . . . NOEUD_ENTIER  5                          -- Ligne 23
+. . . . . . . . NOEUD_ENTIER  3                            -- Ligne 23
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 24
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "(3+3+3)*(3+3+3) / 2 = "        -- Ligne 24
+. . . . . . # NOEUD_DIV                                    -- Ligne 24
+. . . . . . . . NOEUD_MULT                                 -- Ligne 24
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 24
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 24
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 24
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 24
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 24
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 24
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 24
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 24
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 24
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 24
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 24
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 25
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3)*(3+3+3) / 2 = "-- Ligne 25
+. . . . . . # NOEUD_DIV                                    -- Ligne 25
+. . . . . . . . NOEUD_MULT                                 -- Ligne 25
+. . . . . . . . . NOEUD_MULT                               -- Ligne 25
+. . . . . . . . . . NOEUD_MULT                             -- Ligne 25
+. . . . . . . . . . . NOEUD_MULT                           -- Ligne 25
+. . . . . . . . . . . . NOEUD_MULT                         -- Ligne 25
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 25
+. . . . . . . . . . . . . . . NOEUD_ENTIER  3              -- Ligne 25
+. . . . . . . . . . . . . . . NOEUD_ENTIER  3              -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_ENTIER  3                -- Ligne 25
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 25
+. . . . . . . . . . . . . . . NOEUD_ENTIER  3              -- Ligne 25
+. . . . . . . . . . . . . . . NOEUD_ENTIER  3              -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_ENTIER  3                -- Ligne 25
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 25
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_ENTIER  3                -- Ligne 25
+. . . . . . . . . . . . . . NOEUD_ENTIER  3                -- Ligne 25
+. . . . . . . . . . . . . NOEUD_ENTIER  3                  -- Ligne 25
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 25
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 25
+. . . . . . . . . . . . . NOEUD_ENTIER  3                  -- Ligne 25
+. . . . . . . . . . . . . NOEUD_ENTIER  3                  -- Ligne 25
+. . . . . . . . . . . . NOEUD_ENTIER  3                    -- Ligne 25
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 25
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 25
+. . . . . . . . . . . . NOEUD_ENTIER  3                    -- Ligne 25
+. . . . . . . . . . . . NOEUD_ENTIER  3                    -- Ligne 25
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 25
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 25
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 25
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 25
+. . . . . . . . . . . NOEUD_ENTIER  3                      -- Ligne 25
+. . . . . . . . . . NOEUD_ENTIER  3                        -- Ligne 25
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 25
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 26
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "(1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)*((1+1)))))))))) = "-- Ligne 26
+. . . . . . # NOEUD_MULT                                   -- Ligne 26
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 26
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 26
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 26
+. . . . . . . . NOEUD_MULT                                 -- Ligne 26
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 26
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 26
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 26
+. . . . . . . . . NOEUD_MULT                               -- Ligne 26
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 26
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 26
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 26
+. . . . . . . . . . NOEUD_MULT                             -- Ligne 26
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 26
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 26
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 26
+. . . . . . . . . . . NOEUD_MULT                           -- Ligne 26
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 26
+. . . . . . . . . . . . . NOEUD_ENTIER  1                  -- Ligne 26
+. . . . . . . . . . . . . NOEUD_ENTIER  1                  -- Ligne 26
+. . . . . . . . . . . . NOEUD_MULT                         -- Ligne 26
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 26
+. . . . . . . . . . . . . . NOEUD_ENTIER  1                -- Ligne 26
+. . . . . . . . . . . . . . NOEUD_ENTIER  1                -- Ligne 26
+. . . . . . . . . . . . . NOEUD_MULT                       -- Ligne 26
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 26
+. . . . . . . . . . . . . . . NOEUD_ENTIER  1              -- Ligne 26
+. . . . . . . . . . . . . . . NOEUD_ENTIER  1              -- Ligne 26
+. . . . . . . . . . . . . . NOEUD_MULT                     -- Ligne 26
+. . . . . . . . . . . . . . . NOEUD_PLUS                   -- Ligne 26
+. . . . . . . . . . . . . . . . NOEUD_ENTIER  1            -- Ligne 26
+. . . . . . . . . . . . . . . . NOEUD_ENTIER  1            -- Ligne 26
+. . . . . . . . . . . . . . . NOEUD_MULT                   -- Ligne 26
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 26
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 26
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 26
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 26
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 26
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 26
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 27
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "3.0+0.2 = "                    -- Ligne 27
+. . . . . . # NOEUD_PLUS                                   -- Ligne 27
+. . . . . . . . NOEUD_FLOTTANT  3.00000E+00                -- Ligne 27
+. . . . . . . . NOEUD_FLOTTANT  2.00000E-01                -- Ligne 27
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 28
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "2.0-0.2 = "                    -- Ligne 28
+. . . . . . # NOEUD_MOINS                                  -- Ligne 28
+. . . . . . . . NOEUD_FLOTTANT  2.00000E+00                -- Ligne 28
+. . . . . . . . NOEUD_FLOTTANT  2.00000E-01                -- Ligne 28
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 29
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "2.0 * 0.5 = "                  -- Ligne 29
+. . . . . . # NOEUD_MULT                                   -- Ligne 29
+. . . . . . . . NOEUD_FLOTTANT  2.00000E+00                -- Ligne 29
+. . . . . . . . NOEUD_FLOTTANT  5.00000E-01                -- Ligne 29
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 30
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "3.0 / 1.5 = "                  -- Ligne 30
+. . . . . . # NOEUD_DIV                                    -- Ligne 30
+. . . . . . . . NOEUD_FLOTTANT  3.00000E+00                -- Ligne 30
+. . . . . . . . NOEUD_FLOTTANT  1.50000E+00                -- Ligne 30
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 31
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "(1.5+1.3)*((1.3+1.5)*((1.5+1.3)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)*((1.3+1.5)))))))))) = "-- Ligne 31
+. . . . . . # NOEUD_MULT                                   -- Ligne 31
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 31
+. . . . . . . . . NOEUD_FLOTTANT  1.50000E+00              -- Ligne 31
+. . . . . . . . . NOEUD_FLOTTANT  1.30000E+00              -- Ligne 31
+. . . . . . . . NOEUD_MULT                                 -- Ligne 31
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 31
+. . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00            -- Ligne 31
+. . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00            -- Ligne 31
+. . . . . . . . . NOEUD_MULT                               -- Ligne 31
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 31
+. . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00          -- Ligne 31
+. . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00          -- Ligne 31
+. . . . . . . . . . NOEUD_MULT                             -- Ligne 31
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 31
+. . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00        -- Ligne 31
+. . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00        -- Ligne 31
+. . . . . . . . . . . NOEUD_MULT                           -- Ligne 31
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 31
+. . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00      -- Ligne 31
+. . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00      -- Ligne 31
+. . . . . . . . . . . . NOEUD_MULT                         -- Ligne 31
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 31
+. . . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00    -- Ligne 31
+. . . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00    -- Ligne 31
+. . . . . . . . . . . . . NOEUD_MULT                       -- Ligne 31
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 31
+. . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00  -- Ligne 31
+. . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00  -- Ligne 31
+. . . . . . . . . . . . . . NOEUD_MULT                     -- Ligne 31
+. . . . . . . . . . . . . . . NOEUD_PLUS                   -- Ligne 31
+. . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00-- Ligne 31
+. . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00-- Ligne 31
+. . . . . . . . . . . . . . . NOEUD_MULT                   -- Ligne 31
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 31
+. . . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00-- Ligne 31
+. . . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00-- Ligne 31
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 31
+. . . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.30000E+00-- Ligne 31
+. . . . . . . . . . . . . . . . . NOEUD_FLOTTANT  1.50000E+00-- Ligne 31
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 32
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE " (1+3.5) = "                   -- Ligne 32
+. . . . . . # NOEUD_PLUS                                   -- Ligne 32
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 32
+. . . . . . . . NOEUD_FLOTTANT  3.50000E+00                -- Ligne 32

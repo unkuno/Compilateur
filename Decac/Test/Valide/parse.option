@@ -1,0 +1,13 @@
+// Description:
+//    Test la construction de l'arbre option -p
+//
+// Resultats:
+//  Arrête decac apres l’étape de construction de l’arbre, et affiche la décompilation de ce
+//       dernier (i.e. la sortie doit être un programme deca syntaxiquement correct)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-p ./echecs.deca

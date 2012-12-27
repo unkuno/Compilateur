@@ -1,0 +1,11 @@
+int X;
+int N, M;
+{
+	N = readInt();
+	M = N;
+	X = M;
+	while (M >= 2) {
+	      X = X * (M = M - 1);
+	}
+	println(N,"! = ",X);
+}

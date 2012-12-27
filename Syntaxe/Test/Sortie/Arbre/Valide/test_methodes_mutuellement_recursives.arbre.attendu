@@ -1,0 +1,139 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 8) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT A                                -- Ligne 13
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT copain                     -- Ligne 13
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT nb                         -- Ligne 14
+. . . . . . . . . . NOEUD_ENTIER  0                        -- Ligne 14
+. . . . . # NOEUD_METHODE                                  -- Ligne 15
+. . . . . . . NOEUD_IDENT void                             -- Ligne 15
+. . . . . . . NOEUD_IDENT Bonjour                          -- Ligne 15
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 16
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Bonjour !"         -- Ligne 16
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 17
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 17
+. . . . . . . . . . . NOEUD_IDENT copain                   -- Ligne 17
+. . . . . . . . . . . NOEUD_IDENT Salut                    -- Ligne 17
+. . . . . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 19
+. . . . . . . NOEUD_IDENT void                             -- Ligne 19
+. . . . . . . NOEUD_IDENT Bonne_Journee                    -- Ligne 19
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 3) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 20
+. . . . . . . . . . NOEUD_IDENT nb                         -- Ligne 20
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 20
+. . . . . . . . . . . NOEUD_IDENT nb                       -- Ligne 20
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 20
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 21
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Bonne journée !"  -- Ligne 21
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 22
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 22
+. . . . . . . . . . . NOEUD_IDENT copain                   -- Ligne 22
+. . . . . . . . . . . NOEUD_IDENT Tcho                     -- Ligne 22
+. . . . . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 24
+. . . . . . . NOEUD_IDENT void                             -- Ligne 24
+. . . . . . . NOEUD_IDENT Comment_Ca_Va                    -- Ligne 24
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 25
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Commen ça va ?"   -- Ligne 25
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 26
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 26
+. . . . . . . . . . . NOEUD_IDENT copain                   -- Ligne 26
+. . . . . . . . . . . NOEUD_IDENT BienBien                 -- Ligne 26
+. . . . . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 29
+. . . . . . . NOEUD_IDENT void                             -- Ligne 29
+. . . . . . . NOEUD_IDENT Salut                            -- Ligne 29
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 30
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Salut !"           -- Ligne 30
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 31
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 31
+. . . . . . . . . . . NOEUD_IDENT copain                   -- Ligne 31
+. . . . . . . . . . . NOEUD_IDENT Comment_Ca_Va            -- Ligne 31
+. . . . . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 33
+. . . . . . . NOEUD_IDENT void                             -- Ligne 33
+. . . . . . . NOEUD_IDENT BienBien                         -- Ligne 33
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 34
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Bien bien !"       -- Ligne 34
+. . . . . . . . # NOEUD_APPEL                              -- Ligne 35
+. . . . . . . . . . NOEUD_SELECTION                        -- Ligne 35
+. . . . . . . . . . . NOEUD_IDENT copain                   -- Ligne 35
+. . . . . . . . . . . NOEUD_IDENT Bonne_Journee            -- Ligne 35
+. . . . . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 37
+. . . . . . . NOEUD_IDENT void                             -- Ligne 37
+. . . . . . . NOEUD_IDENT Tcho                             -- Ligne 37
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 38
+. . . . . . . . . . NOEUD_IDENT nb                         -- Ligne 38
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 38
+. . . . . . . . . . . NOEUD_IDENT nb                       -- Ligne 38
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 38
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 39
+. . . . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . . . # NOEUD_CHAINE "- Tcho n°"          -- Ligne 39
+. . . . . . . . . . . # NOEUD_IDENT nb                     -- Ligne 39
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 44
+. . . . . NOEUD_IDENT A                                    -- Ligne 44
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 44
+. . . . . . . . NOEUD_IDENT a1                             -- Ligne 44
+. . . . . . . . NOEUD_CREATION                             -- Ligne 44
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 44
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 44
+. . . . . . . . NOEUD_IDENT a2                             -- Ligne 44
+. . . . . . . . NOEUD_CREATION                             -- Ligne 44
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 44
+. . <Liste (longueur 3) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 46
+. . . . . NOEUD_SELECTION                                  -- Ligne 46
+. . . . . . NOEUD_IDENT a1                                 -- Ligne 46
+. . . . . . NOEUD_IDENT copain                             -- Ligne 46
+. . . . . NOEUD_IDENT a2                                   -- Ligne 46
+. . . # NOEUD_AFFECT                                       -- Ligne 47
+. . . . . NOEUD_SELECTION                                  -- Ligne 47
+. . . . . . NOEUD_IDENT a2                                 -- Ligne 47
+. . . . . . NOEUD_IDENT copain                             -- Ligne 47
+. . . . . NOEUD_IDENT a1                                   -- Ligne 47
+. . . # NOEUD_APPEL                                        -- Ligne 48
+. . . . . NOEUD_SELECTION                                  -- Ligne 48
+. . . . . . NOEUD_IDENT a1                                 -- Ligne 48
+. . . . . . NOEUD_IDENT Bonjour                            -- Ligne 48
+. . . . . <Liste vide>

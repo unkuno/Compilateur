@@ -1,0 +1,20 @@
+// Description:
+//    Programme soulevant l'erreur (3.59)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 19 : Conversion de 'void' en 'boolean' impossible (règle 3.59)
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x(){
+   }
+}
+
+A a;
+boolean b;
+{
+   b = cast<boolean> (a.x());
+}

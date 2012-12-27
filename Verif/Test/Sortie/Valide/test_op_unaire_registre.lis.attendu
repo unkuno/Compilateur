@@ -1,0 +1,36 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_SI                                           -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 13
+. . . . . . . . NOEUD_SUP                                  -- Ligne 13
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_MOINS_UNAIRE                       -- Ligne 13
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 13
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 13
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 13
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_ENTIER  2                  -- Ligne 13
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_ENTIER  2                  -- Ligne 13
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  2                    -- Ligne 13
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  2                      -- Ligne 13
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  3                          -- Ligne 13
+. . . . . . . . . . -- Type : int
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE                         -- Ligne 14
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "logic"             -- Ligne 14
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste vide>

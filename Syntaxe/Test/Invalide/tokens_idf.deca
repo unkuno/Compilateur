@@ -1,0 +1,16 @@
+// Description:
+//    tests des identificateurs.
+//    test_lex ne doit pas donner d'erreur
+//
+// Resultats:
+//    Ligne 13 : Erreur de syntaxe.
+//
+// Historique:
+//    crée le 08/01/2012
+
+un_idf
+_un_autre_idf
+un_idf_avec_le_nombre_42
+unIdfAvecDesMajuscules
+un_idf_avec_le_caractere_$
+$42_un_dernier_IDF_$42

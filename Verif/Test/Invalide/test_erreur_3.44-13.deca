@@ -1,0 +1,24 @@
+// Description:
+//	Teste 3.44
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 22 : Les types 'int' et 'float' sont incompatibles pour l'affectation (règle 3.44)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+   int getX() {
+      return 2;
+   }
+}
+
+class B extends A {
+
+   int getX() {
+      return 1.0;
+   }
+}

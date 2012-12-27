@@ -1,0 +1,16 @@
+// Description:
+//    Programme soulevant l'erreur (3.57)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 15 : Identificateur de classe attendu (règle 3.57)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+int a;
+
+{
+   a = new float();
+}

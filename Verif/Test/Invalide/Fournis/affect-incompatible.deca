@@ -1,0 +1,26 @@
+// Description:
+//    Affectation et typage
+//
+// Resultats:
+//    Ligne 25: Affectation de types incompatibles.
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 01/01/2012
+
+class A {
+
+}
+
+class B {
+
+}
+
+A a;
+B b;
+
+{
+        // Doit etre refuse.
+        a = b;
+}

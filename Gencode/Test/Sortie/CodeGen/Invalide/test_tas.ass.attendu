@@ -1,0 +1,172 @@
+; Initialisation du programme
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #4
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Test
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 40.
+while.0 :
+     LOAD #1, R1
+     CMP #0, R1
+     BEQ fin.0
+
+; Instruction ligne n° 41.
+     NEW #27, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Test
+     POP R2
+     BRA while.0
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Test #
+; ##########################
+
+; Initialisation des champs de la classe Test
+init.Test :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 4 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 5 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 6 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 7 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 8 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 9 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 10 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 11 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 12 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 13 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 14 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 15 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 16 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 17 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 18 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 19 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 20 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 21 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 22 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 23 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 24 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 25 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 26 (R0)
+     RTS

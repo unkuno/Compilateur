@@ -1,0 +1,3 @@
+/* Programme syntaxiquement correct */
+Ligne 18 : Nombre de paramètres incorrect (règle 3.96)
+Exception VERIF.ERREUR_VERIF levee

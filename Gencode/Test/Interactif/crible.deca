@@ -1,0 +1,141 @@
+// Description:
+//    crible d'Eratosthène
+//
+// Resultats:
+//    doit fonctionner normalement
+//
+// Historique:
+//    cree le 21/01/2012
+
+class Integer {
+	int val;
+
+	Integer init (int val) {
+		this.val = val;
+		return this;
+	}
+
+	boolean equals (Object o) {
+		return o != null && o instanceof Integer &&
+			cast<Integer>(o).val == val;
+	}
+}
+
+class Boolean {
+	boolean val;
+
+	Boolean init (boolean val) {
+		this.val = val;
+		return this;
+	}
+
+	boolean equals (Object o) {
+		return o != null && o instanceof Boolean &&
+			cast<Boolean>(o).val == val;
+	}
+}
+
+class Cellule {
+	Object val;
+	Cellule fg;
+	Cellule fd;
+}
+
+class Arbre {
+	protected Cellule racine;
+	protected int taille;
+
+	Cellule allouer (int taille)
+		Cellule res = new Cellule();
+        {
+		if (taille > 1) {
+			res.fg = allouer (taille - taille / 2);
+			res.fd = allouer (taille / 2);
+		}
+		return res;
+	}
+
+	Arbre init (int taille) {
+		this.taille = taille;
+		racine = allouer (taille);
+		return this;
+	}
+
+	int getTaille () {
+		return taille;
+	}
+
+	Cellule chercher (Cellule racine, int index) {
+		if (index == 0 && racine.fg == null) {
+			return racine;
+		} elsif (index % 2 == 0) {
+			return chercher (racine.fg, index / 2);
+		} else {
+			return chercher (racine.fd, index / 2);
+		}
+	}
+
+	Object get (int index) {
+		if (index < 0 || index >= taille) {return null;}
+		return chercher(racine, index).val;
+	}
+
+	Object set (int index, Object val) {
+		if (index < 0 || index >= taille) {return null;}
+		return chercher(racine, index).val = val;
+	}
+}
+
+int max;
+int taille;
+boolean ok = false;
+Arbre tab;
+int index, premier, multiple;
+Boolean objTrue = new Boolean().init(true);
+Boolean objFalse = new Boolean().init(false);
+{
+	while (! ok) {
+		print("Recherche des nombres premiers entre 2 et ? ");
+		max = readInt();
+		if (max < 2) {
+			println("Nombre incorrect, recommencez");
+			ok = false;
+		} else {
+			ok = true;
+		}
+	}
+	
+	print("Calcul... ");
+	taille = max - 1;
+	tab = new Arbre().init(taille);
+
+	index = 0;
+	while (index < taille) {
+		tab.set(index, objTrue);
+		index = index + 1;
+	}
+
+	index = 0;
+	while (index < taille) {
+		if (tab.get(index).equals(objTrue)) {
+			premier = index + 2;
+			multiple = 2 * premier;
+			while (multiple <= max) {
+				tab.set(multiple - 2, objFalse);
+				multiple = multiple + premier;
+			}
+		}
+		index = index + 1;
+	}
+	println("OK");
+	
+	print("Résultat :");
+	index = 0;
+	while (index < taille) {
+		if (cast<Boolean>(tab.get(index)).val) {
+			print(" ", index + 2);
+		}
+		index = index + 1;
+	}
+	println();
+}

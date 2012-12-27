@@ -1,0 +1,69 @@
+// Description:
+//	Teste les CONDITIONS IF
+//
+// Resultats:
+//	Conditions et branchements correctement effectués
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+
+{
+    if(true) {
+         println("OK : La condition true marche");
+    }   
+	
+    if(false) {
+         println("KO : La condition false ne devrait pas passer");
+    }
+    else {
+         println("OK : La condition false passe dans le else");
+    }   	
+
+
+    if (false)
+    {
+         println("KO : La condition false ne devrait pas passer");	
+    }
+    elsif (true)
+    {
+         println("OK : La condition true passe dans le elsif");
+    }
+    
+    
+    if (false)
+    {
+         println("KO : La condition false ne devrait pas passer");	
+    }
+    elsif (false)
+    {
+         println("KO : La condition false ne devrait pas passer dans le elsif");	
+    }	
+    elsif ((2+3)>1 && (false || (6.0-2 == 8)))
+    {
+         println("KO : La condition ne devrait pas passer dans le elsif");	
+    }
+    else {
+         println("OK : La condition passe dans le else");
+    }
+    
+    if (false)
+    {
+         println("KO : La condition false ne devrait pas passer");	
+    }
+    elsif (false)
+    {
+         println("KO : La condition false ne devrait pas passer dans le elsif");	
+    }	
+    elsif ((2+3)>1 && (false || (6.0+2 == 8)))
+    {
+         println("OK : La condition passe dans le elsif");	
+    }
+    else {
+         println("KO : La condition ne devrait pas passer dans le else");
+    }
+    
+}

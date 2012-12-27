@@ -1,0 +1,20 @@
+// Description:
+//    Programme soulevant l'erreur (3.34)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 18 : Impossible de retourner 'void' (règle 3.34)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+class A {
+   void setX() {}
+   
+   
+   void getX() {
+      return setX();
+   }
+}

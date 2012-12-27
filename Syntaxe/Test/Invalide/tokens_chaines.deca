@@ -1,0 +1,15 @@
+// Description:
+//    tests des chaines de caracteres.
+//
+// Resultats:
+//    Ligne 11 : Erreur de syntaxe.
+//    test_lex ne doit pas donner d'erreur.
+//
+// Historique:
+//    crée le 08/01/2012
+
+""
+"une chaine normale"
+"un caractère échappé (\")"
+"un autre caractère echappé (\\)"
+"une chaine avec //un commentaire"

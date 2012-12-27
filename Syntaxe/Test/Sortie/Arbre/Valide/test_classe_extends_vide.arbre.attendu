@@ -1,0 +1,22 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 3) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT Vide                                   -- Ligne 14
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 20
+. . . . NOEUD_IDENT Vide2                                  -- Ligne 20
+. . . . NOEUD_IDENT Vide                                   -- Ligne 20
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 26
+. . . . NOEUD_IDENT PasVide                                -- Ligne 26
+. . . . NOEUD_IDENT Vide2                                  -- Ligne 26
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 28
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 28
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 28
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 28
+. . . . . . . . . . NOEUD_VIDE
+. NOEUD_VIDE

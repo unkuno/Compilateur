@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.82)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Les types 'type_null' et 'String' sont incompatibles avec l'opérateur binaire '||' (règle 3.82)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+boolean var;
+{
+   var = null || "a";
+}

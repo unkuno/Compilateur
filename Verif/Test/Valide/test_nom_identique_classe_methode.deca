@@ -1,0 +1,20 @@
+// Description:
+//    test de meme nom classe et methode
+//
+// Resultats:
+//		aucune erreur et aucun affichage
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class add {
+  
+   int add(int i) {
+      return i+1;
+   }
+
+}

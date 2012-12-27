@@ -1,0 +1,59 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 13
+. . . . NOEUD_IDENT A                                      -- Ligne 13
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 15
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 15
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 15
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . NOEUD_ENTIER  0                        -- Ligne 15
+. . . . . . . . . . . -- Type : int
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 19
+. . . . . NOEUD_IDENT A                                    -- Ligne 19
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 19
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 19
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 3) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 21
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 21
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_CREATION                                   -- Ligne 21
+. . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT A                                  -- Ligne 21
+. . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . # NOEUD_AFFECT                                       -- Ligne 22
+. . . . . -- Type : type_classe(A)
+. . . . . NOEUD_IDENT a                                    -- Ligne 22
+. . . . . . -- Defn : (var, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . NOEUD_NULL                                       -- Ligne 22
+. . . . . . -- Type : type_null
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 23
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_SELECTION                              -- Ligne 23
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 23
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . NOEUD_IDENT x                              -- Ligne 23
+. . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . -- Type : int

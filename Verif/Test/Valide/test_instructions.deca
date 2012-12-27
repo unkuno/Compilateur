@@ -1,0 +1,143 @@
+// Description:
+//    Programme testant les instructions
+//    de bases ( if, while, print, println, retour)
+//
+// Resultats:
+//    Analyse contextuelle validée
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+
+class T{
+}
+
+class Te extends T {
+}
+
+class T2 { 
+   
+   int test1(){
+      return 1;
+   }
+   
+   float test2(){
+      return 1;
+   }
+   float test3(){
+      return 1.0;
+   }
+   
+   boolean test4(){
+      return true;
+   }
+   boolean test5(){
+      return false;
+   }
+   
+   void test6(){
+   }
+   
+   T test7()
+      T x = null;	 
+   {
+      return x;
+   }      
+   T test8()
+      Te x;	 
+   {
+      return x;
+   }   
+
+}
+
+
+int i = 1;
+boolean b = true;
+{
+   if(true) {
+      i = i + 1; 
+   }
+   if(false) {
+      i = i + 1; 
+   }
+   if(1<1) {
+      i = i + 1; 
+   }
+   if(1<=1) {
+      i = i + 1; 
+   }
+      
+   while(true) {
+      i = i + 1; 
+   }
+   while(false) {
+      i = i + 1; 
+   }
+   while(1<1) {
+      i = i + 1; 
+   }
+   while(1<=1) {
+      i = i + 1; 
+   }
+   
+   
+   if(true) {
+      i = 0;
+   }
+   elsif(true) {
+      i = i - 1;
+   }
+   else {
+      i = i +1;
+   }
+
+
+   if(true) {
+      i = 0;
+   }
+   elsif(false) {
+      i = i - 1;
+   }
+   else {
+      i = i +1;
+   }
+
+   if(false) {
+      i = 0;
+   }
+   elsif(true) {
+      i = i - 1;
+   }
+   else {
+      i = i +1;
+   }
+
+
+   if(false) {
+      i = 0;
+   }
+   elsif(false) {
+      i = i - 1;
+   }
+   else {
+      i = i +1;
+   }
+
+
+
+   print(i);
+   print(1);
+   print(1.0);
+   print((i+1)*2);
+   print("hello");
+   
+   println(i);
+   println(1);
+   println(1.0);
+   println((i+1)*2);
+   println("hello");   
+      
+}

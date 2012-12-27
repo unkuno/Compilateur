@@ -1,0 +1,16 @@
+// Description:
+//    tests opération arithmétique interdite
+//
+// Resultats:
+//		Dépassement de capacité
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+{
+println(50/0);
+println(50%0);
+println(9999999999999999999999.0*999999999999999999999999999999.0);
+}

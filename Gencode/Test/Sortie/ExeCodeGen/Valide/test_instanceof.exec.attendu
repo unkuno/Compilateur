@@ -1,0 +1,11 @@
+od instanceof D
+od instanceof C
+od instanceof A
+od instanceof Object
+oa instanceof A
+oa instanceof Object
+null instanceof D
+null instanceof C
+null instanceof B
+null instanceof A
+null instanceof Object

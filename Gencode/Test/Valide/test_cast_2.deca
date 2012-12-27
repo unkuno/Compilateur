@@ -1,0 +1,26 @@
+// Description:
+//	   test cast
+//
+// Resultats:
+//    Affichage de 3
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+   int i = 3;
+}
+
+class B extends A {
+
+   float i = 4.0;
+}
+
+
+B b = new B();
+{
+   println( cast<A>(b).i );
+}

@@ -1,0 +1,13 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 3) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 14
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "ok"                            -- Ligne 14
+. . . # NOEUD_ECRITURE                                     -- Ligne 15
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "ok"                            -- Ligne 15
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 16
+. . . . . <Liste vide>

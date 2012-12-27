@@ -1,0 +1,55 @@
+\section{Etape A : analyse lexicosyntaxique}
+
+Pour cette étape, les outils Aflex et Ayacc ont été utilisés afin de générer de manière systématique un analyseur lexical et un analyseur syntaxique.
+
+\subsection{Analyse lexicale (Aflex)}
+
+L'analyseur lexical est généré par Aflex à l'aide du fichier \verb!lexical.l!. Ce fichier défini les unités lexicales utilisées par le langage Deca (expressions régulières) ainsi que les attributs à synthétiser pour chacune d'entre-elles.
+
+Afin de faciliter l'association d'un lexème à une unité lexicale, un dictionnaire est utilisé (voir \verb!dictionnaire.ads!). Ce choix permet de partager les chaines de caractères conservées en mémoire.
+
+Le dictionnaire peut être initialisé pour prédéfinir les lexèmes associés aux mots réservés et/ou aux caractères spéciaux du langage (car les attributs associés sont de type \verb!Lex_Autre!).
+
+Pour ces deux types d'unité lexicale, il existe donc deux choix :
+\begin{enumerate}
+\item les insérer au départ dans le dictionnaire et les 'matcher' ensuite par la même règle que les identificateurs
+\item les 'matcher' un à un via des règles individuelles
+\end{enumerate}
+
+Chaque solution présente à la fois des avantages et des inconvénients. Un choix a donc dû être fait pour l'implémentation :
+\begin{itemize}
+\item Comme les mots réservés sont reconnus par l'expression régulière utilisée pour les identificateur, ils sont traités avec la première solution.
+\item Par contre, afin de ne pas surcharger le dictionnaire, la seconde possibilité est utilisée pour les caractères spéciaux. Cette solution semble satisfaisante, d'autant plus qu'il faudrait modifier l'expression régulière associée aux identificateurs, ce qui serait contre-productif.
+\end{itemize}
+
+\subsection{Analyse syntaxique et construction de l'arbre abstrait (Ayacc)}
+
+L'analyseur syntaxique est généré par Ayacc, à l'aide du fichier \verb!syntaxe.y!. Celui-ci vérifie la syntaxe du programme et construit un arbre abstrait qui lui est parfaitement équivalent.
+
+Pour réaliser cette étape, l'arbre est synthétisé, des feuilles (terminaux) vers la racine, en utilisant des attributs (voir \verb!toto!).
+
+Le seul choix d'implémentation porte sur les numéros de lignes. En effet, à chaque noeud de l'arbre est associé à un numéro de ligne, correspondant à sa position dans le programme d'entrée. Or, certains non-terminaux peuvent couvrir plusieurs lignes.
+
+Exemple :
+
+\begin{verbatim}
+1 class 
+2       A
+3         {
+4     protected
+5               int
+6                   x := 6
+7                          *
+8                            7;
+9 }
+\end{verbatim}
+
+Le programme ci-dessus est syntaxiquement correct, mais quel est le numéro de ligne de la déclaration de la classe \verb!A! ? de la déclaration de l'attribut \verb!x! ? de l'opération \verb!6 * 7! ?
+
+Pour gérer ce phénomène, des conventions on été adoptées :
+\begin{itemize}
+\item Pour les opérations binaires, utiliser le numéro de ligne de l'opérateur
+\item Pour les autres structures, utiliser le numéro de ligne du mot clé
+\end{itemize}
+
+Dans l'expemple ci-dessus, la classe \verb!A! est donc déclarée ligne 1, l'attribut \verb!x! est déclaré ligne 4, et l'opération \verb!6 * 7! est située ligne 7.

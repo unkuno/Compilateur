@@ -1,0 +1,20 @@
+// Description:
+//    Programme soulevant l'erreur (2.22)
+//
+// Resultats:
+//    Affichage de l'erreur (2.22)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+float i = 3.40282E+38;
+float j = 3.40282E+38;
+{
+
+print(i + j);
+
+
+}

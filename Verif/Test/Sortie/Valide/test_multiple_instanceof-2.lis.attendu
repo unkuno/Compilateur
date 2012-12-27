@@ -1,0 +1,491 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 14) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT Toto                                   -- Ligne 12
+. . . . . -- Defn : (classe, type_classe(Toto))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 14
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 14
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 14
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 15
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_CREATION                         -- Ligne 15
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_IDENT Toto                     -- Ligne 15
+. . . . . . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . . . . . -- Type : type_classe(Toto)
+. . # NOEUD_CLASSE                                         -- Ligne 19
+. . . . NOEUD_IDENT A                                      -- Ligne 19
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_IDENT Toto                                   -- Ligne 19
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 20
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 20
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 20
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 21
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 21
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 21
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 21
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . . . NOEUD_IDENT Toto                 -- Ligne 21
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 21
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 25
+. . . . NOEUD_IDENT A1                                     -- Ligne 25
+. . . . . -- Defn : (classe, type_classe(A1))
+. . . . NOEUD_IDENT A                                      -- Ligne 25
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 26
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 26
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 26
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 27
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 27
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 27
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 27
+. . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . . NOEUD_IDENT A                    -- Ligne 27
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 27
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 31
+. . . . NOEUD_IDENT A2                                     -- Ligne 31
+. . . . . -- Defn : (classe, type_classe(A2))
+. . . . NOEUD_IDENT A1                                     -- Ligne 31
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 32
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 32
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 32
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 33
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 33
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 33
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 33
+. . . . . . . . . . . . . -- Type : type_classe(A1)
+. . . . . . . . . . . . . NOEUD_IDENT A1                   -- Ligne 33
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A1))
+. . . . . . . . . . . . . . -- Type : type_classe(A1)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 33
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 37
+. . . . NOEUD_IDENT A3                                     -- Ligne 37
+. . . . . -- Defn : (classe, type_classe(A3))
+. . . . NOEUD_IDENT A2                                     -- Ligne 37
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 38
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 38
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 38
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 39
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 39
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 39
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 39
+. . . . . . . . . . . . . -- Type : type_classe(A2)
+. . . . . . . . . . . . . NOEUD_IDENT A2                   -- Ligne 39
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A2))
+. . . . . . . . . . . . . . -- Type : type_classe(A2)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 39
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 43
+. . . . NOEUD_IDENT A4                                     -- Ligne 43
+. . . . . -- Defn : (classe, type_classe(A4))
+. . . . NOEUD_IDENT A3                                     -- Ligne 43
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 44
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 44
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 44
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 45
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 45
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 45
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 45
+. . . . . . . . . . . . . -- Type : type_classe(A3)
+. . . . . . . . . . . . . NOEUD_IDENT A3                   -- Ligne 45
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A3))
+. . . . . . . . . . . . . . -- Type : type_classe(A3)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 45
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 49
+. . . . NOEUD_IDENT A5                                     -- Ligne 49
+. . . . . -- Defn : (classe, type_classe(A5))
+. . . . NOEUD_IDENT A4                                     -- Ligne 49
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 50
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 50
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 50
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 51
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 51
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 51
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 51
+. . . . . . . . . . . . . -- Type : type_classe(A4)
+. . . . . . . . . . . . . NOEUD_IDENT A4                   -- Ligne 51
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A4))
+. . . . . . . . . . . . . . -- Type : type_classe(A4)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 51
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 55
+. . . . NOEUD_IDENT A6                                     -- Ligne 55
+. . . . . -- Defn : (classe, type_classe(A6))
+. . . . NOEUD_IDENT A5                                     -- Ligne 55
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 56
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 56
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 56
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 57
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 57
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 57
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 57
+. . . . . . . . . . . . . -- Type : type_classe(A5)
+. . . . . . . . . . . . . NOEUD_IDENT A5                   -- Ligne 57
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A5))
+. . . . . . . . . . . . . . -- Type : type_classe(A5)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 57
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 60
+. . . . NOEUD_IDENT A7                                     -- Ligne 60
+. . . . . -- Defn : (classe, type_classe(A7))
+. . . . NOEUD_IDENT A6                                     -- Ligne 60
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 61
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 61
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 61
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 62
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 62
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 62
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 62
+. . . . . . . . . . . . . -- Type : type_classe(A6)
+. . . . . . . . . . . . . NOEUD_IDENT A6                   -- Ligne 62
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A6))
+. . . . . . . . . . . . . . -- Type : type_classe(A6)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 62
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 65
+. . . . NOEUD_IDENT A8                                     -- Ligne 65
+. . . . . -- Defn : (classe, type_classe(A8))
+. . . . NOEUD_IDENT A7                                     -- Ligne 65
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 66
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 66
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 66
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 67
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 67
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 67
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 67
+. . . . . . . . . . . . . -- Type : type_classe(A7)
+. . . . . . . . . . . . . NOEUD_IDENT A7                   -- Ligne 67
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A7))
+. . . . . . . . . . . . . . -- Type : type_classe(A7)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 67
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 70
+. . . . NOEUD_IDENT A9                                     -- Ligne 70
+. . . . . -- Defn : (classe, type_classe(A9))
+. . . . NOEUD_IDENT A8                                     -- Ligne 70
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 71
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 71
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 71
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 72
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 72
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 72
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 72
+. . . . . . . . . . . . . -- Type : type_classe(A8)
+. . . . . . . . . . . . . NOEUD_IDENT A8                   -- Ligne 72
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A8))
+. . . . . . . . . . . . . . -- Type : type_classe(A8)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 72
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 75
+. . . . NOEUD_IDENT A10                                    -- Ligne 75
+. . . . . -- Defn : (classe, type_classe(A10))
+. . . . NOEUD_IDENT A9                                     -- Ligne 75
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 76
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 76
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 76
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 77
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 77
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 77
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 77
+. . . . . . . . . . . . . -- Type : type_classe(A9)
+. . . . . . . . . . . . . NOEUD_IDENT A9                   -- Ligne 77
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A9))
+. . . . . . . . . . . . . . -- Type : type_classe(A9)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 77
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 80
+. . . . NOEUD_IDENT A11                                    -- Ligne 80
+. . . . . -- Defn : (classe, type_classe(A11))
+. . . . NOEUD_IDENT A10                                    -- Ligne 80
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 81
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 81
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 81
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 82
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 82
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 82
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 82
+. . . . . . . . . . . . . -- Type : type_classe(A10)
+. . . . . . . . . . . . . NOEUD_IDENT A10                  -- Ligne 82
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A10))
+. . . . . . . . . . . . . . -- Type : type_classe(A10)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 82
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 85
+. . . . NOEUD_IDENT A12                                    -- Ligne 85
+. . . . . -- Defn : (classe, type_classe(A12))
+. . . . NOEUD_IDENT A11                                    -- Ligne 85
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 86
+. . . . . . . NOEUD_IDENT Toto                             -- Ligne 86
+. . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . NOEUD_IDENT get                              -- Ligne 86
+. . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 87
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . NOEUD_APPEL                            -- Ligne 87
+. . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . NOEUD_SELECTION                      -- Ligne 87
+. . . . . . . . . . . . NOEUD_CREATION                     -- Ligne 87
+. . . . . . . . . . . . . -- Type : type_classe(A11)
+. . . . . . . . . . . . . NOEUD_IDENT A11                  -- Ligne 87
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A11))
+. . . . . . . . . . . . . . -- Type : type_classe(A11)
+. . . . . . . . . . . . NOEUD_IDENT get                    -- Ligne 87
+. . . . . . . . . . . . . -- Defn : (methode([]), type_classe(Toto))
+. . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . . . <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 92
+. . . . . NOEUD_IDENT Toto                                 -- Ligne 92
+. . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . -- Type : type_classe(Toto)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 92
+. . . . . . . . NOEUD_IDENT moi                            -- Ligne 92
+. . . . . . . . . -- Defn : (var, type_classe(Toto))
+. . . . . . . . NOEUD_CREATION                             -- Ligne 92
+. . . . . . . . . -- Type : type_classe(A12)
+. . . . . . . . . NOEUD_IDENT A12                          -- Ligne 92
+. . . . . . . . . . -- Defn : (classe, type_classe(A12))
+. . . . . . . . . . -- Type : type_classe(A12)
+. . <Liste (longueur 1) :>
+. . . # NOEUD_SI                                           -- Ligne 95
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 95
+. . . . . . . . NOEUD_INSTANCEOF                           -- Ligne 95
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_CONVERSION                         -- Ligne 95
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 95
+. . . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . NOEUD_CONVERSION                       -- Ligne 95
+. . . . . . . . . . . -- Type : type_classe(A1)
+. . . . . . . . . . . NOEUD_IDENT A1                       -- Ligne 95
+. . . . . . . . . . . . -- Defn : (classe, type_classe(A1))
+. . . . . . . . . . . . -- Type : type_classe(A1)
+. . . . . . . . . . . NOEUD_CONVERSION                     -- Ligne 95
+. . . . . . . . . . . . -- Type : type_classe(A2)
+. . . . . . . . . . . . NOEUD_IDENT A2                     -- Ligne 95
+. . . . . . . . . . . . . -- Defn : (classe, type_classe(A2))
+. . . . . . . . . . . . . -- Type : type_classe(A2)
+. . . . . . . . . . . . NOEUD_CONVERSION                   -- Ligne 95
+. . . . . . . . . . . . . -- Type : type_classe(A3)
+. . . . . . . . . . . . . NOEUD_IDENT A3                   -- Ligne 95
+. . . . . . . . . . . . . . -- Defn : (classe, type_classe(A3))
+. . . . . . . . . . . . . . -- Type : type_classe(A3)
+. . . . . . . . . . . . . NOEUD_CONVERSION                 -- Ligne 95
+. . . . . . . . . . . . . . -- Type : type_classe(A4)
+. . . . . . . . . . . . . . NOEUD_IDENT A4                 -- Ligne 95
+. . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A4))
+. . . . . . . . . . . . . . . -- Type : type_classe(A4)
+. . . . . . . . . . . . . . NOEUD_CONVERSION               -- Ligne 95
+. . . . . . . . . . . . . . . -- Type : type_classe(A5)
+. . . . . . . . . . . . . . . NOEUD_IDENT A5               -- Ligne 95
+. . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A5))
+. . . . . . . . . . . . . . . . -- Type : type_classe(A5)
+. . . . . . . . . . . . . . . NOEUD_CONVERSION             -- Ligne 95
+. . . . . . . . . . . . . . . . -- Type : type_classe(A6)
+. . . . . . . . . . . . . . . . NOEUD_IDENT A6             -- Ligne 95
+. . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A6))
+. . . . . . . . . . . . . . . . . -- Type : type_classe(A6)
+. . . . . . . . . . . . . . . . NOEUD_CONVERSION           -- Ligne 95
+. . . . . . . . . . . . . . . . . -- Type : type_classe(A7)
+. . . . . . . . . . . . . . . . . NOEUD_IDENT A7           -- Ligne 95
+. . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A7))
+. . . . . . . . . . . . . . . . . . -- Type : type_classe(A7)
+. . . . . . . . . . . . . . . . . NOEUD_CONVERSION         -- Ligne 95
+. . . . . . . . . . . . . . . . . . -- Type : type_classe(A8)
+. . . . . . . . . . . . . . . . . . NOEUD_IDENT A8         -- Ligne 95
+. . . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A8))
+. . . . . . . . . . . . . . . . . . . -- Type : type_classe(A8)
+. . . . . . . . . . . . . . . . . . NOEUD_CONVERSION       -- Ligne 95
+. . . . . . . . . . . . . . . . . . . -- Type : type_classe(A9)
+. . . . . . . . . . . . . . . . . . . NOEUD_IDENT A9       -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A9))
+. . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A9)
+. . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION     -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A10)
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A10    -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A10))
+. . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A10)
+. . . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION   -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A11)
+. . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A11  -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A11))
+. . . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A11)
+. . . . . . . . . . . . . . . . . . . . . NOEUD_CONVERSION -- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A12)
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT A12-- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . . . -- Defn : (classe, type_classe(A12))
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(A12)
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT moi-- Ligne 95
+. . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, type_classe(Toto))
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . . NOEUD_IDENT Toto                         -- Ligne 95
+. . . . . . . . . . -- Defn : (classe, type_classe(Toto))
+. . . . . . . . . . -- Type : type_classe(Toto)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 96
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "ok"                -- Ligne 96
+. . . . . . . . . . . . . . -- Type : String
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 99
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "ko"                      -- Ligne 99
+. . . . . . . . . . . -- Type : String

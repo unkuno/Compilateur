@@ -1,0 +1,22 @@
+// Description:
+//    Programme soulevant l'erreur (3.91)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 18 : Identificateur de champ attendu (règle 3.91)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+class A {
+   int x() 
+   A a;
+   int y;
+   {
+    y = a.x;
+   }
+}
+
+

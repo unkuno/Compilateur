@@ -1,0 +1,60 @@
+// Description:
+//    boucles_imbriquee
+//
+// Resultats:
+//		test un nombre de boucles imbriquee mais moins qu'avant pour pas faire bugger l'analyse syntaxique
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+{
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+while(true) {
+
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

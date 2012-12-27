@@ -1,0 +1,17 @@
+// Description:
+//    Programme soulevant l'erreur (3.23)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 13 : Paramètres de même nom (règle 3.23)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {  
+   int Get( int i, int i)
+   {
+   }
+   
+}

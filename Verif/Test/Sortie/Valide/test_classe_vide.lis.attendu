@@ -1,0 +1,10 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT Vide                                   -- Ligne 14
+. . . . . -- Defn : (classe, type_classe(Vide))
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. NOEUD_VIDE

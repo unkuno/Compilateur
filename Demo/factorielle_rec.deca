@@ -1,0 +1,44 @@
+// Description:
+//    test d'un programme permettant de calculer factorielle n
+//
+// Resultats:
+//		factorielle des nombres entre 1 et 100 calculés
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class Factorielle {
+  
+   int calculFacto(int i)
+   {
+      if (i == 0) {
+         return 1;
+      }
+      else {
+         return this.calculFacto(i-1) * (i);
+      }
+   
+   }
+
+
+}
+
+
+int res;
+int i = 0;
+Factorielle F;
+{
+   while ( i < 10) {
+
+      print("Factorielle de ", i, " = ");
+      F = new Factorielle();
+      res = F.calculFacto(i); 
+      println(res);
+      i = i +1;
+       
+   }
+}

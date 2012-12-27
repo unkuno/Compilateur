@@ -1,0 +1,1211 @@
+; Initialisation du programme
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 15.
+if.0.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.0.1
+
+; Instruction ligne n° 16.
+if.1.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.1.1
+
+; Instruction ligne n° 17.
+if.2.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.2.1
+
+; Instruction ligne n° 18.
+if.3.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.3.1
+
+; Instruction ligne n° 19.
+if.4.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.4.1
+
+; Instruction ligne n° 20.
+if.5.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.5.1
+
+; Instruction ligne n° 21.
+if.6.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.6.1
+
+; Instruction ligne n° 22.
+if.7.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.7.1
+
+; Instruction ligne n° 23.
+if.8.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.8.1
+
+; Instruction ligne n° 24.
+if.9.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.9.1
+
+; Instruction ligne n° 25.
+if.10.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.10.1
+
+; Instruction ligne n° 26.
+if.11.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.11.1
+
+; Instruction ligne n° 27.
+if.12.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.12.1
+
+; Instruction ligne n° 28.
+if.13.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.13.1
+
+; Instruction ligne n° 29.
+if.14.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.14.1
+
+; Instruction ligne n° 30.
+if.15.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.15.1
+
+; Instruction ligne n° 31.
+if.16.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.16.1
+
+; Instruction ligne n° 32.
+if.17.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.17.1
+
+; Instruction ligne n° 33.
+if.18.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.18.1
+
+; Instruction ligne n° 34.
+if.19.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.19.1
+
+; Instruction ligne n° 35.
+if.20.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.20.1
+
+; Instruction ligne n° 36.
+if.21.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.21.1
+
+; Instruction ligne n° 37.
+if.22.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.22.1
+
+; Instruction ligne n° 38.
+if.23.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.23.1
+
+; Instruction ligne n° 39.
+if.24.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.24.1
+
+; Instruction ligne n° 40.
+if.25.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.25.1
+
+; Instruction ligne n° 41.
+if.26.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.26.1
+
+; Instruction ligne n° 42.
+if.27.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.27.1
+
+; Instruction ligne n° 43.
+if.28.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.28.1
+
+; Instruction ligne n° 44.
+if.29.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.29.1
+
+; Instruction ligne n° 45.
+if.30.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.30.1
+
+; Instruction ligne n° 46.
+if.31.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.31.1
+     BRA fin.31
+if.31.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.31
+
+; Instruction ligne n° 50.
+if.32.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.32.1
+     BRA fin.32
+if.32.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.32
+     BRA fin.32
+else.32 :
+fin.32 :
+
+; Instruction ligne n° 59.
+if.33.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.33.1
+     BRA fin.33
+if.33.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.33
+     BRA fin.33
+else.33 :
+fin.33 :
+
+; Instruction ligne n° 68.
+if.34.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.34.1
+     BRA fin.34
+if.34.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.34
+     BRA fin.34
+else.34 :
+fin.34 :
+
+; Instruction ligne n° 77.
+if.35.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.35.1
+     BRA fin.35
+if.35.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.35
+     BRA fin.35
+else.35 :
+fin.35 :
+
+; Instruction ligne n° 86.
+if.36.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.36.1
+     BRA fin.36
+if.36.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.36
+     BRA fin.36
+else.36 :
+fin.36 :
+
+; Instruction ligne n° 95.
+if.37.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.37.1
+     BRA fin.37
+if.37.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.37
+     BRA fin.37
+else.37 :
+fin.37 :
+
+; Instruction ligne n° 104.
+if.38.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.38.1
+     BRA fin.38
+if.38.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.38
+     BRA fin.38
+else.38 :
+fin.38 :
+
+; Instruction ligne n° 113.
+if.39.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.39.1
+     BRA fin.39
+if.39.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.39
+     BRA fin.39
+else.39 :
+fin.39 :
+
+; Instruction ligne n° 122.
+if.40.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.40.1
+     BRA fin.40
+if.40.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.40
+     BRA fin.40
+else.40 :
+fin.40 :
+
+; Instruction ligne n° 131.
+if.41.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.41.1
+     BRA fin.41
+if.41.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.41
+     BRA fin.41
+else.41 :
+fin.41 :
+
+; Instruction ligne n° 140.
+if.42.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.42.1
+     BRA fin.42
+if.42.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.42
+     BRA fin.42
+else.42 :
+fin.42 :
+
+; Instruction ligne n° 149.
+if.43.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.43.1
+     BRA fin.43
+if.43.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.43
+     BRA fin.43
+else.43 :
+fin.43 :
+
+; Instruction ligne n° 158.
+if.44.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.44.1
+     BRA fin.44
+if.44.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.44
+     BRA fin.44
+else.44 :
+fin.44 :
+
+; Instruction ligne n° 167.
+if.45.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.45.1
+     BRA fin.45
+if.45.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.45
+     BRA fin.45
+else.45 :
+fin.45 :
+
+; Instruction ligne n° 176.
+if.46.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.46.1
+     BRA fin.46
+if.46.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.46
+     BRA fin.46
+else.46 :
+fin.46 :
+
+; Instruction ligne n° 185.
+if.47.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.47.1
+     BRA fin.47
+if.47.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.47
+     BRA fin.47
+else.47 :
+fin.47 :
+
+; Instruction ligne n° 194.
+if.48.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.48.1
+     BRA fin.48
+if.48.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.48
+     BRA fin.48
+else.48 :
+fin.48 :
+
+; Instruction ligne n° 203.
+if.49.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.49.1
+     BRA fin.49
+if.49.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.49
+     BRA fin.49
+else.49 :
+fin.49 :
+
+; Instruction ligne n° 212.
+if.50.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.50.1
+     BRA fin.50
+if.50.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.50
+     BRA fin.50
+else.50 :
+fin.50 :
+
+; Instruction ligne n° 221.
+if.51.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.51.1
+     BRA fin.51
+if.51.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.51
+     BRA fin.51
+else.51 :
+fin.51 :
+
+; Instruction ligne n° 230.
+if.52.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.52.1
+     BRA fin.52
+if.52.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.52
+     BRA fin.52
+else.52 :
+fin.52 :
+
+; Instruction ligne n° 239.
+if.53.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.53.1
+     BRA fin.53
+if.53.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.53
+     BRA fin.53
+else.53 :
+fin.53 :
+
+; Instruction ligne n° 248.
+if.54.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.54.1
+     BRA fin.54
+if.54.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.54
+     BRA fin.54
+else.54 :
+fin.54 :
+
+; Instruction ligne n° 257.
+if.55.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.55.1
+     BRA fin.55
+if.55.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.55
+     BRA fin.55
+else.55 :
+fin.55 :
+
+; Instruction ligne n° 266.
+if.56.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.56.1
+     BRA fin.56
+if.56.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.56
+     BRA fin.56
+else.56 :
+fin.56 :
+
+; Instruction ligne n° 275.
+if.57.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.57.1
+     BRA fin.57
+if.57.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.57
+     BRA fin.57
+else.57 :
+fin.57 :
+
+; Instruction ligne n° 284.
+if.58.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.58.1
+     BRA fin.58
+if.58.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.58
+     BRA fin.58
+else.58 :
+fin.58 :
+
+; Instruction ligne n° 293.
+if.59.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.59.1
+     BRA fin.59
+if.59.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.59
+     BRA fin.59
+else.59 :
+fin.59 :
+
+; Instruction ligne n° 302.
+if.60.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.60.1
+     BRA fin.60
+if.60.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.60
+     BRA fin.60
+else.60 :
+fin.60 :
+
+; Instruction ligne n° 311.
+if.61.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.61.1
+     BRA fin.61
+if.61.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.61
+     BRA fin.61
+else.61 :
+fin.61 :
+     BRA fin.31
+else.31 :
+fin.31 :
+     BRA fin.30
+if.30.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.30
+     BRA fin.30
+else.30 :
+fin.30 :
+     BRA fin.29
+if.29.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.29
+     BRA fin.29
+else.29 :
+fin.29 :
+     BRA fin.28
+if.28.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.28
+     BRA fin.28
+else.28 :
+fin.28 :
+     BRA fin.27
+if.27.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.27
+     BRA fin.27
+else.27 :
+fin.27 :
+     BRA fin.26
+if.26.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.26
+     BRA fin.26
+else.26 :
+fin.26 :
+     BRA fin.25
+if.25.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.25
+     BRA fin.25
+else.25 :
+fin.25 :
+     BRA fin.24
+if.24.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.24
+     BRA fin.24
+else.24 :
+fin.24 :
+     BRA fin.23
+if.23.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.23
+     BRA fin.23
+else.23 :
+fin.23 :
+     BRA fin.22
+if.22.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.22
+     BRA fin.22
+else.22 :
+fin.22 :
+     BRA fin.21
+if.21.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.21
+     BRA fin.21
+else.21 :
+fin.21 :
+     BRA fin.20
+if.20.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.20
+     BRA fin.20
+else.20 :
+fin.20 :
+     BRA fin.19
+if.19.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.19
+     BRA fin.19
+else.19 :
+fin.19 :
+     BRA fin.18
+if.18.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.18
+     BRA fin.18
+else.18 :
+fin.18 :
+     BRA fin.17
+if.17.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.17
+     BRA fin.17
+else.17 :
+fin.17 :
+     BRA fin.16
+if.16.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.16
+     BRA fin.16
+else.16 :
+fin.16 :
+     BRA fin.15
+if.15.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.15
+     BRA fin.15
+else.15 :
+fin.15 :
+     BRA fin.14
+if.14.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.14
+
+; Instruction ligne n° 438.
+if.62.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.62.1
+
+; Instruction ligne n° 439.
+if.63.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.63.1
+
+; Instruction ligne n° 440.
+if.64.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.64.1
+
+; Instruction ligne n° 441.
+if.65.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.65.1
+
+; Instruction ligne n° 442.
+if.66.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.66.1
+
+; Instruction ligne n° 443.
+if.67.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.67.1
+
+; Instruction ligne n° 444.
+if.68.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.68.1
+
+; Instruction ligne n° 445.
+if.69.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.69.1
+
+; Instruction ligne n° 446.
+if.70.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.70.1
+
+; Instruction ligne n° 447.
+if.71.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.71.1
+     BRA fin.71
+if.71.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.71
+
+; Instruction ligne n° 451.
+if.72.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.72.1
+     BRA fin.72
+if.72.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.72
+
+; Instruction ligne n° 455.
+if.73.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.73.1
+     BRA fin.73
+if.73.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.73
+
+; Instruction ligne n° 459.
+if.74.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.74.1
+     BRA fin.74
+if.74.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.74
+
+; Instruction ligne n° 463.
+if.75.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.75.1
+     BRA fin.75
+if.75.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.75
+
+; Instruction ligne n° 467.
+if.76.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.76.1
+     BRA fin.76
+if.76.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.76
+
+; Instruction ligne n° 471.
+if.77.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.77.1
+     BRA fin.77
+if.77.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.77
+
+; Instruction ligne n° 475.
+if.78.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.78.1
+     BRA fin.78
+if.78.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.78
+
+; Instruction ligne n° 479.
+if.79.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.79.1
+     BRA fin.79
+if.79.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.79
+
+; Instruction ligne n° 483.
+if.80.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.80.1
+     BRA fin.80
+if.80.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.80
+
+; Instruction ligne n° 487.
+if.81.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ if.81.1
+     BRA fin.81
+if.81.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.81
+     BRA fin.81
+else.81 :
+fin.81 :
+     BRA fin.80
+else.80 :
+fin.80 :
+     BRA fin.79
+else.79 :
+fin.79 :
+     BRA fin.78
+else.78 :
+fin.78 :
+     BRA fin.77
+else.77 :
+fin.77 :
+     BRA fin.76
+else.76 :
+fin.76 :
+     BRA fin.75
+else.75 :
+fin.75 :
+     BRA fin.74
+else.74 :
+fin.74 :
+     BRA fin.73
+else.73 :
+fin.73 :
+     BRA fin.72
+else.72 :
+fin.72 :
+     BRA fin.71
+else.71 :
+fin.71 :
+     BRA fin.70
+if.70.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.70
+     BRA fin.70
+else.70 :
+fin.70 :
+     BRA fin.69
+if.69.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.69
+     BRA fin.69
+else.69 :
+fin.69 :
+     BRA fin.68
+if.68.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.68
+     BRA fin.68
+else.68 :
+fin.68 :
+     BRA fin.67
+if.67.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.67
+     BRA fin.67
+else.67 :
+fin.67 :
+     BRA fin.66
+if.66.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.66
+     BRA fin.66
+else.66 :
+fin.66 :
+     BRA fin.65
+if.65.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.65
+     BRA fin.65
+else.65 :
+fin.65 :
+     BRA fin.64
+if.64.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.64
+     BRA fin.64
+else.64 :
+fin.64 :
+     BRA fin.63
+if.63.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.63
+     BRA fin.63
+else.63 :
+fin.63 :
+     BRA fin.62
+if.62.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.62
+     BRA fin.62
+else.62 :
+fin.62 :
+     BRA fin.14
+else.14 :
+fin.14 :
+     BRA fin.13
+if.13.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.13
+     BRA fin.13
+else.13 :
+fin.13 :
+     BRA fin.12
+if.12.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.12
+     BRA fin.12
+else.12 :
+fin.12 :
+     BRA fin.11
+if.11.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.11
+     BRA fin.11
+else.11 :
+fin.11 :
+     BRA fin.10
+if.10.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.10
+     BRA fin.10
+else.10 :
+fin.10 :
+     BRA fin.9
+if.9.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.9
+     BRA fin.9
+else.9 :
+fin.9 :
+     BRA fin.8
+if.8.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.8
+     BRA fin.8
+else.8 :
+fin.8 :
+     BRA fin.7
+if.7.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.7
+     BRA fin.7
+else.7 :
+fin.7 :
+     BRA fin.6
+if.6.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.6
+     BRA fin.6
+else.6 :
+fin.6 :
+     BRA fin.5
+if.5.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.5
+     BRA fin.5
+else.5 :
+fin.5 :
+     BRA fin.4
+if.4.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.4
+     BRA fin.4
+else.4 :
+fin.4 :
+     BRA fin.3
+if.3.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.3
+     BRA fin.3
+else.3 :
+fin.3 :
+     BRA fin.2
+if.2.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.2
+     BRA fin.2
+else.2 :
+fin.2 :
+     BRA fin.1
+if.1.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.1
+     BRA fin.1
+else.1 :
+fin.1 :
+     BRA fin.0
+if.0.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.0
+     BRA fin.0
+else.0 :
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

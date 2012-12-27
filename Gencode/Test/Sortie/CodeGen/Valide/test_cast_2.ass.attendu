@@ -1,0 +1,135 @@
+; Initialisation du programme
+     TSTO #9
+     BOV pile_pleine
+     ADDSP #7
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+
+; Table des méthode de la classe B
+     LEA 3 (GB), R0
+     STORE R0, 5 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 6 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 23.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 5 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.B
+     POP R2
+     STORE R2, 7 (LB)
+
+
+; Instruction ligne n° 25.
+     LOAD 7 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.0
+while_instanceof.0 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.0
+     LEA 3 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.0
+     BRA while_instanceof.0
+true_instanceof.0 :
+     LOAD #1, R2
+     BRA fin_instanceof.0
+false_instanceof.0 :
+     LOAD #0, R2
+fin_instanceof.0 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD 7 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #3, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Initialisation des champs de la classe B
+init.B :
+     LOAD #4.00000E+00, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS

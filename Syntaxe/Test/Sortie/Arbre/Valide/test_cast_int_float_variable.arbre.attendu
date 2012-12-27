@@ -1,0 +1,41 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT int                                  -- Ligne 12
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 12
+. . . . . . . . NOEUD_ENTIER  42                           -- Ligne 12
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 13
+. . . . . NOEUD_IDENT float                                -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 13
+. . . . . . . . NOEUD_IDENT j                              -- Ligne 13
+. . . . . . . . NOEUD_FLOTTANT  3.14000E+00                -- Ligne 13
+. . <Liste (longueur 4) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 16
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "i="                            -- Ligne 16
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 16
+. . . . . . . . NOEUD_IDENT int                            -- Ligne 16
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 16
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 17
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "i="                            -- Ligne 17
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 17
+. . . . . . . . NOEUD_IDENT float                          -- Ligne 17
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 17
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 18
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "j="                            -- Ligne 18
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 18
+. . . . . . . . NOEUD_IDENT int                            -- Ligne 18
+. . . . . . . . NOEUD_IDENT j                              -- Ligne 18
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 19
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_CHAINE "j="                            -- Ligne 19
+. . . . . . # NOEUD_CONVERSION                             -- Ligne 19
+. . . . . . . . NOEUD_IDENT float                          -- Ligne 19
+. . . . . . . . NOEUD_IDENT j                              -- Ligne 19

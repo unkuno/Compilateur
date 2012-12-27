@@ -1,0 +1,313 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 3) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT T                                      -- Ligne 14
+. . . . NOEUD_VIDE
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 17
+. . . . NOEUD_IDENT Te                                     -- Ligne 17
+. . . . NOEUD_IDENT T                                      -- Ligne 17
+. . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 20
+. . . . NOEUD_IDENT T2                                     -- Ligne 20
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 8) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 22
+. . . . . . . NOEUD_IDENT int                              -- Ligne 22
+. . . . . . . NOEUD_IDENT test1                            -- Ligne 22
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 23
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 23
+. . . . . # NOEUD_METHODE                                  -- Ligne 26
+. . . . . . . NOEUD_IDENT float                            -- Ligne 26
+. . . . . . . NOEUD_IDENT test2                            -- Ligne 26
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 27
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 27
+. . . . . # NOEUD_METHODE                                  -- Ligne 29
+. . . . . . . NOEUD_IDENT float                            -- Ligne 29
+. . . . . . . NOEUD_IDENT test3                            -- Ligne 29
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 30
+. . . . . . . . . . NOEUD_FLOTTANT  1.00000E+00            -- Ligne 30
+. . . . . # NOEUD_METHODE                                  -- Ligne 33
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 33
+. . . . . . . NOEUD_IDENT test4                            -- Ligne 33
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 34
+. . . . . . . . . . NOEUD_VRAI                             -- Ligne 34
+. . . . . # NOEUD_METHODE                                  -- Ligne 36
+. . . . . . . NOEUD_IDENT boolean                          -- Ligne 36
+. . . . . . . NOEUD_IDENT test5                            -- Ligne 36
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 37
+. . . . . . . . . . NOEUD_FAUX                             -- Ligne 37
+. . . . . # NOEUD_METHODE                                  -- Ligne 40
+. . . . . . . NOEUD_IDENT void                             -- Ligne 40
+. . . . . . . NOEUD_IDENT test6                            -- Ligne 40
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . # NOEUD_METHODE                                  -- Ligne 43
+. . . . . . . NOEUD_IDENT T                                -- Ligne 43
+. . . . . . . NOEUD_IDENT test7                            -- Ligne 43
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 44
+. . . . . . . . . . NOEUD_IDENT T                          -- Ligne 44
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 44
+. . . . . . . . . . . . . NOEUD_IDENT x                    -- Ligne 44
+. . . . . . . . . . . . . NOEUD_NULL                       -- Ligne 44
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 46
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 46
+. . . . . # NOEUD_METHODE                                  -- Ligne 48
+. . . . . . . NOEUD_IDENT T                                -- Ligne 48
+. . . . . . . NOEUD_IDENT test8                            -- Ligne 48
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_VARIABLE                      -- Ligne 49
+. . . . . . . . . . NOEUD_IDENT Te                         -- Ligne 49
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_DECL_VAR                     -- Ligne 49
+. . . . . . . . . . . . . NOEUD_IDENT x                    -- Ligne 49
+. . . . . . . . . . . . . NOEUD_VIDE
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 51
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 51
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 57
+. . . . . NOEUD_IDENT int                                  -- Ligne 57
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 57
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 57
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 57
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 58
+. . . . . NOEUD_IDENT boolean                              -- Ligne 58
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 58
+. . . . . . . . NOEUD_IDENT b                              -- Ligne 58
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 58
+. . <Liste (longueur 22) :>
+. . . # NOEUD_SI                                           -- Ligne 60
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 60
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 60
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 61
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 61
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 61
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 61
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 61
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 63
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 63
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 63
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 64
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 64
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 64
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 64
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 64
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 66
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 66
+. . . . . . . . NOEUD_INF                                  -- Ligne 66
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 66
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 66
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 67
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 67
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 67
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 67
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 67
+. . . . . <Liste vide>
+. . . # NOEUD_SI                                           -- Ligne 69
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 69
+. . . . . . . . NOEUD_INF_EGAL                             -- Ligne 69
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 69
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 69
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 70
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 70
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 70
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 70
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 70
+. . . . . <Liste vide>
+. . . # NOEUD_TANTQUE                                      -- Ligne 73
+. . . . . NOEUD_VRAI                                       -- Ligne 73
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 74
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 74
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 74
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 74
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 74
+. . . # NOEUD_TANTQUE                                      -- Ligne 76
+. . . . . NOEUD_FAUX                                       -- Ligne 76
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 77
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 77
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 77
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 77
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 77
+. . . # NOEUD_TANTQUE                                      -- Ligne 79
+. . . . . NOEUD_INF                                        -- Ligne 79
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 79
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 79
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 80
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 80
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 80
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 80
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 80
+. . . # NOEUD_TANTQUE                                      -- Ligne 82
+. . . . . NOEUD_INF_EGAL                                   -- Ligne 82
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 82
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 82
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 83
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 83
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 83
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 83
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 83
+. . . # NOEUD_SI                                           -- Ligne 87
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 87
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 87
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 88
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 88
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 88
+. . . . . . # NOEUD_COND                                   -- Ligne 90
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 90
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 91
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 91
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 91
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 91
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 91
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 94
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 94
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 94
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 94
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 94
+. . . # NOEUD_SI                                           -- Ligne 98
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 98
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 98
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 99
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 99
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 99
+. . . . . . # NOEUD_COND                                   -- Ligne 101
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 101
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 102
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 102
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 102
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 102
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 102
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 105
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 105
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 105
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 105
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 105
+. . . # NOEUD_SI                                           -- Ligne 108
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 108
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 108
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 109
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 109
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 109
+. . . . . . # NOEUD_COND                                   -- Ligne 111
+. . . . . . . . NOEUD_VRAI                                 -- Ligne 111
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 112
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 112
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 112
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 112
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 112
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 115
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 115
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 115
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 115
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 115
+. . . # NOEUD_SI                                           -- Ligne 119
+. . . . . <Liste (longueur 2) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 119
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 119
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 120
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 120
+. . . . . . . . . . . NOEUD_ENTIER  0                      -- Ligne 120
+. . . . . . # NOEUD_COND                                   -- Ligne 122
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 122
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 123
+. . . . . . . . . . . NOEUD_IDENT i                        -- Ligne 123
+. . . . . . . . . . . NOEUD_MOINS                          -- Ligne 123
+. . . . . . . . . . . . NOEUD_IDENT i                      -- Ligne 123
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 123
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 126
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 126
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 126
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 126
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 126
+. . . # NOEUD_ECRITURE                                     -- Ligne 131
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 131
+. . . # NOEUD_ECRITURE                                     -- Ligne 132
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ENTIER  1                              -- Ligne 132
+. . . # NOEUD_ECRITURE                                     -- Ligne 133
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_FLOTTANT  1.00000E+00                  -- Ligne 133
+. . . # NOEUD_ECRITURE                                     -- Ligne 134
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_MULT                                   -- Ligne 134
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 134
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 134
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 134
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 134
+. . . # NOEUD_ECRITURE                                     -- Ligne 135
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "hello"                         -- Ligne 135
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 137
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT i                                -- Ligne 137
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 138
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ENTIER  1                              -- Ligne 138
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 139
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_FLOTTANT  1.00000E+00                  -- Ligne 139
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 140
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_MULT                                   -- Ligne 140
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 140
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 140
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 140
+. . . . . . . . NOEUD_ENTIER  2                            -- Ligne 140
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 141
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_CHAINE "hello"                         -- Ligne 141

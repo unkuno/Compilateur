@@ -1,0 +1,13 @@
+// Description:
+//    test nombre de registre max trop gros
+//
+// Resultats:
+//    Affiche le message Nombre de registres minimum : 4. Cette valeur minimum sera utilisé pour la suite.
+//    La compilation est effectuée avec 4 registres.
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-r 2 ./echecs.deca

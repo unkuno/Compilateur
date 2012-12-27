@@ -1,0 +1,31 @@
+// Description:
+//	Teste la surcharge et le typage dyn/stat
+//
+// Resultats:
+//	Ne plante pas
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 22/01/2012
+
+class A {
+    int c;
+    int m(int b) {
+	return b;
+    }
+}
+
+class B extends A {
+    float c;
+    int m(int b) {
+	return 2*b;
+    }
+}
+
+B a=new B();
+{
+    a.c=3.0;
+    println("a.c = ", a.m(cast<int>(a.c)));
+
+}

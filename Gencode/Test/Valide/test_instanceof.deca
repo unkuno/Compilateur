@@ -1,0 +1,95 @@
+// Description:
+//    test des instanceof
+//
+// Resultats:
+//    od doit être de classe D, C, A, Object
+//    oa doit être de classe A, Object
+//    null doit être de classe D, C, B, A, Object
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+      int a = 18;
+}
+
+class B extends A {
+      int b = this.a;
+}
+
+class C extends A {
+      int c = 42;
+}
+
+class D extends C {
+//      int a = cast<A>(this).a;
+	int a;
+}
+
+D od = new D();
+C oc = new C();
+B ob = new B();
+A oa = new A();
+{
+	if (od instanceof D) {		
+	   println("od instanceof D");			
+	}	   	
+
+	if (od instanceof C) {		
+	   println("od instanceof C");			
+	}
+
+	if (od instanceof B) {		
+	   println("od instanceof B");			
+	}
+
+	if (od instanceof A) {		
+	   println("od instanceof A");			
+	}
+
+	if (od instanceof Object) {		
+	   println("od instanceof Object");			
+	}
+
+	
+	if (oa instanceof D) {		
+	   println("oa instanceof D");			
+	}	   	
+
+	if (oa instanceof C) {		
+	   println("oa instanceof C");			
+	}
+
+	if (oa instanceof B) {		
+	   println("oa instanceof B");			
+	}
+
+	if (oa instanceof A) {		
+	   println("oa instanceof A");			
+	}
+
+	if (oa instanceof Object) {		
+	   println("oa instanceof Object");			
+	}
+
+
+	if (null instanceof D) {		
+	   println("null instanceof D");			
+	}	   	
+
+	if (null instanceof C) {		
+	   println("null instanceof C");			
+	}
+
+	if (null instanceof B) {		
+	   println("null instanceof B");			
+	}
+
+	if (null instanceof A) {		
+	   println("null instanceof A");			
+	}
+
+	if (null instanceof Object) {		
+	   println("null instanceof Object");			
+	}
+}

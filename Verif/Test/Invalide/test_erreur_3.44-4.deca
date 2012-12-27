@@ -1,0 +1,14 @@
+// Description:
+//    Programme soulevant l'erreur (3.44)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 12 : Les types 'int' et 'String' sont incompatibles pour l'affectation (règle 3.44)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+int x = "a" ;
+{
+}

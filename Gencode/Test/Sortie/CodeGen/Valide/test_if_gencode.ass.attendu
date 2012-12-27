@@ -1,0 +1,243 @@
+; Initialisation du programme
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+
+; Instruction ligne n° 15.
+if.0.0 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 16.
+     WSTR "OK : La condition true marche"
+     WNL
+     BRA fin.0
+else.0 :
+fin.0 :
+
+; Instruction ligne n° 19.
+if.1.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 20.
+     WSTR "KO : La condition false ne devrait pas passer"
+     WNL
+     BRA fin.1
+else.1 :
+
+; Instruction ligne n° 23.
+     WSTR "OK : La condition false passe dans le else"
+     WNL
+fin.1 :
+
+; Instruction ligne n° 27.
+if.2.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ if.2.1
+
+; Instruction ligne n° 29.
+     WSTR "KO : La condition false ne devrait pas passer"
+     WNL
+     BRA fin.2
+if.2.1 :
+     LOAD #1, R2
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 33.
+     WSTR "OK : La condition true passe dans le elsif"
+     WNL
+     BRA fin.2
+else.2 :
+fin.2 :
+
+; Instruction ligne n° 37.
+if.3.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ if.3.1
+
+; Instruction ligne n° 39.
+     WSTR "KO : La condition false ne devrait pas passer"
+     WNL
+     BRA fin.3
+if.3.1 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ if.3.2
+
+; Instruction ligne n° 43.
+     WSTR "KO : La condition false ne devrait pas passer dans le elsif"
+     WNL
+     BRA fin.3
+if.3.2 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+     ADD #3, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+     CMP #0, R2
+     BEQ fin.ET.4
+; Evaluation seconde opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.5
+; Evaluation seconde opérande :
+     LOAD #6.00000E+00, R2
+     FLOAT #2, R3
+     SUB R3, R2
+     BOV debordement
+     FLOAT #8, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+fin.OU.5 :
+; Fin d'un calcul OU
+fin.ET.4 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.3
+
+; Instruction ligne n° 47.
+     WSTR "KO : La condition ne devrait pas passer dans le elsif"
+     WNL
+     BRA fin.3
+else.3 :
+
+; Instruction ligne n° 50.
+     WSTR "OK : La condition passe dans le else"
+     WNL
+fin.3 :
+
+; Instruction ligne n° 53.
+if.6.0 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ if.6.1
+
+; Instruction ligne n° 55.
+     WSTR "KO : La condition false ne devrait pas passer"
+     WNL
+     BRA fin.6
+if.6.1 :
+     LOAD #0, R2
+     CMP #0, R2
+     BEQ if.6.2
+
+; Instruction ligne n° 59.
+     WSTR "KO : La condition false ne devrait pas passer dans le elsif"
+     WNL
+     BRA fin.6
+if.6.2 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD #2, R2
+     ADD #3, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+     CMP #0, R2
+     BEQ fin.ET.7
+; Evaluation seconde opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD #0, R2
+     CMP #0, R2
+     BNE fin.OU.8
+; Evaluation seconde opérande :
+     LOAD #6.00000E+00, R2
+     FLOAT #2, R3
+     ADD R3, R2
+     BOV debordement
+     FLOAT #8, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+fin.OU.8 :
+; Fin d'un calcul OU
+fin.ET.7 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.6
+
+; Instruction ligne n° 63.
+     WSTR "OK : La condition passe dans le elsif"
+     WNL
+     BRA fin.6
+else.6 :
+
+; Instruction ligne n° 66.
+     WSTR "KO : La condition ne devrait pas passer dans le else"
+     WNL
+fin.6 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS

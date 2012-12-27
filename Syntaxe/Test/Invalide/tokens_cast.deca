@@ -1,0 +1,29 @@
+// Description:
+//	Teste mots réservés cast 
+//
+// Resultats:
+//	Ligne 18 : Erreur de syntaxe aux alentours de 'cast'
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+
+}
+
+class B extends A {
+
+   boolean cast(B b) {
+      if (b instanceof A) {
+         return true;
+      }
+   }
+}
+
+B13 b = new B13();
+{
+
+  b.cast(b);
+}

@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (0.3)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Identificateur 'b' non déclaré (règle 0.3)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+int a;
+{
+a = a + (1 + ( 1 + ( 1 + ( 1 + ( 1 + ( 1 + ( 1 +( 1 + ( 1 +( 1 +( 1 + ( 1 + ( 1 + b) ) ) )))))))))) ;
+}

@@ -1,0 +1,26 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 2) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 13
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . NOEUD_IDENT Get                              -- Ligne 13
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . # NOEUD_CLASSE                                         -- Ligne 18
+. . . . NOEUD_IDENT B                                      -- Ligne 18
+. . . . NOEUD_IDENT A                                      -- Ligne 18
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 19
+. . . . . . . NOEUD_IDENT int                              -- Ligne 19
+. . . . . . . NOEUD_IDENT Get                              -- Ligne 19
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 19
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 19
+. . . . . . . . . . NOEUD_IDENT x                          -- Ligne 19
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. NOEUD_VIDE

@@ -1,0 +1,16 @@
+// Description:
+//    Programme minimaliste testant le champ protected.
+//
+// Resultats:
+//    Creation de la classe A avec un champ protected
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 09/01/2012
+
+class A {
+   protected int x;
+}
+{
+}

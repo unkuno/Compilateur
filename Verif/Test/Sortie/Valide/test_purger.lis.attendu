@@ -1,0 +1,295 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . . -- Defn : (classe, type_classe(A))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 4) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 13
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 13
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 13
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 13
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 14
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_IDENT get                              -- Ligne 14
+. . . . . . . . -- Defn : (methode([]), int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 15
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 15
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . -- Type : int
+. . . . . # NOEUD_METHODE                                  -- Ligne 17
+. . . . . . . NOEUD_IDENT A                                -- Ligne 17
+. . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . -- Type : type_classe(A)
+. . . . . . . NOEUD_IDENT init                             -- Ligne 17
+. . . . . . . . -- Defn : (methode([int]), type_classe(A))
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 17
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 17
+. . . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT b                          -- Ligne 17
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 2) :>
+. . . . . . . . # NOEUD_AFFECT                             -- Ligne 18
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT a                          -- Ligne 18
+. . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT b                          -- Ligne 18
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . # NOEUD_RETOUR                             -- Ligne 19
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . NOEUD_THIS                             -- Ligne 19
+. . . . . . . . . . . -- Type : type_classe(A)
+. . . . . # NOEUD_METHODE                                  -- Ligne 21
+. . . . . . . NOEUD_IDENT void                             -- Ligne 21
+. . . . . . . . -- Defn : (type, void)
+. . . . . . . . -- Type : void
+. . . . . . . NOEUD_IDENT affiche                          -- Ligne 21
+. . . . . . . . -- Defn : (methode([]), void)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 22
+. . . . . . . . . . <Liste (longueur 2) :>
+. . . . . . . . . . . # NOEUD_CHAINE "a="                  -- Ligne 22
+. . . . . . . . . . . . . -- Type : String
+. . . . . . . . . . . # NOEUD_IDENT a                      -- Ligne 22
+. . . . . . . . . . . . . -- Defn : (champ(valfalse, A), int)
+. . . . . . . . . . . . . -- Type : int
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 26
+. . . . . NOEUD_IDENT A                                    -- Ligne 26
+. . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . -- Type : type_classe(A)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 26
+. . . . . . . . NOEUD_IDENT a                              -- Ligne 26
+. . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 3) :>
+. . . # NOEUD_APPEL                                        -- Ligne 28
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 28
+. . . . . . NOEUD_AFFECT                                   -- Ligne 28
+. . . . . . . -- Type : type_classe(A)
+. . . . . . . NOEUD_IDENT a                                -- Ligne 28
+. . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . -- Type : type_classe(A)
+. . . . . . . NOEUD_APPEL                                  -- Ligne 28
+. . . . . . . . -- Type : type_classe(A)
+. . . . . . . . NOEUD_SELECTION                            -- Ligne 28
+. . . . . . . . . NOEUD_CREATION                           -- Ligne 28
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 28
+. . . . . . . . . . . -- Defn : (classe, type_classe(A))
+. . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . NOEUD_IDENT init                         -- Ligne 28
+. . . . . . . . . . -- Defn : (methode([int]), type_classe(A))
+. . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_PLUS                             -- Ligne 28
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 28
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 28
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  2                    -- Ligne 28
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 28
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_ENTIER  3                  -- Ligne 28
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 28
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 28
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_ENTIER  4              -- Ligne 28
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_PLUS                   -- Ligne 28
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 28
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  5          -- Ligne 28
+. . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  6          -- Ligne 28
+. . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . NOEUD_ENTIER  7            -- Ligne 28
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 28
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_ENTIER  8              -- Ligne 28
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_ENTIER  9              -- Ligne 28
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . NOEUD_IDENT affiche                            -- Ligne 28
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>
+. . . # NOEUD_PLUS                                         -- Ligne 29
+. . . . . -- Type : int
+. . . . . NOEUD_ENTIER  1                                  -- Ligne 29
+. . . . . . -- Type : int
+. . . . . NOEUD_PLUS                                       -- Ligne 29
+. . . . . . -- Type : int
+. . . . . . NOEUD_ENTIER  1                                -- Ligne 29
+. . . . . . . -- Type : int
+. . . . . . NOEUD_PLUS                                     -- Ligne 29
+. . . . . . . -- Type : int
+. . . . . . . NOEUD_ENTIER  1                              -- Ligne 29
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_PLUS                                   -- Ligne 29
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_ENTIER  1                            -- Ligne 29
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 29
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 29
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_PLUS                               -- Ligne 29
+. . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_ENTIER  1                        -- Ligne 29
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_PLUS                             -- Ligne 29
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_ENTIER  1                      -- Ligne 29
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . NOEUD_PLUS                           -- Ligne 29
+. . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_ENTIER  1                    -- Ligne 29
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . NOEUD_PLUS                         -- Ligne 29
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_PLUS                       -- Ligne 29
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_ENTIER  1                -- Ligne 29
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_PLUS                     -- Ligne 29
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_PLUS                   -- Ligne 29
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . NOEUD_ENTIER  1            -- Ligne 29
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . NOEUD_PLUS                 -- Ligne 29
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . NOEUD_PLUS               -- Ligne 29
+. . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1        -- Ligne 29
+. . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . NOEUD_PLUS             -- Ligne 29
+. . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1      -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1      -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . NOEUD_ENTIER  1          -- Ligne 29
+. . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_ENTIER  1              -- Ligne 29
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_APPEL                      -- Ligne 29
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_SELECTION                -- Ligne 29
+. . . . . . . . . . . . . . . NOEUD_APPEL                  -- Ligne 29
+. . . . . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . . . . . NOEUD_SELECTION            -- Ligne 29
+. . . . . . . . . . . . . . . . . NOEUD_IDENT a            -- Ligne 29
+. . . . . . . . . . . . . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . . . . . . NOEUD_IDENT init         -- Ligne 29
+. . . . . . . . . . . . . . . . . . -- Defn : (methode([int]), type_classe(A))
+. . . . . . . . . . . . . . . . . . -- Type : type_classe(A)
+. . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . # NOEUD_PLUS             -- Ligne 29
+. . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1      -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . NOEUD_PLUS           -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1    -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . NOEUD_PLUS         -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1  -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS       -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS     -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS   -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS -- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_PLUS-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_IDENT get              -- Ligne 29
+. . . . . . . . . . . . . . . . -- Defn : (methode([]), int)
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . <Liste vide>
+. . . # NOEUD_APPEL                                        -- Ligne 30
+. . . . . -- Type : void
+. . . . . NOEUD_SELECTION                                  -- Ligne 30
+. . . . . . NOEUD_IDENT a                                  -- Ligne 30
+. . . . . . . -- Defn : (var, type_classe(A))
+. . . . . . . -- Type : type_classe(A)
+. . . . . . NOEUD_IDENT affiche                            -- Ligne 30
+. . . . . . . -- Defn : (methode([]), void)
+. . . . . . . -- Type : void
+. . . . . <Liste vide>

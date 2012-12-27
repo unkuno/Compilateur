@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{color}
+
+
+%%%%%%%%%%
+% Taille des pages (A4 serré)
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{-.7cm}
+\setlength{\evensidemargin}{-.7cm}
+\setlength{\topmargin}{-.5in}
+
+
+%%%%%%%%%%
+% En-têtes et pied de pages
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{1.6pt}
+\addtolength{\headheight}{2.6pt}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\sf \thepage/\pageref{LastPage}}
+\lhead{\footnotesize\sf Projet GL}
+\rhead{\footnotesize\sf Equipe 16} % numéro d'équipe Teide 
+
+%%%%%%%%%%
+% Informations sur le document
+
+\title{Projet GL\\\emph{Erreurs contextuelles}}
+
+\author{Equipe 16} 
+
+\date{10 Janvier 2012}
+
+
+%%%%%%%%%%
+% Début du document
+
+\begin{document}
+
+\maketitle
+
+\begin{tabular}{lll}
+  (0.1 / 0.2) & raison & Filtrage partie droite\\
+  & message & Erreur interne du compilateur\\
+  \\
+  (0.3) & raison & Opération partielle\\
+  & message & Identificateur ``nom'' non déclaré\\
+  \\
+  (1.4) & raison & Condition\\
+  & message & Identificateur de type classe attendu\\
+  \\
+  & raison & Opération partielle\\
+  & message & Identificateur ``super'' non déclaré\\
+  \\
+  & raison & Opération partielle\\
+  & message & Identificateur ``nom'' déjà déclaré\\
+\end{tabular}
+
+\begin{tabular}{lll}
+  (2.4) & raison & Opération partielle\\
+  & message & Identificateur ``super'' non déclaré\\
+  \\
+  & raison & Condition\\
+  & message & Identificateur de classe attendu\\
+  \\
+  (2.9) & raison & Opération partielle\\
+  & message & Identificateurs de même nom dans la classe ``class''\\
+  \\
+  (2.12 / 2.13) & raison & Condition\\
+  & message & Un champ ne peut pas être de type ``void''\\
+  \\
+  (2.14) & raison & Opération partielle\\
+  & message & Champs de même nom dans la classe ``class''\\
+  \\
+  (2.16) & raison & Condition\\
+  & message & ``nom'' est déjà un champ dans une super-classe\\
+  \\
+  (2.17) & raison & Condition\\
+  & message & ``nom'' est déjà une méthode dans une super-classe\\
+  \\
+  & raison & Condition\\
+  & message & La signature de la méthode ``nom'' diffère dans la super-classe\\
+  \\
+  & raison & Condition\\
+  & message & Le type de retour de ``nom'' doit être un sous-type de ``type2''\\
+  \\
+  (2.22) & raison & Condition\\
+  & message & Un paramètre ne peut pas être de type ``void''\\
+\end{tabular}
+
+\begin{tabular}{lll}
+  (3.6) & raison & Opération partielle\\
+  & message & Identificateur ``nom'' non déclaré\\
+  \\
+  (3.6) & raison & Condition\\
+  & message & Identificateur de classe attendu\\
+  \\
+  (3.23) & raison & Opération partielle\\
+  & message & Paramètres de même nom\\
+  \\
+  (3.27) & raison & Condition\\
+  & message & Une variable ne peut pas être de type ``void''\\
+  \\
+  (3.30) & raison & Opération partielle\\
+  & message & Identificateur ``nom'' déjà déclaré\\
+  \\
+  (3.34) & raison & Condition\\
+  & message & Impossible de retourner ``void''\\
+  \\
+  (3.44) & raison & Condition\\
+  & message & Les types ``type1'' et ``type2'' sont incompatibles pour l'affectation\\
+  \\
+  (3.45) & raison & Filtrage partie droite\\
+  & message & Expression booléenne attendue\\
+  \\
+  (3.50) & raison & Condition\\
+  & message & Entier, flottant ou chaine de caractère attendu\\
+  \\
+  (3.52) & raison & Opération partielle\\
+  & message & Les types ``type1'' et ``type2'' sont incompatibles avec l'opérateur binaire ``op''\\
+  \\
+  (3.53) & raison & Opération partielle\\
+  & message & Le type ``type1'' est incompatible avec l'opérateur unaire ``op''\\
+  \\
+  (3.54) & raison & Condition\\
+  & message & ``this'' ne peut pas être utilisé dans le programme principal\\
+  \\
+  (3.57) & raison & Filtrage partie droite\\
+  & message & Identificateur de classe attendu\\
+  \\
+  (3.58) & raison & Opération partielle\\
+  & message & Les types ``type1'' et ``type2'' sont incompatibles avec l'opérateur ``instanceof''\\
+  \\
+  (3.59) & raison & Condition\\
+  & message & Conversion de ``type2'' en ``type'' impossible\\
+\end{tabular}
+
+\begin{tabular}{lll}
+  (3.86 / 3.87) & raison & Filtrage partie droite\\
+  & message & Objet attendu à gauche de '.'\\
+  \\
+  & raison & Opération partielle\\
+  & message & Erreur interne du compilateur\\
+  \\
+  (3.87) & raison & Condition\\
+  & message & Champ non visible dans ce contexte\\
+  \\
+  (3.88 / 3.89 / 3.90) & raison & Filtrage partie droite\\
+  & message & Identificateur de champ, de paramètre ou de variable attendu\\
+  \\
+  (3.91) & raison & Filtrage partie droite\\
+  & message & Identificateur de champ attendu\\
+  \\
+  (3.93) & raison & Filtrage partie droite\\
+  & message & Objet attendu à gauche de '.'\\
+  \\
+  & raison & Condition\\
+  & message & Erreur interne du compilateur\\
+  \\
+  (3.94) & raison & Filtrage partie droite\\
+  & message & Identificateur de méthode attendu\\
+  \\
+  (3.95) & raison & Filtrage partie gauche\\
+  & message & Erreur interne du compilateur\\
+  \\
+  (3.96) & raison & Filtrage partie gauche\\
+  & message & Erreur interne du compilateur\\
+  \\
+  (3.97) & raison & Filtrage partie gauche\\
+  & message & Erreur interne du compilateur\\
+\end{tabular}
+
+\end{document}

@@ -1,0 +1,105 @@
+// Description:
+//	Teste multiple instance of
+//
+// Resultats:
+//	affichage du bon nombre
+// 
+// Attributs: exec correct automatique
+   //
+// Historique:
+//    cree le 13/01/2012
+
+class Toto {
+
+   Toto get() {
+      return new Toto();
+   }
+}
+
+class A extends Toto {
+   Toto get() {
+      return new Toto().get();
+   }
+}
+
+class A1 extends A {
+   Toto get() {
+      return new A().get();
+   }
+}
+
+class A2 extends A1 {
+   Toto get() {
+      return new A1().get();
+   }
+}
+
+class A3 extends A2 {
+   Toto get() {
+      return new A2().get();
+   }
+}
+
+class A4 extends A3 {
+   Toto get() {
+      return new A3().get();
+   }
+}
+
+class A5 extends A4 {
+   Toto get() {
+      return new A4().get();
+   }
+}
+
+class A6 extends A5 {
+   Toto get() {
+      return new A5().get();
+   }
+}
+class A7 extends A6 {
+   Toto get() {
+      return new A6().get();
+   }
+}
+class A8 extends A7 {
+   Toto get() {
+      return new A7().get();
+   }
+}
+class A9 extends A8 {
+   Toto get() {
+      return new A8().get();
+   }
+}
+class A10 extends A9 {
+   Toto get() {
+      return new A9().get();
+   }
+}
+class A11 extends A10 {
+   Toto get() {
+      return new A10().get();
+   }
+}
+class A12 extends A11 {
+   Toto get() {
+      return new A11().get();
+   }
+
+}
+
+Toto moi = new A12();
+{
+
+   if ( cast<A>(cast<A1>(cast<A2>(cast<A3>(cast<A4>(cast<A5>(cast<A6>(cast<A7>(cast<A8>(cast<A9>(cast<A10>(cast<A11>(cast<A12>(moi))))))))))))) instanceof Toto) {
+      println("ok");
+   }
+   else {
+      println("ko");  
+   }
+
+
+}
+
+

@@ -1,0 +1,3 @@
+/* Programme syntaxiquement correct */
+Ligne 25 : Les types 'type_classe(A)' et 'type_classe(B)' sont incompatibles pour l'affectation (règle 3.44)
+Exception VERIF.ERREUR_VERIF levee

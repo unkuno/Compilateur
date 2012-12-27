@@ -1,0 +1,11 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_SI                                           -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 13
+. . . . . . . . NOEUD_FLOTTANT  1.00000E+00                -- Ligne 13
+. . . . . . . . <Liste vide>
+. . . . . <Liste vide>

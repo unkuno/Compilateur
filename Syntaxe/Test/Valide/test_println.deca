@@ -1,0 +1,15 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    Affichage de la chaine "hello"
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 10/01/2012
+
+
+{
+        println("hello");
+}

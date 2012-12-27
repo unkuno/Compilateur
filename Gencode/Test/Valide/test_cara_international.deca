@@ -1,0 +1,14 @@
+// Description:
+//	Teste caractère internationnal
+//
+// Resultats:
+//	affiche Arabe : السلام عليكم - Chinois : 你好 - Grec : ἱερογλύφος - Japonais : ありがと  ♥ ♠ ♣ ♦ ¶
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+{  
+   println("Arabe : السلام عليكم - Chinois : 你好 - Grec : ἱερογλύφος - Japonais : ありがと  ♥ ♠ ♣ ♦ ¶");
+}

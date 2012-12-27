@@ -1,0 +1,9 @@
+{
+	print("Entrez un nombre : ");
+	while(readInt() != 42) {
+	   println();
+	   println("Vous n'avez pas entré le bon nombre");
+	   print("Entrez un nombre : ");
+	}	
+	println("Vous avez trouvé la réponse ultime !");
+}

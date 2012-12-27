@@ -1,0 +1,19 @@
+// Description:
+//	   test règle 3.58 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 18 : Les types 'type_classe(A)' et 'int' sont incompatibles avec l'opérateur 'instanceof' (règle 3.58)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+}   
+
+A a;
+boolean b;
+{
+   b = a instanceof int;
+}

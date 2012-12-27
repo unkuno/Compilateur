@@ -1,0 +1,786 @@
+; Initialisation du programme
+     TSTO #23
+     BOV pile_pleine
+     ADDSP #19
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Cellule
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Cellule.init, R0
+     STORE R0, 5 (GB)
+
+; Table des méthode de la classe Liste
+     LEA 1 (GB), R0
+     STORE R0, 6 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 7 (GB)
+     LOAD code.Liste.ajouter, R0
+     STORE R0, 8 (GB)
+     LOAD code.Liste.afficherTous, R0
+     STORE R0, 9 (GB)
+     LOAD code.Liste.afficher, R0
+     STORE R0, 10 (GB)
+
+; Table des méthode de la classe Tableau
+     LEA 1 (GB), R0
+     STORE R0, 11 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 12 (GB)
+     LOAD code.Tableau.init, R0
+     STORE R0, 13 (GB)
+     LOAD code.Tableau.ajouter, R0
+     STORE R0, 14 (GB)
+     LOAD code.Tableau.afficher, R0
+     STORE R0, 15 (GB)
+     LOAD code.Tableau.afficherTous, R0
+     STORE R0, 16 (GB)
+     LOAD code.Tableau.copier, R0
+     STORE R0, 17 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 109.
+
+; Declarations ligne n° 109.
+
+
+; Instruction ligne n° 111.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 11 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tableau
+     POP R2
+     STORE R2, 18 (LB)
+
+; Instruction ligne n° 112.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #5, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 113.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 11 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tableau
+     POP R2
+     STORE R2, 19 (LB)
+
+; Instruction ligne n° 114.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #10, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 116.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 117.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 118.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #3, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 119.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 120.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #5, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 121.
+     ADDSP #2
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #6, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 122.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 18 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 123.
+     ADDSP #1
+     LOAD 18 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 124.
+     WSTR ""
+     WNL
+
+; Instruction ligne n° 125.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #6, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 126.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #7, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 127.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #8, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 128.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #9, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 129.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #10, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 130.
+     ADDSP #1
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 131.
+     ADDSP #2
+     LOAD 19 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #2
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #############################
+; # Code de la classe Cellule #
+; #############################
+
+; Méthode Cellule.init
+code.Cellule.init :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 21.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+fin.Cellule.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Cellule
+init.Cellule :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; ###########################
+; # Code de la classe Liste #
+; ###########################
+
+; Méthode Liste.ajouter
+code.Liste.ajouter :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 30.
+if.0.0 :
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 31.
+     LOAD -2 (LB), R2
+     NEW #3, R3
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Cellule
+     POP R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 32.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 33.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     STORE R3, 2 (R2)
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 36.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     NEW #3, R3
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Cellule
+     POP R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 37.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 38.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+fin.0 :
+fin.Liste.ajouter :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Liste.afficherTous
+code.Liste.afficherTous :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #2
+     STORE R2, 0 (SP)
+; Declarations ligne n° 43.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 45.
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, 1 (LB)
+
+; Instruction ligne n° 46.
+while.1 :
+     LOAD 1 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.1
+
+; Instruction ligne n° 47.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR "-"
+
+; Instruction ligne n° 48.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, 1 (LB)
+     BRA while.1
+fin.1 :
+fin.Liste.afficherTous :
+     LOAD 0 (SP), R2
+     SUBSP #2
+     RTS
+
+; Méthode Liste.afficher
+code.Liste.afficher :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #3
+     STORE R2, 0 (SP)
+; Declarations ligne n° 53.
+     LOAD #0, R1
+     STORE R1, 1 (LB)
+
+; Declarations ligne n° 54.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     STORE R2, 2 (LB)
+
+
+; Instruction ligne n° 56.
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, 2 (LB)
+
+; Instruction ligne n° 57.
+while.2 :
+     LOAD 1 (LB), R2
+
+; Comparaison LT
+     CMP -3 (LB), R2
+     SLT R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.2
+
+; Instruction ligne n° 58.
+     LOAD 2 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, 2 (LB)
+
+; Instruction ligne n° 59.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA while.2
+fin.2 :
+
+; Instruction ligne n° 61.
+     LOAD 2 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+fin.Liste.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #3
+     RTS
+
+; Initialisation des champs de la classe Liste
+init.Liste :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; #############################
+; # Code de la classe Tableau #
+; #############################
+
+; Méthode Tableau.init
+code.Tableau.init :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 74.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 75.
+     LOAD -2 (LB), R2
+     NEW #3, R3
+     BOV tas_plein
+     LEA 6 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Liste
+     POP R3
+     STORE R3, 3 (R2)
+fin.Tableau.init :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Tableau.ajouter
+code.Tableau.ajouter :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 79.
+if.3.0 :
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison EQ
+     CMP 2 (R3), R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.3
+
+; Instruction ligne n° 80.
+     WSTR "Erreur : tableau plein"
+     WNL
+     BRA fin.3
+else.3 :
+
+; Instruction ligne n° 83.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 84.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     ADD #1, R3
+     STORE R3, 1 (R2)
+fin.3 :
+fin.Tableau.ajouter :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Tableau.afficher
+code.Tableau.afficher :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 89.
+if.4.0 :
+     LOAD -3 (LB), R2
+     LOAD -2 (LB), R3
+
+; Comparaison LT
+     CMP 2 (R3), R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 90.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #2
+     BRA fin.4
+else.4 :
+
+; Instruction ligne n° 93.
+     WSTR "Erreur : le tableau est d'indice max "
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R1
+     WINT
+     WNL
+fin.4 :
+fin.Tableau.afficher :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Tableau.afficherTous
+code.Tableau.afficherTous :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 98.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+fin.Tableau.afficherTous :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Tableau.copier
+code.Tableau.copier :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 102.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 3 (R3), R3
+     STORE R3, 3 (R2)
+fin.Tableau.copier :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Tableau
+init.Tableau :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     RTS

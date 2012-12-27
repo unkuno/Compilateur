@@ -1,0 +1,47 @@
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 12
+. . . . NOEUD_IDENT A                                      -- Ligne 12
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 2) :>
+. . . . . # NOEUD_CHAMP                                    -- Ligne 14
+. . . . . . . NOEUD_VIDE
+. . . . . . . NOEUD_IDENT int                              -- Ligne 14
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_DECL_CHAMP                         -- Ligne 14
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 14
+. . . . . . . . . . NOEUD_VIDE
+. . . . . # NOEUD_METHODE                                  -- Ligne 15
+. . . . . . . NOEUD_IDENT void                             -- Ligne 15
+. . . . . . . NOEUD_IDENT A                                -- Ligne 15
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 15
+. . . . . . . . . . NOEUD_IDENT A                          -- Ligne 15
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_ECRITURE_LIGNE                     -- Ligne 16
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_IDENT A                      -- Ligne 16
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 2) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 22
+. . . . . NOEUD_IDENT A                                    -- Ligne 22
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 22
+. . . . . . . . NOEUD_IDENT A                              -- Ligne 22
+. . . . . . . . NOEUD_CREATION                             -- Ligne 22
+. . . . . . . . . NOEUD_IDENT A                            -- Ligne 22
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 23
+. . . . . NOEUD_IDENT int                                  -- Ligne 23
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 23
+. . . . . . . . NOEUD_IDENT A                              -- Ligne 23
+. . . . . . . . NOEUD_ENTIER  42                           -- Ligne 23
+. . <Liste (longueur 1) :>
+. . . # NOEUD_APPEL                                        -- Ligne 25
+. . . . . NOEUD_SELECTION                                  -- Ligne 25
+. . . . . . NOEUD_IDENT A                                  -- Ligne 25
+. . . . . . NOEUD_IDENT A                                  -- Ligne 25
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_IDENT A                                -- Ligne 25

@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.96)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Nombre de paramètres incorrect (règle 3.96)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x() {
+   }
+}
+
+int var;
+A a;
+{
+   var = a.x(1);
+}

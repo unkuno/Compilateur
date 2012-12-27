@@ -1,0 +1,43 @@
+// Description:
+//    test des casts
+//
+// Resultats:
+//    ne doit pas lever d'erreur
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+      int a = 18;
+}
+
+class B extends A {
+      int b = this.a;
+}
+
+class C extends A {
+      int c = 42;
+}
+
+class D extends C {
+	int a = cast<A>(this).a;
+}
+
+D od = new D();
+C oc = new C();
+B ob = new B();
+A oa = new A();
+{
+	println("od.a = ", od.a);
+
+	oa = cast<A>(oa);
+
+	oa = ob;
+	ob = cast<B>(oa);
+
+	oa = od;
+	oa = cast<C>(oa);
+
+	println("cast<int>(3.14) = ", cast<int>(3.14));
+	println("cast<float>(42) = ", cast<float>(42));
+}

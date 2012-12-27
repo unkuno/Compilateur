@@ -1,0 +1,12 @@
+// Description:
+//    test sur les caractères d'échappements
+//
+// Resultats: Le code ne produit pas d'erreur et la décompilation doit se faire sans erreurs
+//
+//
+// Historique:
+//    crée le 09/01/2012
+
+{
+println("C'est la \"classe\" de porter des shirt\\tshirt");
+}

@@ -1,0 +1,20 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 3) :>
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DIV                                    -- Ligne 13
+. . . . . . . . NOEUD_ENTIER  50                           -- Ligne 13
+. . . . . . . . NOEUD_ENTIER  0                            -- Ligne 13
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 14
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_RESTE                                  -- Ligne 14
+. . . . . . . . NOEUD_ENTIER  50                           -- Ligne 14
+. . . . . . . . NOEUD_ENTIER  0                            -- Ligne 14
+. . . # NOEUD_ECRITURE_LIGNE                               -- Ligne 15
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_MULT                                   -- Ligne 15
+. . . . . . . . NOEUD_FLOTTANT  1.00000E+22                -- Ligne 15
+. . . . . . . . NOEUD_FLOTTANT  1.00000E+30                -- Ligne 15

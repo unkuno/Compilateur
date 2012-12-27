@@ -1,0 +1,13 @@
+ob1 : b = 4
+ob2 : b = 4
+ob3 : b = 42
+! oa1.equals(oa2)
+! oa2.equals(oa1)
+oa1.equals(oa1)
+oa2.equals(oa2)
+! oa1.equals(ob1)
+! oa1.equals(null)
+! ob1.equals(null)
+ob1.equals(ob2)
+! ob1.equals(ob3)
+! ob3.equals(ob2)

@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.71)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Les types 'float' et 'type_classe(A)' sont incompatibles avec l'opérateur binaire '-' (règle 3.71)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x() {
+   }
+}
+
+int var;
+A a;
+{
+   var = 1.0 - a;
+}

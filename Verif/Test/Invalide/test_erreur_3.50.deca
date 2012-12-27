@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (3.50)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Entier, flottant ou chaine de caractère attendu (règle 3.50)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 12/01/2012
+
+boolean b = true;
+{
+   print(b);
+}

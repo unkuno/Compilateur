@@ -1,0 +1,20 @@
+// Description:
+//    Programme soulevant l'erreur (3.83)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 19 : Le type 'void' est incompatible avec  l'opérateur unaire '!' (règle 3.84)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 14/01/2012
+
+class A{
+   void x() {
+   }
+}
+A a;
+int var;
+{
+    var = ! a.x();
+}

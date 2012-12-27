@@ -1,0 +1,21 @@
+// Description:
+//    Programme soulevant l'erreur (3.94)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Identificateur de méthode attendu (règle 3.94)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+
+class A {
+   int x;
+}
+
+A a;
+int y;
+{
+ y = a.x();
+} 

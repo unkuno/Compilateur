@@ -1,0 +1,19 @@
+// Description:
+//    ecriture de chaines
+//
+// Resultats:
+//    ok
+//    ok
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 01/01/2012
+
+{
+   println("ok") ; 
+   print("ok") ; 
+   println() ; 
+}
+
+

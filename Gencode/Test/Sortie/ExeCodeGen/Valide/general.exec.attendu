@@ -1,0 +1,11 @@
+x=0
+y=true
+a=A[x=3.14000E+00, y=0, z=42, t=false]
+
+b=B[x=42, y=0, z=42, t=false]
+
+b=B[x=4, y=2, z=43, t=false]
+
+a=B[x=4, y=2, z=43, t=false]
+
+a.x=3.14000E+00

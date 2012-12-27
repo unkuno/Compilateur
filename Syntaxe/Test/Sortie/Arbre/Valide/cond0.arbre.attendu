@@ -1,0 +1,19 @@
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste vide>
+. . <Liste (longueur 1) :>
+. . . # NOEUD_SI                                           -- Ligne 13
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_COND                                   -- Ligne 13
+. . . . . . . . NOEUD_SUP_EGAL                             -- Ligne 13
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 13
+. . . . . . . . . NOEUD_ENTIER  0                          -- Ligne 13
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_ECRITURE_LIGNE                   -- Ligne 14
+. . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . # NOEUD_CHAINE "ok"                -- Ligne 14
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 16
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_CHAINE "erreur"                  -- Ligne 16

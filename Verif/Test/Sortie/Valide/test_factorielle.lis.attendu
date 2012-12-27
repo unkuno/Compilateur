@@ -1,0 +1,157 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste (longueur 1) :>
+. . # NOEUD_CLASSE                                         -- Ligne 14
+. . . . NOEUD_IDENT Factorielle                            -- Ligne 14
+. . . . . -- Defn : (classe, type_classe(Factorielle))
+. . . . NOEUD_VIDE
+. . . . <Liste (longueur 1) :>
+. . . . . # NOEUD_METHODE                                  -- Ligne 16
+. . . . . . . NOEUD_IDENT int                              -- Ligne 16
+. . . . . . . . -- Defn : (type, int)
+. . . . . . . . -- Type : int
+. . . . . . . NOEUD_IDENT calculFacto                      -- Ligne 16
+. . . . . . . . -- Defn : (methode([int]), int)
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_PARAMETRE                          -- Ligne 16
+. . . . . . . . . . NOEUD_IDENT int                        -- Ligne 16
+. . . . . . . . . . . -- Defn : (type, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . . NOEUD_IDENT i                          -- Ligne 16
+. . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . <Liste vide>
+. . . . . . . <Liste (longueur 1) :>
+. . . . . . . . # NOEUD_SI                                 -- Ligne 18
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_COND                         -- Ligne 18
+. . . . . . . . . . . . . NOEUD_EGAL_EGAL                  -- Ligne 18
+. . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . NOEUD_IDENT i                  -- Ligne 18
+. . . . . . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_ENTIER  0                -- Ligne 18
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . # NOEUD_RETOUR                 -- Ligne 19
+. . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . NOEUD_ENTIER  1            -- Ligne 19
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . # NOEUD_RETOUR                       -- Ligne 22
+. . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . NOEUD_MULT                       -- Ligne 22
+. . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_APPEL                    -- Ligne 22
+. . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . NOEUD_SELECTION              -- Ligne 22
+. . . . . . . . . . . . . . . . NOEUD_THIS                 -- Ligne 22
+. . . . . . . . . . . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . . . . . . . . . . . NOEUD_IDENT calculFacto    -- Ligne 22
+. . . . . . . . . . . . . . . . . -- Defn : (methode([int]), int)
+. . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . # NOEUD_MOINS              -- Ligne 22
+. . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . NOEUD_IDENT i          -- Ligne 22
+. . . . . . . . . . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . . . . . NOEUD_ENTIER  1        -- Ligne 22
+. . . . . . . . . . . . . . . . . . . -- Type : int
+. . . . . . . . . . . . . . NOEUD_IDENT i                  -- Ligne 22
+. . . . . . . . . . . . . . . -- Defn : (param, int)
+. . . . . . . . . . . . . . . -- Type : int
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 3) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 31
+. . . . . NOEUD_IDENT int                                  -- Ligne 31
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 31
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 31
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_VIDE
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 32
+. . . . . NOEUD_IDENT int                                  -- Ligne 32
+. . . . . . -- Defn : (type, int)
+. . . . . . -- Type : int
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 32
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 32
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . NOEUD_ENTIER  0                            -- Ligne 32
+. . . . . . . . . -- Type : int
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 33
+. . . . . NOEUD_IDENT Factorielle                          -- Ligne 33
+. . . . . . -- Defn : (classe, type_classe(Factorielle))
+. . . . . . -- Type : type_classe(Factorielle)
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 33
+. . . . . . . . NOEUD_IDENT F                              -- Ligne 33
+. . . . . . . . . -- Defn : (var, type_classe(Factorielle))
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 1) :>
+. . . # NOEUD_TANTQUE                                      -- Ligne 35
+. . . . . NOEUD_INF                                        -- Ligne 35
+. . . . . . -- Type : boolean
+. . . . . . NOEUD_IDENT i                                  -- Ligne 35
+. . . . . . . -- Defn : (var, int)
+. . . . . . . -- Type : int
+. . . . . . NOEUD_ENTIER  10                               -- Ligne 35
+. . . . . . . -- Type : int
+. . . . . <Liste (longueur 5) :>
+. . . . . . # NOEUD_ECRITURE                               -- Ligne 37
+. . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . # NOEUD_CHAINE "Factorielle de "         -- Ligne 37
+. . . . . . . . . . . -- Type : String
+. . . . . . . . . # NOEUD_IDENT i                          -- Ligne 37
+. . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . # NOEUD_CHAINE " = "                     -- Ligne 37
+. . . . . . . . . . . -- Type : String
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 38
+. . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . . . NOEUD_IDENT F                              -- Ligne 38
+. . . . . . . . . -- Defn : (var, type_classe(Factorielle))
+. . . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . . . NOEUD_CREATION                             -- Ligne 38
+. . . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . . . . NOEUD_IDENT Factorielle                  -- Ligne 38
+. . . . . . . . . . -- Defn : (classe, type_classe(Factorielle))
+. . . . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 39
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 39
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_APPEL                                -- Ligne 39
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_SELECTION                          -- Ligne 39
+. . . . . . . . . . NOEUD_IDENT F                          -- Ligne 39
+. . . . . . . . . . . -- Defn : (var, type_classe(Factorielle))
+. . . . . . . . . . . -- Type : type_classe(Factorielle)
+. . . . . . . . . . NOEUD_IDENT calculFacto                -- Ligne 39
+. . . . . . . . . . . -- Defn : (methode([int]), int)
+. . . . . . . . . . . -- Type : int
+. . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . # NOEUD_IDENT i                        -- Ligne 39
+. . . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_ECRITURE_LIGNE                         -- Ligne 40
+. . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . # NOEUD_IDENT res                        -- Ligne 40
+. . . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . . -- Type : int
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 41
+. . . . . . . . -- Type : int
+. . . . . . . . NOEUD_IDENT i                              -- Ligne 41
+. . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . -- Type : int
+. . . . . . . . NOEUD_PLUS                                 -- Ligne 41
+. . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_IDENT i                            -- Ligne 41
+. . . . . . . . . . -- Defn : (var, int)
+. . . . . . . . . . -- Type : int
+. . . . . . . . . NOEUD_ENTIER  1                          -- Ligne 41
+. . . . . . . . . . -- Type : int

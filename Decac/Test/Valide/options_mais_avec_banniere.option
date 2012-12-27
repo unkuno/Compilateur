@@ -1,0 +1,12 @@
+// Description:
+//    Test options mais avec bannière
+//
+// Resultats:
+//   doit afficher la bannière
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 21/01/2012
+
+-v -p -b -r 3 ./echecs.deca

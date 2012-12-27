@@ -1,0 +1,510 @@
+; Initialisation du programme
+     TSTO #27
+     BOV pile_pleine
+     ADDSP #22
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.A.getZ, R0
+     STORE R0, 5 (GB)
+     LOAD code.A.setZ, R0
+     STORE R0, 6 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 7 (GB)
+     LOAD code.A.setX, R0
+     STORE R0, 8 (GB)
+     LOAD code.A.creerB, R0
+     STORE R0, 9 (GB)
+     LOAD code.A.ecrire, R0
+     STORE R0, 10 (GB)
+
+; Table des méthode de la classe B
+     LEA 3 (GB), R0
+     STORE R0, 11 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 12 (GB)
+     LOAD code.A.getZ, R0
+     STORE R0, 13 (GB)
+     LOAD code.A.setZ, R0
+     STORE R0, 14 (GB)
+     LOAD code.A.getX, R0
+     STORE R0, 15 (GB)
+     LOAD code.A.setX, R0
+     STORE R0, 16 (GB)
+     LOAD code.A.creerB, R0
+     STORE R0, 17 (GB)
+     LOAD code.B.ecrire, R0
+     STORE R0, 18 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 65.
+     LOAD #0, R1
+     STORE R1, 19 (LB)
+
+; Declarations ligne n° 66.
+     LOAD #1, R1
+     STORE R1, 20 (LB)
+
+; Declarations ligne n° 68.
+     NEW #5, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 21 (LB)
+
+; Declarations ligne n° 69.
+     NEW #6, R2
+     BOV tas_plein
+     LEA 11 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.B
+     POP R2
+     STORE R2, 22 (LB)
+
+
+; Instruction ligne n° 72.
+     WSTR "x="
+     LOAD 19 (LB), R1
+     WINT
+     WNL
+
+; Instruction ligne n° 74.
+     WSTR "y="
+
+; Instruction ligne n° 75.
+if.0.0 :
+     LOAD 20 (LB), R2
+     CMP #0, R2
+     BEQ else.0
+
+; Instruction ligne n° 75.
+     WSTR "true"
+     BRA fin.0
+else.0 :
+
+; Instruction ligne n° 75.
+     WSTR "false"
+fin.0 :
+
+; Instruction ligne n° 76.
+     WNL
+
+; Instruction ligne n° 78.
+     WSTR "a="
+
+; Instruction ligne n° 79.
+     ADDSP #1
+     LOAD 21 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 80.
+     WNL
+
+; Instruction ligne n° 82.
+     WSTR "b="
+
+; Instruction ligne n° 83.
+     ADDSP #1
+     LOAD 22 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 84.
+     WNL
+
+; Instruction ligne n° 86.
+     ADDSP #3
+     LOAD 21 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD #2, R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     STORE R2, 22 (LB)
+
+; Instruction ligne n° 87.
+     WSTR "b="
+
+; Instruction ligne n° 88.
+     ADDSP #1
+     LOAD 22 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 89.
+     WNL
+
+; Instruction ligne n° 91.
+     LOAD 22 (LB), R2
+     STORE R2, 21 (LB)
+
+; Instruction ligne n° 92.
+     WSTR "a="
+
+; Instruction ligne n° 93.
+     ADDSP #1
+     LOAD 21 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 94.
+     WNL
+
+; Instruction ligne n° 96.
+     WSTR "a.x="
+     LOAD 21 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WFLOAT
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.getZ
+code.A.getZ :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 18.
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R0
+     BRA fin.A.getZ
+     WSTR "Erreur : sortie de la méthode A.getZ sans return"
+     WNL
+     ERROR
+fin.A.getZ :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.setZ
+code.A.setZ :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 22.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 3 (R2)
+fin.A.setZ :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode A.getX
+code.A.getX :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 27.
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R0
+     BRA fin.A.getX
+     WSTR "Erreur : sortie de la méthode A.getX sans return"
+     WNL
+     ERROR
+fin.A.getX :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.setX
+code.A.setX :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 32.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+fin.A.setX :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode A.creerB
+code.A.creerB :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 36.
+     NEW #6, R2
+     BOV tas_plein
+     LEA 11 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     BSR init.B
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 38.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -3 (LB), R3
+     STORE R3, 5 (R2)
+
+; Instruction ligne n° 39.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -4 (LB), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 40.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     ADD #1, R3
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 41.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 42.
+     LOAD 1 (LB), R0
+     BRA fin.A.creerB
+     WSTR "Erreur : sortie de la méthode A.creerB sans return"
+     WNL
+     ERROR
+fin.A.creerB :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode A.ecrire
+code.A.ecrire :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 47.
+     WSTR "A[x="
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R1
+     WFLOAT
+     WSTR ", y="
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R1
+     WINT
+     WSTR ", z="
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R1
+     WINT
+     WSTR ", t="
+
+; Instruction ligne n° 48.
+if.1.0 :
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 48.
+     WSTR "true"
+     BRA fin.1
+else.1 :
+
+; Instruction ligne n° 48.
+     WSTR "false"
+fin.1 :
+
+; Instruction ligne n° 49.
+     WSTR "]"
+     WNL
+fin.A.ecrire :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #3.14000E+00, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #42, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 4 (R0)
+     RTS
+
+; #######################
+; # Code de la classe B #
+; #######################
+
+; Méthode B.ecrire
+code.B.ecrire :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 59.
+     WSTR "B[x="
+     LOAD -2 (LB), R2
+     LOAD 5 (R2), R1
+     WINT
+     WSTR ", y="
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R1
+     WINT
+     WSTR ", z="
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R1
+     WINT
+     WSTR ", t="
+
+; Instruction ligne n° 60.
+if.2.0 :
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #0, R2
+     BEQ else.2
+
+; Instruction ligne n° 60.
+     WSTR "true"
+     BRA fin.2
+else.2 :
+
+; Instruction ligne n° 60.
+     WSTR "false"
+fin.2 :
+
+; Instruction ligne n° 61.
+     WSTR "]"
+     WNL
+fin.B.ecrire :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe B
+init.B :
+     LOAD #42, R1
+     LOAD -2 (LB), R0
+     STORE R1, 5 (R0)
+     RTS

@@ -1,0 +1,97 @@
+// Description:
+//    tests variés
+//
+// Resultats:
+//    doit fonctionner [A COMPLETER]
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+	float x = 3.14;
+        int y;
+        protected int z = 42;
+	protected boolean t;
+	
+	int getZ()
+	{
+		return this.z;
+	}
+
+	void setZ(int z) {
+		this.z = z;
+	}
+
+	float getX()
+	{
+		return x;
+	}
+
+	void setX(float newX)
+	{
+		x = newX;
+	}
+
+	B creerB(int x, int y)
+		B b = new B();
+	{
+		b.x = x;
+		b.y = y;
+		z = z + 1;
+		b.z = z;
+		return b;
+	}
+
+	void ecrire()
+	{
+		print("A[x=", x, ", y=", y, ", z=", z, ", t=");
+		if (t) {print("true");} else {print("false");}
+		println("]");
+	}
+}
+	
+
+class B extends A {
+	int x = 42;
+	
+	void ecrire()
+	{
+		print("B[x=", x, ", y=", y, ", z=", z, ", t=");
+		if (t) {print("true");} else {print("false");}
+		println("]");
+	}
+}
+
+int x = 0;
+boolean y = true;
+
+A a = new A();
+B b = new B();
+
+{
+	println("x=", x);
+	
+	print("y=");
+	if (y) {print("true");} else {print("false");}
+	println();
+	
+	print("a=");
+	a.ecrire();
+	println();
+
+	print("b=");
+	b.ecrire();
+	println();
+
+	b = a.creerB(4, 2);
+	print("b=");
+	b.ecrire();
+	println();
+	
+	a = b;
+	print("a=");
+	a.ecrire();
+	println();
+
+	println("a.x=", a.x);
+}

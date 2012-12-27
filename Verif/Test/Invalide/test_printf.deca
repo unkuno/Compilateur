@@ -1,0 +1,21 @@
+// Description:
+//    test appel procedure avec param alors que définie sans param
+//
+// Resultats:
+//	Erreur a spécifier
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+
+
+class toto {
+
+   void printf() {
+   
+      printf("toto");
+   }
+
+}

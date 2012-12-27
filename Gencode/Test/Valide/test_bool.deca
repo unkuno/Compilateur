@@ -1,0 +1,707 @@
+// Description:
+//	Teste les BOOLEENS
+//
+// Resultats:
+//	Conditions correct
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+
+{
+print("true -> ");
+if (true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false -> ");
+if (false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("0==0 -> ");
+if (0==0) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("40+2==43 -> ");
+if (40+2==43) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("40-2+4==10*4+3-1 -> ");
+if (40-2+4==10*4+3-1) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1>2 -> ");
+if (1>2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2>1 -> ");
+if (2>1) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1<2 -> ");
+if (1<2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3<2 -> ");
+if (3<2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1>=2 -> ");
+if (1>=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3>=2 -> ");
+if (3>=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1<=2 -> ");
+if (1<=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3<=2 -> ");
+if (3<=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1==2  -> ");
+if (1==2 ) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3==2  -> ");
+if (3==2 ) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("1!=2 -> ");
+if (1!=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("4!=2 -> ");
+if (4!=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2>2 -> ");
+if (2>2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2<2 -> ");
+if (2<2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2>=2 -> ");
+if (2>=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2<=2 -> ");
+if (2<=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 -> ");
+if (2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2!=2 -> ");
+if (2!=2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+println();
+println("----------------------------------");
+println();
+
+print("true || true -> ");
+if (true || true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false || true -> ");
+if (false || true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false || false -> ");
+if (false || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true || false -> ");
+if (true || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 || true -> ");
+if (2==2 || true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 || false -> ");
+if (2==2 || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true || 2==2 -> ");
+if (true || 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false || 2==2 -> ");
+if (false || 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 || 3 >= 18 -> ");
+if (2==2 || 3 >= 18) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3 >= 18 || 2==2 -> ");
+if (3 >= 18 || 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2!=3 || (9+10) >= 18 -> ");
+if (2!=3 || (9+10) >= 18) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("(9+10) >= 18 || 2!=3 -> ");
+if ((9+10) >= 18 || 2!=3) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==3 || 2==26 || (0 > 0 || 2 > 1) -> ");
+if (2==3 || 2==26 || (0 > 0 || 2 > 1)) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==3 || 2==26 || 0 > 0 -> ");
+if (2==3 || 2==26 || 0 > 0) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+println();
+println("----------------------------------");
+println();
+
+print("true && true -> ");
+if (true && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false && true -> ");
+if (false && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false && false -> ");
+if (false && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true && false -> ");
+if (true && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true && 2==2 -> ");
+if (true && 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 && true -> ");
+if (2==2 && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false && 2==2 -> ");
+if (false && 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 && false -> ");
+if (2==2 && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 && 3 >= 18 -> ");
+if (2==2 && 3 >= 18) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("3 >= 18 && 2==2 -> ");
+if (3 >= 18 && 2==2) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2!=3 && (9+10) >= 18 -> ");
+if (2!=3 && (9+10) >= 18) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==3 && 2==26 && (0 > 0 && 2 > 1) -> ");
+if (2==3 && 2==26 && (0 > 0 && 2 > 1)) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==3 && 2==26 && 0 > 0 -> ");
+if (2==3 && 2==26 && 0 > 0) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+println();
+println("----------------------------------");
+println();
+
+print("!true -> ");
+if (!true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false -> ");
+if (!false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true && true -> ");
+if (!true && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true && !true -> ");
+if (true && !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true && !true -> ");
+if (!true && !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false && false -> ");
+if (!false && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false && !false -> ");
+if (false && !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false && !false -> ");
+if (!false && !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true && false -> ");
+if (!true && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true && !false -> ");
+if (!true && !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false && !true -> ");
+if (!false && !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false && true -> ");
+if (!false && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true || true -> ");
+if (!true || true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true || !true -> ");
+if (true || !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true || !true -> ");
+if (!true || !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false || false -> ");
+if (!false || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false || !false -> ");
+if (false || !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false || !false -> ");
+if (!false || !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true || false -> ");
+if (!true || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!true || !false -> ");
+if (!true || !false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false || !true -> ");
+if (!false || !true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!false || true -> ");
+if (!false || true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!!!true || false -> ");
+if (!!!true || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!!!false || false -> ");
+if (!!!false || false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!!!true && false -> ");
+if (!!!true && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!!!false && false -> ");
+if (!!!false && false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true || !!!false -> ");
+if (true || !!!false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false || !!!false -> ");
+if (false || !!!false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("true && !!!false -> ");
+if (true && !!!false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("false && !!!false -> ");
+if (false && !!!false) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 && true -> ");
+if (2==2 && true) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==2 && 3 >= 18 -> ");
+if (2==2 && 3 >= 18) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2!=3 || ! ((9+10) >= 18) -> ");
+if (2!=3 || ! ((9+10) >= 18)) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("2==3 && 2==26 || (0 > 0 && 2 > 1) -> ");
+if (2==3 && 2==26 || (0 > 0 && 2 > 1)) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+print("!! (2==3) || 2==2 && ! (0 >= 0) -> ");
+if (!! (2==3) || 2==2 && ! (0 >= 0)) {
+	println("true");
+}
+else {
+	println("false");
+}
+
+}

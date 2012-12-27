@@ -1,0 +1,16 @@
+// Description:
+//    Programme minimaliste utilisant print.
+//
+// Resultats:
+//    Affichage de a
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 09/01/2012
+
+int a = 5;
+
+{
+        print(a);
+}

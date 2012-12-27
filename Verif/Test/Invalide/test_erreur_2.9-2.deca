@@ -1,0 +1,15 @@
+// Description:
+//    Programme soulevant l'erreur (2.9)
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 14 : Identificateurs de même nom dans la classe 'A' (règle 2.9)
+//
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   int i;
+   float i;
+}

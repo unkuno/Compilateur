@@ -1,0 +1,296 @@
+/* Programme syntaxiquement correct */
+/* Programme contextuellement correct */
+NOEUD_PROGRAMME
+. <Liste vide>
+. NOEUD_PRINCIPAL
+. . <Liste (longueur 1) :>
+. . . # NOEUD_DECL_VARIABLE                                -- Ligne 12
+. . . . . NOEUD_IDENT boolean                              -- Ligne 12
+. . . . . . -- Defn : (type, boolean)
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 1) :>
+. . . . . . # NOEUD_DECL_VAR                               -- Ligne 12
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 12
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . NOEUD_VIDE
+. . <Liste (longueur 2) :>
+. . . # NOEUD_AFFECT                                       -- Ligne 14
+. . . . . -- Type : boolean
+. . . . . NOEUD_IDENT res                                  -- Ligne 14
+. . . . . . -- Defn : (var, boolean)
+. . . . . . -- Type : boolean
+. . . . . NOEUD_VRAI                                       -- Ligne 14
+. . . . . . -- Type : boolean
+. . . # NOEUD_TANTQUE                                      -- Ligne 15
+. . . . . NOEUD_IDENT res                                  -- Ligne 15
+. . . . . . -- Defn : (var, boolean)
+. . . . . . -- Type : boolean
+. . . . . <Liste (longueur 3) :>
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 16
+. . . . . . . . -- Type : boolean
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 16
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . -- Type : boolean
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 16
+. . . . . . . . . -- Type : boolean
+. . . . . . # NOEUD_TANTQUE                                -- Ligne 17
+. . . . . . . . NOEUD_NON                                  -- Ligne 17
+. . . . . . . . . -- Type : boolean
+. . . . . . . . . NOEUD_IDENT res                          -- Ligne 17
+. . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . -- Type : boolean
+. . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 18
+. . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 18
+. . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . NOEUD_VRAI                           -- Ligne 18
+. . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . # NOEUD_TANTQUE                          -- Ligne 19
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 19
+. . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . # NOEUD_AFFECT                     -- Ligne 20
+. . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . NOEUD_IDENT res                -- Ligne 20
+. . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . NOEUD_FAUX                     -- Ligne 20
+. . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . # NOEUD_TANTQUE                    -- Ligne 21
+. . . . . . . . . . . . . . NOEUD_NON                      -- Ligne 21
+. . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . NOEUD_IDENT res              -- Ligne 21
+. . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . # NOEUD_AFFECT               -- Ligne 22
+. . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 22
+. . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . NOEUD_VRAI               -- Ligne 22
+. . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . # NOEUD_TANTQUE              -- Ligne 23
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 23
+. . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . # NOEUD_AFFECT         -- Ligne 24
+. . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res    -- Ligne 24
+. . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . NOEUD_FAUX         -- Ligne 24
+. . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE        -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . NOEUD_NON          -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res  -- Ligne 25
+. . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT   -- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI   -- Ligne 26
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE  -- Ligne 27
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 27
+. . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 28
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 29
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 30
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 31
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 31
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 32
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 33
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 34
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 35
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 35
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 36
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 37
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 38
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 39
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 39
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 3) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 40
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_TANTQUE-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_NON-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 41
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <Liste (longueur 1) :>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 42
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 44
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 46
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 48
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 50
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 52
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI-- Ligne 54
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . . . . NOEUD_FAUX-- Ligne 56
+. . . . . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . # NOEUD_AFFECT   -- Ligne 58
+. . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res-- Ligne 58
+. . . . . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . . . . NOEUD_VRAI   -- Ligne 58
+. . . . . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . # NOEUD_AFFECT         -- Ligne 60
+. . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . NOEUD_IDENT res    -- Ligne 60
+. . . . . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . . . . NOEUD_FAUX         -- Ligne 60
+. . . . . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . # NOEUD_AFFECT               -- Ligne 62
+. . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . NOEUD_IDENT res          -- Ligne 62
+. . . . . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . . . . NOEUD_VRAI               -- Ligne 62
+. . . . . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . # NOEUD_AFFECT                     -- Ligne 64
+. . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . NOEUD_IDENT res                -- Ligne 64
+. . . . . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . . . . NOEUD_FAUX                     -- Ligne 64
+. . . . . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . # NOEUD_AFFECT                           -- Ligne 66
+. . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . NOEUD_IDENT res                      -- Ligne 66
+. . . . . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . . . . -- Type : boolean
+. . . . . . . . . . . NOEUD_VRAI                           -- Ligne 66
+. . . . . . . . . . . . -- Type : boolean
+. . . . . . # NOEUD_AFFECT                                 -- Ligne 68
+. . . . . . . . -- Type : boolean
+. . . . . . . . NOEUD_IDENT res                            -- Ligne 68
+. . . . . . . . . -- Defn : (var, boolean)
+. . . . . . . . . -- Type : boolean
+. . . . . . . . NOEUD_FAUX                                 -- Ligne 68
+. . . . . . . . . -- Type : boolean

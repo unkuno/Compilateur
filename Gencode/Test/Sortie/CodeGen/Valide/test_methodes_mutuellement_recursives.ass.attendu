@@ -1,0 +1,311 @@
+; Initialisation du programme
+     TSTO #15
+     BOV pile_pleine
+     ADDSP #12
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe A
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.A.Bonjour, R0
+     STORE R0, 5 (GB)
+     LOAD code.A.Bonne_Journee, R0
+     STORE R0, 6 (GB)
+     LOAD code.A.Comment_Ca_Va, R0
+     STORE R0, 7 (GB)
+     LOAD code.A.Salut, R0
+     STORE R0, 8 (GB)
+     LOAD code.A.BienBien, R0
+     STORE R0, 9 (GB)
+     LOAD code.A.Tcho, R0
+     STORE R0, 10 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 44.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 11 (LB)
+
+; Declarations ligne n° 44.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.A
+     POP R2
+     STORE R2, 12 (LB)
+
+
+; Instruction ligne n° 46.
+     LOAD 11 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 12 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 47.
+     LOAD 12 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 11 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 48.
+     ADDSP #1
+     LOAD 11 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #######################
+; # Code de la classe A #
+; #######################
+
+; Méthode A.Bonjour
+code.A.Bonjour :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 16.
+     WSTR "- Bonjour !"
+     WNL
+
+; Instruction ligne n° 17.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+fin.A.Bonjour :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.Bonne_Journee
+code.A.Bonne_Journee :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 20.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     ADD #1, R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 21.
+     WSTR "- Bonne journée !"
+     WNL
+
+; Instruction ligne n° 22.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+fin.A.Bonne_Journee :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode A.Comment_Ca_Va
+code.A.Comment_Ca_Va :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 25.
+     WSTR "- Commen ça va ?"
+     WNL
+
+; Instruction ligne n° 26.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #1
+fin.A.Comment_Ca_Va :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.Salut
+code.A.Salut :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 30.
+     WSTR "- Salut !"
+     WNL
+
+; Instruction ligne n° 31.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+fin.A.Salut :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.BienBien
+code.A.BienBien :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 34.
+     WSTR "- Bien bien !"
+     WNL
+
+; Instruction ligne n° 35.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+fin.A.BienBien :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode A.Tcho
+code.A.Tcho :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 38.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     ADD #1, R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 39.
+     WSTR "- Tcho n°"
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R1
+     WINT
+     WNL
+fin.A.Tcho :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe A
+init.A :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS

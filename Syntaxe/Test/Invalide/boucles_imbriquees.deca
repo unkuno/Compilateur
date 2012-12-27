@@ -1,0 +1,117 @@
+// Description:
+//    tests de l'imbrication de boucle
+//
+// Resultats:
+//    CONSTRAINT_ERROR SUR test_synt
+//    test_lex ne doit pas donner d'erreur.
+//
+// Historique:
+//    crée le 08/01/2012
+
+{
+while (true) {
+   while(true) {
+      while(true) {
+         while(true) {
+            while(true) {
+               while(true) {
+                  while(true) {
+                     while(true) {
+                        while(true) {
+                           while(true) {
+                              while(true) {
+                                 while(true) {
+                                    while(true) {
+                                       while (true) {
+   while(true) {
+      while(true) {
+         while(true) {
+            while(true) {
+               while(true) {
+                  while(true) {
+                     while(true) {
+                        while(true) {
+                           while(true) {
+                              while(true) {
+                                 while(true) {
+                                    while(true) {
+                                    while (true) {
+   while(true) {
+      while(true) {
+         while(true) {
+            while(true) {
+               while(true) {
+                  while(true) {
+                     while(true) {
+                        while(true) {
+                           while(true) {
+                              while(true) {
+                                 while(true) {
+                                    while(true) {
+                                    while (true) {
+   while(true) {
+      while(true) {
+         while(true) {
+            while(true) {
+               while(true) {
+                  while(true) {
+                     while(true) {
+                        while(true) {
+                           while(true) {
+                              while(true) {
+                                 while(true) {
+                                    while(true) {
+                                    
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+}

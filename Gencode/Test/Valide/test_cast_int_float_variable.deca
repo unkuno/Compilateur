@@ -1,0 +1,21 @@
+// Description:
+//    tests de cast scalaires dans des variables
+//
+// Resultats:
+//    ne plante pas, affiche pi et 42
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 22/01/2012
+
+int i=42;
+float j=3.14;
+
+{
+    println("i=",cast<int>(i));
+    println("i=",cast<float>(i));
+    println("j=",cast<int>(j));
+    println("j=",cast<float>(j));
+
+}

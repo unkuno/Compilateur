@@ -1,0 +1,188 @@
+; Initialisation du programme
+     TSTO #12
+     BOV pile_pleine
+     ADDSP #8
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Factorielle
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Factorielle.calculFacto, R0
+     STORE R0, 5 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 31.
+
+; Declarations ligne n° 32.
+     LOAD #0, R1
+     STORE R1, 7 (LB)
+
+; Declarations ligne n° 33.
+
+
+; Instruction ligne n° 35.
+while.0 :
+     LOAD 7 (LB), R2
+
+; Comparaison LT
+     CMP #10, R2
+     SLT R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.0
+
+; Instruction ligne n° 37.
+     WSTR "Factorielle de "
+     LOAD 7 (LB), R1
+     WINT
+     WSTR " = "
+
+; Instruction ligne n° 38.
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Factorielle
+     POP R2
+     STORE R2, 8 (LB)
+
+; Instruction ligne n° 39.
+     ADDSP #2
+     LOAD 8 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 6 (LB)
+
+; Instruction ligne n° 40.
+     LOAD 6 (LB), R1
+     WINT
+     WNL
+
+; Instruction ligne n° 41.
+     LOAD 7 (LB), R2
+     ADD #1, R2
+     STORE R2, 7 (LB)
+     BRA while.0
+fin.0 :
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; #################################
+; # Code de la classe Factorielle #
+; #################################
+
+; Méthode Factorielle.calculFacto
+code.Factorielle.calculFacto :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 18.
+if.1.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.1
+
+; Instruction ligne n° 19.
+     LOAD #1, R0
+     BRA fin.Factorielle.calculFacto
+     BRA fin.1
+else.1 :
+
+; Instruction ligne n° 22.
+     ADDSP #2
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     SUB #1, R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     MUL -3 (LB), R2
+     LOAD R2, R0
+     BRA fin.Factorielle.calculFacto
+fin.1 :
+     WSTR "Erreur : sortie de la méthode Factorielle.calculFacto sans return"
+     WNL
+     ERROR
+fin.Factorielle.calculFacto :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Factorielle
+init.Factorielle :
+     RTS

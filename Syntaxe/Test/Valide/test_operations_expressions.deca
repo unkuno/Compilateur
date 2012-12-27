@@ -1,0 +1,45 @@
+// Description:
+//    tests sur les operations sur les expressions
+//
+// Resultats:
+//  Operations sur deux variables
+//
+// Historique:
+//    crée le 10/01/2012
+
+
+   int i = 1;
+   int j = 5; 
+   int k = j;
+{   
+   i = j || k;
+   i = j && k;
+   i = j == k; 
+   i = j != k;
+   i = j < k;
+   i = j > k;
+   i = j <= k;
+   i = j >= k;
+   i = j instanceof int;
+   i = j + k;
+   i = j - k;
+   i = j * k;
+   i = j / k;
+   i = j % k;
+   i = -j ;
+   i = !j ;
+   i = cast<int>(j);
+   i = 1;
+   i = 1.0;
+   i = "hello";
+   i = true;
+   i = false;
+   i = null;
+   i = this;
+   i = readInt();
+   i = readFloat();
+   i = new A();
+   i = A.x;
+   i = A.m(x,y);
+   i = (j);
+}

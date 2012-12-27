@@ -1,0 +1,7292 @@
+; Initialisation du programme
+     TSTO #91
+     BOV pile_pleine
+     ADDSP #85
+
+; ####################################
+; # Creation des tables des methodes #
+; ####################################
+
+; Table des méthodes de la classe Object
+     LOAD #null, R0
+     STORE R0, 1 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 2 (GB)
+
+; Table des méthode de la classe Calc
+     LEA 1 (GB), R0
+     STORE R0, 3 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 4 (GB)
+     LOAD code.Calc.min, R0
+     STORE R0, 5 (GB)
+     LOAD code.Calc.max, R0
+     STORE R0, 6 (GB)
+     LOAD code.Calc.borne, R0
+     STORE R0, 7 (GB)
+     LOAD code.Calc.abs, R0
+     STORE R0, 8 (GB)
+
+; Table des méthode de la classe Position
+     LEA 1 (GB), R0
+     STORE R0, 9 (GB)
+     LOAD code.Position.equals, R0
+     STORE R0, 10 (GB)
+     LOAD code.Position.afficher, R0
+     STORE R0, 11 (GB)
+     LOAD code.Position.surPlateau, R0
+     STORE R0, 12 (GB)
+     LOAD code.Position.deplace, R0
+     STORE R0, 13 (GB)
+     LOAD code.Position.copie, R0
+     STORE R0, 14 (GB)
+     LOAD code.Position.set, R0
+     STORE R0, 15 (GB)
+     LOAD code.Position.lirePosition, R0
+     STORE R0, 16 (GB)
+
+; Table des méthode de la classe Joueur
+     LEA 1 (GB), R0
+     STORE R0, 17 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 18 (GB)
+     LOAD code.Joueur.setAt, R0
+     STORE R0, 19 (GB)
+     LOAD code.Joueur.afficher, R0
+     STORE R0, 20 (GB)
+     LOAD code.Joueur.score, R0
+     STORE R0, 21 (GB)
+     LOAD code.Joueur.aSonRoi, R0
+     STORE R0, 22 (GB)
+     LOAD code.Joueur.joue, R0
+     STORE R0, 23 (GB)
+
+; Table des méthode de la classe Piece
+     LEA 1 (GB), R0
+     STORE R0, 24 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 25 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 26 (GB)
+     LOAD code.Piece.afficher, R0
+     STORE R0, 27 (GB)
+
+; Table des méthode de la classe Pion
+     LEA 24 (GB), R0
+     STORE R0, 28 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 29 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 30 (GB)
+     LOAD code.Pion.afficher, R0
+     STORE R0, 31 (GB)
+
+; Table des méthode de la classe Roi
+     LEA 24 (GB), R0
+     STORE R0, 32 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 33 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 34 (GB)
+     LOAD code.Roi.afficher, R0
+     STORE R0, 35 (GB)
+
+; Table des méthode de la classe Reine
+     LEA 24 (GB), R0
+     STORE R0, 36 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 37 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 38 (GB)
+     LOAD code.Reine.afficher, R0
+     STORE R0, 39 (GB)
+
+; Table des méthode de la classe Tour
+     LEA 24 (GB), R0
+     STORE R0, 40 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 41 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 42 (GB)
+     LOAD code.Tour.afficher, R0
+     STORE R0, 43 (GB)
+
+; Table des méthode de la classe Cavalier
+     LEA 24 (GB), R0
+     STORE R0, 44 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 45 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 46 (GB)
+     LOAD code.Cavalier.afficher, R0
+     STORE R0, 47 (GB)
+
+; Table des méthode de la classe Fou
+     LEA 24 (GB), R0
+     STORE R0, 48 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 49 (GB)
+     LOAD code.Piece.place, R0
+     STORE R0, 50 (GB)
+     LOAD code.Fou.afficher, R0
+     STORE R0, 51 (GB)
+
+; Table des méthode de la classe GestionnairePieces
+     LEA 1 (GB), R0
+     STORE R0, 52 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 53 (GB)
+     LOAD code.GestionnairePieces.creeArmee, R0
+     STORE R0, 54 (GB)
+     LOAD code.GestionnairePieces.afficher, R0
+     STORE R0, 55 (GB)
+     LOAD code.GestionnairePieces.score, R0
+     STORE R0, 56 (GB)
+
+; Table des méthode de la classe Cellule
+     LEA 1 (GB), R0
+     STORE R0, 57 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 58 (GB)
+     LOAD code.Cellule.getVal, R0
+     STORE R0, 59 (GB)
+     LOAD code.Cellule.setVal, R0
+     STORE R0, 60 (GB)
+
+; Table des méthode de la classe Tab2x2
+     LEA 1 (GB), R0
+     STORE R0, 61 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 62 (GB)
+     LOAD code.Tab2x2.getVal, R0
+     STORE R0, 63 (GB)
+     LOAD code.Tab2x2.setVal, R0
+     STORE R0, 64 (GB)
+
+; Table des méthode de la classe Tab4x4
+     LEA 1 (GB), R0
+     STORE R0, 65 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 66 (GB)
+     LOAD code.Tab4x4.getVal, R0
+     STORE R0, 67 (GB)
+     LOAD code.Tab4x4.setVal, R0
+     STORE R0, 68 (GB)
+
+; Table des méthode de la classe Echiquier
+     LEA 1 (GB), R0
+     STORE R0, 69 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 70 (GB)
+     LOAD code.Echiquier.getVal, R0
+     STORE R0, 71 (GB)
+     LOAD code.Echiquier.getValP, R0
+     STORE R0, 72 (GB)
+     LOAD code.Echiquier.setVal, R0
+     STORE R0, 73 (GB)
+     LOAD code.Echiquier.setValP, R0
+     STORE R0, 74 (GB)
+     LOAD code.Echiquier.installe, R0
+     STORE R0, 75 (GB)
+     LOAD code.Echiquier.afficher, R0
+     STORE R0, 76 (GB)
+
+; Table des méthode de la classe Coup
+     LEA 1 (GB), R0
+     STORE R0, 77 (GB)
+     LOAD code.Object.equals, R0
+     STORE R0, 78 (GB)
+     LOAD code.Coup.valide, R0
+     STORE R0, 79 (GB)
+     LOAD code.Coup.applique, R0
+     STORE R0, 80 (GB)
+
+; #######################
+; # Programme principal #
+; #######################
+
+; Declarations ligne n° 631.
+     NEW #5, R2
+     BOV tas_plein
+     LEA 69 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Echiquier
+     POP R2
+     STORE R2, 81 (LB)
+
+; Declarations ligne n° 632.
+     ADDSP #4
+     NEW #5, R2
+     BOV tas_plein
+     LEA 17 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Joueur
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD #0, R1
+     STORE R1, -2 (SP)
+     LOAD #1, R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #4
+     LOAD R0, R2
+     STORE R2, 82 (LB)
+
+; Declarations ligne n° 633.
+     ADDSP #4
+     NEW #5, R2
+     BOV tas_plein
+     LEA 17 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Joueur
+     POP R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD #7, R1
+     STORE R1, -2 (SP)
+     OPP #1, R2
+     STORE R2, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #4
+     LOAD R0, R2
+     STORE R2, 83 (LB)
+
+; Declarations ligne n° 634.
+     LOAD 82 (LB), R1
+     STORE R1, 84 (LB)
+
+; Declarations ligne n° 636.
+
+
+; Instruction ligne n° 638.
+     ADDSP #3
+     LOAD 81 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 82 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 83 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 640.
+while.0 :
+     ADDSP #1
+     LOAD 84 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.0
+
+; Instruction ligne n° 642.
+     ADDSP #1
+     LOAD 81 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 643.
+     ADDSP #1
+     LOAD 82 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 644.
+     WSTR " = "
+     ADDSP #1
+     LOAD 82 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R1
+     WINT
+
+; Instruction ligne n° 645.
+     WSTR "       &       "
+
+; Instruction ligne n° 646.
+     ADDSP #1
+     LOAD 83 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 647.
+     WSTR " = "
+     ADDSP #1
+     LOAD 83 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R1
+     WINT
+
+; Instruction ligne n° 648.
+     WNL
+
+; Instruction ligne n° 648.
+     WNL
+
+; Instruction ligne n° 650.
+     WSTR "Joueur : "
+
+; Instruction ligne n° 651.
+     ADDSP #1
+     LOAD 84 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 652.
+     WNL
+
+; Instruction ligne n° 654.
+     LOAD #null, R2
+     STORE R2, 85 (LB)
+
+; Instruction ligne n° 655.
+while.1 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD 85 (LB), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.2
+; Evaluation seconde opérande :
+     ADDSP #3
+     LOAD 85 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 81 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 84 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+fin.OU.2 :
+; Fin d'un calcul OU
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.1
+
+; Instruction ligne n° 656.
+if.3.0 :
+     LOAD 85 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.3
+
+; Instruction ligne n° 657.
+     WSTR "Ceci n'est pas un coup valide."
+     WNL
+     BRA fin.3
+else.3 :
+fin.3 :
+
+; Instruction ligne n° 659.
+     ADDSP #1
+     LOAD 84 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 85 (LB)
+     BRA while.1
+fin.1 :
+
+; Instruction ligne n° 661.
+     ADDSP #2
+     LOAD 85 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 81 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+
+; Instruction ligne n° 664.
+if.4.0 :
+     LOAD 84 (LB), R2
+
+; Comparaison EQ
+     CMP 82 (LB), R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.4
+
+; Instruction ligne n° 665.
+     LOAD 83 (LB), R2
+     STORE R2, 84 (LB)
+     BRA fin.4
+else.4 :
+
+; Instruction ligne n° 668.
+     LOAD 82 (LB), R2
+     STORE R2, 84 (LB)
+fin.4 :
+     BRA while.0
+fin.0 :
+
+; Instruction ligne n° 671.
+     WSTR "Le joueur "
+
+; Instruction ligne n° 671.
+     ADDSP #1
+     LOAD 84 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 671.
+     WSTR " a perdu !"
+     WNL
+
+; Fin du programme principal
+     HALT
+
+
+; #######################
+; # Gestion des erreurs #
+; #######################
+
+debordement :
+     WSTR "Erreur : dépassement de capacité"
+     WNL
+     ERROR
+
+tas_plein :
+     WSTR "Erreur : tas plein"
+     WNL
+     ERROR
+
+pile_pleine :
+     WSTR "Erreur : pile pleine"
+     WNL
+     ERROR
+
+dereferencement_null :
+     WSTR "Erreur : dereferencement de null"
+     WNL
+     ERROR
+
+conversion_impossible :
+     WSTR "Erreur : conversion impossible"
+     WNL
+     ERROR
+
+; ############################
+; # Code de la classe Object #
+; ############################
+
+; Méthode Object.equals
+code.Object.equals :
+     LOAD -2 (LB), R0
+     CMP -3 (LB), R0
+     SEQ R0
+     RTS
+
+; ##########################
+; # Code de la classe Calc #
+; ##########################
+
+; Méthode Calc.min
+code.Calc.min :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 14.
+if.5.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison LT
+     CMP -4 (LB), R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.5
+
+; Instruction ligne n° 14.
+     LOAD -3 (LB), R0
+     BRA fin.Calc.min
+     BRA fin.5
+else.5 :
+
+; Instruction ligne n° 14.
+     LOAD -4 (LB), R0
+     BRA fin.Calc.min
+fin.5 :
+     WSTR "Erreur : sortie de la méthode Calc.min sans return"
+     WNL
+     ERROR
+fin.Calc.min :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Calc.max
+code.Calc.max :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 17.
+if.6.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison GT
+     CMP -4 (LB), R2
+     SGT R2
+     CMP #0, R2
+     BEQ else.6
+
+; Instruction ligne n° 17.
+     LOAD -3 (LB), R0
+     BRA fin.Calc.max
+     BRA fin.6
+else.6 :
+
+; Instruction ligne n° 17.
+     LOAD -4 (LB), R0
+     BRA fin.Calc.max
+fin.6 :
+     WSTR "Erreur : sortie de la méthode Calc.max sans return"
+     WNL
+     ERROR
+fin.Calc.max :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Calc.borne
+code.Calc.borne :
+     TSTO #9
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 21.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD -4 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Calc.borne
+     WSTR "Erreur : sortie de la méthode Calc.borne sans return"
+     WNL
+     ERROR
+fin.Calc.borne :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Calc.abs
+code.Calc.abs :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 24.
+if.7.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison LT
+     CMP #0, R2
+     SLT R2
+     CMP #0, R2
+     BEQ else.7
+
+; Instruction ligne n° 24.
+     OPP -3 (LB), R2
+     LOAD R2, R0
+     BRA fin.Calc.abs
+     BRA fin.7
+else.7 :
+
+; Instruction ligne n° 24.
+     LOAD -3 (LB), R0
+     BRA fin.Calc.abs
+fin.7 :
+     WSTR "Erreur : sortie de la méthode Calc.abs sans return"
+     WNL
+     ERROR
+fin.Calc.abs :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Calc
+init.Calc :
+     RTS
+
+; ##############################
+; # Code de la classe Position #
+; ##############################
+
+; Méthode Position.afficher
+code.Position.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 35.
+     WSTR "("
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R1
+     WINT
+     WSTR ","
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R1
+     WINT
+     WSTR ")"
+fin.Position.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Position.surPlateau
+code.Position.surPlateau :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 38.
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+
+; Comparaison GE
+     CMP #0, R2
+     SGE R2
+     CMP #0, R2
+     BEQ fin.ET.10
+; Evaluation seconde opérande :
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+
+; Comparaison LT
+     CMP #8, R2
+     SLT R2
+fin.ET.10 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.9
+; Evaluation seconde opérande :
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+
+; Comparaison GE
+     CMP #0, R2
+     SGE R2
+fin.ET.9 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.8
+; Evaluation seconde opérande :
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+
+; Comparaison LT
+     CMP #8, R2
+     SLT R2
+fin.ET.8 :
+; Fin d'un calcul ET
+     LOAD R2, R0
+     BRA fin.Position.surPlateau
+     WSTR "Erreur : sortie de la méthode Position.surPlateau sans return"
+     WNL
+     ERROR
+fin.Position.surPlateau :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Position.deplace
+code.Position.deplace :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 44.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     ADD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 45.
+     LOAD -2 (LB), R2
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     ADD -4 (LB), R3
+     STORE R3, 2 (R2)
+fin.Position.deplace :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Position.copie
+code.Position.copie :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 49.
+     NEW #3, R2
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Position
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 51.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 52.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD -2 (LB), R3
+     LOAD 2 (R3), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 53.
+     LOAD 1 (LB), R0
+     BRA fin.Position.copie
+     WSTR "Erreur : sortie de la méthode Position.copie sans return"
+     WNL
+     ERROR
+fin.Position.copie :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode Position.set
+code.Position.set :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 57.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 58.
+     LOAD -2 (LB), R2
+     LOAD -4 (LB), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 59.
+     LOAD -2 (LB), R0
+     BRA fin.Position.set
+     WSTR "Erreur : sortie de la méthode Position.set sans return"
+     WNL
+     ERROR
+fin.Position.set :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Position.lirePosition
+code.Position.lirePosition :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 63.
+
+
+; Instruction ligne n° 65.
+     WSTR "(ij) "
+
+; Instruction ligne n° 66.
+     RINT
+     BOV debordement
+     LOAD R1, R2
+     STORE R2, 1 (LB)
+
+; Instruction ligne n° 67.
+     LOAD -2 (LB), R2
+     LOAD 1 (LB), R3
+     QUO #10, R3
+     BOV debordement
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 68.
+     LOAD -2 (LB), R2
+     LOAD 1 (LB), R3
+     REM #10, R3
+     BOV debordement
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 69.
+     LOAD -2 (LB), R0
+     BRA fin.Position.lirePosition
+     WSTR "Erreur : sortie de la méthode Position.lirePosition sans return"
+     WNL
+     ERROR
+fin.Position.lirePosition :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode Position.equals
+code.Position.equals :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 73.
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD -3 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ fin.ET.13
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.14
+while_instanceof.14 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.14
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.14
+     BRA while_instanceof.14
+true_instanceof.14 :
+     LOAD #1, R2
+     BRA fin_instanceof.14
+false_instanceof.14 :
+     LOAD #0, R2
+fin_instanceof.14 :
+fin.ET.13 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.12
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.15
+while_instanceof.15 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.15
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.15
+     BRA while_instanceof.15
+true_instanceof.15 :
+     LOAD #1, R2
+     BRA fin_instanceof.15
+false_instanceof.15 :
+     LOAD #0, R2
+fin_instanceof.15 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison EQ
+     CMP 1 (R3), R2
+     SEQ R2
+fin.ET.12 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.11
+; Evaluation seconde opérande :
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.16
+while_instanceof.16 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.16
+     LEA 9 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.16
+     BRA while_instanceof.16
+true_instanceof.16 :
+     LOAD #1, R2
+     BRA fin_instanceof.16
+false_instanceof.16 :
+     LOAD #0, R2
+fin_instanceof.16 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     LOAD -2 (LB), R3
+
+; Comparaison EQ
+     CMP 2 (R3), R2
+     SEQ R2
+fin.ET.11 :
+; Fin d'un calcul ET
+     LOAD R2, R0
+     BRA fin.Position.equals
+     WSTR "Erreur : sortie de la méthode Position.equals sans return"
+     WNL
+     ERROR
+fin.Position.equals :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Position
+init.Position :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     RTS
+
+; ############################
+; # Code de la classe Joueur #
+; ############################
+
+; Méthode Joueur.setAt
+code.Joueur.setAt :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 85.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 86.
+     LOAD -2 (LB), R2
+     LOAD -4 (LB), R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 87.
+     LOAD -2 (LB), R2
+     LOAD -5 (LB), R3
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 88.
+     LOAD -2 (LB), R2
+     ADDSP #2
+     NEW #18, R3
+     BOV tas_plein
+     LEA 52 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.GestionnairePieces
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -2 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     STORE R3, 4 (R2)
+
+; Instruction ligne n° 89.
+     LOAD -2 (LB), R0
+     BRA fin.Joueur.setAt
+     WSTR "Erreur : sortie de la méthode Joueur.setAt sans return"
+     WNL
+     ERROR
+fin.Joueur.setAt :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Joueur.afficher
+code.Joueur.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 93.
+     WSTR "Joueur n°"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R1
+     WINT
+fin.Joueur.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Joueur.score
+code.Joueur.score :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 97.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Joueur.score
+     WSTR "Erreur : sortie de la méthode Joueur.score sans return"
+     WNL
+     ERROR
+fin.Joueur.score :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Joueur.aSonRoi
+code.Joueur.aSonRoi :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 101.
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R0
+     BRA fin.Joueur.aSonRoi
+     WSTR "Erreur : sortie de la méthode Joueur.aSonRoi sans return"
+     WNL
+     ERROR
+fin.Joueur.aSonRoi :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Joueur.joue
+code.Joueur.joue :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 105.
+     NEW #4, R2
+     BOV tas_plein
+     LEA 77 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Coup
+     POP R2
+     STORE R2, 1 (LB)
+
+
+; Instruction ligne n° 107.
+     WSTR "Source ? "
+
+; Instruction ligne n° 108.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADDSP #1
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+     LOAD R0, R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 109.
+     WSTR "Destination ? "
+
+; Instruction ligne n° 110.
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADDSP #1
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 7 (R0)
+     SUBSP #1
+     LOAD R0, R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 111.
+     LOAD 1 (LB), R0
+     BRA fin.Joueur.joue
+     WSTR "Erreur : sortie de la méthode Joueur.joue sans return"
+     WNL
+     ERROR
+fin.Joueur.joue :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Initialisation des champs de la classe Joueur
+init.Joueur :
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 4 (R0)
+     RTS
+
+; ###########################
+; # Code de la classe Piece #
+; ###########################
+
+; Méthode Piece.place
+code.Piece.place :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 122.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 123.
+     LOAD -2 (LB), R2
+     LOAD #1, R3
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 124.
+     LOAD -2 (LB), R2
+     LOAD -4 (LB), R3
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 125.
+     LOAD -2 (LB), R0
+     BRA fin.Piece.place
+     WSTR "Erreur : sortie de la méthode Piece.place sans return"
+     WNL
+     ERROR
+fin.Piece.place :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Méthode Piece.afficher
+code.Piece.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 130.
+     LOAD #0, R2
+     QUO #0, R2
+     BOV debordement
+fin.Piece.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Piece
+init.Piece :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #0, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     RTS
+
+; ##########################
+; # Code de la classe Pion #
+; ##########################
+
+; Méthode Pion.afficher
+code.Pion.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 136.
+     WSTR " p"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Pion.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Pion
+init.Pion :
+     RTS
+
+; #########################
+; # Code de la classe Roi #
+; #########################
+
+; Méthode Roi.afficher
+code.Roi.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 141.
+     WSTR " R"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Roi.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Roi
+init.Roi :
+     RTS
+
+; ###########################
+; # Code de la classe Reine #
+; ###########################
+
+; Méthode Reine.afficher
+code.Reine.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 146.
+     WSTR " D"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Reine.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Reine
+init.Reine :
+     RTS
+
+; ##########################
+; # Code de la classe Tour #
+; ##########################
+
+; Méthode Tour.afficher
+code.Tour.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 151.
+     WSTR " T"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Tour.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Tour
+init.Tour :
+     RTS
+
+; ##############################
+; # Code de la classe Cavalier #
+; ##############################
+
+; Méthode Cavalier.afficher
+code.Cavalier.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 156.
+     WSTR " C"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Cavalier.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Cavalier
+init.Cavalier :
+     RTS
+
+; #########################
+; # Code de la classe Fou #
+; #########################
+
+; Méthode Fou.afficher
+code.Fou.afficher :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 161.
+     WSTR " F"
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R1
+     WINT
+     WSTR " "
+fin.Fou.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Fou
+init.Fou :
+     RTS
+
+; ########################################
+; # Code de la classe GestionnairePieces #
+; ########################################
+
+; Méthode GestionnairePieces.creeArmee
+code.GestionnairePieces.creeArmee :
+     TSTO #11
+     BOV pile_pleine
+     ADDSP #3
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 178.
+     LOAD #0, R1
+     STORE R1, 1 (LB)
+
+
+; Instruction ligne n° 180.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+
+; Instruction ligne n° 181.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 32 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Roi
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #3, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.17
+while_instanceof.17 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.17
+     LEA 32 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.17
+     BRA while_instanceof.17
+true_instanceof.17 :
+     LOAD #1, R2
+     BRA fin_instanceof.17
+false_instanceof.17 :
+     LOAD #0, R2
+fin_instanceof.17 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 2 (R2)
+
+; Instruction ligne n° 182.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 36 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Reine
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.18
+while_instanceof.18 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.18
+     LEA 36 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.18
+     BRA while_instanceof.18
+true_instanceof.18 :
+     LOAD #1, R2
+     BRA fin_instanceof.18
+false_instanceof.18 :
+     LOAD #0, R2
+fin_instanceof.18 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 3 (R2)
+
+; Instruction ligne n° 184.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 48 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Fou
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.19
+while_instanceof.19 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.19
+     LEA 48 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.19
+     BRA while_instanceof.19
+true_instanceof.19 :
+     LOAD #1, R2
+     BRA fin_instanceof.19
+false_instanceof.19 :
+     LOAD #0, R2
+fin_instanceof.19 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 4 (R2)
+
+; Instruction ligne n° 185.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 48 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Fou
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #5, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.20
+while_instanceof.20 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.20
+     LEA 48 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.20
+     BRA while_instanceof.20
+true_instanceof.20 :
+     LOAD #1, R2
+     BRA fin_instanceof.20
+false_instanceof.20 :
+     LOAD #0, R2
+fin_instanceof.20 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 5 (R2)
+
+; Instruction ligne n° 186.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 44 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Cavalier
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.21
+while_instanceof.21 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.21
+     LEA 44 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.21
+     BRA while_instanceof.21
+true_instanceof.21 :
+     LOAD #1, R2
+     BRA fin_instanceof.21
+false_instanceof.21 :
+     LOAD #0, R2
+fin_instanceof.21 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 6 (R2)
+
+; Instruction ligne n° 187.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 44 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Cavalier
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #6, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.22
+while_instanceof.22 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.22
+     LEA 44 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.22
+     BRA while_instanceof.22
+true_instanceof.22 :
+     LOAD #1, R2
+     BRA fin_instanceof.22
+false_instanceof.22 :
+     LOAD #0, R2
+fin_instanceof.22 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 7 (R2)
+
+; Instruction ligne n° 188.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 40 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Tour
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.23
+while_instanceof.23 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.23
+     LEA 40 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.23
+     BRA while_instanceof.23
+true_instanceof.23 :
+     LOAD #1, R2
+     BRA fin_instanceof.23
+false_instanceof.23 :
+     LOAD #0, R2
+fin_instanceof.23 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 8 (R2)
+
+; Instruction ligne n° 189.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 40 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Tour
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #7, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.24
+while_instanceof.24 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.24
+     LEA 40 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.24
+     BRA while_instanceof.24
+true_instanceof.24 :
+     LOAD #1, R2
+     BRA fin_instanceof.24
+false_instanceof.24 :
+     LOAD #0, R2
+fin_instanceof.24 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 9 (R2)
+
+; Instruction ligne n° 191.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #0, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.25
+while_instanceof.25 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.25
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.25
+     BRA while_instanceof.25
+true_instanceof.25 :
+     LOAD #1, R2
+     BRA fin_instanceof.25
+false_instanceof.25 :
+     LOAD #0, R2
+fin_instanceof.25 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 10 (R2)
+
+; Instruction ligne n° 192.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #1, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.26
+while_instanceof.26 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.26
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.26
+     BRA while_instanceof.26
+true_instanceof.26 :
+     LOAD #1, R2
+     BRA fin_instanceof.26
+false_instanceof.26 :
+     LOAD #0, R2
+fin_instanceof.26 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 11 (R2)
+
+; Instruction ligne n° 193.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #2, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.27
+while_instanceof.27 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.27
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.27
+     BRA while_instanceof.27
+true_instanceof.27 :
+     LOAD #1, R2
+     BRA fin_instanceof.27
+false_instanceof.27 :
+     LOAD #0, R2
+fin_instanceof.27 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 12 (R2)
+
+; Instruction ligne n° 194.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #3, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.28
+while_instanceof.28 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.28
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.28
+     BRA while_instanceof.28
+true_instanceof.28 :
+     LOAD #1, R2
+     BRA fin_instanceof.28
+false_instanceof.28 :
+     LOAD #0, R2
+fin_instanceof.28 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 13 (R2)
+
+; Instruction ligne n° 195.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #4, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.29
+while_instanceof.29 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.29
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.29
+     BRA while_instanceof.29
+true_instanceof.29 :
+     LOAD #1, R2
+     BRA fin_instanceof.29
+false_instanceof.29 :
+     LOAD #0, R2
+fin_instanceof.29 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 14 (R2)
+
+; Instruction ligne n° 196.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #5, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.30
+while_instanceof.30 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.30
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.30
+     BRA while_instanceof.30
+true_instanceof.30 :
+     LOAD #1, R2
+     BRA fin_instanceof.30
+false_instanceof.30 :
+     LOAD #0, R2
+fin_instanceof.30 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 15 (R2)
+
+; Instruction ligne n° 197.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #6, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.31
+while_instanceof.31 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.31
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.31
+     BRA while_instanceof.31
+true_instanceof.31 :
+     LOAD #1, R2
+     BRA fin_instanceof.31
+false_instanceof.31 :
+     LOAD #0, R2
+fin_instanceof.31 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 16 (R2)
+
+; Instruction ligne n° 198.
+     LOAD -2 (LB), R2
+     ADDSP #3
+     NEW #4, R3
+     BOV tas_plein
+     LEA 28 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Piece
+     BSR init.Pion
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD -3 (LB), R1
+     STORE R1, -1 (SP)
+     ADDSP #3
+     NEW #3, R3
+     BOV tas_plein
+     LEA 9 (GB), R0
+     STORE R0, 0 (R3)
+     PUSH R3
+     BSR init.Position
+     POP R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD #7, R1
+     STORE R1, -1 (SP)
+     LOAD -3 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 6 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     STORE R3, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD R3, R2
+     CMP #null, R2
+     BEQ true_instanceof.32
+while_instanceof.32 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.32
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.32
+     BRA while_instanceof.32
+true_instanceof.32 :
+     LOAD #1, R2
+     BRA fin_instanceof.32
+false_instanceof.32 :
+     LOAD #0, R2
+fin_instanceof.32 :
+     CMP #0, R2
+     BEQ conversion_impossible
+     POP R2                            ; Restauration de R2
+     STORE R3, 17 (R2)
+
+; Instruction ligne n° 199.
+     LOAD -2 (LB), R0
+     BRA fin.GestionnairePieces.creeArmee
+     WSTR "Erreur : sortie de la méthode GestionnairePieces.creeArmee sans return"
+     WNL
+     ERROR
+fin.GestionnairePieces.creeArmee :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #3
+     RTS
+
+; Méthode GestionnairePieces.afficher
+code.GestionnairePieces.afficher :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 202.
+     WSTR "R -> "
+
+; Instruction ligne n° 202.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 202.
+     WNL
+
+; Instruction ligne n° 203.
+     WSTR "D -> "
+
+; Instruction ligne n° 203.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 203.
+     WNL
+
+; Instruction ligne n° 204.
+     WSTR "Fg -> "
+
+; Instruction ligne n° 204.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 204.
+     WNL
+
+; Instruction ligne n° 205.
+     WSTR "Fd -> "
+
+; Instruction ligne n° 205.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 5 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 205.
+     WNL
+
+; Instruction ligne n° 206.
+     WSTR "Cg -> "
+
+; Instruction ligne n° 206.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 6 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 206.
+     WNL
+
+; Instruction ligne n° 207.
+     WSTR "Cd -> "
+
+; Instruction ligne n° 207.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 7 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 207.
+     WNL
+
+; Instruction ligne n° 208.
+     WSTR "Tg -> "
+
+; Instruction ligne n° 208.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 8 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 208.
+     WNL
+
+; Instruction ligne n° 209.
+     WSTR "Td -> "
+
+; Instruction ligne n° 209.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 9 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 209.
+     WNL
+
+; Instruction ligne n° 211.
+     WSTR "p1 -> "
+
+; Instruction ligne n° 211.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 10 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 211.
+     WNL
+
+; Instruction ligne n° 212.
+     WSTR "p2 -> "
+
+; Instruction ligne n° 212.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 11 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 212.
+     WNL
+
+; Instruction ligne n° 213.
+     WSTR "p3 -> "
+
+; Instruction ligne n° 213.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 12 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 213.
+     WNL
+
+; Instruction ligne n° 214.
+     WSTR "p4 -> "
+
+; Instruction ligne n° 214.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 13 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 214.
+     WNL
+
+; Instruction ligne n° 215.
+     WSTR "p5 -> "
+
+; Instruction ligne n° 215.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 14 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 215.
+     WNL
+
+; Instruction ligne n° 216.
+     WSTR "p6 -> "
+
+; Instruction ligne n° 216.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 15 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 216.
+     WNL
+
+; Instruction ligne n° 217.
+     WSTR "p7 -> "
+
+; Instruction ligne n° 217.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 16 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 217.
+     WNL
+
+; Instruction ligne n° 218.
+     WSTR "p8 -> "
+
+; Instruction ligne n° 218.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 17 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+
+; Instruction ligne n° 218.
+     WNL
+fin.GestionnairePieces.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode GestionnairePieces.score
+code.GestionnairePieces.score :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R2, 0 (SP)
+; Declarations ligne n° 222.
+     LOAD #0, R1
+     STORE R1, 1 (LB)
+
+
+; Instruction ligne n° 224.
+if.33.0 :
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.33
+
+; Instruction ligne n° 224.
+     LOAD 1 (LB), R2
+     ADD #9, R2
+     STORE R2, 1 (LB)
+     BRA fin.33
+else.33 :
+fin.33 :
+
+; Instruction ligne n° 225.
+if.34.0 :
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.34
+
+; Instruction ligne n° 225.
+     LOAD 1 (LB), R2
+     ADD #3, R2
+     STORE R2, 1 (LB)
+     BRA fin.34
+else.34 :
+fin.34 :
+
+; Instruction ligne n° 226.
+if.35.0 :
+     LOAD -2 (LB), R2
+     LOAD 5 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.35
+
+; Instruction ligne n° 226.
+     LOAD 1 (LB), R2
+     ADD #3, R2
+     STORE R2, 1 (LB)
+     BRA fin.35
+else.35 :
+fin.35 :
+
+; Instruction ligne n° 227.
+if.36.0 :
+     LOAD -2 (LB), R2
+     LOAD 6 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.36
+
+; Instruction ligne n° 227.
+     LOAD 1 (LB), R2
+     ADD #3, R2
+     STORE R2, 1 (LB)
+     BRA fin.36
+else.36 :
+fin.36 :
+
+; Instruction ligne n° 228.
+if.37.0 :
+     LOAD -2 (LB), R2
+     LOAD 7 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.37
+
+; Instruction ligne n° 228.
+     LOAD 1 (LB), R2
+     ADD #3, R2
+     STORE R2, 1 (LB)
+     BRA fin.37
+else.37 :
+fin.37 :
+
+; Instruction ligne n° 229.
+if.38.0 :
+     LOAD -2 (LB), R2
+     LOAD 8 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.38
+
+; Instruction ligne n° 229.
+     LOAD 1 (LB), R2
+     ADD #5, R2
+     STORE R2, 1 (LB)
+     BRA fin.38
+else.38 :
+fin.38 :
+
+; Instruction ligne n° 230.
+if.39.0 :
+     LOAD -2 (LB), R2
+     LOAD 9 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.39
+
+; Instruction ligne n° 230.
+     LOAD 1 (LB), R2
+     ADD #5, R2
+     STORE R2, 1 (LB)
+     BRA fin.39
+else.39 :
+fin.39 :
+
+; Instruction ligne n° 231.
+if.40.0 :
+     LOAD -2 (LB), R2
+     LOAD 10 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.40
+
+; Instruction ligne n° 231.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.40
+else.40 :
+fin.40 :
+
+; Instruction ligne n° 232.
+if.41.0 :
+     LOAD -2 (LB), R2
+     LOAD 11 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.41
+
+; Instruction ligne n° 232.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.41
+else.41 :
+fin.41 :
+
+; Instruction ligne n° 233.
+if.42.0 :
+     LOAD -2 (LB), R2
+     LOAD 12 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.42
+
+; Instruction ligne n° 233.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.42
+else.42 :
+fin.42 :
+
+; Instruction ligne n° 234.
+if.43.0 :
+     LOAD -2 (LB), R2
+     LOAD 13 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.43
+
+; Instruction ligne n° 234.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.43
+else.43 :
+fin.43 :
+
+; Instruction ligne n° 235.
+if.44.0 :
+     LOAD -2 (LB), R2
+     LOAD 14 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.44
+
+; Instruction ligne n° 235.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.44
+else.44 :
+fin.44 :
+
+; Instruction ligne n° 236.
+if.45.0 :
+     LOAD -2 (LB), R2
+     LOAD 15 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.45
+
+; Instruction ligne n° 236.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.45
+else.45 :
+fin.45 :
+
+; Instruction ligne n° 237.
+if.46.0 :
+     LOAD -2 (LB), R2
+     LOAD 16 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.46
+
+; Instruction ligne n° 237.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.46
+else.46 :
+fin.46 :
+
+; Instruction ligne n° 238.
+if.47.0 :
+     LOAD -2 (LB), R2
+     LOAD 17 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #0, R2
+     BEQ else.47
+
+; Instruction ligne n° 238.
+     LOAD 1 (LB), R2
+     ADD #1, R2
+     STORE R2, 1 (LB)
+     BRA fin.47
+else.47 :
+fin.47 :
+
+; Instruction ligne n° 239.
+     LOAD 1 (LB), R0
+     BRA fin.GestionnairePieces.score
+     WSTR "Erreur : sortie de la méthode GestionnairePieces.score sans return"
+     WNL
+     ERROR
+fin.GestionnairePieces.score :
+     LOAD 0 (SP), R2
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe GestionnairePieces
+init.GestionnairePieces :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 3 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 4 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 5 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 6 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 7 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 8 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 9 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 10 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 11 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 12 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 13 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 14 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 15 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 16 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 17 (R0)
+     RTS
+
+; #############################
+; # Code de la classe Cellule #
+; #############################
+
+; Méthode Cellule.getVal
+code.Cellule.getVal :
+     TSTO #1
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 252.
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R0
+     BRA fin.Cellule.getVal
+     WSTR "Erreur : sortie de la méthode Cellule.getVal sans return"
+     WNL
+     ERROR
+fin.Cellule.getVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Cellule.setVal
+code.Cellule.setVal :
+     TSTO #2
+     BOV pile_pleine
+     ADDSP #2
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 255.
+     LOAD -2 (LB), R2
+     LOAD -3 (LB), R3
+     STORE R3, 1 (R2)
+fin.Cellule.setVal :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #2
+     RTS
+
+; Initialisation des champs de la classe Cellule
+init.Cellule :
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     RTS
+
+; ############################
+; # Code de la classe Tab2x2 #
+; ############################
+
+; Méthode Tab2x2.getVal
+code.Tab2x2.getVal :
+     TSTO #4
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 266.
+if.48.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.48.1
+
+; Instruction ligne n° 267.
+if.49.0 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.49.1
+
+; Instruction ligne n° 268.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab2x2.getVal
+     BRA fin.49
+if.49.1 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.49
+
+; Instruction ligne n° 271.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab2x2.getVal
+     BRA fin.49
+else.49 :
+fin.49 :
+     BRA fin.48
+if.48.1 :
+     LOAD -3 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.48
+
+; Instruction ligne n° 275.
+if.50.0 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.50.1
+
+; Instruction ligne n° 276.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab2x2.getVal
+     BRA fin.50
+if.50.1 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.50
+
+; Instruction ligne n° 279.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab2x2.getVal
+     BRA fin.50
+else.50 :
+fin.50 :
+     BRA fin.48
+else.48 :
+fin.48 :
+     WSTR "Erreur : sortie de la méthode Tab2x2.getVal sans return"
+     WNL
+     ERROR
+fin.Tab2x2.getVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Tab2x2.setVal
+code.Tab2x2.setVal :
+     TSTO #5
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 284.
+if.51.0 :
+     LOAD -3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.51.1
+
+; Instruction ligne n° 285.
+if.52.0 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.52.1
+
+; Instruction ligne n° 286.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     BRA fin.52
+if.52.1 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.52
+
+; Instruction ligne n° 289.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     BRA fin.52
+else.52 :
+fin.52 :
+     BRA fin.51
+if.51.1 :
+     LOAD -3 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.51
+
+; Instruction ligne n° 293.
+if.53.0 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.53.1
+
+; Instruction ligne n° 294.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     BRA fin.53
+if.53.1 :
+     LOAD -4 (LB), R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.53
+
+; Instruction ligne n° 297.
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     BRA fin.53
+else.53 :
+fin.53 :
+     BRA fin.51
+else.51 :
+fin.51 :
+fin.Tab2x2.setVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Tab2x2
+init.Tab2x2 :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     NEW #2, R2
+     BOV tas_plein
+     LEA 57 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 1 (R0)
+     NEW #2, R2
+     BOV tas_plein
+     LEA 57 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 2 (R0)
+     NEW #2, R2
+     BOV tas_plein
+     LEA 57 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 3 (R0)
+     NEW #2, R2
+     BOV tas_plein
+     LEA 57 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Cellule
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 4 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; ############################
+; # Code de la classe Tab4x4 #
+; ############################
+
+; Méthode Tab4x4.getVal
+code.Tab4x4.getVal :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 309.
+if.54.0 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.54.1
+
+; Instruction ligne n° 310.
+if.55.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.55.1
+
+; Instruction ligne n° 311.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab4x4.getVal
+     BRA fin.55
+if.55.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.55
+
+; Instruction ligne n° 314.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab4x4.getVal
+     BRA fin.55
+else.55 :
+fin.55 :
+     BRA fin.54
+if.54.1 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.54
+
+; Instruction ligne n° 318.
+if.56.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.56.1
+
+; Instruction ligne n° 319.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab4x4.getVal
+     BRA fin.56
+if.56.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.56
+
+; Instruction ligne n° 322.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Tab4x4.getVal
+     BRA fin.56
+else.56 :
+fin.56 :
+     BRA fin.54
+else.54 :
+fin.54 :
+     WSTR "Erreur : sortie de la méthode Tab4x4.getVal sans return"
+     WNL
+     ERROR
+fin.Tab4x4.getVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Tab4x4.setVal
+code.Tab4x4.setVal :
+     TSTO #7
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 327.
+if.57.0 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.57.1
+
+; Instruction ligne n° 328.
+if.58.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.58.1
+
+; Instruction ligne n° 329.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.58
+if.58.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.58
+
+; Instruction ligne n° 332.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.58
+else.58 :
+fin.58 :
+     BRA fin.57
+if.57.1 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.57
+
+; Instruction ligne n° 336.
+if.59.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.59.1
+
+; Instruction ligne n° 337.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.59
+if.59.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.59
+
+; Instruction ligne n° 340.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.59
+else.59 :
+fin.59 :
+     BRA fin.57
+else.57 :
+fin.57 :
+fin.Tab4x4.setVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Initialisation des champs de la classe Tab4x4
+init.Tab4x4 :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 61 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab2x2
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 1 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 61 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab2x2
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 2 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 61 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab2x2
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 3 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 61 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab2x2
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 4 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; ###############################
+; # Code de la classe Echiquier #
+; ###############################
+
+; Méthode Echiquier.getVal
+code.Echiquier.getVal :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 352.
+if.60.0 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.60.1
+
+; Instruction ligne n° 353.
+if.61.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.61.1
+
+; Instruction ligne n° 354.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Echiquier.getVal
+     BRA fin.61
+if.61.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.61
+
+; Instruction ligne n° 357.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Echiquier.getVal
+     BRA fin.61
+else.61 :
+fin.61 :
+     BRA fin.60
+if.60.1 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.60
+
+; Instruction ligne n° 361.
+if.62.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.62.1
+
+; Instruction ligne n° 362.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Echiquier.getVal
+     BRA fin.62
+if.62.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.62
+
+; Instruction ligne n° 365.
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Echiquier.getVal
+     BRA fin.62
+else.62 :
+fin.62 :
+     BRA fin.60
+else.60 :
+fin.60 :
+     WSTR "Erreur : sortie de la méthode Echiquier.getVal sans return"
+     WNL
+     ERROR
+fin.Echiquier.getVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Echiquier.getValP
+code.Echiquier.getValP :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 369.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     LOAD R2, R0
+     BRA fin.Echiquier.getValP
+     WSTR "Erreur : sortie de la méthode Echiquier.getValP sans return"
+     WNL
+     ERROR
+fin.Echiquier.getValP :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Echiquier.setVal
+code.Echiquier.setVal :
+     TSTO #7
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 372.
+if.63.0 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.63.1
+
+; Instruction ligne n° 373.
+if.64.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.64.1
+
+; Instruction ligne n° 374.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.64
+if.64.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.64
+
+; Instruction ligne n° 377.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.64
+else.64 :
+fin.64 :
+     BRA fin.63
+if.63.1 :
+     LOAD -3 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.63
+
+; Instruction ligne n° 381.
+if.65.0 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.65.1
+
+; Instruction ligne n° 382.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.65
+if.65.1 :
+     LOAD -4 (LB), R2
+     REM #2, R2
+     BOV debordement
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.65
+
+; Instruction ligne n° 385.
+     ADDSP #4
+     LOAD -2 (LB), R2
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -3 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     QUO #2, R2
+     BOV debordement
+     STORE R2, -2 (SP)
+     LOAD -5 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #4
+     BRA fin.65
+else.65 :
+fin.65 :
+     BRA fin.63
+else.63 :
+fin.63 :
+fin.Echiquier.setVal :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Echiquier.setValP
+code.Echiquier.setValP :
+     TSTO #7
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 389.
+     ADDSP #4
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD -4 (LB), R1
+     STORE R1, -3 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #4
+fin.Echiquier.setValP :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Echiquier.installe
+code.Echiquier.installe :
+     TSTO #6
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+
+; Instruction ligne n° 392.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 393.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 394.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 395.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 5 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 5 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 396.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 6 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 6 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 397.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 7 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 7 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 398.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 8 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 8 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 399.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 9 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 9 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 400.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 10 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 10 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 401.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 11 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 11 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 402.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 12 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 12 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 403.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 13 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 13 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 404.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 14 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 14 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 405.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 15 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 15 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 406.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 16 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 16 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 407.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 17 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -3 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 17 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 409.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 410.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 411.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 412.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 5 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 5 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 413.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 6 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 6 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 414.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 7 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 7 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 415.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 8 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 8 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 416.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 9 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 9 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 417.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 10 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 10 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 418.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 11 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 11 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 419.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 12 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 12 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 420.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 13 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 13 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 421.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 14 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 14 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 422.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 15 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 15 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 423.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 16 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 16 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 424.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 17 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 3 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 4 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 17 (R2), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+fin.Echiquier.installe :
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; Méthode Echiquier.afficher
+code.Echiquier.afficher :
+     TSTO #9
+     BOV pile_pleine
+     ADDSP #4
+     STORE R2, 0 (SP)
+; Declarations ligne n° 428.
+
+; Declarations ligne n° 428.
+
+; Declarations ligne n° 429.
+
+
+; Instruction ligne n° 431.
+     LOAD #7, R2
+     STORE R2, 1 (LB)
+
+; Instruction ligne n° 432.
+while.66 :
+     LOAD 1 (LB), R2
+
+; Comparaison GE
+     CMP #0, R2
+     SGE R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.66
+
+; Instruction ligne n° 433.
+if.67.0 :
+     LOAD 1 (LB), R2
+
+; Comparaison EQ
+     CMP #7, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.67
+
+; Instruction ligne n° 434.
+     WSTR " j "
+     WNL
+
+; Instruction ligne n° 435.
+     WSTR "   +----+----+----+----+----+----+----+----+"
+     WNL
+     BRA fin.67
+else.67 :
+fin.67 :
+
+; Instruction ligne n° 437.
+     LOAD #0, R2
+     STORE R2, 2 (LB)
+
+; Instruction ligne n° 438.
+while.68 :
+     LOAD 2 (LB), R2
+
+; Comparaison LT
+     CMP #8, R2
+     SLT R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.68
+
+; Instruction ligne n° 439.
+if.69.0 :
+     LOAD 2 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.69
+
+; Instruction ligne n° 440.
+     WSTR " "
+     LOAD 1 (LB), R1
+     WINT
+     WSTR " |"
+     BRA fin.69
+else.69 :
+fin.69 :
+
+; Instruction ligne n° 443.
+     ADDSP #3
+     LOAD -2 (LB), R1
+     STORE R1, 0 (SP)
+     LOAD 2 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 1 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 444.
+if.70.0 :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.70
+
+; Instruction ligne n° 445.
+     WSTR "    "
+     BRA fin.70
+else.70 :
+
+; Instruction ligne n° 448.
+     ADDSP #1
+     LOAD 3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+fin.70 :
+
+; Instruction ligne n° 450.
+     WSTR "|"
+
+; Instruction ligne n° 451.
+     LOAD 2 (LB), R2
+     ADD #1, R2
+     STORE R2, 2 (LB)
+     BRA while.68
+fin.68 :
+
+; Instruction ligne n° 453.
+     WNL
+
+; Instruction ligne n° 454.
+     WSTR "   +----+----+----+----+----+----+----+----+"
+     WNL
+
+; Instruction ligne n° 455.
+     LOAD 1 (LB), R2
+     SUB #1, R2
+     STORE R2, 1 (LB)
+     BRA while.66
+fin.66 :
+
+; Instruction ligne n° 457.
+     WSTR "     0    1    2    3    4    5    6    7    i"
+     WNL
+fin.Echiquier.afficher :
+     LOAD 0 (SP), R2
+     SUBSP #4
+     RTS
+
+; Initialisation des champs de la classe Echiquier
+init.Echiquier :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 65 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab4x4
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 1 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 65 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab4x4
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 2 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 65 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab4x4
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 3 (R0)
+     NEW #5, R2
+     BOV tas_plein
+     LEA 65 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Tab4x4
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 4 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS
+
+; ##########################
+; # Code de la classe Coup #
+; ##########################
+
+; Méthode Coup.valide
+code.Coup.valide :
+     TSTO #16
+     BOV pile_pleine
+     ADDSP #9
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 467.
+
+; Declarations ligne n° 467.
+
+; Declarations ligne n° 468.
+
+; Declarations ligne n° 468.
+
+; Declarations ligne n° 469.
+
+; Declarations ligne n° 470.
+
+; Declarations ligne n° 470.
+
+
+; Instruction ligne n° 472.
+if.71.0 :
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.71
+
+; Instruction ligne n° 473.
+     WSTR "Source invalide."
+     WNL
+
+; Instruction ligne n° 474.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.71
+else.71 :
+fin.71 :
+
+; Instruction ligne n° 476.
+if.72.0 :
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.72
+
+; Instruction ligne n° 477.
+     WSTR "Destination invalide."
+     WNL
+
+; Instruction ligne n° 478.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.72
+else.72 :
+fin.72 :
+
+; Instruction ligne n° 481.
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 1 (LB)
+
+; Instruction ligne n° 482.
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 2 (LB)
+
+; Instruction ligne n° 483.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     SUB 1 (R3), R2
+     STORE R2, 3 (LB)
+
+; Instruction ligne n° 484.
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     LOAD -2 (LB), R3
+     LOAD 1 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     SUB 2 (R3), R2
+     STORE R2, 4 (LB)
+
+; Instruction ligne n° 486.
+if.73.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD 1 (LB), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.74
+; Evaluation seconde opérande :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+
+; Comparaison NE
+     CMP -4 (LB), R2
+     SNE R2
+fin.OU.74 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.73
+
+; Instruction ligne n° 488.
+     WSTR "Source invalide."
+     WNL
+
+; Instruction ligne n° 489.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.73
+else.73 :
+fin.73 :
+
+; Instruction ligne n° 491.
+if.75.0 :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD 2 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ fin.ET.76
+; Evaluation seconde opérande :
+     LOAD 2 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+
+; Comparaison EQ
+     CMP -4 (LB), R2
+     SEQ R2
+fin.ET.76 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ else.75
+
+; Instruction ligne n° 493.
+     WSTR "Destination occuppée par vous."
+     WNL
+
+; Instruction ligne n° 494.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.75
+else.75 :
+fin.75 :
+
+; Instruction ligne n° 496.
+if.77.0 :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     BEQ else.77
+
+; Instruction ligne n° 498.
+     WSTR "Identité interdite."
+     WNL
+
+; Instruction ligne n° 499.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.77
+else.77 :
+fin.77 :
+
+; Instruction ligne n° 502.
+if.78.0 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.79
+while_instanceof.79 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.79
+     LEA 28 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.79
+     BRA while_instanceof.79
+true_instanceof.79 :
+     LOAD #1, R2
+     BRA fin_instanceof.79
+false_instanceof.79 :
+     LOAD #0, R2
+fin_instanceof.79 :
+     CMP #0, R2
+     BEQ if.78.1
+
+; Instruction ligne n° 503.
+if.80.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.84
+; Evaluation seconde opérande :
+     LOAD 4 (LB), R2
+     LOAD -4 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+
+; Comparaison EQ
+     CMP 3 (R3), R2
+     SEQ R2
+fin.ET.84 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.83
+; Evaluation seconde opérande :
+     LOAD 2 (LB), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+fin.ET.83 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BNE fin.OU.82
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     LOAD -4 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 2 (R3), R3
+     PUSH R2                           ; Sauvegarde de R2
+     LOAD -4 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     ADD 3 (R2), R3
+     POP R2                            ; Restauration de R2
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.88
+; Evaluation seconde opérande :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+fin.ET.88 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.87
+; Evaluation seconde opérande :
+     LOAD 4 (LB), R2
+     LOAD -4 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     LOAD 3 (R3), R3
+     MUL #2, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+fin.ET.87 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.86
+; Evaluation seconde opérande :
+     ADDSP #3
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 2 (R2), R2
+     LOAD -4 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     ADD 3 (R3), R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 2 (R0)
+     SUBSP #3
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+fin.ET.86 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.85
+; Evaluation seconde opérande :
+     LOAD 2 (LB), R2
+
+; Comparaison EQ
+     CMP #null, R2
+     SEQ R2
+fin.ET.85 :
+; Fin d'un calcul ET
+fin.OU.82 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BNE fin.OU.81
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.91
+; Evaluation seconde opérande :
+     LOAD 4 (LB), R2
+     LOAD -4 (LB), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+
+; Comparaison EQ
+     CMP 3 (R3), R2
+     SEQ R2
+fin.ET.91 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.90
+; Evaluation seconde opérande :
+     LOAD 2 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+fin.ET.90 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BEQ fin.ET.89
+; Evaluation seconde opérande :
+     LOAD 2 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD 1 (R2), R2
+
+; Comparaison NE
+     CMP -4 (LB), R2
+     SNE R2
+fin.ET.89 :
+; Fin d'un calcul ET
+fin.OU.81 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.80
+
+; Instruction ligne n° 511.
+     WSTR "Mouvement du Pion interdit !"
+     WNL
+
+; Instruction ligne n° 512.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.80
+else.80 :
+fin.80 :
+     BRA fin.78
+if.78.1 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.92
+while_instanceof.92 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.92
+     LEA 32 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.92
+     BRA while_instanceof.92
+true_instanceof.92 :
+     LOAD #1, R2
+     BRA fin_instanceof.92
+false_instanceof.92 :
+     LOAD #0, R2
+fin_instanceof.92 :
+     CMP #0, R2
+     BEQ if.78.2
+
+; Instruction ligne n° 517.
+if.93.0 :
+     ADDSP #3
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -1 (SP)
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #3
+     LOAD R0, R2
+
+; Comparaison GT
+     CMP #1, R2
+     SGT R2
+     CMP #0, R2
+     BEQ else.93
+
+; Instruction ligne n° 518.
+     WSTR "Mouvement du Roi interdit !"
+     WNL
+
+; Instruction ligne n° 519.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.93
+else.93 :
+fin.93 :
+     BRA fin.78
+if.78.2 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.94
+while_instanceof.94 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.94
+     LEA 36 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.94
+     BRA while_instanceof.94
+true_instanceof.94 :
+     LOAD #1, R2
+     BRA fin_instanceof.94
+false_instanceof.94 :
+     LOAD #0, R2
+fin_instanceof.94 :
+     CMP #0, R2
+     BEQ if.78.3
+
+; Instruction ligne n° 524.
+if.95.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.97
+; Evaluation seconde opérande :
+     LOAD 4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+fin.OU.97 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BNE fin.OU.96
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+fin.OU.96 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.95
+
+; Instruction ligne n° 525.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 5 (LB)
+
+; Instruction ligne n° 526.
+if.98.0 :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ if.98.1
+
+; Instruction ligne n° 527.
+     LOAD #0, R2
+     STORE R2, 6 (LB)
+
+; Instruction ligne n° 528.
+     LOAD 4 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 7 (LB)
+     BRA fin.98
+if.98.1 :
+     LOAD 4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.98
+
+; Instruction ligne n° 530.
+     LOAD #0, R2
+     STORE R2, 7 (LB)
+
+; Instruction ligne n° 531.
+     LOAD 3 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 6 (LB)
+     BRA fin.98
+else.98 :
+
+; Instruction ligne n° 533.
+     LOAD 3 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 6 (LB)
+
+; Instruction ligne n° 534.
+     LOAD 4 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 7 (LB)
+fin.98 :
+
+; Instruction ligne n° 537.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 538.
+while.99 :
+     ADDSP #2
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.99
+
+; Instruction ligne n° 540.
+if.100.0 :
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.100
+
+; Instruction ligne n° 541.
+     WSTR "Mouvement de la Reine interdit : Génée !"
+     WNL
+
+; Instruction ligne n° 542.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.100
+else.100 :
+fin.100 :
+
+; Instruction ligne n° 544.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+     BRA while.99
+fin.99 :
+     BRA fin.95
+else.95 :
+
+; Instruction ligne n° 548.
+     WSTR "Mouvement de la Reine interdit !"
+     WNL
+
+; Instruction ligne n° 549.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+fin.95 :
+     BRA fin.78
+if.78.3 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.101
+while_instanceof.101 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.101
+     LEA 40 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.101
+     BRA while_instanceof.101
+true_instanceof.101 :
+     LOAD #1, R2
+     BRA fin_instanceof.101
+false_instanceof.101 :
+     LOAD #0, R2
+fin_instanceof.101 :
+     CMP #0, R2
+     BEQ if.78.4
+
+; Instruction ligne n° 553.
+if.102.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BNE fin.OU.103
+; Evaluation seconde opérande :
+     LOAD 4 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+fin.OU.103 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     BEQ else.102
+
+; Instruction ligne n° 554.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 5 (LB)
+
+; Instruction ligne n° 555.
+if.104.0 :
+     LOAD 3 (LB), R2
+
+; Comparaison EQ
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.104
+
+; Instruction ligne n° 556.
+     LOAD #0, R2
+     STORE R2, 6 (LB)
+
+; Instruction ligne n° 557.
+     LOAD 4 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 7 (LB)
+     BRA fin.104
+else.104 :
+
+; Instruction ligne n° 559.
+     LOAD #0, R2
+     STORE R2, 7 (LB)
+
+; Instruction ligne n° 560.
+     LOAD 3 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 6 (LB)
+fin.104 :
+
+; Instruction ligne n° 562.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 563.
+while.105 :
+     ADDSP #2
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.105
+
+; Instruction ligne n° 565.
+if.106.0 :
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.106
+
+; Instruction ligne n° 566.
+     WSTR "Mouvement de la Tour interdit : Génée !"
+     WNL
+
+; Instruction ligne n° 567.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.106
+else.106 :
+fin.106 :
+
+; Instruction ligne n° 569.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+     BRA while.105
+fin.105 :
+     BRA fin.102
+else.102 :
+
+; Instruction ligne n° 573.
+     WSTR "Mouvement de la Tour interdit !"
+     WNL
+
+; Instruction ligne n° 574.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+fin.102 :
+     BRA fin.78
+if.78.4 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.107
+while_instanceof.107 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.107
+     LEA 44 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.107
+     BRA while_instanceof.107
+true_instanceof.107 :
+     LOAD #1, R2
+     BRA fin_instanceof.107
+false_instanceof.107 :
+     LOAD #0, R2
+fin_instanceof.107 :
+     CMP #0, R2
+     BEQ if.78.5
+
+; Instruction ligne n° 578.
+if.108.0 :
+; Debut d'un calcul OU
+; Evaluation première opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.110
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+fin.ET.110 :
+; Fin d'un calcul ET
+     CMP #0, R2
+     BNE fin.OU.109
+; Evaluation seconde opérande :
+; Debut d'un calcul ET
+; Evaluation première opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #2, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ fin.ET.111
+; Evaluation seconde opérande :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison EQ
+     CMP #1, R2
+     SEQ R2
+fin.ET.111 :
+; Fin d'un calcul ET
+fin.OU.109 :
+; Fin d'un calcul OU
+     CMP #0, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.108
+
+; Instruction ligne n° 583.
+     WSTR "Mouvement du Cavalier interdit !"
+     WNL
+
+; Instruction ligne n° 584.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.108
+else.108 :
+fin.108 :
+     BRA fin.78
+if.78.5 :
+     LOAD 1 (LB), R2
+     CMP #null, R2
+     BEQ true_instanceof.112
+while_instanceof.112 :
+     LOAD 0 (R2), R2
+     CMP #null, R2
+     BEQ false_instanceof.112
+     LEA 48 (GB), R1
+     CMP R1, R2
+     BEQ true_instanceof.112
+     BRA while_instanceof.112
+true_instanceof.112 :
+     LOAD #1, R2
+     BRA fin_instanceof.112
+false_instanceof.112 :
+     LOAD #0, R2
+fin_instanceof.112 :
+     CMP #0, R2
+     BEQ else.78
+
+; Instruction ligne n° 590.
+if.113.0 :
+     ADDSP #2
+     LOAD -2 (LB), R2
+     LOAD 3 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+
+; Comparaison EQ
+     CMP R3, R2
+     SEQ R2
+     CMP #0, R2
+     BEQ else.113
+
+; Instruction ligne n° 591.
+     ADDSP #1
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     STORE R2, 0 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #1
+     LOAD R0, R2
+     STORE R2, 5 (LB)
+
+; Instruction ligne n° 592.
+     LOAD 3 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 3 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 6 (LB)
+
+; Instruction ligne n° 593.
+     LOAD 4 (LB), R2
+     ADDSP #2
+     LOAD -2 (LB), R3
+     LOAD 3 (R3), R3
+     CMP #null, R3
+     BEQ dereferencement_null
+     STORE R3, 0 (SP)
+     LOAD 4 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #2
+     LOAD R0, R3
+     QUO R3, R2
+     BOV debordement
+     STORE R2, 7 (LB)
+
+; Instruction ligne n° 594.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 595.
+while.114 :
+     ADDSP #2
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 1 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     CMP #0, R2
+     SEQ R2
+     LOAD R2, R1
+     CMP #0, R1
+     BEQ fin.114
+
+; Instruction ligne n° 597.
+if.115.0 :
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 5 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.115
+
+; Instruction ligne n° 598.
+     WSTR "Mouvement du Fou interdit : Géné !"
+     WNL
+
+; Instruction ligne n° 599.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+     BRA fin.115
+else.115 :
+fin.115 :
+
+; Instruction ligne n° 601.
+     ADDSP #3
+     LOAD 5 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD 6 (LB), R1
+     STORE R1, -1 (SP)
+     LOAD 7 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 4 (R0)
+     SUBSP #3
+     BRA while.114
+fin.114 :
+     BRA fin.113
+else.113 :
+
+; Instruction ligne n° 605.
+     WSTR "Mouvement du Fou interdit !"
+     WNL
+
+; Instruction ligne n° 606.
+     LOAD #0, R0
+     BRA fin.Coup.valide
+fin.113 :
+     BRA fin.78
+else.78 :
+
+; Instruction ligne n° 612.
+     WSTR "Erreur interne : piece inconnue"
+     WNL
+
+; Instruction ligne n° 613.
+     LOAD #0, R2
+     QUO #0, R2
+     BOV debordement
+fin.78 :
+
+; Instruction ligne n° 616.
+     LOAD #1, R0
+     BRA fin.Coup.valide
+     WSTR "Erreur : sortie de la méthode Coup.valide sans return"
+     WNL
+     ERROR
+fin.Coup.valide :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #9
+     RTS
+
+; Méthode Coup.applique
+code.Coup.applique :
+     TSTO #9
+     BOV pile_pleine
+     ADDSP #4
+     STORE R3, -1 (SP)
+     STORE R2, 0 (SP)
+; Declarations ligne n° 620.
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 1 (LB)
+
+; Declarations ligne n° 621.
+     ADDSP #2
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 3 (R0)
+     SUBSP #2
+     LOAD R0, R2
+     STORE R2, 2 (LB)
+
+
+; Instruction ligne n° 623.
+     ADDSP #3
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 1 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD #null, R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+
+; Instruction ligne n° 624.
+if.116.0 :
+     LOAD 2 (LB), R2
+
+; Comparaison NE
+     CMP #null, R2
+     SNE R2
+     CMP #0, R2
+     BEQ else.116
+
+; Instruction ligne n° 625.
+     LOAD 2 (LB), R2
+     CMP #null, R2
+     BEQ dereferencement_null
+     LOAD #0, R3
+     STORE R3, 2 (R2)
+     BRA fin.116
+else.116 :
+fin.116 :
+
+; Instruction ligne n° 627.
+     ADDSP #3
+     LOAD -3 (LB), R1
+     CMP #null, R1
+     BEQ dereferencement_null
+     STORE R1, 0 (SP)
+     LOAD -2 (LB), R2
+     LOAD 2 (R2), R2
+     STORE R2, -1 (SP)
+     LOAD 1 (LB), R1
+     STORE R1, -2 (SP)
+     LOAD 0 (SP), R0
+     LOAD 0 (R0), R0
+     BSR 5 (R0)
+     SUBSP #3
+fin.Coup.applique :
+     LOAD 0 (SP), R2
+     LOAD -1 (SP), R3
+     SUBSP #4
+     RTS
+
+; Initialisation des champs de la classe Coup
+init.Coup :
+     TSTO #3
+     BOV pile_pleine
+     ADDSP #1
+     STORE R2, 0 (SP)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 1 (R0)
+     LOAD #null, R1
+     LOAD -2 (LB), R0
+     STORE R1, 2 (R0)
+     NEW #1, R2
+     BOV tas_plein
+     LEA 3 (GB), R0
+     STORE R0, 0 (R2)
+     PUSH R2
+     BSR init.Calc
+     POP R2
+     LOAD -2 (LB), R0
+     STORE R2, 3 (R0)
+     LOAD 0 (SP), R2
+     SUBSP #1
+     RTS

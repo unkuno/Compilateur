@@ -1,0 +1,29 @@
+// Description:
+//	Teste les CLASSES
+//
+// Resultats:
+//	Tables des méthodes correctements construites
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+class A {
+
+   int getX() {
+      return 1;
+   }
+
+   int getY() {
+      return 2;
+   }
+}
+
+class B extends A {
+
+   int getZ() {
+      return 3;
+   }
+}  

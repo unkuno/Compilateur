@@ -1,0 +1,18 @@
+// Description:
+//	Teste conversion flottant vers int
+//
+// Resultats:
+// Erreur : dépassement de capacité
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 13/01/2012
+
+
+
+int i;
+{
+i = cast<int>(3.40282E+8);
+println(i);
+}

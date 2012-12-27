@@ -1,0 +1,21 @@
+// Description:
+//	   test règle 3.58 
+// Resultats:
+//    Erreur contextuelle
+//    Ligne 20 : Les types 'void' et 'type_classe(A)' sont incompatibles avec l'opérateur 'instanceof' (règle 3.58)
+// 
+// Attributs: exec incorrect automatique
+//
+// Historique:
+//    cree le 20/01/2012
+
+class A {
+   void x() {
+   }
+}
+
+A a;
+boolean b;
+{
+   b = a.x() instanceof A;
+}

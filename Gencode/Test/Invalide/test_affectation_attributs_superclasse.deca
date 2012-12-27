@@ -1,0 +1,32 @@
+// Description:
+//    test d'une mauvaise affectation d'une variable avec valeur appartenant a une super classe
+//
+// Resultats:
+//		aucun affichage, erreur : indéfnition
+// 
+// Attributs: exec correct automatique
+//
+// Historique:
+//    cree le 19/01/2012
+
+class A {
+   int a = 18;
+}
+
+class B extends A {
+   int b;
+}
+
+class C extends B {
+   int c;
+}
+
+class D extends C {
+   int a = this.a;
+}
+
+D monD = new D();
+{
+   println(monD.a);
+}
+
