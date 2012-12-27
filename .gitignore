@@ -1,0 +1,39 @@
+# fichiers générés par gnat
+*.o
+*.ali
+b~*
+
+# fichier de sauvegarde Emacs
+*~
+\#*#
+.#*
+
+# Fichiers générés par gcov
+*.gcov
+*.gcno
+*.gcda
+# Fichier généré par "make gcovreport"
+gcovreport.txt
+
+# Fichiers générés par pdflatex
+*.aux
+*.log
+*.pdf
+*.txt
+*.ps
+
+# Fichiers générés par decac
+*.ass
+
+# Fichiers générés par la test-suite
+*.valide
+*.arbre
+*.decompil
+*.lex
+*.errlex
+*.synt
+*.errsynt
+*.lis
+*.errass
+*.exec
+*.errexec
